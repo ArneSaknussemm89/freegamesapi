@@ -1,6 +1,5 @@
-# NOTES
-https://developer.haloapi.com/developer#623d350460948524c4fe2b59
-https://www.freetogame.com/api/games
+# Free GAMES API
+This app uses the Free Games API to show a list of free-to-play games.
 
 # Koality Flutter
 
