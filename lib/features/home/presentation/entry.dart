@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import 'package:freegamesapi/features/home/presentation/blocs/games_list.dart';
+import 'package:freegamesexample/features/home/presentation/blocs/games_list.dart';
 
-class HomeScreen extends ConsumerWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomePage extends ConsumerWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final gamesList = ref.watch(gamesListBloc);
+    final gamesList = ref.watch(gamesListBlocProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -21,8 +21,8 @@ class HomeScreen extends ConsumerWidget {
           itemBuilder: (context, index) {
             final game = games[index];
             return ListTile(
-              title: Text(game.title ?? 'No Title'),
-              subtitle: game.shortDescription != null ? Text(game.shortDescription!) : null,
+              title: Text(game.title, style: Theme.of(context).textTheme.headline6),
+              subtitle: Text(game.shortDescription),
             );
           },
           itemCount: games.length,

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:freegamesapi/core/adapters.dart';
+import 'package:freegamesexample/core/adapters.dart';
 
 final dioAdapter = Provider.autoDispose.family<DioAdapter, BaseOptions>((ref, options) {
   final client = Dio(options);

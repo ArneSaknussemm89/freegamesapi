@@ -1,6 +1,5 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'game.dart';
@@ -24,16 +23,16 @@ class _$GameTearOff {
 
   _Game call(
       int id,
-      String? title,
-      String? thumbnail,
-      String? shortDescription,
-      String? gameUrl,
-      String? genre,
-      String? platform,
-      String? publisher,
-      String? developer,
-      DateTime? releaseDate,
-      String? freetogameProfileUrl) {
+      String title,
+      String thumbnail,
+      String shortDescription,
+      String gameUrl,
+      String genre,
+      String platform,
+      String publisher,
+      String developer,
+      DateTime releaseDate,
+      String freetogameProfileUrl) {
     return _Game(
       id,
       title,
@@ -60,16 +59,16 @@ const $Game = _$GameTearOff();
 /// @nodoc
 mixin _$Game {
   int get id => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
-  String? get thumbnail => throw _privateConstructorUsedError;
-  String? get shortDescription => throw _privateConstructorUsedError;
-  String? get gameUrl => throw _privateConstructorUsedError;
-  String? get genre => throw _privateConstructorUsedError;
-  String? get platform => throw _privateConstructorUsedError;
-  String? get publisher => throw _privateConstructorUsedError;
-  String? get developer => throw _privateConstructorUsedError;
-  DateTime? get releaseDate => throw _privateConstructorUsedError;
-  String? get freetogameProfileUrl => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get thumbnail => throw _privateConstructorUsedError;
+  String get shortDescription => throw _privateConstructorUsedError;
+  String get gameUrl => throw _privateConstructorUsedError;
+  String get genre => throw _privateConstructorUsedError;
+  String get platform => throw _privateConstructorUsedError;
+  String get publisher => throw _privateConstructorUsedError;
+  String get developer => throw _privateConstructorUsedError;
+  DateTime get releaseDate => throw _privateConstructorUsedError;
+  String get freetogameProfileUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -82,16 +81,16 @@ abstract class $GameCopyWith<$Res> {
       _$GameCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      String? title,
-      String? thumbnail,
-      String? shortDescription,
-      String? gameUrl,
-      String? genre,
-      String? platform,
-      String? publisher,
-      String? developer,
-      DateTime? releaseDate,
-      String? freetogameProfileUrl});
+      String title,
+      String thumbnail,
+      String shortDescription,
+      String gameUrl,
+      String genre,
+      String platform,
+      String publisher,
+      String developer,
+      DateTime releaseDate,
+      String freetogameProfileUrl});
 }
 
 /// @nodoc
@@ -124,43 +123,43 @@ class _$GameCopyWithImpl<$Res> implements $GameCopyWith<$Res> {
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       shortDescription: shortDescription == freezed
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gameUrl: gameUrl == freezed
           ? _value.gameUrl
           : gameUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       genre: genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       platform: platform == freezed
           ? _value.platform
           : platform // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       publisher: publisher == freezed
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       developer: developer == freezed
           ? _value.developer
           : developer // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       releaseDate: releaseDate == freezed
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       freetogameProfileUrl: freetogameProfileUrl == freezed
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -172,16 +171,16 @@ abstract class _$GameCopyWith<$Res> implements $GameCopyWith<$Res> {
   @override
   $Res call(
       {int id,
-      String? title,
-      String? thumbnail,
-      String? shortDescription,
-      String? gameUrl,
-      String? genre,
-      String? platform,
-      String? publisher,
-      String? developer,
-      DateTime? releaseDate,
-      String? freetogameProfileUrl});
+      String title,
+      String thumbnail,
+      String shortDescription,
+      String gameUrl,
+      String genre,
+      String platform,
+      String publisher,
+      String developer,
+      DateTime releaseDate,
+      String freetogameProfileUrl});
 }
 
 /// @nodoc
@@ -215,43 +214,43 @@ class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
       title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       shortDescription == freezed
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gameUrl == freezed
           ? _value.gameUrl
           : gameUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       platform == freezed
           ? _value.platform
           : platform // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       publisher == freezed
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       developer == freezed
           ? _value.developer
           : developer // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       releaseDate == freezed
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       freetogameProfileUrl == freezed
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -278,25 +277,25 @@ class _$_Game implements _Game {
   @override
   final int id;
   @override
-  final String? title;
+  final String title;
   @override
-  final String? thumbnail;
+  final String thumbnail;
   @override
-  final String? shortDescription;
+  final String shortDescription;
   @override
-  final String? gameUrl;
+  final String gameUrl;
   @override
-  final String? genre;
+  final String genre;
   @override
-  final String? platform;
+  final String platform;
   @override
-  final String? publisher;
+  final String publisher;
   @override
-  final String? developer;
+  final String developer;
   @override
-  final DateTime? releaseDate;
+  final DateTime releaseDate;
   @override
-  final String? freetogameProfileUrl;
+  final String freetogameProfileUrl;
 
   @override
   String toString() {
@@ -353,41 +352,41 @@ class _$_Game implements _Game {
 abstract class _Game implements Game {
   const factory _Game(
       int id,
-      String? title,
-      String? thumbnail,
-      String? shortDescription,
-      String? gameUrl,
-      String? genre,
-      String? platform,
-      String? publisher,
-      String? developer,
-      DateTime? releaseDate,
-      String? freetogameProfileUrl) = _$_Game;
+      String title,
+      String thumbnail,
+      String shortDescription,
+      String gameUrl,
+      String genre,
+      String platform,
+      String publisher,
+      String developer,
+      DateTime releaseDate,
+      String freetogameProfileUrl) = _$_Game;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
 
   @override
   int get id;
   @override
-  String? get title;
+  String get title;
   @override
-  String? get thumbnail;
+  String get thumbnail;
   @override
-  String? get shortDescription;
+  String get shortDescription;
   @override
-  String? get gameUrl;
+  String get gameUrl;
   @override
-  String? get genre;
+  String get genre;
   @override
-  String? get platform;
+  String get platform;
   @override
-  String? get publisher;
+  String get publisher;
   @override
-  String? get developer;
+  String get developer;
   @override
-  DateTime? get releaseDate;
+  DateTime get releaseDate;
   @override
-  String? get freetogameProfileUrl;
+  String get freetogameProfileUrl;
   @override
   @JsonKey(ignore: true)
   _$GameCopyWith<_Game> get copyWith => throw _privateConstructorUsedError;

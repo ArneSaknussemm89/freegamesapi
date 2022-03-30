@@ -24,6 +24,7 @@ analyzer:
         - ios/**
         - build/**
         - lib/**/*.g.dart
+        - lib/**/*.freezed.dart
 
 # Dart code metrics options.
 dart_code_metrics:

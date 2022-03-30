@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:freegamesapi/data/adapters/dio_adapter.dart';
-import 'package:freegamesapi/data/repositories/repository.dart';
-import 'package:freegamesapi/features/home/data/data_sources/games_api.dart';
-import 'package:freegamesapi/features/home/domain/models/game/game.dart';
+import 'package:freegamesexample/data/adapters/dio_adapter.dart';
+import 'package:freegamesexample/data/repositories/repository.dart';
+import 'package:freegamesexample/features/home/data/data_sources/games_api.dart';
+import 'package:freegamesexample/features/home/domain/models/game/game.dart';
 import 'package:riverbloc/riverbloc.dart';
 
 // The default provider for this repository.
