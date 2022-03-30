@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 
 import 'package:freegamesexample/features/favorites/presentation/entry.dart';
 import 'package:freegamesexample/features/home/presentation/entry.dart';
+import 'package:freegamesexample/features/login/presentation/entry.dart';
 
 part 'router.gr.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AdaptiveRoute(page: HomePage, initial: true),
-    AdaptiveRoute(page: FavoriteGamesPage),
+    AdaptiveRoute(page: LoginPage, path: '/login', initial: true),
+    AdaptiveRoute(page: HomePage, path: '/'),
+    AdaptiveRoute(page: FavoriteGamesPage, path: '/favorites'),
   ],
 )
 class AppRouter extends _$AppRouter {}

@@ -17,6 +17,10 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    LoginRoute.name: (routeData) {
+      return AdaptivePage<dynamic>(
+          routeData: routeData, child: const LoginPage());
+    },
     HomeRoute.name: (routeData) {
       return AdaptivePage<dynamic>(
           routeData: routeData, child: const HomePage());
@@ -29,9 +33,18 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
+        RouteConfig(LoginRoute.name, path: '/login'),
         RouteConfig(HomeRoute.name, path: '/'),
-        RouteConfig(FavoriteGamesRoute.name, path: '/favorite-games-page')
+        RouteConfig(FavoriteGamesRoute.name, path: '/favorites')
       ];
+}
+
+/// generated route for
+/// [LoginPage]
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute() : super(LoginRoute.name, path: '/login');
+
+  static const String name = 'LoginRoute';
 }
 
 /// generated route for
@@ -46,7 +59,7 @@ class HomeRoute extends PageRouteInfo<void> {
 /// [FavoriteGamesPage]
 class FavoriteGamesRoute extends PageRouteInfo<void> {
   const FavoriteGamesRoute()
-      : super(FavoriteGamesRoute.name, path: '/favorite-games-page');
+      : super(FavoriteGamesRoute.name, path: '/favorites');
 
   static const String name = 'FavoriteGamesRoute';
 }

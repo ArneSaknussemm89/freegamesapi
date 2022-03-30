@@ -6,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'package:freegamesexample/features/login/presentation/entry.dart';
 import 'package:freegamesexample/routing/router.dart';
 import 'package:freegamesexample/firebase_options.dart';
 
@@ -19,9 +18,11 @@ Future main() async {
   await Hive.initFlutter();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  final authed = FirebaseAuth.instance.currentUser != null;
+
   runApp(
-    const ProviderScope(
-      child: AppEntry(),
+    ProviderScope(
+      child: AppEntry(authed: authed),
     ),
   );
 }
@@ -30,7 +31,9 @@ Future main() async {
 /// The main entry widget for the application.
 ///
 class AppEntry extends ConsumerWidget {
-  const AppEntry({Key? key}) : super(key: key);
+  const AppEntry({Key? key, this.authed = false}) : super(key: key);
+
+  final bool authed;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -79,23 +82,28 @@ class AppEntry extends ConsumerWidget {
       },
       child: MaterialApp.router(
         key: key,
-        routerDelegate: router.delegate(),
+        routerDelegate: router.delegate(
+          initialRoutes: [
+            if (authed) const HomeRoute(),
+            if (!authed) const LoginRoute(),
+          ],
+        ),
         routeInformationParser: router.defaultRouteParser(),
         debugShowCheckedModeBanner: false,
         title: 'Todo Application',
-        builder: (context, child) => StreamBuilder<User?>(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          initialData: FirebaseAuth.instance.currentUser,
-          builder: (context, snapshot) {
-            // User is not signed in
-            if (!snapshot.hasData) {
-              return const LoginPage();
-            }
+        // builder: (context, child) => StreamBuilder<User?>(
+        //   stream: FirebaseAuth.instance.authStateChanges(),
+        //   initialData: FirebaseAuth.instance.currentUser,
+        //   builder: (context, snapshot) {
+        //     // User is not signed in
+        //     if (!snapshot.hasData) {
+        //       return const LoginPage();
+        //     }
 
-            // Render the child if already authenticated.
-            return child!;
-          },
-        ),
+        //     // Render the child if already authenticated.
+        //     return child!;
+        //   },
+        // ),
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
           sliderTheme: sliderTheme.copyWith(
