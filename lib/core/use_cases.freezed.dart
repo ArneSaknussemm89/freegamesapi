@@ -17,9 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$UseCaseResultTearOff {
   const _$UseCaseResultTearOff();
 
-  UseCaseResultException<E, T> exception<E, T>(E exception, StackTrace trace) {
-    return UseCaseResultException<E, T>(
-      exception,
+  UseCaseResultFailure<E, T> failure<E, T>(Object? error, StackTrace trace) {
+    return UseCaseResultFailure<E, T>(
+      error,
       trace,
     );
   }
@@ -38,38 +38,38 @@ const $UseCaseResult = _$UseCaseResultTearOff();
 mixin _$UseCaseResult<E, T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(E exception, StackTrace trace) exception,
+    required TResult Function(Object? error, StackTrace trace) failure,
     required TResult Function(T data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(E exception, StackTrace trace)? exception,
+    TResult Function(Object? error, StackTrace trace)? failure,
     TResult Function(T data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(E exception, StackTrace trace)? exception,
+    TResult Function(Object? error, StackTrace trace)? failure,
     TResult Function(T data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UseCaseResultException<E, T> value) exception,
+    required TResult Function(UseCaseResultFailure<E, T> value) failure,
     required TResult Function(UseCaseResultSuccess<E, T> value) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UseCaseResultException<E, T> value)? exception,
+    TResult Function(UseCaseResultFailure<E, T> value)? failure,
     TResult Function(UseCaseResultSuccess<E, T> value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UseCaseResultException<E, T> value)? exception,
+    TResult Function(UseCaseResultFailure<E, T> value)? failure,
     TResult Function(UseCaseResultSuccess<E, T> value)? success,
     required TResult orElse(),
   }) =>
@@ -94,35 +94,32 @@ class _$UseCaseResultCopyWithImpl<E, T, $Res>
 }
 
 /// @nodoc
-abstract class $UseCaseResultExceptionCopyWith<E, T, $Res> {
-  factory $UseCaseResultExceptionCopyWith(UseCaseResultException<E, T> value,
-          $Res Function(UseCaseResultException<E, T>) then) =
-      _$UseCaseResultExceptionCopyWithImpl<E, T, $Res>;
-  $Res call({E exception, StackTrace trace});
+abstract class $UseCaseResultFailureCopyWith<E, T, $Res> {
+  factory $UseCaseResultFailureCopyWith(UseCaseResultFailure<E, T> value,
+          $Res Function(UseCaseResultFailure<E, T>) then) =
+      _$UseCaseResultFailureCopyWithImpl<E, T, $Res>;
+  $Res call({Object? error, StackTrace trace});
 }
 
 /// @nodoc
-class _$UseCaseResultExceptionCopyWithImpl<E, T, $Res>
+class _$UseCaseResultFailureCopyWithImpl<E, T, $Res>
     extends _$UseCaseResultCopyWithImpl<E, T, $Res>
-    implements $UseCaseResultExceptionCopyWith<E, T, $Res> {
-  _$UseCaseResultExceptionCopyWithImpl(UseCaseResultException<E, T> _value,
-      $Res Function(UseCaseResultException<E, T>) _then)
-      : super(_value, (v) => _then(v as UseCaseResultException<E, T>));
+    implements $UseCaseResultFailureCopyWith<E, T, $Res> {
+  _$UseCaseResultFailureCopyWithImpl(UseCaseResultFailure<E, T> _value,
+      $Res Function(UseCaseResultFailure<E, T>) _then)
+      : super(_value, (v) => _then(v as UseCaseResultFailure<E, T>));
 
   @override
-  UseCaseResultException<E, T> get _value =>
-      super._value as UseCaseResultException<E, T>;
+  UseCaseResultFailure<E, T> get _value =>
+      super._value as UseCaseResultFailure<E, T>;
 
   @override
   $Res call({
-    Object? exception = freezed,
+    Object? error = freezed,
     Object? trace = freezed,
   }) {
-    return _then(UseCaseResultException<E, T>(
-      exception == freezed
-          ? _value.exception
-          : exception // ignore: cast_nullable_to_non_nullable
-              as E,
+    return _then(UseCaseResultFailure<E, T>(
+      error == freezed ? _value.error : error,
       trace == freezed
           ? _value.trace
           : trace // ignore: cast_nullable_to_non_nullable
@@ -133,67 +130,68 @@ class _$UseCaseResultExceptionCopyWithImpl<E, T, $Res>
 
 /// @nodoc
 
-class _$UseCaseResultException<E, T> implements UseCaseResultException<E, T> {
-  const _$UseCaseResultException(this.exception, this.trace);
+class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
+  const _$UseCaseResultFailure(this.error, this.trace);
 
   @override
-  final E exception;
+  final Object? error;
   @override
   final StackTrace trace;
 
   @override
   String toString() {
-    return 'UseCaseResult<$E, $T>.exception(exception: $exception, trace: $trace)';
+    return 'UseCaseResult<$E, $T>.failure(error: $error, trace: $trace)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UseCaseResultException<E, T> &&
-            const DeepCollectionEquality().equals(other.exception, exception) &&
+            other is UseCaseResultFailure<E, T> &&
+            const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.trace, trace));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(exception),
+      const DeepCollectionEquality().hash(error),
       const DeepCollectionEquality().hash(trace));
 
   @JsonKey(ignore: true)
   @override
-  $UseCaseResultExceptionCopyWith<E, T, UseCaseResultException<E, T>>
-      get copyWith => _$UseCaseResultExceptionCopyWithImpl<E, T,
-          UseCaseResultException<E, T>>(this, _$identity);
+  $UseCaseResultFailureCopyWith<E, T, UseCaseResultFailure<E, T>>
+      get copyWith =>
+          _$UseCaseResultFailureCopyWithImpl<E, T, UseCaseResultFailure<E, T>>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(E exception, StackTrace trace) exception,
+    required TResult Function(Object? error, StackTrace trace) failure,
     required TResult Function(T data) success,
   }) {
-    return exception(this.exception, trace);
+    return failure(error, trace);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(E exception, StackTrace trace)? exception,
+    TResult Function(Object? error, StackTrace trace)? failure,
     TResult Function(T data)? success,
   }) {
-    return exception?.call(this.exception, trace);
+    return failure?.call(error, trace);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(E exception, StackTrace trace)? exception,
+    TResult Function(Object? error, StackTrace trace)? failure,
     TResult Function(T data)? success,
     required TResult orElse(),
   }) {
-    if (exception != null) {
-      return exception(this.exception, trace);
+    if (failure != null) {
+      return failure(error, trace);
     }
     return orElse();
   }
@@ -201,43 +199,43 @@ class _$UseCaseResultException<E, T> implements UseCaseResultException<E, T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UseCaseResultException<E, T> value) exception,
+    required TResult Function(UseCaseResultFailure<E, T> value) failure,
     required TResult Function(UseCaseResultSuccess<E, T> value) success,
   }) {
-    return exception(this);
+    return failure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UseCaseResultException<E, T> value)? exception,
+    TResult Function(UseCaseResultFailure<E, T> value)? failure,
     TResult Function(UseCaseResultSuccess<E, T> value)? success,
   }) {
-    return exception?.call(this);
+    return failure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UseCaseResultException<E, T> value)? exception,
+    TResult Function(UseCaseResultFailure<E, T> value)? failure,
     TResult Function(UseCaseResultSuccess<E, T> value)? success,
     required TResult orElse(),
   }) {
-    if (exception != null) {
-      return exception(this);
+    if (failure != null) {
+      return failure(this);
     }
     return orElse();
   }
 }
 
-abstract class UseCaseResultException<E, T> implements UseCaseResult<E, T> {
-  const factory UseCaseResultException(E exception, StackTrace trace) =
-      _$UseCaseResultException<E, T>;
+abstract class UseCaseResultFailure<E, T> implements UseCaseResult<E, T> {
+  const factory UseCaseResultFailure(Object? error, StackTrace trace) =
+      _$UseCaseResultFailure<E, T>;
 
-  E get exception;
+  Object? get error;
   StackTrace get trace;
   @JsonKey(ignore: true)
-  $UseCaseResultExceptionCopyWith<E, T, UseCaseResultException<E, T>>
+  $UseCaseResultFailureCopyWith<E, T, UseCaseResultFailure<E, T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -309,7 +307,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(E exception, StackTrace trace) exception,
+    required TResult Function(Object? error, StackTrace trace) failure,
     required TResult Function(T data) success,
   }) {
     return success(data);
@@ -318,7 +316,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(E exception, StackTrace trace)? exception,
+    TResult Function(Object? error, StackTrace trace)? failure,
     TResult Function(T data)? success,
   }) {
     return success?.call(data);
@@ -327,7 +325,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(E exception, StackTrace trace)? exception,
+    TResult Function(Object? error, StackTrace trace)? failure,
     TResult Function(T data)? success,
     required TResult orElse(),
   }) {
@@ -340,7 +338,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UseCaseResultException<E, T> value) exception,
+    required TResult Function(UseCaseResultFailure<E, T> value) failure,
     required TResult Function(UseCaseResultSuccess<E, T> value) success,
   }) {
     return success(this);
@@ -349,7 +347,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UseCaseResultException<E, T> value)? exception,
+    TResult Function(UseCaseResultFailure<E, T> value)? failure,
     TResult Function(UseCaseResultSuccess<E, T> value)? success,
   }) {
     return success?.call(this);
@@ -358,7 +356,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UseCaseResultException<E, T> value)? exception,
+    TResult Function(UseCaseResultFailure<E, T> value)? failure,
     TResult Function(UseCaseResultSuccess<E, T> value)? success,
     required TResult orElse(),
   }) {

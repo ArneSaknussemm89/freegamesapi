@@ -53,6 +53,7 @@ dependencies:
   responsive_builder: ^0.4.0
   responsive_framework: ^0.1.0
   riverbloc: ^1.0.0
+  simple_animations: ^4.0.1
   styled_widget: ^0.4.0
   supercharged: ^2.1.0
 

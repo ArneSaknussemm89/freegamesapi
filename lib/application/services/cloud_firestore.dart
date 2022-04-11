@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:freegamesexample/domain/models/app_user.dart';
+import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
 
 // Provider for the firestore.
 final cloudFirestoreProvider = Provider.autoDispose<FirebaseFirestore>(
@@ -19,5 +20,5 @@ class AppFirestoreService {
   final FirebaseFirestore firestore;
 
   AppUserCollectionReference get users => appUsersRef;
-  FavoriteGameCollectionReference myFavorites(String uid) => users.doc(uid).favorites;
+  FavoriteGameCollectionReference get favorites => favoriteGamesRef;
 }

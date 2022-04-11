@@ -21,9 +21,13 @@ class _$AppRouter extends RootStackRouter {
       return AdaptivePage<dynamic>(
           routeData: routeData, child: const LoginPage());
     },
-    HomeRoute.name: (routeData) {
+    GamesRootRoute.name: (routeData) {
       return AdaptivePage<dynamic>(
-          routeData: routeData, child: const HomePage());
+          routeData: routeData, child: const EmptyRouterPage());
+    },
+    GamesListingRoute.name: (routeData) {
+      return AdaptivePage<dynamic>(
+          routeData: routeData, child: const GamesListingPage());
     },
     FavoriteGamesRoute.name: (routeData) {
       return AdaptivePage<dynamic>(
@@ -33,9 +37,15 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
+        RouteConfig('/#redirect',
+            path: '/', redirectTo: '/login', fullMatch: true),
         RouteConfig(LoginRoute.name, path: '/login'),
-        RouteConfig(HomeRoute.name, path: '/'),
-        RouteConfig(FavoriteGamesRoute.name, path: '/favorites')
+        RouteConfig(GamesRootRoute.name, path: '/games', children: [
+          RouteConfig(GamesListingRoute.name,
+              path: '', parent: GamesRootRoute.name),
+          RouteConfig(FavoriteGamesRoute.name,
+              path: 'favorites', parent: GamesRootRoute.name)
+        ])
       ];
 }
 
@@ -48,18 +58,27 @@ class LoginRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute() : super(HomeRoute.name, path: '/');
+/// [EmptyRouterPage]
+class GamesRootRoute extends PageRouteInfo<void> {
+  const GamesRootRoute({List<PageRouteInfo>? children})
+      : super(GamesRootRoute.name, path: '/games', initialChildren: children);
 
-  static const String name = 'HomeRoute';
+  static const String name = 'GamesRootRoute';
+}
+
+/// generated route for
+/// [GamesListingPage]
+class GamesListingRoute extends PageRouteInfo<void> {
+  const GamesListingRoute() : super(GamesListingRoute.name, path: '');
+
+  static const String name = 'GamesListingRoute';
 }
 
 /// generated route for
 /// [FavoriteGamesPage]
 class FavoriteGamesRoute extends PageRouteInfo<void> {
   const FavoriteGamesRoute()
-      : super(FavoriteGamesRoute.name, path: '/favorites');
+      : super(FavoriteGamesRoute.name, path: 'favorites');
 
   static const String name = 'FavoriteGamesRoute';
 }

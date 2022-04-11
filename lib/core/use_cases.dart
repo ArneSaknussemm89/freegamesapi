@@ -1,15 +1,11 @@
-import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'use_cases.freezed.dart';
 
 /// These classes are used to define the use cases of the application.
 ///
-abstract class UseCaseBase extends Equatable {
+abstract class UseCaseBase {
   const UseCaseBase();
-
-  @override
-  List<Object?> get props => throw UnimplementedError();
 }
 
 class Void {
@@ -20,7 +16,7 @@ const kVoid = Void._();
 
 @freezed
 class UseCaseResult<E, T> with _$UseCaseResult<E, T> {
-  const factory UseCaseResult.exception(E exception, StackTrace trace) = UseCaseResultException<E, T>;
+  const factory UseCaseResult.failure(Object? error, StackTrace trace) = UseCaseResultFailure<E, T>;
   const factory UseCaseResult.success(T data) = UseCaseResultSuccess<E, T>;
 }
 

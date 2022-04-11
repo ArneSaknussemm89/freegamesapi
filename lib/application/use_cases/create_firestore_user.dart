@@ -40,7 +40,7 @@ class CreateFirestoreAppUserUseCase
       await service.users.doc(params.user.uid).set(user);
       return UseCaseResult.success(user);
     } on Exception catch (exception) {
-      return UseCaseResult.exception(exception, StackTrace.current);
+      return UseCaseResult.failure(exception, StackTrace.current);
     }
   }
 }

@@ -37,29 +37,6 @@ class AppEntry extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final alice = ref.watch(aliceProvider);
-    // var client = Dio(
-    //   BaseOptions(
-    //     baseUrl: dotenv.env['API_URL'] ?? '',
-    //     contentType: 'application/json',
-    //     connectTimeout: 20000,
-    //     headers: {
-    //       'accept': 'application/json',
-    //     },
-    //   ),
-    // );
-
-    // var isDev = dotenv.env['ENVIRONMENT'] == 'development';
-    // GlobalKey<NavigatorState>? key = navigatorKey;
-    // if (isDev) {
-    //   // If we are working with dev environment then we set up Alice.
-    //   key = alice.getNavigatorKey();
-    //   final dioInterceptor = alice.getDioInterceptor();
-    //   if (!client.interceptors.contains(dioInterceptor)) {
-    //     client.interceptors.add(dioInterceptor);
-    //   }
-    // }
-
     /// This node is used for removing focus from anything else in the app.
     final mainFocus = FocusNode();
 
@@ -84,26 +61,13 @@ class AppEntry extends ConsumerWidget {
         key: key,
         routerDelegate: router.delegate(
           initialRoutes: [
-            if (authed) const HomeRoute(),
+            if (authed) const GamesRootRoute(),
             if (!authed) const LoginRoute(),
           ],
         ),
         routeInformationParser: router.defaultRouteParser(),
         debugShowCheckedModeBanner: false,
         title: 'Todo Application',
-        // builder: (context, child) => StreamBuilder<User?>(
-        //   stream: FirebaseAuth.instance.authStateChanges(),
-        //   initialData: FirebaseAuth.instance.currentUser,
-        //   builder: (context, snapshot) {
-        //     // User is not signed in
-        //     if (!snapshot.hasData) {
-        //       return const LoginPage();
-        //     }
-
-        //     // Render the child if already authenticated.
-        //     return child!;
-        //   },
-        // ),
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
           sliderTheme: sliderTheme.copyWith(

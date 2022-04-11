@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_user.dart';
+part of 'favorite.dart';
 
 // **************************************************************************
 // CollectionGenerator
@@ -18,74 +18,76 @@ const _sentinel = _Sentinel();
 /// A collection reference object can be used for adding documents,
 /// getting document references, and querying for documents
 /// (using the methods inherited from Query).
-abstract class AppUserCollectionReference
+abstract class FavoriteGameCollectionReference
     implements
-        AppUserQuery,
-        FirestoreCollectionReference<AppUserQuerySnapshot> {
-  factory AppUserCollectionReference([
+        FavoriteGameQuery,
+        FirestoreCollectionReference<FavoriteGameQuerySnapshot> {
+  factory FavoriteGameCollectionReference([
     FirebaseFirestore? firestore,
-  ]) = _$AppUserCollectionReference;
+  ]) = _$FavoriteGameCollectionReference;
 
-  static AppUser fromFirestore(
+  static FavoriteGame fromFirestore(
     DocumentSnapshot<Map<String, Object?>> snapshot,
     SnapshotOptions? options,
   ) {
-    return AppUser.fromJson(snapshot.data()!);
+    return FavoriteGame.fromJson(snapshot.data()!);
   }
 
   static Map<String, Object?> toFirestore(
-    AppUser value,
+    FavoriteGame value,
     SetOptions? options,
   ) {
     return value.toJson();
   }
 
   @override
-  AppUserDocumentReference doc([String? id]);
+  FavoriteGameDocumentReference doc([String? id]);
 
   /// Add a new document to this collection with the specified data,
   /// assigning it a document ID automatically.
-  Future<AppUserDocumentReference> add(AppUser value);
+  Future<FavoriteGameDocumentReference> add(FavoriteGame value);
 }
 
-class _$AppUserCollectionReference extends _$AppUserQuery
-    implements AppUserCollectionReference {
-  factory _$AppUserCollectionReference([FirebaseFirestore? firestore]) {
+class _$FavoriteGameCollectionReference extends _$FavoriteGameQuery
+    implements FavoriteGameCollectionReference {
+  factory _$FavoriteGameCollectionReference([FirebaseFirestore? firestore]) {
     firestore ??= FirebaseFirestore.instance;
 
-    return _$AppUserCollectionReference._(
-      firestore.collection('users').withConverter(
-            fromFirestore: AppUserCollectionReference.fromFirestore,
-            toFirestore: AppUserCollectionReference.toFirestore,
+    return _$FavoriteGameCollectionReference._(
+      firestore.collection('favorites').withConverter(
+            fromFirestore: FavoriteGameCollectionReference.fromFirestore,
+            toFirestore: FavoriteGameCollectionReference.toFirestore,
           ),
     );
   }
 
-  _$AppUserCollectionReference._(
-    CollectionReference<AppUser> reference,
+  _$FavoriteGameCollectionReference._(
+    CollectionReference<FavoriteGame> reference,
   ) : super(reference, reference);
 
   String get path => reference.path;
 
   @override
-  CollectionReference<AppUser> get reference =>
-      super.reference as CollectionReference<AppUser>;
+  CollectionReference<FavoriteGame> get reference =>
+      super.reference as CollectionReference<FavoriteGame>;
 
   @override
-  AppUserDocumentReference doc([String? id]) {
-    return AppUserDocumentReference(
+  FavoriteGameDocumentReference doc([String? id]) {
+    return FavoriteGameDocumentReference(
       reference.doc(id),
     );
   }
 
   @override
-  Future<AppUserDocumentReference> add(AppUser value) {
-    return reference.add(value).then((ref) => AppUserDocumentReference(ref));
+  Future<FavoriteGameDocumentReference> add(FavoriteGame value) {
+    return reference
+        .add(value)
+        .then((ref) => FavoriteGameDocumentReference(ref));
   }
 
   @override
   bool operator ==(Object other) {
-    return other is _$AppUserCollectionReference &&
+    return other is _$FavoriteGameCollectionReference &&
         other.runtimeType == runtimeType &&
         other.reference == reference;
   }
@@ -94,53 +96,54 @@ class _$AppUserCollectionReference extends _$AppUserQuery
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
-abstract class AppUserDocumentReference
-    extends FirestoreDocumentReference<AppUserDocumentSnapshot> {
-  factory AppUserDocumentReference(DocumentReference<AppUser> reference) =
-      _$AppUserDocumentReference;
+abstract class FavoriteGameDocumentReference
+    extends FirestoreDocumentReference<FavoriteGameDocumentSnapshot> {
+  factory FavoriteGameDocumentReference(
+          DocumentReference<FavoriteGame> reference) =
+      _$FavoriteGameDocumentReference;
 
-  DocumentReference<AppUser> get reference;
+  DocumentReference<FavoriteGame> get reference;
 
-  /// A reference to the [AppUserCollectionReference] containing this document.
-  AppUserCollectionReference get parent {
-    return _$AppUserCollectionReference(reference.firestore);
+  /// A reference to the [FavoriteGameCollectionReference] containing this document.
+  FavoriteGameCollectionReference get parent {
+    return _$FavoriteGameCollectionReference(reference.firestore);
   }
 
   @override
-  Stream<AppUserDocumentSnapshot> snapshots();
+  Stream<FavoriteGameDocumentSnapshot> snapshots();
 
   @override
-  Future<AppUserDocumentSnapshot> get([GetOptions? options]);
+  Future<FavoriteGameDocumentSnapshot> get([GetOptions? options]);
 
   @override
   Future<void> delete();
 
   Future<void> update({
-    String uid,
-    String displayName,
+    int gameId,
+    String ownerId,
     List<Object?> props,
   });
 
-  Future<void> set(AppUser value);
+  Future<void> set(FavoriteGame value);
 }
 
-class _$AppUserDocumentReference
-    extends FirestoreDocumentReference<AppUserDocumentSnapshot>
-    implements AppUserDocumentReference {
-  _$AppUserDocumentReference(this.reference);
+class _$FavoriteGameDocumentReference
+    extends FirestoreDocumentReference<FavoriteGameDocumentSnapshot>
+    implements FavoriteGameDocumentReference {
+  _$FavoriteGameDocumentReference(this.reference);
 
   @override
-  final DocumentReference<AppUser> reference;
+  final DocumentReference<FavoriteGame> reference;
 
-  /// A reference to the [AppUserCollectionReference] containing this document.
-  AppUserCollectionReference get parent {
-    return _$AppUserCollectionReference(reference.firestore);
+  /// A reference to the [FavoriteGameCollectionReference] containing this document.
+  FavoriteGameCollectionReference get parent {
+    return _$FavoriteGameCollectionReference(reference.firestore);
   }
 
   @override
-  Stream<AppUserDocumentSnapshot> snapshots() {
+  Stream<FavoriteGameDocumentSnapshot> snapshots() {
     return reference.snapshots().map((snapshot) {
-      return AppUserDocumentSnapshot._(
+      return FavoriteGameDocumentSnapshot._(
         snapshot,
         snapshot.data(),
       );
@@ -148,9 +151,9 @@ class _$AppUserDocumentReference
   }
 
   @override
-  Future<AppUserDocumentSnapshot> get([GetOptions? options]) {
+  Future<FavoriteGameDocumentSnapshot> get([GetOptions? options]) {
     return reference.get(options).then((snapshot) {
-      return AppUserDocumentSnapshot._(
+      return FavoriteGameDocumentSnapshot._(
         snapshot,
         snapshot.data(),
       );
@@ -163,26 +166,26 @@ class _$AppUserDocumentReference
   }
 
   Future<void> update({
-    Object? uid = _sentinel,
-    Object? displayName = _sentinel,
+    Object? gameId = _sentinel,
+    Object? ownerId = _sentinel,
     Object? props = _sentinel,
   }) async {
     final json = {
-      if (uid != _sentinel) "uid": uid as String,
-      if (displayName != _sentinel) "displayName": displayName as String,
+      if (gameId != _sentinel) "gameId": gameId as int,
+      if (ownerId != _sentinel) "ownerId": ownerId as String,
       if (props != _sentinel) "props": props as List<Object?>,
     };
 
     return reference.update(json);
   }
 
-  Future<void> set(AppUser value) {
+  Future<void> set(FavoriteGame value) {
     return reference.set(value);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is AppUserDocumentReference &&
+    return other is FavoriteGameDocumentReference &&
         other.runtimeType == runtimeType &&
         other.parent == parent &&
         other.id == id;
@@ -192,34 +195,46 @@ class _$AppUserDocumentReference
   int get hashCode => Object.hash(runtimeType, parent, id);
 }
 
-class AppUserDocumentSnapshot extends FirestoreDocumentSnapshot {
-  AppUserDocumentSnapshot._(
+class FavoriteGameDocumentSnapshot extends FirestoreDocumentSnapshot {
+  FavoriteGameDocumentSnapshot._(
     this.snapshot,
     this.data,
   );
 
   @override
-  final DocumentSnapshot<AppUser> snapshot;
+  final DocumentSnapshot<FavoriteGame> snapshot;
 
   @override
-  AppUserDocumentReference get reference {
-    return AppUserDocumentReference(
+  FavoriteGameDocumentReference get reference {
+    return FavoriteGameDocumentReference(
       snapshot.reference,
     );
   }
 
   @override
-  final AppUser? data;
+  final FavoriteGame? data;
 }
 
-abstract class AppUserQuery implements QueryReference<AppUserQuerySnapshot> {
+abstract class FavoriteGameQuery
+    implements QueryReference<FavoriteGameQuerySnapshot> {
   @override
-  AppUserQuery limit(int limit);
+  FavoriteGameQuery limit(int limit);
 
   @override
-  AppUserQuery limitToLast(int limit);
+  FavoriteGameQuery limitToLast(int limit);
 
-  AppUserQuery whereUid({
+  FavoriteGameQuery whereGameId({
+    int? isEqualTo,
+    int? isNotEqualTo,
+    int? isLessThan,
+    int? isLessThanOrEqualTo,
+    int? isGreaterThan,
+    int? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<int>? whereIn,
+    List<int>? whereNotIn,
+  });
+  FavoriteGameQuery whereOwnerId({
     String? isEqualTo,
     String? isNotEqualTo,
     String? isLessThan,
@@ -230,18 +245,7 @@ abstract class AppUserQuery implements QueryReference<AppUserQuerySnapshot> {
     List<String>? whereIn,
     List<String>? whereNotIn,
   });
-  AppUserQuery whereDisplayName({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  AppUserQuery whereProps({
+  FavoriteGameQuery whereProps({
     List<Object?>? isEqualTo,
     List<Object?>? isNotEqualTo,
     List<Object?>? isLessThan,
@@ -252,46 +256,46 @@ abstract class AppUserQuery implements QueryReference<AppUserQuerySnapshot> {
     List<Object?>? arrayContainsAny,
   });
 
-  AppUserQuery orderByUid({
+  FavoriteGameQuery orderByGameId({
+    bool descending = false,
+    int startAt,
+    int startAfter,
+    int endAt,
+    int endBefore,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  });
+
+  FavoriteGameQuery orderByOwnerId({
     bool descending = false,
     String startAt,
     String startAfter,
     String endAt,
     String endBefore,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
   });
 
-  AppUserQuery orderByDisplayName({
-    bool descending = false,
-    String startAt,
-    String startAfter,
-    String endAt,
-    String endBefore,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
-  });
-
-  AppUserQuery orderByProps({
+  FavoriteGameQuery orderByProps({
     bool descending = false,
     List<Object?> startAt,
     List<Object?> startAfter,
     List<Object?> endAt,
     List<Object?> endBefore,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
   });
 }
 
-class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
-    implements AppUserQuery {
-  _$AppUserQuery(
+class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
+    implements FavoriteGameQuery {
+  _$FavoriteGameQuery(
     this.reference,
     this._collection,
   );
@@ -299,25 +303,25 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
   final CollectionReference<Object?> _collection;
 
   @override
-  final Query<AppUser> reference;
+  final Query<FavoriteGame> reference;
 
-  AppUserQuerySnapshot _decodeSnapshot(
-    QuerySnapshot<AppUser> snapshot,
+  FavoriteGameQuerySnapshot _decodeSnapshot(
+    QuerySnapshot<FavoriteGame> snapshot,
   ) {
     final docs = snapshot.docs.map((e) {
-      return AppUserQueryDocumentSnapshot._(e, e.data());
+      return FavoriteGameQueryDocumentSnapshot._(e, e.data());
     }).toList();
 
     final docChanges = snapshot.docChanges.map((change) {
-      return FirestoreDocumentChange<AppUserDocumentSnapshot>(
+      return FirestoreDocumentChange<FavoriteGameDocumentSnapshot>(
         type: change.type,
         oldIndex: change.oldIndex,
         newIndex: change.newIndex,
-        doc: AppUserDocumentSnapshot._(change.doc, change.doc.data()),
+        doc: FavoriteGameDocumentSnapshot._(change.doc, change.doc.data()),
       );
     }).toList();
 
-    return AppUserQuerySnapshot._(
+    return FavoriteGameQuerySnapshot._(
       snapshot,
       docs,
       docChanges,
@@ -325,45 +329,45 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
   }
 
   @override
-  Stream<AppUserQuerySnapshot> snapshots([SnapshotOptions? options]) {
+  Stream<FavoriteGameQuerySnapshot> snapshots([SnapshotOptions? options]) {
     return reference.snapshots().map(_decodeSnapshot);
   }
 
   @override
-  Future<AppUserQuerySnapshot> get([GetOptions? options]) {
+  Future<FavoriteGameQuerySnapshot> get([GetOptions? options]) {
     return reference.get(options).then(_decodeSnapshot);
   }
 
   @override
-  AppUserQuery limit(int limit) {
-    return _$AppUserQuery(
+  FavoriteGameQuery limit(int limit) {
+    return _$FavoriteGameQuery(
       reference.limit(limit),
       _collection,
     );
   }
 
   @override
-  AppUserQuery limitToLast(int limit) {
-    return _$AppUserQuery(
+  FavoriteGameQuery limitToLast(int limit) {
+    return _$FavoriteGameQuery(
       reference.limitToLast(limit),
       _collection,
     );
   }
 
-  AppUserQuery whereUid({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
+  FavoriteGameQuery whereGameId({
+    int? isEqualTo,
+    int? isNotEqualTo,
+    int? isLessThan,
+    int? isLessThanOrEqualTo,
+    int? isGreaterThan,
+    int? isGreaterThanOrEqualTo,
     bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
+    List<int>? whereIn,
+    List<int>? whereNotIn,
   }) {
-    return _$AppUserQuery(
+    return _$FavoriteGameQuery(
       reference.where(
-        'uid',
+        'gameId',
         isEqualTo: isEqualTo,
         isNotEqualTo: isNotEqualTo,
         isLessThan: isLessThan,
@@ -378,7 +382,7 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
     );
   }
 
-  AppUserQuery whereDisplayName({
+  FavoriteGameQuery whereOwnerId({
     String? isEqualTo,
     String? isNotEqualTo,
     String? isLessThan,
@@ -389,9 +393,9 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
     List<String>? whereIn,
     List<String>? whereNotIn,
   }) {
-    return _$AppUserQuery(
+    return _$FavoriteGameQuery(
       reference.where(
-        'displayName',
+        'ownerId',
         isEqualTo: isEqualTo,
         isNotEqualTo: isNotEqualTo,
         isLessThan: isLessThan,
@@ -406,7 +410,7 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
     );
   }
 
-  AppUserQuery whereProps({
+  FavoriteGameQuery whereProps({
     List<Object?>? isEqualTo,
     List<Object?>? isNotEqualTo,
     List<Object?>? isLessThan,
@@ -416,7 +420,7 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
     bool? isNull,
     List<Object?>? arrayContainsAny,
   }) {
-    return _$AppUserQuery(
+    return _$FavoriteGameQuery(
       reference.where(
         'props',
         isEqualTo: isEqualTo,
@@ -432,18 +436,18 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
     );
   }
 
-  AppUserQuery orderByUid({
+  FavoriteGameQuery orderByGameId({
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
     Object? endAt = _sentinel,
     Object? endBefore = _sentinel,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
   }) {
-    var query = reference.orderBy('uid', descending: descending);
+    var query = reference.orderBy('gameId', descending: descending);
 
     if (startAtDocument != null) {
       query = query.startAtDocument(startAtDocument.snapshot);
@@ -471,21 +475,21 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
       query = query.endBefore([endBefore]);
     }
 
-    return _$AppUserQuery(query, _collection);
+    return _$FavoriteGameQuery(query, _collection);
   }
 
-  AppUserQuery orderByDisplayName({
+  FavoriteGameQuery orderByOwnerId({
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
     Object? endAt = _sentinel,
     Object? endBefore = _sentinel,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
   }) {
-    var query = reference.orderBy('displayName', descending: descending);
+    var query = reference.orderBy('ownerId', descending: descending);
 
     if (startAtDocument != null) {
       query = query.startAtDocument(startAtDocument.snapshot);
@@ -513,19 +517,19 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
       query = query.endBefore([endBefore]);
     }
 
-    return _$AppUserQuery(query, _collection);
+    return _$FavoriteGameQuery(query, _collection);
   }
 
-  AppUserQuery orderByProps({
+  FavoriteGameQuery orderByProps({
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
     Object? endAt = _sentinel,
     Object? endBefore = _sentinel,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
   }) {
     var query = reference.orderBy('props', descending: descending);
 
@@ -555,12 +559,12 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
       query = query.endBefore([endBefore]);
     }
 
-    return _$AppUserQuery(query, _collection);
+    return _$FavoriteGameQuery(query, _collection);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is _$AppUserQuery &&
+    return other is _$FavoriteGameQuery &&
         other.runtimeType == runtimeType &&
         other.reference == reference;
   }
@@ -569,49 +573,52 @@ class _$AppUserQuery extends QueryReference<AppUserQuerySnapshot>
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
-class AppUserQuerySnapshot
-    extends FirestoreQuerySnapshot<AppUserQueryDocumentSnapshot> {
-  AppUserQuerySnapshot._(
+class FavoriteGameQuerySnapshot
+    extends FirestoreQuerySnapshot<FavoriteGameQueryDocumentSnapshot> {
+  FavoriteGameQuerySnapshot._(
     this.snapshot,
     this.docs,
     this.docChanges,
   );
 
-  final QuerySnapshot<AppUser> snapshot;
+  final QuerySnapshot<FavoriteGame> snapshot;
 
   @override
-  final List<AppUserQueryDocumentSnapshot> docs;
+  final List<FavoriteGameQueryDocumentSnapshot> docs;
 
   @override
-  final List<FirestoreDocumentChange<AppUserDocumentSnapshot>> docChanges;
+  final List<FirestoreDocumentChange<FavoriteGameDocumentSnapshot>> docChanges;
 }
 
-class AppUserQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
-    implements AppUserDocumentSnapshot {
-  AppUserQueryDocumentSnapshot._(this.snapshot, this.data);
+class FavoriteGameQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
+    implements FavoriteGameDocumentSnapshot {
+  FavoriteGameQueryDocumentSnapshot._(this.snapshot, this.data);
 
   @override
-  final QueryDocumentSnapshot<AppUser> snapshot;
+  final QueryDocumentSnapshot<FavoriteGame> snapshot;
 
   @override
-  AppUserDocumentReference get reference {
-    return AppUserDocumentReference(snapshot.reference);
+  FavoriteGameDocumentReference get reference {
+    return FavoriteGameDocumentReference(snapshot.reference);
   }
 
   @override
-  final AppUser data;
+  final FavoriteGame data;
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AppUser _$AppUserFromJson(Map<String, dynamic> json) => AppUser(
-      uid: json['uid'] as String,
-      displayName: json['displayName'] as String,
+FavoriteGame _$FavoriteGameFromJson(Map<String, dynamic> json) => FavoriteGame(
+      gameId: json['gameId'] as int,
+      ownerId: json['ownerId'] as String,
+      savedOn: DateTime.parse(json['savedOn'] as String),
     );
 
-Map<String, dynamic> _$AppUserToJson(AppUser instance) => <String, dynamic>{
-      'uid': instance.uid,
-      'displayName': instance.displayName,
+Map<String, dynamic> _$FavoriteGameToJson(FavoriteGame instance) =>
+    <String, dynamic>{
+      'gameId': instance.gameId,
+      'ownerId': instance.ownerId,
+      'savedOn': instance.savedOn.toIso8601String(),
     };

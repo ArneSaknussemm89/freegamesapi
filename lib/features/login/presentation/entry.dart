@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterfire_ui/auth.dart';
+
 import 'package:freegamesexample/application/services/firebase_auth.dart';
 import 'package:freegamesexample/routing/router.dart';
 
@@ -11,6 +12,7 @@ class LoginPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.watch(firebaseAuthProvider);
+    final authService = ref.watch(firebaseAuthServiceProvider);
 
     return SignInScreen(
       auth: auth,
@@ -26,7 +28,7 @@ class LoginPage extends ConsumerWidget {
         shrinkOffset,
       ) {
         return AspectRatio(
-          aspectRatio: 16.0/9.0,
+          aspectRatio: 16.0 / 9.0,
           child: Image.asset(
             'assets/images/logo_transparent.png',
             fit: BoxFit.contain,
@@ -36,7 +38,14 @@ class LoginPage extends ConsumerWidget {
       actions: [
         AuthStateChangeAction<SignedIn>(
           (context, state) {
-            context.router.navigate(const HomeRoute());
+            authService.createFirestoreAppUser();
+            context.router.navigate(
+              const GamesRootRoute(
+                children: [
+                  GamesListingRoute(),
+                ],
+              ),
+            );
           },
         ),
       ],
