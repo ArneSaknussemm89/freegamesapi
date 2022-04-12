@@ -13,6 +13,7 @@ jobs:
         channel: 'stable'
     - run: flutter packages get
     - run: flutter test --coverage
+    - run: lcov --remove coverage/lcov.info 'lib/*/*.freezed.dart' 'lib/*/*.g.dart' -o coverage/lcov.info
     - name: Upload coverage to Codecov  
       uses: codecov/codecov-action@v2
       with:

@@ -33,11 +33,14 @@ dependencies:
   alice: ^0.2.0
   animations: ^2.0.0
   auto_route: ^3.0.0
+  bloc_test: ^9.0.3
   cached_network_image: ^3.2.0
   cloud_firestore_odm: ^1.0.0-dev.10
   dio: ^4.0.0
   equatable: ^2.0.0
+  fake_cloud_firestore: ^1.2.2
   firebase_auth: ^3.3.11
+  firebase_auth_mocks: ^0.8.4
   firebase_core: ^1.13.1
   flutter_dotenv: ^5.0.0
   flutter_portal: ^0.4.0
@@ -60,12 +63,15 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  integration_test:
+    sdk: flutter
   auto_route_generator: ^3.0.0
   build_runner: ^2.0.0
   cloud_firestore_odm_generator: ^1.0.0-dev.10
   freezed_annotation: ^1.1.0
   flutter_lints: ^1.0.0
   json_serializable: ^6.0.0
+  mockito: ^5.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
