@@ -37,7 +37,7 @@ final favoriteGamesListFiltersProvider = StateProvider.autoDispose<GamesListFilt
   return GamesListFilter.all;
 });
 
-final favoriteGamesListBloc = BlocProvider.autoDispose<FavoriteGamesBloc, FavoriteGamesListState>(
+final favoriteGamesListBlocProvider = BlocProvider.autoDispose<FavoriteGamesBloc, FavoriteGamesListState>(
   (ref) {
     final firestoreService = ref.watch(appFirestoreServiceProvider);
     final addFavoriteGameUseCase = ref.watch(addFavoriteGamesUseCaseProvider);
@@ -101,16 +101,10 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
             _$FavoriteGamesListFetchFavorites: sideEffect(handleFetchFavorites),
             _$FavoriteGamesListFetchGames: sideEffect(handleFetchGames),
             _$FavoriteGamesListSetGames: transition(
-              (FavoriteGamesListSetGames event, state) => FavoriteGamesListState.loaded(
-                [],
-                event.games,
-              ),
+              (FavoriteGamesListSetGames event, state) => FavoriteGamesListState.loaded([], event.games),
             ),
             _$FavoriteGamesListSetFavorites: transition(
-              (FavoriteGamesListSetFavorites event, state) => FavoriteGamesListState.loaded(
-                event.favorites,
-                [],
-              ),
+              (FavoriteGamesListSetFavorites event, state) => FavoriteGamesListState.loaded(event.favorites, []),
             ),
             _$FavoriteGamesListHasError: transition(
               (FavoriteGamesListHasError event, state) => FavoriteGamesListState.error(event.error.toString()),
@@ -120,18 +114,11 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
             _$FavoriteGamesListFetchFavorites: sideEffect(handleFetchFavorites),
             _$FavoriteGamesListFetchGames: sideEffect(handleFetchGames),
             _$FavoriteGamesListSetGames: transitionWithEffect(
-              (
-                FavoriteGamesListSetGames event,
-                FavoriteGamesListLoaded state,
-              ) =>
-                  state.copyWith(games: event.games),
+              (FavoriteGamesListSetGames event, FavoriteGamesListLoaded state) => state.copyWith(games: event.games),
               (event, state) => add(const FavoriteGamesListEvent.merge()),
             ),
             _$FavoriteGamesListSetFavorites: transitionWithEffect(
-              (
-                FavoriteGamesListSetFavorites event,
-                FavoriteGamesListLoaded state,
-              ) =>
+              (FavoriteGamesListSetFavorites event, FavoriteGamesListLoaded state) =>
                   state.copyWith(favorites: event.favorites),
               (event, state) => add(const FavoriteGamesListEvent.merge()),
             ),

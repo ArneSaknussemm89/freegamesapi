@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// coverage:ignore-file
+
 class Spacing {
   static double get one => 5;
   static double get two => one * 2.0;

@@ -7,11 +7,15 @@ import 'package:freegamesexample/features/games/data/data_sources/games_api.dart
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
 final fetchAllGamesUseCaseProvider = Provider.autoDispose<FetchAllGamesUseCase>((ref) {
-  final dataSource = ref.watch(gamesApiDataSource);
-  final adapter = ref.watch(dioAdapter(BaseOptions(baseUrl: dataSource.baseUrl)));
+  final dataSource = ref.watch(gamesApiDataSourceProvider);
+  final adapter = ref.watch(
+    dioAdapterProvider(
+      BaseOptions(baseUrl: dataSource.baseUrl),
+    ),
+  );
 
   return FetchAllGamesUseCase(adapter: adapter, dataSource: dataSource);
-});
+}, dependencies: [gamesApiDataSourceProvider, dioAdapterProvider]);
 
 class FetchAllGamesUseCase extends AsyncUseCase<Object?, List<Game>> {
   const FetchAllGamesUseCase({

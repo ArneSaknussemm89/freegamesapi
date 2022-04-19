@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutterfire_ui/auth.dart';
-import 'package:freegamesexample/application/use_cases/create_firestore_user.dart';
 import 'package:riverpod/riverpod.dart';
 
+// Reusing FlutterFire's functionality that's already been tested. Once we add stuff like Google/Apple login
+// then we may want to make sure this is tested.
+// coverage:ignore-file
 final firebaseAuthProvider = Provider.autoDispose<FirebaseAuth>((ref) {
   FlutterFireUIAuth.configureProviders([
     const EmailProviderConfiguration(),
@@ -11,29 +13,3 @@ final firebaseAuthProvider = Provider.autoDispose<FirebaseAuth>((ref) {
 
   return FirebaseAuth.instance;
 });
-
-final firebaseUserProvider = StreamProvider.autoDispose<User?>((ref) {
-  return ref.watch(firebaseAuthProvider).authStateChanges();
-});
-
-final firebaseAuthServiceProvider = Provider.autoDispose<FirebaseAuthService>((ref) {
-  final createFirestoreAppUserUseCase = ref.watch(createFirestoreAppUserUseCaseProvider);
-  final user = ref.watch(firebaseUserProvider);
-
-  return FirebaseAuthService(
-    user: user.value,
-    createFirestoreAppUserUseCase: createFirestoreAppUserUseCase,
-  );
-});
-
-class FirebaseAuthService {
-  const FirebaseAuthService({required this.user, required this.createFirestoreAppUserUseCase});
-
-  final User? user;
-  final CreateFirestoreAppUserUseCase createFirestoreAppUserUseCase;
-
-  void createFirestoreAppUser() {
-    if (user == null) return;
-    createFirestoreAppUserUseCase.execute(user!.toCreateFirestoreAppUserUseCaseParams);
-  }
-}

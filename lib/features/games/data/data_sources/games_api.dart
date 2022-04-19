@@ -1,6 +1,8 @@
 import 'package:riverpod/riverpod.dart';
 
-final gamesApiDataSource = Provider.autoDispose<GameApiDataSource>((ref) => const GameApiDataSource());
+final gamesApiDataSourceProvider = Provider.autoDispose<GameApiDataSource>(
+  (ref) => const GameApiDataSource(),
+);
 
 class GameApiDataSource {
   const GameApiDataSource({

@@ -10,7 +10,8 @@ class ErrorViewWidget extends StatelessWidget {
   final StackTrace? trace;
 
   // Builder function to pass to a builder function.
-  factory ErrorViewWidget.builder(Object? error, StackTrace? trace) => ErrorViewWidget(error: error, trace: trace);
+  factory ErrorViewWidget.builder(Object? error, StackTrace? trace) =>
+      ErrorViewWidget(error: error, trace: trace);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,8 @@ class ErrorViewWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Error: ${error.toString()}', style: Theme.of(context).textTheme.bodyLarge),
+        Text('Error: ${error.toString()}',
+            style: Theme.of(context).textTheme.bodyLarge),
         Text('Stack trace: ${trace.toString()}').padding(top: Spacing.two),
       ],
     );

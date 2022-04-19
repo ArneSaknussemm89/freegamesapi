@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod/riverpod.dart';
 
 import 'package:freegamesexample/application/services/cloud_firestore.dart';
@@ -7,7 +8,7 @@ import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 final favoriteGamesServiceProvider = Provider.autoDispose<FavoriteGamesService>((ref) {
   final appFirestore = ref.watch(appFirestoreServiceProvider);
   return FavoriteGamesService(appFirestore: appFirestore);
-});
+}, dependencies: [appFirestoreServiceProvider]);
 
 class FavoriteGamesService {
   const FavoriteGamesService({required this.appFirestore});
@@ -29,9 +30,10 @@ class FavoriteGamesService {
 
   // Remove a favorite from the list.
   Future<void> removeFavorite(String uid, Game game) async {
-    final docs = await appFirestore.favorites.whereOwnerId(isEqualTo: uid).whereGameId(isEqualTo: game.id).get();
+    final docs =
+        await appFirestore.favorites.where('ownerId', isEqualTo: uid).where('gameId', isEqualTo: game.id).get();
 
-    Future.forEach<FavoriteGameQueryDocumentSnapshot>(
+    await Future.forEach<QueryDocumentSnapshot<FavoriteGame>>(
       docs.docs,
       (doc) async {
         await doc.reference.delete();

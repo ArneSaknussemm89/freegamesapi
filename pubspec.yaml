@@ -19,6 +19,12 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
+scripts:
+  coverage-helper: './scripts/coverage-helper.sh'
+  test: "./scripts/run-tests.sh"
+  report: "genhtml coverage/lcov.info -o codecov"
+  test-report: "rps test && rps report"
+
 environment:
   sdk: ">=2.16.0 <3.0.0"
 
@@ -33,9 +39,8 @@ dependencies:
   alice: ^0.2.0
   animations: ^2.0.0
   auto_route: ^3.0.0
-  bloc_test: ^9.0.3
   cached_network_image: ^3.2.0
-  cloud_firestore_odm: ^1.0.0-dev.10
+  cloud_firestore_odm: ^1.0.0-dev.11
   dio: ^4.0.0
   equatable: ^2.0.0
   fake_cloud_firestore: ^1.2.2
@@ -45,7 +50,7 @@ dependencies:
   flutter_dotenv: ^5.0.0
   flutter_portal: ^0.4.0
   flutter_riverpod: ^1.0.0
-  flutterfire_ui: ^0.3.6+1
+  flutterfire_ui: ^0.4.0+1
   freezed: ^1.1.0
   google_fonts: ^2.0.0
   graph_bloc: ^0.1.0
@@ -66,12 +71,14 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   auto_route_generator: ^3.0.0
+  bloc_test: ^9.0.3
   build_runner: ^2.0.0
   cloud_firestore_odm_generator: ^1.0.0-dev.10
   freezed_annotation: ^1.1.0
   flutter_lints: ^1.0.0
   json_serializable: ^6.0.0
-  mockito: ^5.1.0
+  mocktail: ^0.3.0
+  test: ^1.19.5
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

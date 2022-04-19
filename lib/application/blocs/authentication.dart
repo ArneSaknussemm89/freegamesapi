@@ -14,7 +14,7 @@ final authenticationBlocProvider = BlocProvider.autoDispose<AuthenticationBloc, 
   final auth = ref.watch(firebaseAuthProvider);
   final createFirestoreAppUserUseCase = ref.watch(createFirestoreAppUserUseCaseProvider);
   return AuthenticationBloc(auth: auth, createFirestoreAppUserUseCase: createFirestoreAppUserUseCase);
-});
+}, dependencies: [firebaseAuthProvider, createFirestoreAppUserUseCaseProvider]);
 
 // A simple graph bloc that keeps track of auth state changes and updates the state of
 // this bloc accordingly.
@@ -33,7 +33,9 @@ class AuthenticationBloc extends GraphBloc<AuthenticationEvent, AuthenticationSt
   BlocStateGraph<AuthenticationEvent, AuthenticationState> get graph => BlocStateGraph(graph: {
         _$Uninitialized: {
           _$Authenticate: transitionWithEffect(
-              (Authenticate event, state) => AuthenticationState.authenticated(event.user), verifyFirestoreUser),
+            (Authenticate event, state) => AuthenticationState.authenticated(event.user),
+            verifyFirestoreUser,
+          ),
           _$Unauthenticate: transition((Unauthenticate event, state) => const AuthenticationState.unauthenticated()),
         },
         _$Authenticated: {

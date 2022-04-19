@@ -30,13 +30,16 @@ class CreateFirestoreAppUserUseCase
   Future<UseCaseResult<Exception, AppUser>> execute(
     CreateFirestoreAppUserUseCaseParams params,
   ) async {
-    final user = await service.users.doc(params.user.uid).get();
-    if (user.exists) {
-      return UseCaseResult.success(user.data!);
-    }
-
     try {
-      final user = AppUser(displayName: params.user.displayName ?? 'Unnamed Person', uid: params.user.uid);
+      final existing = await service.users.doc(params.user.uid).get();
+      if (existing.exists) {
+        return UseCaseResult.success(existing.data()!);
+      }
+
+      final user = AppUser(
+        displayName: params.user.displayName ?? 'Unnamed Person',
+        uid: params.user.uid,
+      );
       await service.users.doc(params.user.uid).set(user);
       return UseCaseResult.success(user);
     } on Exception catch (exception) {

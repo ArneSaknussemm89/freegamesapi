@@ -12,13 +12,15 @@ import 'package:freegamesexample/features/games/domain/value_objects/setup_game_
 /// Feature presentation elements.
 import 'package:freegamesexample/features/games/presentation/view_models/game.dart';
 
-final setupGameFavoritesUseCaseProvider = Provider.autoDispose<SetupGameFavoritesUseCase>((ref) {
-  final auth = ref.watch(authenticationBlocProvider);
-  return SetupGameFavoritesUseCase(auth: auth);
-});
+final setupGameFavoritesUseCaseProvider = Provider.autoDispose<SetupGameFavoritesUseCase>(
+  (ref) {
+    final auth = ref.watch(authenticationBlocProvider);
+    return SetupGameFavoritesUseCase(auth: auth);
+  },
+  dependencies: [authenticationBlocProvider],
+);
 
-class SetupGameFavoritesUseCase
-    extends UseCaseWithParams<Object?, List<GameVM>, SetupGameFavoritesUseCaseParams> {
+class SetupGameFavoritesUseCase extends UseCaseWithParams<Object?, List<GameVM>, SetupGameFavoritesUseCaseParams> {
   const SetupGameFavoritesUseCase({
     required this.auth,
   });

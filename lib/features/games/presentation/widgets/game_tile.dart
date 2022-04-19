@@ -15,9 +15,12 @@ class GameTileWidget extends ConsumerWidget {
     final loading = ref.watch(gameVMFavoriteWaiting(viewModel));
     final controller = ref.watch(gameVMFavoriteWaiting(viewModel).notifier);
 
-    final icon = viewModel.favorite ? const Icon(Icons.favorite, color: Colors.red) : const Icon(Icons.favorite_border);
+    final icon = viewModel.favorite
+        ? const Icon(Icons.favorite, color: Colors.red)
+        : const Icon(Icons.favorite_border);
     return ListTile(
-      title: Text(viewModel.game.title, style: Theme.of(context).textTheme.bodyLarge),
+      title: Text(viewModel.game.title,
+          style: Theme.of(context).textTheme.bodyLarge),
       subtitle: Text(viewModel.game.gameUrl),
       trailing: AnimatedSwitcher(
         duration: 50.milliseconds,
@@ -27,7 +30,8 @@ class GameTileWidget extends ConsumerWidget {
             alignment: Alignment.center,
             children: <Widget>[
               ...previousChildren.map(
-                (child) => child.positioned(top: 0, right: 0, bottom: 0, left: 0),
+                (child) =>
+                    child.positioned(top: 0, right: 0, bottom: 0, left: 0),
               ),
               if (currentChild != null)
                 currentChild.positioned(

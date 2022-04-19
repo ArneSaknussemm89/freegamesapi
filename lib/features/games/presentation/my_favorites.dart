@@ -12,16 +12,19 @@ class FavoriteGamesPage extends StatelessWidget {
   const FavoriteGamesPage({Key? key}) : super(key: key);
 
   Widget mobile(BuildContext context) {
-    return MobileLayout(bodyBuilder: (context) => const FavoriteGamesPageBody());
+    return MobileLayout(
+        bodyBuilder: (context) => const FavoriteGamesPageBody());
   }
 
   Widget tablet(BuildContext context) {
-    return TabletLayout(bodyBuilder: (context) => const FavoriteGamesPageBody());
+    return TabletLayout(
+        bodyBuilder: (context) => const FavoriteGamesPageBody());
   }
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout.builder(mobile: mobile, tablet: tablet, desktop: tablet);
+    return ScreenTypeLayout.builder(
+        mobile: mobile, tablet: tablet, desktop: tablet);
   }
 }
 
@@ -30,7 +33,7 @@ class FavoriteGamesPageBody extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final favorites = ref.watch(favoriteGamesListBloc);
+    final favorites = ref.watch(favoriteGamesListBlocProvider);
 
     return favorites.when(
       loading: const CircularProgressIndicator.adaptive().center,
@@ -39,15 +42,18 @@ class FavoriteGamesPageBody extends ConsumerWidget {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('No favorites yet.', style: Theme.of(context).textTheme.displayMedium),
-              const Icon(Icons.mood_rounded, size: 44).padding(top: Spacing.two),
+              Text('No favorites yet.',
+                  style: Theme.of(context).textTheme.displayMedium),
+              const Icon(Icons.mood_rounded, size: 44)
+                  .padding(top: Spacing.two),
             ],
           );
         }
 
         return Column(
           children: [
-            Text('Favorites', style: Theme.of(context).textTheme.displayMedium).padding(all: Spacing.two),
+            Text('Favorites', style: Theme.of(context).textTheme.displayMedium)
+                .padding(all: Spacing.two),
             ListView.builder(
               itemCount: vms.length,
               itemBuilder: (context, index) {

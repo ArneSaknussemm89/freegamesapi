@@ -17,12 +17,15 @@ class FavoriteGame extends Equatable {
   final String ownerId;
   final DateTime savedOn;
 
-  factory FavoriteGame.fromJson(Map<String, dynamic> json) => _$FavoriteGameFromJson(json);
+  factory FavoriteGame.fromJson(Map<String, dynamic> json) =>
+      _$FavoriteGameFromJson(json);
   Map<String, dynamic> toJson() => _$FavoriteGameToJson(this);
 
   @override
   List<Object?> get props => [gameId, ownerId, savedOn];
 }
 
+// coverage:ignore-start
 @Collection<FavoriteGame>('favorites')
 final favoriteGamesRef = FavoriteGameCollectionReference();
+// coverage:ignore-end

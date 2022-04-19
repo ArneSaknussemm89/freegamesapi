@@ -22,6 +22,7 @@ class AppUser extends Equatable {
   List<Object?> get props => [uid, displayName];
 }
 
-
+// coverage:ignore-start
 @Collection<AppUser>('users')
 final appUsersRef = AppUserCollectionReference();
+// coverage:ignore-end

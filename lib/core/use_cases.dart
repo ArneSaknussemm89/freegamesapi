@@ -16,7 +16,8 @@ const kVoid = Void._();
 
 @freezed
 class UseCaseResult<E, T> with _$UseCaseResult<E, T> {
-  const factory UseCaseResult.failure(Object? error, StackTrace trace) = UseCaseResultFailure<E, T>;
+  const factory UseCaseResult.failure(Object? error, StackTrace trace) =
+      UseCaseResultFailure<E, T>;
   const factory UseCaseResult.success(T data) = UseCaseResultSuccess<E, T>;
 }
 

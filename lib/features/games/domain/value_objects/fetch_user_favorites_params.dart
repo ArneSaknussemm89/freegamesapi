@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
 
 extension FetchUserFavoritesUseCaseParamsX on String {
-  FetchUserFavoritesUseCaseParams get toFetchUserFavoritesUseCaseParams => FetchUserFavoritesUseCaseParams(this);
+  FetchUserFavoritesUseCaseParams get toFetchUserFavoritesUseCaseParams =>
+      FetchUserFavoritesUseCaseParams(this);
 }
 
 class FetchUserFavoritesUseCaseParams extends Equatable {

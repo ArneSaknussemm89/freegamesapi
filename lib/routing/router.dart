@@ -11,10 +11,18 @@ part 'router.gr.dart';
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AdaptiveRoute(page: LoginPage, path: '/login', initial: true),
-    AdaptiveRoute(page: EmptyRouterPage, path: '/games', name: 'GamesRootRoute', children: <AutoRoute>[
-      AdaptiveRoute(page: GamesListingPage, path: '',),
-      AdaptiveRoute(page: FavoriteGamesPage, path: 'favorites'),
-    ],),
+    AdaptiveRoute(
+      page: EmptyRouterPage,
+      path: '/games',
+      name: 'GamesRootRoute',
+      children: <AutoRoute>[
+        AdaptiveRoute(
+          page: GamesListingPage,
+          path: '',
+        ),
+        AdaptiveRoute(page: FavoriteGamesPage, path: 'favorites'),
+      ],
+    ),
   ],
 )
 class AppRouter extends _$AppRouter {}

@@ -9,7 +9,8 @@ import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
 typedef WaitingForBlocFunction = Future<void> Function();
 
-final gameVMFavoriteWaiting = StateProvider.autoDispose.family<bool, GameVM>((ref, args) {
+final gameVMFavoriteWaiting =
+    StateProvider.autoDispose.family<bool, GameVM>((ref, args) {
   return false;
 });
 

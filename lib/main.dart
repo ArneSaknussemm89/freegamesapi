@@ -9,6 +9,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:freegamesexample/routing/router.dart';
 import 'package:freegamesexample/firebase_options.dart';
 
+// Most of this is just bootstrapping the app basics. Testing here provides little value.
+// coverage:ignore-file
+
 final router = AppRouter();
 
 // If we need to do anything before bootstrapping the app
@@ -45,7 +48,8 @@ class AppEntry extends ConsumerWidget {
       primaryColor: Colors.deepOrange,
       primaryColorDark: Colors.deepOrange[700]!,
       primaryColorLight: Colors.deepOrange[100]!,
-      valueIndicatorTextStyle: GoogleFonts.roboto(textStyle: textTheme.overline),
+      valueIndicatorTextStyle:
+          GoogleFonts.roboto(textStyle: textTheme.overline),
     );
 
     return GestureDetector(

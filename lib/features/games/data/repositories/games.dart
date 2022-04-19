@@ -8,13 +8,16 @@ import 'package:freegamesexample/features/games/data/data_sources/games_api.dart
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
 // The default provider for this repository.
-final gamesRepository = Provider.autoDispose<GamesRepository>((ref) {
-  final dataSource = ref.watch(gamesApiDataSource);
-  final adapter = ref.watch(dioAdapter(BaseOptions(baseUrl: dataSource.baseUrl)));
+final gamesRepositoryProvider = Provider.autoDispose<GamesRepository>((ref) {
+  final dataSource = ref.watch(gamesApiDataSourceProvider);
+  final adapter = ref.watch(dioAdapterProvider(BaseOptions(baseUrl: dataSource.baseUrl)));
   final fetchAllGamesUseCase = ref.watch(fetchAllGamesUseCaseProvider);
 
-  return GamesRepository(adapter: adapter, fetchAllGamesUseCase: fetchAllGamesUseCase);
-});
+  return GamesRepository(
+    adapter: adapter,
+    fetchAllGamesUseCase: fetchAllGamesUseCase,
+  );
+}, dependencies: [gamesApiDataSourceProvider, dioAdapterProvider, fetchAllGamesUseCaseProvider]);
 
 class GamesRepository extends Repository<Game, DioAdapter> {
   GamesRepository({
@@ -29,7 +32,7 @@ class GamesRepository extends Repository<Game, DioAdapter> {
 
     return result.when(
       success: (data) {
-        return data.map((dynamic game) => Game.fromJson(game as Map<String, dynamic>)).toList();
+        return data;
       },
       failure: (error, trace) => const <Game>[],
     );

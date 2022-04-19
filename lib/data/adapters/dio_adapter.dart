@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:freegamesexample/core/adapters.dart';
 
-final dioAdapter = Provider.autoDispose.family<DioAdapter, BaseOptions>((ref, options) {
+final dioAdapterProvider = Provider.autoDispose.family<DioAdapter, BaseOptions>((ref, options) {
   final client = Dio(options);
   return DioAdapter(client: client);
 });
@@ -23,6 +23,9 @@ class DioAdapterOptions extends AdapterOptions {
         );
 
   final CancelToken? cancelToken;
+
+  @override
+  List<Object?> get props => [...super.props, cancelToken];
 }
 
 class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {

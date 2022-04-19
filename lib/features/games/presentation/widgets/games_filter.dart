@@ -15,8 +15,9 @@ class GamesFilterWidget extends ConsumerWidget {
         Icon(Icons.list),
         Icon(Icons.favorite),
       ],
-      onPressed: (selectedIndex) =>
-          notifier.state = selectedIndex == 0 ? GamesListFilter.all : GamesListFilter.onlyFavorites,
+      onPressed: (selectedIndex) => notifier.state = selectedIndex == 0
+          ? GamesListFilter.all
+          : GamesListFilter.onlyFavorites,
       isSelected: [
         filter == GamesListFilter.all,
         filter == GamesListFilter.onlyFavorites,

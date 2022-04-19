@@ -12,7 +12,6 @@ class LoginPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.watch(firebaseAuthProvider);
-    final authService = ref.watch(firebaseAuthServiceProvider);
 
     return SignInScreen(
       auth: auth,
@@ -38,7 +37,6 @@ class LoginPage extends ConsumerWidget {
       actions: [
         AuthStateChangeAction<SignedIn>(
           (context, state) {
-            authService.createFirestoreAppUser();
             context.router.navigate(
               const GamesRootRoute(
                 children: [

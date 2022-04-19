@@ -55,9 +55,13 @@ class _SquishSwitchState extends State<SquishSwitch> with AnimationMixin {
       transform: Matrix4.identity()..scale(1.0, scaleFactor),
       child: Icon(
         controller.value > 0.5 ? widget.firstChild : widget.secondChild,
-        color: controller.value > 0.5 ? widget.firstIconColor : widget.secondIconColor,
+        color: controller.value > 0.5
+            ? widget.firstIconColor
+            : widget.secondIconColor,
         size: widget.iconSize,
-      ).transform(transform: widget.transform ?? Matrix4.identity(), alignment: Alignment.center),
+      ).transform(
+          transform: widget.transform ?? Matrix4.identity(),
+          alignment: Alignment.center),
     );
   }
 }

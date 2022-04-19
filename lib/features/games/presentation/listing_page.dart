@@ -6,7 +6,7 @@ import 'package:freegamesexample/features/games/application/blocs/favorites_list
 import 'package:freegamesexample/features/games/application/blocs/games_list.dart';
 import 'package:freegamesexample/features/games/presentation/widgets/game_tile.dart';
 import 'package:freegamesexample/features/games/presentation/widgets/games_filter.dart';
-import 'package:freegamesexample/presentation/themes.dart';
+import 'package:freegamesexample/presentation/constants.dart';
 
 class GamesListingPage extends ConsumerWidget {
   const GamesListingPage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class GamesListingPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isLoading = ref.watch(
-      favoriteGamesListBloc.select(
+      favoriteGamesListBlocProvider.select(
         (state) => state.when(
           error: (error) => false,
           loading: () => true,

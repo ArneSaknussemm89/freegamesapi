@@ -13,11 +13,14 @@ import 'package:freegamesexample/features/games/domain/value_objects/merge_game_
 /// Feature presentation elements.
 import 'package:freegamesexample/features/games/presentation/view_models/game.dart';
 
-final mergeGameFavoritesUseCaseProvider = Provider.autoDispose<MergeGameFavoritesUseCase>((ref) {
-  final auth = ref.watch(authenticationBlocProvider);
-  return MergeGameFavoritesUseCase(auth: auth);
-});
-
+final mergeGameFavoritesUseCaseProvider = Provider.autoDispose<MergeGameFavoritesUseCase>(
+  (ref) {
+    final auth = ref.watch(authenticationBlocProvider);
+    return MergeGameFavoritesUseCase(auth: auth);
+  },
+  dependencies: [authenticationBlocProvider],
+);
+  
 class MergeGameFavoritesUseCase extends UseCaseWithParams<Object?, List<GameVM>, MergeGameFavoritesUseCaseParams> {
   const MergeGameFavoritesUseCase({
     required this.auth,
