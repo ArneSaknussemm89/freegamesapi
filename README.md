@@ -1,10 +1,11 @@
-# Free GAMES API
-This app uses the Free Games API to show a list of free-to-play games.
+# Free Games API
+This app uses the Free Games API to fetch games from the [Free Games API](https://www.freetogame.com/api-doc).
 
-# Koality Flutter
+## Koality Flutter
 
 A boilerplate project for CK's Flutter apps. (Adapted from [Flutter App Architecture](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction))
-![image](assets/flutter-clean-architecture.jpg)
+  
+![image](assets/Clean%20Architecture%20-%20Flutter.png)
 
 ## Architecture Design
 In order to keep code organized and searchable, we follow a slightly modified Domain-Drive Feature-First Architecture.
@@ -36,8 +37,7 @@ Features contains all of the features of our application. Typically we define a 
 ### Presentation Layer
 The presentation layer is where we define how our UI is rendered. It contains all of the blocs, widgets and view models that are used to render the UI.
 Widgets should be composable and contain little to no logic. If a UI component requires it's own internal logic, it should be created as a ViewModel.
-The folders allowed here are `widgets`, `blocs` and `view_models`.
-* **Blocs** are going to be GraphBlocs that define a state graph using States/Events.
+The folders allowed here are `widgets` and `view_models`.
 * **View Models** are logical wrapper classes around domain objects. If some logic is needed for domain objects before being used in the UI, then a ViewModel
 class should be used. It could keep track of callbacks, streams, or other logic that does not belong as a use case. Typically this would be used for transforming values, combining model/value object values or doing things like validating data.
 * **Widgets** are you classic Flutter Widget UI Components. They should be "dumb" in the sense of being pure widgets. They should get passed data in their
@@ -47,7 +47,7 @@ constructor and the most logic they should have it showing/hiding UI elements.
 ### Application Layer
 The application directory contains the Use Cases that describe the app specific behavior or "Business Logic" as it's referred to
 in other paradigms. This is where we store Services and Use Cases. The folders
-allowed here are `blocs`, `services`, and `use_cases`.
+allowed here are `blocs`, `services` and `use_cases`.
 
 * **Blocs** Blocs created using the `graph_bloc` that are FSMs that define a state graph using States/Events.
 * **Services** Are generic classes that typically handle doing some I/O operations. A common use is to store use cases that can be triggered when requested.
