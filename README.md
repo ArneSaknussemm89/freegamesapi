@@ -1,5 +1,7 @@
 # Free Games API
 This app uses the Free Games API to fetch games from the [Free Games API](https://www.freetogame.com/api-doc).
+  
+[![codecov](https://codecov.io/gh/ArneSaknussemm89/freegamesapi/branch/master/graph/badge.svg?token=JEICGD97V3)](https://codecov.io/gh/ArneSaknussemm89/freegamesapi)
 
 ## Koality Flutter
 
