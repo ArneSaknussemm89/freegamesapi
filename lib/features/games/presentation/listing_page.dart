@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
-import 'package:freegamesexample/features/games/application/blocs/games_list.dart';
+import 'package:freegamesexample/features/games/application/services/games_list.dart';
 import 'package:freegamesexample/features/games/presentation/widgets/game_tile.dart';
 import 'package:freegamesexample/features/games/presentation/widgets/games_filter.dart';
 import 'package:freegamesexample/presentation/constants.dart';

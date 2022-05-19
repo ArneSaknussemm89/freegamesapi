@@ -30,21 +30,23 @@ class AuthenticationBloc extends GraphBloc<AuthenticationEvent, AuthenticationSt
   final CreateFirestoreAppUserUseCase createFirestoreAppUserUseCase;
 
   @override
-  BlocStateGraph<AuthenticationEvent, AuthenticationState> get graph => BlocStateGraph(graph: {
-        _$Uninitialized: {
-          _$Authenticate: transitionWithEffect(
-            (Authenticate event, state) => AuthenticationState.authenticated(event.user),
-            verifyFirestoreUser,
-          ),
-          _$Unauthenticate: transition((Unauthenticate event, state) => const AuthenticationState.unauthenticated()),
+  BlocStateGraph<AuthenticationEvent, AuthenticationState> get graph => BlocStateGraph(
+        graph: {
+          _$Uninitialized: {
+            _$Authenticate: transitionWithEffect(
+              (Authenticate event, state) => AuthenticationState.authenticated(event.user),
+              verifyFirestoreUser,
+            ),
+            _$Unauthenticate: transition((Unauthenticate event, state) => const AuthenticationState.unauthenticated()),
+          },
+          _$Authenticated: {
+            _$Unauthenticate: transition((Unauthenticate event, state) => const AuthenticationState.unauthenticated()),
+          },
+          _$Unauthenticated: {
+            _$Authenticate: transition((Authenticate event, state) => AuthenticationState.authenticated(event.user)),
+          },
         },
-        _$Authenticated: {
-          _$Unauthenticate: transition((Unauthenticate event, state) => const AuthenticationState.unauthenticated()),
-        },
-        _$Unauthenticated: {
-          _$Authenticate: transition((Authenticate event, state) => AuthenticationState.authenticated(event.user)),
-        },
-      });
+      );
 
   @override
   Future<void> close() async {

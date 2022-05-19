@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:freegamesexample/features/games/application/use_cases/fetch_all_games.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graph_bloc/graph_bloc.dart';
 import 'package:riverbloc/riverbloc.dart';
@@ -11,6 +10,7 @@ import 'package:freegamesexample/application/services/cloud_firestore.dart';
 
 /// Feature application elements.
 import 'package:freegamesexample/features/games/application/use_cases/add_favorite_game.dart';
+import 'package:freegamesexample/features/games/application/use_cases/fetch_all_games.dart';
 import 'package:freegamesexample/features/games/application/use_cases/fetch_user_favorites.dart';
 import 'package:freegamesexample/features/games/application/use_cases/merge_game_favorites.dart';
 import 'package:freegamesexample/features/games/application/use_cases/remove_favorite_game.dart';

@@ -52,6 +52,7 @@ in other paradigms. This is where we store Services and Use Cases. The folders
 allowed here are `blocs`, `services` and `use_cases`.
 
 * **Blocs** Blocs created using the `graph_bloc` that are FSMs that define a state graph using States/Events.
+* **Providers** Providers are stored here, this is where the providers are created.
 * **Services** Are generic classes that typically handle doing some I/O operations. A common use is to store use cases that can be triggered when requested.
 * **Use Cases** are the way we describe the business logic of our app. These can be thought of as Action Classes; they are passed parameters and
 then execute their logic and return either a result or an error. All Use Cases extends one of the `UseCase` classes. `AsyncUseCase` is used

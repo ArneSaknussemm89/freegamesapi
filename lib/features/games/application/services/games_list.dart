@@ -15,8 +15,10 @@ final gamesListProvider = Provider.autoDispose<List<GameVM>>((ref) {
   return state.when(
     loading: () => [],
     loaded: (favorites, games, vms) {
-      final result = filterGamesListUseCase
-          .execute(FilterGamesListUseCaseParams(games: vms, filter: filter));
+      final result = filterGamesListUseCase.execute(FilterGamesListUseCaseParams(
+        games: vms,
+        filter: filter,
+      ));
       return result.when(
         failure: (error, trace) => [],
         success: (viewModels) => viewModels,
