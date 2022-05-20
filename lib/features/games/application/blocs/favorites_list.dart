@@ -55,7 +55,7 @@ final favoriteGamesListBlocProvider = BlocProvider.autoDispose<FavoriteGamesBloc
       mergeGameFavoritesUseCase: mergeGameFavoritesUseCase,
       fetchAllGamesUseCase: fetchAllGamesUseCase,
     );
-    ref.maintainState = true;
+    ref.keepAlive();
 
     return bloc;
   },
@@ -218,7 +218,7 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
     );
   }
 
-  void handleMerge(FavoriteGamesListMerge event, FavoriteGamesListLoaded state) {
+  void handleMerge(FavoriteGamesListMerge _, FavoriteGamesListLoaded state) {
     mergeGameFavoritesUseCase
         .execute(
           MergeGameFavoritesUseCaseParams(

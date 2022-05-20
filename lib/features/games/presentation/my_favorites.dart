@@ -13,18 +13,19 @@ class FavoriteGamesPage extends StatelessWidget {
 
   Widget mobile(BuildContext context) {
     return MobileLayout(
-        bodyBuilder: (context) => const FavoriteGamesPageBody());
+      bodyBuilder: (_) => const FavoriteGamesPageBody(),
+    );
   }
 
   Widget tablet(BuildContext context) {
     return TabletLayout(
-        bodyBuilder: (context) => const FavoriteGamesPageBody());
+      bodyBuilder: (_) => const FavoriteGamesPageBody(),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout.builder(
-        mobile: mobile, tablet: tablet, desktop: tablet);
+    return ScreenTypeLayout.builder(mobile: mobile, tablet: tablet, desktop: tablet);
   }
 }
 
@@ -42,18 +43,15 @@ class FavoriteGamesPageBody extends ConsumerWidget {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('No favorites yet.',
-                  style: Theme.of(context).textTheme.displayMedium),
-              const Icon(Icons.mood_rounded, size: 44)
-                  .padding(top: Spacing.two),
+              Text('No favorites yet.', style: Theme.of(context).textTheme.displayMedium),
+              const Icon(Icons.mood_rounded, size: 44).padding(top: Spacing.two),
             ],
           );
         }
 
         return Column(
           children: [
-            Text('Favorites', style: Theme.of(context).textTheme.displayMedium)
-                .padding(all: Spacing.two),
+            Text('Favorites', style: Theme.of(context).textTheme.displayMedium).padding(all: Spacing.two),
             ListView.builder(
               itemCount: vms.length,
               itemBuilder: (context, index) {

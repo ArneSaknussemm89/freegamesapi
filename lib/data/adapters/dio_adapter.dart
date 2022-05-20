@@ -42,7 +42,7 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
     );
     final statusCode = response.statusCode ?? 500;
     if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+      return AdapterResponse.success(response.data as T);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -58,7 +58,7 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
     );
     final statusCode = response.statusCode ?? 500;
     if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+      return AdapterResponse.success(response.data as T);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -74,7 +74,7 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
     );
     final statusCode = response.statusCode ?? 500;
     if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+      return AdapterResponse.success(response.data as T);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -90,7 +90,7 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
     );
     final statusCode = response.statusCode ?? 500;
     if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+      return AdapterResponse.success(response.data as T);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -105,7 +105,7 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
     );
     final statusCode = response.statusCode ?? 500;
     if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+      return AdapterResponse.success(response.data as T);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }

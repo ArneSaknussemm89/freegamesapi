@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'adapters.dart';
@@ -11,28 +12,7 @@ part of 'adapters.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AdapterResponseTearOff {
-  const _$AdapterResponseTearOff();
-
-  AdapterResponseSuccess<T> success<T>(T data) {
-    return AdapterResponseSuccess<T>(
-      data,
-    );
-  }
-
-  AdapterResponseFailure<T> failure<T>(Object? error, StackTrace trace) {
-    return AdapterResponseFailure<T>(
-      error,
-      trace,
-    );
-  }
-}
-
-/// @nodoc
-const $AdapterResponse = _$AdapterResponseTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AdapterResponse<T> {
@@ -94,30 +74,30 @@ class _$AdapterResponseCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-abstract class $AdapterResponseSuccessCopyWith<T, $Res> {
-  factory $AdapterResponseSuccessCopyWith(AdapterResponseSuccess<T> value,
-          $Res Function(AdapterResponseSuccess<T>) then) =
-      _$AdapterResponseSuccessCopyWithImpl<T, $Res>;
+abstract class _$$AdapterResponseSuccessCopyWith<T, $Res> {
+  factory _$$AdapterResponseSuccessCopyWith(_$AdapterResponseSuccess<T> value,
+          $Res Function(_$AdapterResponseSuccess<T>) then) =
+      __$$AdapterResponseSuccessCopyWithImpl<T, $Res>;
   $Res call({T data});
 }
 
 /// @nodoc
-class _$AdapterResponseSuccessCopyWithImpl<T, $Res>
+class __$$AdapterResponseSuccessCopyWithImpl<T, $Res>
     extends _$AdapterResponseCopyWithImpl<T, $Res>
-    implements $AdapterResponseSuccessCopyWith<T, $Res> {
-  _$AdapterResponseSuccessCopyWithImpl(AdapterResponseSuccess<T> _value,
-      $Res Function(AdapterResponseSuccess<T>) _then)
-      : super(_value, (v) => _then(v as AdapterResponseSuccess<T>));
+    implements _$$AdapterResponseSuccessCopyWith<T, $Res> {
+  __$$AdapterResponseSuccessCopyWithImpl(_$AdapterResponseSuccess<T> _value,
+      $Res Function(_$AdapterResponseSuccess<T>) _then)
+      : super(_value, (v) => _then(v as _$AdapterResponseSuccess<T>));
 
   @override
-  AdapterResponseSuccess<T> get _value =>
-      super._value as AdapterResponseSuccess<T>;
+  _$AdapterResponseSuccess<T> get _value =>
+      super._value as _$AdapterResponseSuccess<T>;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(AdapterResponseSuccess<T>(
+    return _then(_$AdapterResponseSuccess<T>(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -143,7 +123,7 @@ class _$AdapterResponseSuccess<T> implements AdapterResponseSuccess<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AdapterResponseSuccess<T> &&
+            other is _$AdapterResponseSuccess<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -153,9 +133,9 @@ class _$AdapterResponseSuccess<T> implements AdapterResponseSuccess<T> {
 
   @JsonKey(ignore: true)
   @override
-  $AdapterResponseSuccessCopyWith<T, AdapterResponseSuccess<T>> get copyWith =>
-      _$AdapterResponseSuccessCopyWithImpl<T, AdapterResponseSuccess<T>>(
-          this, _$identity);
+  _$$AdapterResponseSuccessCopyWith<T, _$AdapterResponseSuccess<T>>
+      get copyWith => __$$AdapterResponseSuccessCopyWithImpl<T,
+          _$AdapterResponseSuccess<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -221,40 +201,41 @@ class _$AdapterResponseSuccess<T> implements AdapterResponseSuccess<T> {
 }
 
 abstract class AdapterResponseSuccess<T> implements AdapterResponse<T> {
-  const factory AdapterResponseSuccess(T data) = _$AdapterResponseSuccess<T>;
+  const factory AdapterResponseSuccess(final T data) =
+      _$AdapterResponseSuccess<T>;
 
-  T get data;
+  T get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AdapterResponseSuccessCopyWith<T, AdapterResponseSuccess<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AdapterResponseSuccessCopyWith<T, _$AdapterResponseSuccess<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AdapterResponseFailureCopyWith<T, $Res> {
-  factory $AdapterResponseFailureCopyWith(AdapterResponseFailure<T> value,
-          $Res Function(AdapterResponseFailure<T>) then) =
-      _$AdapterResponseFailureCopyWithImpl<T, $Res>;
+abstract class _$$AdapterResponseFailureCopyWith<T, $Res> {
+  factory _$$AdapterResponseFailureCopyWith(_$AdapterResponseFailure<T> value,
+          $Res Function(_$AdapterResponseFailure<T>) then) =
+      __$$AdapterResponseFailureCopyWithImpl<T, $Res>;
   $Res call({Object? error, StackTrace trace});
 }
 
 /// @nodoc
-class _$AdapterResponseFailureCopyWithImpl<T, $Res>
+class __$$AdapterResponseFailureCopyWithImpl<T, $Res>
     extends _$AdapterResponseCopyWithImpl<T, $Res>
-    implements $AdapterResponseFailureCopyWith<T, $Res> {
-  _$AdapterResponseFailureCopyWithImpl(AdapterResponseFailure<T> _value,
-      $Res Function(AdapterResponseFailure<T>) _then)
-      : super(_value, (v) => _then(v as AdapterResponseFailure<T>));
+    implements _$$AdapterResponseFailureCopyWith<T, $Res> {
+  __$$AdapterResponseFailureCopyWithImpl(_$AdapterResponseFailure<T> _value,
+      $Res Function(_$AdapterResponseFailure<T>) _then)
+      : super(_value, (v) => _then(v as _$AdapterResponseFailure<T>));
 
   @override
-  AdapterResponseFailure<T> get _value =>
-      super._value as AdapterResponseFailure<T>;
+  _$AdapterResponseFailure<T> get _value =>
+      super._value as _$AdapterResponseFailure<T>;
 
   @override
   $Res call({
     Object? error = freezed,
     Object? trace = freezed,
   }) {
-    return _then(AdapterResponseFailure<T>(
+    return _then(_$AdapterResponseFailure<T>(
       error == freezed ? _value.error : error,
       trace == freezed
           ? _value.trace
@@ -283,7 +264,7 @@ class _$AdapterResponseFailure<T> implements AdapterResponseFailure<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AdapterResponseFailure<T> &&
+            other is _$AdapterResponseFailure<T> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.trace, trace));
   }
@@ -296,9 +277,9 @@ class _$AdapterResponseFailure<T> implements AdapterResponseFailure<T> {
 
   @JsonKey(ignore: true)
   @override
-  $AdapterResponseFailureCopyWith<T, AdapterResponseFailure<T>> get copyWith =>
-      _$AdapterResponseFailureCopyWithImpl<T, AdapterResponseFailure<T>>(
-          this, _$identity);
+  _$$AdapterResponseFailureCopyWith<T, _$AdapterResponseFailure<T>>
+      get copyWith => __$$AdapterResponseFailureCopyWithImpl<T,
+          _$AdapterResponseFailure<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -364,12 +345,13 @@ class _$AdapterResponseFailure<T> implements AdapterResponseFailure<T> {
 }
 
 abstract class AdapterResponseFailure<T> implements AdapterResponse<T> {
-  const factory AdapterResponseFailure(Object? error, StackTrace trace) =
+  const factory AdapterResponseFailure(
+          final Object? error, final StackTrace trace) =
       _$AdapterResponseFailure<T>;
 
-  Object? get error;
-  StackTrace get trace;
+  Object? get error => throw _privateConstructorUsedError;
+  StackTrace get trace => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AdapterResponseFailureCopyWith<T, AdapterResponseFailure<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AdapterResponseFailureCopyWith<T, _$AdapterResponseFailure<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

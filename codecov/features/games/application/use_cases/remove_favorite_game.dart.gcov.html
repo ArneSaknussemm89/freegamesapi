@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-04-19 14:31:27</td>
+            <td class="headerValue">2022-05-22 22:26:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -66,23 +66,23 @@
 <a name="4"><span class="lineNum">       4 </span>            : import 'package:freegamesexample/features/games/application/services/favorites_service.dart';</a>
 <a name="5"><span class="lineNum">       5 </span>            : import 'package:freegamesexample/features/games/domain/value_objects/remove_favorite_game_params.dart';</a>
 <a name="6"><span class="lineNum">       6 </span>            : </a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          4 : final removeFavoriteGamesUseCaseProvider =</span></a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          4 :     Provider.autoDispose&lt;RemoveFavoriteGameUseCase&gt;((ref) {</span></a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          4 :   final favoritesService = ref.watch(favoriteGamesServiceProvider);</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineCov">          2 :   return RemoveFavoriteGameUseCase(favoritesService: favoritesService);</span></a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          4 : }, dependencies: [favoriteGamesServiceProvider]);</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          6 : final removeFavoriteGamesUseCaseProvider =</span></a>
+<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          6 :     Provider.autoDispose&lt;RemoveFavoriteGameUseCase&gt;((ref) {</span></a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          6 :   final favoritesService = ref.watch(favoriteGamesServiceProvider);</span></a>
+<a name="10"><span class="lineNum">      10 </span><span class="lineCov">          3 :   return RemoveFavoriteGameUseCase(favoritesService: favoritesService);</span></a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          6 : }, dependencies: [favoriteGamesServiceProvider]);</span></a>
 <a name="12"><span class="lineNum">      12 </span>            : </a>
 <a name="13"><span class="lineNum">      13 </span>            : class RemoveFavoriteGameUseCase extends AsyncUseCaseWithParams&lt;Exception, Void,</a>
 <a name="14"><span class="lineNum">      14 </span>            :     RemoveFavoriteGameUseCaseParams&gt; {</a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          2 :   const RemoveFavoriteGameUseCase({required this.favoritesService});</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          3 :   const RemoveFavoriteGameUseCase({required this.favoritesService});</span></a>
 <a name="16"><span class="lineNum">      16 </span>            : </a>
 <a name="17"><span class="lineNum">      17 </span>            :   final FavoriteGamesService favoritesService;</a>
 <a name="18"><span class="lineNum">      18 </span>            : </a>
 <a name="19"><span class="lineNum">      19 </span>            :   @override</a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          1 :   Future&lt;UseCaseResult&lt;Exception, Void&gt;&gt; execute(</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          2 :   Future&lt;UseCaseResult&lt;Exception, Void&gt;&gt; execute(</span></a>
 <a name="21"><span class="lineNum">      21 </span>            :       RemoveFavoriteGameUseCaseParams params) async {</a>
 <a name="22"><span class="lineNum">      22 </span>            :     try {</a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          5 :       await favoritesService.removeFavorite(params.uid, params.game);</span></a>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">         10 :       await favoritesService.removeFavorite(params.uid, params.game);</span></a>
 <a name="24"><span class="lineNum">      24 </span>            :       return const UseCaseResult.success(kVoid);</a>
 <a name="25"><span class="lineNum">      25 </span><span class="lineCov">          1 :     } on Exception catch (exception) {</span></a>
 <a name="26"><span class="lineNum">      26 </span><span class="lineCov">          2 :       return UseCaseResult.failure(exception, StackTrace.current);</span></a>

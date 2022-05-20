@@ -3,10 +3,12 @@ import 'dart:async';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
+import 'package:dio/dio.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/foundation.dart';
+import 'package:freegamesexample/core/use_cases.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:riverpod/riverpod.dart';
 
@@ -34,6 +36,35 @@ class MockFavoriteGamesService extends Mock implements FavoriteGamesService {}
 
 class MockGameApiDataSource extends Mock implements GameApiDataSource {}
 
+class MockDioClient extends Mock implements Dio {}
+
+class MockUseCase extends UseCase<Exception, String> {
+  const MockUseCase();
+
+  @override
+  UseCaseResult<Exception, String> execute() {
+    return const UseCaseResult.success(TestConstants.kMockUseCaseResult);
+  }
+}
+
+class MockStreamUseCase extends StreamUseCase<Exception, String> {
+  const MockStreamUseCase();
+
+  @override
+  UseCaseResult<Exception, Stream<String>> execute() {
+    return UseCaseResult.success(Stream.fromIterable(TestConstants.elements));
+  }
+}
+
+class MockStreamUseCaseWithParams extends StreamUseCaseWithParams<Exception, String, List<String>> {
+  const MockStreamUseCaseWithParams();
+
+  @override
+  UseCaseResult<Exception, Stream<String>> execute(List<String> params) {
+    return UseCaseResult.success(Stream.fromIterable(TestConstants.elements + params));
+  }
+}
+
 class Listener<T> extends Mock {
   void call(T? prev, T value);
 }
@@ -52,6 +83,7 @@ class TestConstants {
   static const kTestFirebaseAuthUserPassword = 'testfirebaseauthuserpassword';
   static const kTestFirebaseAuthUserId = 'mock_uid';
   static const kTestFirebaseAuthDisplayName = 'Mock User';
+  static const kMockUseCaseResult = 'Mock Use Case Result';
 
   static final testUser = MockUser(
     uid: kTestFirebaseAuthUserId,
@@ -120,6 +152,17 @@ class TestConstants {
       savedOn: DateTime(2022, 1, 1),
     ),
   ];
+
+  static const dioAdapterFailedMessage = 'API call failed';
+  static const dioAdapterSuccessMessage = 'API call was succuessful';
+
+  static const elements = [
+    'GET',
+    'PUT',
+    'DELETE',
+    'POST',
+    'PATCH',
+  ];
 }
 
 Future<void> clearFirestore(FakeFirebaseFirestore firestore) async {
@@ -138,11 +181,13 @@ ProviderContainer createContainer({
   ProviderContainer? parent,
   List<Override> overrides = const [],
   List<ProviderObserver>? observers,
+  Duration? disposeDelay,
 }) {
   final container = ProviderContainer(
     parent: parent,
     overrides: overrides,
     observers: observers,
+    disposeDelay: disposeDelay,
   );
   addTearDown(container.dispose);
   return container;

@@ -48,11 +48,11 @@ abstract class AsyncUseCaseWithParams<E, T, P> extends UseCaseBase {
 abstract class StreamUseCase<E, T> extends UseCaseBase {
   const StreamUseCase();
 
-  Stream<UseCaseResult<E, T>> execute();
+  UseCaseResult<E, Stream<T>> execute();
 }
 
 abstract class StreamUseCaseWithParams<E, T, P> extends UseCaseBase {
   const StreamUseCaseWithParams();
 
-  Stream<UseCaseResult<E, T>> execute(P params);
+  UseCaseResult<E, Stream<T>> execute(P params);
 }

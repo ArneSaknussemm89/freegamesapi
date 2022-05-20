@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'favorites_list.dart';
@@ -11,77 +12,7 @@ part of 'favorites_list.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FavoriteGamesListEventTearOff {
-  const _$FavoriteGamesListEventTearOff();
-
-  FavoriteGamesListFetchAll fetchAll() {
-    return const FavoriteGamesListFetchAll();
-  }
-
-  FavoriteGamesListFetchGames fetchGames() {
-    return const FavoriteGamesListFetchGames();
-  }
-
-  FavoriteGamesListFetchFavorites fetchFavorites() {
-    return const FavoriteGamesListFetchFavorites();
-  }
-
-  FavoriteGamesListSetGames setGames(List<Game> games) {
-    return FavoriteGamesListSetGames(
-      games,
-    );
-  }
-
-  FavoriteGamesListSetFavorites setFavorites(List<FavoriteGame> favorites) {
-    return FavoriteGamesListSetFavorites(
-      favorites,
-    );
-  }
-
-  FavoriteGamesListMerge merge() {
-    return const FavoriteGamesListMerge();
-  }
-
-  FavoriteGamesListFinishMerging finishMerging(List<GameVM> viewModels) {
-    return FavoriteGamesListFinishMerging(
-      viewModels,
-    );
-  }
-
-  FavoriteGamesListAddFavorite addFavorite(String uid, Game game) {
-    return FavoriteGamesListAddFavorite(
-      uid,
-      game,
-    );
-  }
-
-  FavoriteGamesListRemoveFavorite removeFavorite(String uid, Game game) {
-    return FavoriteGamesListRemoveFavorite(
-      uid,
-      game,
-    );
-  }
-
-  FavoriteGamesListHasError hasError(Object? error) {
-    return FavoriteGamesListHasError(
-      error,
-    );
-  }
-
-  FavoriteGamesListRetry retry() {
-    return const FavoriteGamesListRetry();
-  }
-
-  FavoriteGamesListRefresh refresh() {
-    return const FavoriteGamesListRefresh();
-  }
-}
-
-/// @nodoc
-const $FavoriteGamesListEvent = _$FavoriteGamesListEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FavoriteGamesListEvent {
@@ -206,23 +137,24 @@ class _$FavoriteGamesListEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFetchAllCopyWith<$Res> {
-  factory $FavoriteGamesListFetchAllCopyWith(FavoriteGamesListFetchAll value,
-          $Res Function(FavoriteGamesListFetchAll) then) =
-      _$FavoriteGamesListFetchAllCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFetchAllCopyWith<$Res> {
+  factory _$$FavoriteGamesListFetchAllCopyWith(
+          _$FavoriteGamesListFetchAll value,
+          $Res Function(_$FavoriteGamesListFetchAll) then) =
+      __$$FavoriteGamesListFetchAllCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListFetchAllCopyWithImpl<$Res>
+class __$$FavoriteGamesListFetchAllCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFetchAllCopyWith<$Res> {
-  _$FavoriteGamesListFetchAllCopyWithImpl(FavoriteGamesListFetchAll _value,
-      $Res Function(FavoriteGamesListFetchAll) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFetchAll));
+    implements _$$FavoriteGamesListFetchAllCopyWith<$Res> {
+  __$$FavoriteGamesListFetchAllCopyWithImpl(_$FavoriteGamesListFetchAll _value,
+      $Res Function(_$FavoriteGamesListFetchAll) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListFetchAll));
 
   @override
-  FavoriteGamesListFetchAll get _value =>
-      super._value as FavoriteGamesListFetchAll;
+  _$FavoriteGamesListFetchAll get _value =>
+      super._value as _$FavoriteGamesListFetchAll;
 }
 
 /// @nodoc
@@ -239,7 +171,7 @@ class _$FavoriteGamesListFetchAll implements FavoriteGamesListFetchAll {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFetchAll);
+            other is _$FavoriteGamesListFetchAll);
   }
 
   @override
@@ -376,24 +308,25 @@ abstract class FavoriteGamesListFetchAll implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFetchGamesCopyWith<$Res> {
-  factory $FavoriteGamesListFetchGamesCopyWith(
-          FavoriteGamesListFetchGames value,
-          $Res Function(FavoriteGamesListFetchGames) then) =
-      _$FavoriteGamesListFetchGamesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFetchGamesCopyWith<$Res> {
+  factory _$$FavoriteGamesListFetchGamesCopyWith(
+          _$FavoriteGamesListFetchGames value,
+          $Res Function(_$FavoriteGamesListFetchGames) then) =
+      __$$FavoriteGamesListFetchGamesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListFetchGamesCopyWithImpl<$Res>
+class __$$FavoriteGamesListFetchGamesCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFetchGamesCopyWith<$Res> {
-  _$FavoriteGamesListFetchGamesCopyWithImpl(FavoriteGamesListFetchGames _value,
-      $Res Function(FavoriteGamesListFetchGames) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFetchGames));
+    implements _$$FavoriteGamesListFetchGamesCopyWith<$Res> {
+  __$$FavoriteGamesListFetchGamesCopyWithImpl(
+      _$FavoriteGamesListFetchGames _value,
+      $Res Function(_$FavoriteGamesListFetchGames) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListFetchGames));
 
   @override
-  FavoriteGamesListFetchGames get _value =>
-      super._value as FavoriteGamesListFetchGames;
+  _$FavoriteGamesListFetchGames get _value =>
+      super._value as _$FavoriteGamesListFetchGames;
 }
 
 /// @nodoc
@@ -410,7 +343,7 @@ class _$FavoriteGamesListFetchGames implements FavoriteGamesListFetchGames {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFetchGames);
+            other is _$FavoriteGamesListFetchGames);
   }
 
   @override
@@ -547,25 +480,25 @@ abstract class FavoriteGamesListFetchGames implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFetchFavoritesCopyWith<$Res> {
-  factory $FavoriteGamesListFetchFavoritesCopyWith(
-          FavoriteGamesListFetchFavorites value,
-          $Res Function(FavoriteGamesListFetchFavorites) then) =
-      _$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFetchFavoritesCopyWith<$Res> {
+  factory _$$FavoriteGamesListFetchFavoritesCopyWith(
+          _$FavoriteGamesListFetchFavorites value,
+          $Res Function(_$FavoriteGamesListFetchFavorites) then) =
+      __$$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>
+class __$$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFetchFavoritesCopyWith<$Res> {
-  _$FavoriteGamesListFetchFavoritesCopyWithImpl(
-      FavoriteGamesListFetchFavorites _value,
-      $Res Function(FavoriteGamesListFetchFavorites) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFetchFavorites));
+    implements _$$FavoriteGamesListFetchFavoritesCopyWith<$Res> {
+  __$$FavoriteGamesListFetchFavoritesCopyWithImpl(
+      _$FavoriteGamesListFetchFavorites _value,
+      $Res Function(_$FavoriteGamesListFetchFavorites) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListFetchFavorites));
 
   @override
-  FavoriteGamesListFetchFavorites get _value =>
-      super._value as FavoriteGamesListFetchFavorites;
+  _$FavoriteGamesListFetchFavorites get _value =>
+      super._value as _$FavoriteGamesListFetchFavorites;
 }
 
 /// @nodoc
@@ -583,7 +516,7 @@ class _$FavoriteGamesListFetchFavorites
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFetchFavorites);
+            other is _$FavoriteGamesListFetchFavorites);
   }
 
   @override
@@ -722,32 +655,33 @@ abstract class FavoriteGamesListFetchFavorites
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListSetGamesCopyWith<$Res> {
-  factory $FavoriteGamesListSetGamesCopyWith(FavoriteGamesListSetGames value,
-          $Res Function(FavoriteGamesListSetGames) then) =
-      _$FavoriteGamesListSetGamesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListSetGamesCopyWith<$Res> {
+  factory _$$FavoriteGamesListSetGamesCopyWith(
+          _$FavoriteGamesListSetGames value,
+          $Res Function(_$FavoriteGamesListSetGames) then) =
+      __$$FavoriteGamesListSetGamesCopyWithImpl<$Res>;
   $Res call({List<Game> games});
 }
 
 /// @nodoc
-class _$FavoriteGamesListSetGamesCopyWithImpl<$Res>
+class __$$FavoriteGamesListSetGamesCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListSetGamesCopyWith<$Res> {
-  _$FavoriteGamesListSetGamesCopyWithImpl(FavoriteGamesListSetGames _value,
-      $Res Function(FavoriteGamesListSetGames) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListSetGames));
+    implements _$$FavoriteGamesListSetGamesCopyWith<$Res> {
+  __$$FavoriteGamesListSetGamesCopyWithImpl(_$FavoriteGamesListSetGames _value,
+      $Res Function(_$FavoriteGamesListSetGames) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListSetGames));
 
   @override
-  FavoriteGamesListSetGames get _value =>
-      super._value as FavoriteGamesListSetGames;
+  _$FavoriteGamesListSetGames get _value =>
+      super._value as _$FavoriteGamesListSetGames;
 
   @override
   $Res call({
     Object? games = freezed,
   }) {
-    return _then(FavoriteGamesListSetGames(
+    return _then(_$FavoriteGamesListSetGames(
       games == freezed
-          ? _value.games
+          ? _value._games
           : games // ignore: cast_nullable_to_non_nullable
               as List<Game>,
     ));
@@ -757,10 +691,14 @@ class _$FavoriteGamesListSetGamesCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
-  const _$FavoriteGamesListSetGames(this.games);
+  const _$FavoriteGamesListSetGames(final List<Game> games) : _games = games;
 
+  final List<Game> _games;
   @override
-  final List<Game> games;
+  List<Game> get games {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_games);
+  }
 
   @override
   String toString() {
@@ -771,19 +709,19 @@ class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListSetGames &&
-            const DeepCollectionEquality().equals(other.games, games));
+            other is _$FavoriteGamesListSetGames &&
+            const DeepCollectionEquality().equals(other._games, _games));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(games));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_games));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListSetGamesCopyWith<FavoriteGamesListSetGames> get copyWith =>
-      _$FavoriteGamesListSetGamesCopyWithImpl<FavoriteGamesListSetGames>(
-          this, _$identity);
+  _$$FavoriteGamesListSetGamesCopyWith<_$FavoriteGamesListSetGames>
+      get copyWith => __$$FavoriteGamesListSetGamesCopyWithImpl<
+          _$FavoriteGamesListSetGames>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -912,44 +850,44 @@ class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
 }
 
 abstract class FavoriteGamesListSetGames implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListSetGames(List<Game> games) =
+  const factory FavoriteGamesListSetGames(final List<Game> games) =
       _$FavoriteGamesListSetGames;
 
-  List<Game> get games;
+  List<Game> get games => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListSetGamesCopyWith<FavoriteGamesListSetGames> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FavoriteGamesListSetGamesCopyWith<_$FavoriteGamesListSetGames>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListSetFavoritesCopyWith<$Res> {
-  factory $FavoriteGamesListSetFavoritesCopyWith(
-          FavoriteGamesListSetFavorites value,
-          $Res Function(FavoriteGamesListSetFavorites) then) =
-      _$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListSetFavoritesCopyWith<$Res> {
+  factory _$$FavoriteGamesListSetFavoritesCopyWith(
+          _$FavoriteGamesListSetFavorites value,
+          $Res Function(_$FavoriteGamesListSetFavorites) then) =
+      __$$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>;
   $Res call({List<FavoriteGame> favorites});
 }
 
 /// @nodoc
-class _$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>
+class __$$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListSetFavoritesCopyWith<$Res> {
-  _$FavoriteGamesListSetFavoritesCopyWithImpl(
-      FavoriteGamesListSetFavorites _value,
-      $Res Function(FavoriteGamesListSetFavorites) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListSetFavorites));
+    implements _$$FavoriteGamesListSetFavoritesCopyWith<$Res> {
+  __$$FavoriteGamesListSetFavoritesCopyWithImpl(
+      _$FavoriteGamesListSetFavorites _value,
+      $Res Function(_$FavoriteGamesListSetFavorites) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListSetFavorites));
 
   @override
-  FavoriteGamesListSetFavorites get _value =>
-      super._value as FavoriteGamesListSetFavorites;
+  _$FavoriteGamesListSetFavorites get _value =>
+      super._value as _$FavoriteGamesListSetFavorites;
 
   @override
   $Res call({
     Object? favorites = freezed,
   }) {
-    return _then(FavoriteGamesListSetFavorites(
+    return _then(_$FavoriteGamesListSetFavorites(
       favorites == freezed
-          ? _value.favorites
+          ? _value._favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<FavoriteGame>,
     ));
@@ -959,10 +897,15 @@ class _$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
-  const _$FavoriteGamesListSetFavorites(this.favorites);
+  const _$FavoriteGamesListSetFavorites(final List<FavoriteGame> favorites)
+      : _favorites = favorites;
 
+  final List<FavoriteGame> _favorites;
   @override
-  final List<FavoriteGame> favorites;
+  List<FavoriteGame> get favorites {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favorites);
+  }
 
   @override
   String toString() {
@@ -973,19 +916,20 @@ class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListSetFavorites &&
-            const DeepCollectionEquality().equals(other.favorites, favorites));
+            other is _$FavoriteGamesListSetFavorites &&
+            const DeepCollectionEquality()
+                .equals(other._favorites, _favorites));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(favorites));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_favorites));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListSetFavoritesCopyWith<FavoriteGamesListSetFavorites>
-      get copyWith => _$FavoriteGamesListSetFavoritesCopyWithImpl<
-          FavoriteGamesListSetFavorites>(this, _$identity);
+  _$$FavoriteGamesListSetFavoritesCopyWith<_$FavoriteGamesListSetFavorites>
+      get copyWith => __$$FavoriteGamesListSetFavoritesCopyWithImpl<
+          _$FavoriteGamesListSetFavorites>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1114,32 +1058,33 @@ class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
 }
 
 abstract class FavoriteGamesListSetFavorites implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListSetFavorites(List<FavoriteGame> favorites) =
-      _$FavoriteGamesListSetFavorites;
+  const factory FavoriteGamesListSetFavorites(
+      final List<FavoriteGame> favorites) = _$FavoriteGamesListSetFavorites;
 
-  List<FavoriteGame> get favorites;
+  List<FavoriteGame> get favorites => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListSetFavoritesCopyWith<FavoriteGamesListSetFavorites>
+  _$$FavoriteGamesListSetFavoritesCopyWith<_$FavoriteGamesListSetFavorites>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListMergeCopyWith<$Res> {
-  factory $FavoriteGamesListMergeCopyWith(FavoriteGamesListMerge value,
-          $Res Function(FavoriteGamesListMerge) then) =
-      _$FavoriteGamesListMergeCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListMergeCopyWith<$Res> {
+  factory _$$FavoriteGamesListMergeCopyWith(_$FavoriteGamesListMerge value,
+          $Res Function(_$FavoriteGamesListMerge) then) =
+      __$$FavoriteGamesListMergeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListMergeCopyWithImpl<$Res>
+class __$$FavoriteGamesListMergeCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListMergeCopyWith<$Res> {
-  _$FavoriteGamesListMergeCopyWithImpl(FavoriteGamesListMerge _value,
-      $Res Function(FavoriteGamesListMerge) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListMerge));
+    implements _$$FavoriteGamesListMergeCopyWith<$Res> {
+  __$$FavoriteGamesListMergeCopyWithImpl(_$FavoriteGamesListMerge _value,
+      $Res Function(_$FavoriteGamesListMerge) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListMerge));
 
   @override
-  FavoriteGamesListMerge get _value => super._value as FavoriteGamesListMerge;
+  _$FavoriteGamesListMerge get _value =>
+      super._value as _$FavoriteGamesListMerge;
 }
 
 /// @nodoc
@@ -1155,7 +1100,7 @@ class _$FavoriteGamesListMerge implements FavoriteGamesListMerge {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListMerge);
+        (other.runtimeType == runtimeType && other is _$FavoriteGamesListMerge);
   }
 
   @override
@@ -1292,34 +1237,34 @@ abstract class FavoriteGamesListMerge implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFinishMergingCopyWith<$Res> {
-  factory $FavoriteGamesListFinishMergingCopyWith(
-          FavoriteGamesListFinishMerging value,
-          $Res Function(FavoriteGamesListFinishMerging) then) =
-      _$FavoriteGamesListFinishMergingCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFinishMergingCopyWith<$Res> {
+  factory _$$FavoriteGamesListFinishMergingCopyWith(
+          _$FavoriteGamesListFinishMerging value,
+          $Res Function(_$FavoriteGamesListFinishMerging) then) =
+      __$$FavoriteGamesListFinishMergingCopyWithImpl<$Res>;
   $Res call({List<GameVM> viewModels});
 }
 
 /// @nodoc
-class _$FavoriteGamesListFinishMergingCopyWithImpl<$Res>
+class __$$FavoriteGamesListFinishMergingCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFinishMergingCopyWith<$Res> {
-  _$FavoriteGamesListFinishMergingCopyWithImpl(
-      FavoriteGamesListFinishMerging _value,
-      $Res Function(FavoriteGamesListFinishMerging) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFinishMerging));
+    implements _$$FavoriteGamesListFinishMergingCopyWith<$Res> {
+  __$$FavoriteGamesListFinishMergingCopyWithImpl(
+      _$FavoriteGamesListFinishMerging _value,
+      $Res Function(_$FavoriteGamesListFinishMerging) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListFinishMerging));
 
   @override
-  FavoriteGamesListFinishMerging get _value =>
-      super._value as FavoriteGamesListFinishMerging;
+  _$FavoriteGamesListFinishMerging get _value =>
+      super._value as _$FavoriteGamesListFinishMerging;
 
   @override
   $Res call({
     Object? viewModels = freezed,
   }) {
-    return _then(FavoriteGamesListFinishMerging(
+    return _then(_$FavoriteGamesListFinishMerging(
       viewModels == freezed
-          ? _value.viewModels
+          ? _value._viewModels
           : viewModels // ignore: cast_nullable_to_non_nullable
               as List<GameVM>,
     ));
@@ -1330,10 +1275,15 @@ class _$FavoriteGamesListFinishMergingCopyWithImpl<$Res>
 
 class _$FavoriteGamesListFinishMerging
     implements FavoriteGamesListFinishMerging {
-  const _$FavoriteGamesListFinishMerging(this.viewModels);
+  const _$FavoriteGamesListFinishMerging(final List<GameVM> viewModels)
+      : _viewModels = viewModels;
 
+  final List<GameVM> _viewModels;
   @override
-  final List<GameVM> viewModels;
+  List<GameVM> get viewModels {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_viewModels);
+  }
 
   @override
   String toString() {
@@ -1344,20 +1294,20 @@ class _$FavoriteGamesListFinishMerging
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFinishMerging &&
+            other is _$FavoriteGamesListFinishMerging &&
             const DeepCollectionEquality()
-                .equals(other.viewModels, viewModels));
+                .equals(other._viewModels, _viewModels));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(viewModels));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_viewModels));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListFinishMergingCopyWith<FavoriteGamesListFinishMerging>
-      get copyWith => _$FavoriteGamesListFinishMergingCopyWithImpl<
-          FavoriteGamesListFinishMerging>(this, _$identity);
+  _$$FavoriteGamesListFinishMergingCopyWith<_$FavoriteGamesListFinishMerging>
+      get copyWith => __$$FavoriteGamesListFinishMergingCopyWithImpl<
+          _$FavoriteGamesListFinishMerging>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1487,45 +1437,45 @@ class _$FavoriteGamesListFinishMerging
 
 abstract class FavoriteGamesListFinishMerging
     implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListFinishMerging(List<GameVM> viewModels) =
+  const factory FavoriteGamesListFinishMerging(final List<GameVM> viewModels) =
       _$FavoriteGamesListFinishMerging;
 
-  List<GameVM> get viewModels;
+  List<GameVM> get viewModels => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListFinishMergingCopyWith<FavoriteGamesListFinishMerging>
+  _$$FavoriteGamesListFinishMergingCopyWith<_$FavoriteGamesListFinishMerging>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListAddFavoriteCopyWith<$Res> {
-  factory $FavoriteGamesListAddFavoriteCopyWith(
-          FavoriteGamesListAddFavorite value,
-          $Res Function(FavoriteGamesListAddFavorite) then) =
-      _$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListAddFavoriteCopyWith<$Res> {
+  factory _$$FavoriteGamesListAddFavoriteCopyWith(
+          _$FavoriteGamesListAddFavorite value,
+          $Res Function(_$FavoriteGamesListAddFavorite) then) =
+      __$$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>;
   $Res call({String uid, Game game});
 
   $GameCopyWith<$Res> get game;
 }
 
 /// @nodoc
-class _$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>
+class __$$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListAddFavoriteCopyWith<$Res> {
-  _$FavoriteGamesListAddFavoriteCopyWithImpl(
-      FavoriteGamesListAddFavorite _value,
-      $Res Function(FavoriteGamesListAddFavorite) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListAddFavorite));
+    implements _$$FavoriteGamesListAddFavoriteCopyWith<$Res> {
+  __$$FavoriteGamesListAddFavoriteCopyWithImpl(
+      _$FavoriteGamesListAddFavorite _value,
+      $Res Function(_$FavoriteGamesListAddFavorite) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListAddFavorite));
 
   @override
-  FavoriteGamesListAddFavorite get _value =>
-      super._value as FavoriteGamesListAddFavorite;
+  _$FavoriteGamesListAddFavorite get _value =>
+      super._value as _$FavoriteGamesListAddFavorite;
 
   @override
   $Res call({
     Object? uid = freezed,
     Object? game = freezed,
   }) {
-    return _then(FavoriteGamesListAddFavorite(
+    return _then(_$FavoriteGamesListAddFavorite(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -1564,7 +1514,7 @@ class _$FavoriteGamesListAddFavorite implements FavoriteGamesListAddFavorite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListAddFavorite &&
+            other is _$FavoriteGamesListAddFavorite &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.game, game));
   }
@@ -1577,9 +1527,9 @@ class _$FavoriteGamesListAddFavorite implements FavoriteGamesListAddFavorite {
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListAddFavoriteCopyWith<FavoriteGamesListAddFavorite>
-      get copyWith => _$FavoriteGamesListAddFavoriteCopyWithImpl<
-          FavoriteGamesListAddFavorite>(this, _$identity);
+  _$$FavoriteGamesListAddFavoriteCopyWith<_$FavoriteGamesListAddFavorite>
+      get copyWith => __$$FavoriteGamesListAddFavoriteCopyWithImpl<
+          _$FavoriteGamesListAddFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1708,46 +1658,46 @@ class _$FavoriteGamesListAddFavorite implements FavoriteGamesListAddFavorite {
 }
 
 abstract class FavoriteGamesListAddFavorite implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListAddFavorite(String uid, Game game) =
-      _$FavoriteGamesListAddFavorite;
+  const factory FavoriteGamesListAddFavorite(
+      final String uid, final Game game) = _$FavoriteGamesListAddFavorite;
 
-  String get uid;
-  Game get game;
+  String get uid => throw _privateConstructorUsedError;
+  Game get game => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListAddFavoriteCopyWith<FavoriteGamesListAddFavorite>
+  _$$FavoriteGamesListAddFavoriteCopyWith<_$FavoriteGamesListAddFavorite>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
-  factory $FavoriteGamesListRemoveFavoriteCopyWith(
-          FavoriteGamesListRemoveFavorite value,
-          $Res Function(FavoriteGamesListRemoveFavorite) then) =
-      _$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
+  factory _$$FavoriteGamesListRemoveFavoriteCopyWith(
+          _$FavoriteGamesListRemoveFavorite value,
+          $Res Function(_$FavoriteGamesListRemoveFavorite) then) =
+      __$$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>;
   $Res call({String uid, Game game});
 
   $GameCopyWith<$Res> get game;
 }
 
 /// @nodoc
-class _$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>
+class __$$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
-  _$FavoriteGamesListRemoveFavoriteCopyWithImpl(
-      FavoriteGamesListRemoveFavorite _value,
-      $Res Function(FavoriteGamesListRemoveFavorite) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListRemoveFavorite));
+    implements _$$FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
+  __$$FavoriteGamesListRemoveFavoriteCopyWithImpl(
+      _$FavoriteGamesListRemoveFavorite _value,
+      $Res Function(_$FavoriteGamesListRemoveFavorite) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListRemoveFavorite));
 
   @override
-  FavoriteGamesListRemoveFavorite get _value =>
-      super._value as FavoriteGamesListRemoveFavorite;
+  _$FavoriteGamesListRemoveFavorite get _value =>
+      super._value as _$FavoriteGamesListRemoveFavorite;
 
   @override
   $Res call({
     Object? uid = freezed,
     Object? game = freezed,
   }) {
-    return _then(FavoriteGamesListRemoveFavorite(
+    return _then(_$FavoriteGamesListRemoveFavorite(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -1787,7 +1737,7 @@ class _$FavoriteGamesListRemoveFavorite
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListRemoveFavorite &&
+            other is _$FavoriteGamesListRemoveFavorite &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.game, game));
   }
@@ -1800,9 +1750,9 @@ class _$FavoriteGamesListRemoveFavorite
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListRemoveFavoriteCopyWith<FavoriteGamesListRemoveFavorite>
-      get copyWith => _$FavoriteGamesListRemoveFavoriteCopyWithImpl<
-          FavoriteGamesListRemoveFavorite>(this, _$identity);
+  _$$FavoriteGamesListRemoveFavoriteCopyWith<_$FavoriteGamesListRemoveFavorite>
+      get copyWith => __$$FavoriteGamesListRemoveFavoriteCopyWithImpl<
+          _$FavoriteGamesListRemoveFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1932,41 +1882,42 @@ class _$FavoriteGamesListRemoveFavorite
 
 abstract class FavoriteGamesListRemoveFavorite
     implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListRemoveFavorite(String uid, Game game) =
-      _$FavoriteGamesListRemoveFavorite;
+  const factory FavoriteGamesListRemoveFavorite(
+      final String uid, final Game game) = _$FavoriteGamesListRemoveFavorite;
 
-  String get uid;
-  Game get game;
+  String get uid => throw _privateConstructorUsedError;
+  Game get game => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListRemoveFavoriteCopyWith<FavoriteGamesListRemoveFavorite>
+  _$$FavoriteGamesListRemoveFavoriteCopyWith<_$FavoriteGamesListRemoveFavorite>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListHasErrorCopyWith<$Res> {
-  factory $FavoriteGamesListHasErrorCopyWith(FavoriteGamesListHasError value,
-          $Res Function(FavoriteGamesListHasError) then) =
-      _$FavoriteGamesListHasErrorCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListHasErrorCopyWith<$Res> {
+  factory _$$FavoriteGamesListHasErrorCopyWith(
+          _$FavoriteGamesListHasError value,
+          $Res Function(_$FavoriteGamesListHasError) then) =
+      __$$FavoriteGamesListHasErrorCopyWithImpl<$Res>;
   $Res call({Object? error});
 }
 
 /// @nodoc
-class _$FavoriteGamesListHasErrorCopyWithImpl<$Res>
+class __$$FavoriteGamesListHasErrorCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListHasErrorCopyWith<$Res> {
-  _$FavoriteGamesListHasErrorCopyWithImpl(FavoriteGamesListHasError _value,
-      $Res Function(FavoriteGamesListHasError) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListHasError));
+    implements _$$FavoriteGamesListHasErrorCopyWith<$Res> {
+  __$$FavoriteGamesListHasErrorCopyWithImpl(_$FavoriteGamesListHasError _value,
+      $Res Function(_$FavoriteGamesListHasError) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListHasError));
 
   @override
-  FavoriteGamesListHasError get _value =>
-      super._value as FavoriteGamesListHasError;
+  _$FavoriteGamesListHasError get _value =>
+      super._value as _$FavoriteGamesListHasError;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(FavoriteGamesListHasError(
+    return _then(_$FavoriteGamesListHasError(
       error == freezed ? _value.error : error,
     ));
   }
@@ -1989,7 +1940,7 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListHasError &&
+            other is _$FavoriteGamesListHasError &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -1999,9 +1950,9 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListHasErrorCopyWith<FavoriteGamesListHasError> get copyWith =>
-      _$FavoriteGamesListHasErrorCopyWithImpl<FavoriteGamesListHasError>(
-          this, _$identity);
+  _$$FavoriteGamesListHasErrorCopyWith<_$FavoriteGamesListHasError>
+      get copyWith => __$$FavoriteGamesListHasErrorCopyWithImpl<
+          _$FavoriteGamesListHasError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2130,32 +2081,33 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
 }
 
 abstract class FavoriteGamesListHasError implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListHasError(Object? error) =
+  const factory FavoriteGamesListHasError(final Object? error) =
       _$FavoriteGamesListHasError;
 
-  Object? get error;
+  Object? get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListHasErrorCopyWith<FavoriteGamesListHasError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FavoriteGamesListHasErrorCopyWith<_$FavoriteGamesListHasError>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListRetryCopyWith<$Res> {
-  factory $FavoriteGamesListRetryCopyWith(FavoriteGamesListRetry value,
-          $Res Function(FavoriteGamesListRetry) then) =
-      _$FavoriteGamesListRetryCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListRetryCopyWith<$Res> {
+  factory _$$FavoriteGamesListRetryCopyWith(_$FavoriteGamesListRetry value,
+          $Res Function(_$FavoriteGamesListRetry) then) =
+      __$$FavoriteGamesListRetryCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListRetryCopyWithImpl<$Res>
+class __$$FavoriteGamesListRetryCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListRetryCopyWith<$Res> {
-  _$FavoriteGamesListRetryCopyWithImpl(FavoriteGamesListRetry _value,
-      $Res Function(FavoriteGamesListRetry) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListRetry));
+    implements _$$FavoriteGamesListRetryCopyWith<$Res> {
+  __$$FavoriteGamesListRetryCopyWithImpl(_$FavoriteGamesListRetry _value,
+      $Res Function(_$FavoriteGamesListRetry) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListRetry));
 
   @override
-  FavoriteGamesListRetry get _value => super._value as FavoriteGamesListRetry;
+  _$FavoriteGamesListRetry get _value =>
+      super._value as _$FavoriteGamesListRetry;
 }
 
 /// @nodoc
@@ -2171,7 +2123,7 @@ class _$FavoriteGamesListRetry implements FavoriteGamesListRetry {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListRetry);
+        (other.runtimeType == runtimeType && other is _$FavoriteGamesListRetry);
   }
 
   @override
@@ -2308,23 +2260,23 @@ abstract class FavoriteGamesListRetry implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListRefreshCopyWith<$Res> {
-  factory $FavoriteGamesListRefreshCopyWith(FavoriteGamesListRefresh value,
-          $Res Function(FavoriteGamesListRefresh) then) =
-      _$FavoriteGamesListRefreshCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListRefreshCopyWith<$Res> {
+  factory _$$FavoriteGamesListRefreshCopyWith(_$FavoriteGamesListRefresh value,
+          $Res Function(_$FavoriteGamesListRefresh) then) =
+      __$$FavoriteGamesListRefreshCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListRefreshCopyWithImpl<$Res>
+class __$$FavoriteGamesListRefreshCopyWithImpl<$Res>
     extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListRefreshCopyWith<$Res> {
-  _$FavoriteGamesListRefreshCopyWithImpl(FavoriteGamesListRefresh _value,
-      $Res Function(FavoriteGamesListRefresh) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListRefresh));
+    implements _$$FavoriteGamesListRefreshCopyWith<$Res> {
+  __$$FavoriteGamesListRefreshCopyWithImpl(_$FavoriteGamesListRefresh _value,
+      $Res Function(_$FavoriteGamesListRefresh) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListRefresh));
 
   @override
-  FavoriteGamesListRefresh get _value =>
-      super._value as FavoriteGamesListRefresh;
+  _$FavoriteGamesListRefresh get _value =>
+      super._value as _$FavoriteGamesListRefresh;
 }
 
 /// @nodoc
@@ -2340,7 +2292,8 @@ class _$FavoriteGamesListRefresh implements FavoriteGamesListRefresh {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListRefresh);
+        (other.runtimeType == runtimeType &&
+            other is _$FavoriteGamesListRefresh);
   }
 
   @override
@@ -2477,33 +2430,6 @@ abstract class FavoriteGamesListRefresh implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-class _$FavoriteGamesListStateTearOff {
-  const _$FavoriteGamesListStateTearOff();
-
-  FavoriteGamesListLoading loading() {
-    return const FavoriteGamesListLoading();
-  }
-
-  FavoriteGamesListLoaded loaded(List<FavoriteGame> favorites, List<Game> games,
-      [List<GameVM> viewModels = const []]) {
-    return FavoriteGamesListLoaded(
-      favorites,
-      games,
-      viewModels,
-    );
-  }
-
-  FavoriteGamesListError error(String message) {
-    return FavoriteGamesListError(
-      message,
-    );
-  }
-}
-
-/// @nodoc
-const $FavoriteGamesListState = _$FavoriteGamesListStateTearOff();
-
-/// @nodoc
 mixin _$FavoriteGamesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -2575,23 +2501,23 @@ class _$FavoriteGamesListStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListLoadingCopyWith<$Res> {
-  factory $FavoriteGamesListLoadingCopyWith(FavoriteGamesListLoading value,
-          $Res Function(FavoriteGamesListLoading) then) =
-      _$FavoriteGamesListLoadingCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListLoadingCopyWith<$Res> {
+  factory _$$FavoriteGamesListLoadingCopyWith(_$FavoriteGamesListLoading value,
+          $Res Function(_$FavoriteGamesListLoading) then) =
+      __$$FavoriteGamesListLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListLoadingCopyWithImpl<$Res>
+class __$$FavoriteGamesListLoadingCopyWithImpl<$Res>
     extends _$FavoriteGamesListStateCopyWithImpl<$Res>
-    implements $FavoriteGamesListLoadingCopyWith<$Res> {
-  _$FavoriteGamesListLoadingCopyWithImpl(FavoriteGamesListLoading _value,
-      $Res Function(FavoriteGamesListLoading) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListLoading));
+    implements _$$FavoriteGamesListLoadingCopyWith<$Res> {
+  __$$FavoriteGamesListLoadingCopyWithImpl(_$FavoriteGamesListLoading _value,
+      $Res Function(_$FavoriteGamesListLoading) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListLoading));
 
   @override
-  FavoriteGamesListLoading get _value =>
-      super._value as FavoriteGamesListLoading;
+  _$FavoriteGamesListLoading get _value =>
+      super._value as _$FavoriteGamesListLoading;
 }
 
 /// @nodoc
@@ -2607,7 +2533,8 @@ class _$FavoriteGamesListLoading implements FavoriteGamesListLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListLoading);
+        (other.runtimeType == runtimeType &&
+            other is _$FavoriteGamesListLoading);
   }
 
   @override
@@ -2693,10 +2620,10 @@ abstract class FavoriteGamesListLoading implements FavoriteGamesListState {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListLoadedCopyWith<$Res> {
-  factory $FavoriteGamesListLoadedCopyWith(FavoriteGamesListLoaded value,
-          $Res Function(FavoriteGamesListLoaded) then) =
-      _$FavoriteGamesListLoadedCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListLoadedCopyWith<$Res> {
+  factory _$$FavoriteGamesListLoadedCopyWith(_$FavoriteGamesListLoaded value,
+          $Res Function(_$FavoriteGamesListLoaded) then) =
+      __$$FavoriteGamesListLoadedCopyWithImpl<$Res>;
   $Res call(
       {List<FavoriteGame> favorites,
       List<Game> games,
@@ -2704,15 +2631,16 @@ abstract class $FavoriteGamesListLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FavoriteGamesListLoadedCopyWithImpl<$Res>
+class __$$FavoriteGamesListLoadedCopyWithImpl<$Res>
     extends _$FavoriteGamesListStateCopyWithImpl<$Res>
-    implements $FavoriteGamesListLoadedCopyWith<$Res> {
-  _$FavoriteGamesListLoadedCopyWithImpl(FavoriteGamesListLoaded _value,
-      $Res Function(FavoriteGamesListLoaded) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListLoaded));
+    implements _$$FavoriteGamesListLoadedCopyWith<$Res> {
+  __$$FavoriteGamesListLoadedCopyWithImpl(_$FavoriteGamesListLoaded _value,
+      $Res Function(_$FavoriteGamesListLoaded) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListLoaded));
 
   @override
-  FavoriteGamesListLoaded get _value => super._value as FavoriteGamesListLoaded;
+  _$FavoriteGamesListLoaded get _value =>
+      super._value as _$FavoriteGamesListLoaded;
 
   @override
   $Res call({
@@ -2720,17 +2648,17 @@ class _$FavoriteGamesListLoadedCopyWithImpl<$Res>
     Object? games = freezed,
     Object? viewModels = freezed,
   }) {
-    return _then(FavoriteGamesListLoaded(
+    return _then(_$FavoriteGamesListLoaded(
       favorites == freezed
-          ? _value.favorites
+          ? _value._favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<FavoriteGame>,
       games == freezed
-          ? _value.games
+          ? _value._games
           : games // ignore: cast_nullable_to_non_nullable
               as List<Game>,
       viewModels == freezed
-          ? _value.viewModels
+          ? _value._viewModels
           : viewModels // ignore: cast_nullable_to_non_nullable
               as List<GameVM>,
     ));
@@ -2740,16 +2668,34 @@ class _$FavoriteGamesListLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
-  const _$FavoriteGamesListLoaded(this.favorites, this.games,
-      [this.viewModels = const []]);
+  const _$FavoriteGamesListLoaded(
+      final List<FavoriteGame> favorites, final List<Game> games,
+      [final List<GameVM> viewModels = const []])
+      : _favorites = favorites,
+        _games = games,
+        _viewModels = viewModels;
 
+  final List<FavoriteGame> _favorites;
   @override
-  final List<FavoriteGame> favorites;
+  List<FavoriteGame> get favorites {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favorites);
+  }
+
+  final List<Game> _games;
   @override
-  final List<Game> games;
+  List<Game> get games {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_games);
+  }
+
+  final List<GameVM> _viewModels;
+  @override
   @JsonKey()
-  @override
-  final List<GameVM> viewModels;
+  List<GameVM> get viewModels {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_viewModels);
+  }
 
   @override
   String toString() {
@@ -2760,24 +2706,25 @@ class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListLoaded &&
-            const DeepCollectionEquality().equals(other.favorites, favorites) &&
-            const DeepCollectionEquality().equals(other.games, games) &&
+            other is _$FavoriteGamesListLoaded &&
             const DeepCollectionEquality()
-                .equals(other.viewModels, viewModels));
+                .equals(other._favorites, _favorites) &&
+            const DeepCollectionEquality().equals(other._games, _games) &&
+            const DeepCollectionEquality()
+                .equals(other._viewModels, _viewModels));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(favorites),
-      const DeepCollectionEquality().hash(games),
-      const DeepCollectionEquality().hash(viewModels));
+      const DeepCollectionEquality().hash(_favorites),
+      const DeepCollectionEquality().hash(_games),
+      const DeepCollectionEquality().hash(_viewModels));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListLoadedCopyWith<FavoriteGamesListLoaded> get copyWith =>
-      _$FavoriteGamesListLoadedCopyWithImpl<FavoriteGamesListLoaded>(
+  _$$FavoriteGamesListLoadedCopyWith<_$FavoriteGamesListLoaded> get copyWith =>
+      __$$FavoriteGamesListLoadedCopyWithImpl<_$FavoriteGamesListLoaded>(
           this, _$identity);
 
   @override
@@ -2857,41 +2804,42 @@ class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
 
 abstract class FavoriteGamesListLoaded implements FavoriteGamesListState {
   const factory FavoriteGamesListLoaded(
-      List<FavoriteGame> favorites, List<Game> games,
-      [List<GameVM> viewModels]) = _$FavoriteGamesListLoaded;
+      final List<FavoriteGame> favorites, final List<Game> games,
+      [final List<GameVM> viewModels]) = _$FavoriteGamesListLoaded;
 
-  List<FavoriteGame> get favorites;
-  List<Game> get games;
-  List<GameVM> get viewModels;
+  List<FavoriteGame> get favorites => throw _privateConstructorUsedError;
+  List<Game> get games => throw _privateConstructorUsedError;
+  List<GameVM> get viewModels => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListLoadedCopyWith<FavoriteGamesListLoaded> get copyWith =>
+  _$$FavoriteGamesListLoadedCopyWith<_$FavoriteGamesListLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListErrorCopyWith<$Res> {
-  factory $FavoriteGamesListErrorCopyWith(FavoriteGamesListError value,
-          $Res Function(FavoriteGamesListError) then) =
-      _$FavoriteGamesListErrorCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListErrorCopyWith<$Res> {
+  factory _$$FavoriteGamesListErrorCopyWith(_$FavoriteGamesListError value,
+          $Res Function(_$FavoriteGamesListError) then) =
+      __$$FavoriteGamesListErrorCopyWithImpl<$Res>;
   $Res call({String message});
 }
 
 /// @nodoc
-class _$FavoriteGamesListErrorCopyWithImpl<$Res>
+class __$$FavoriteGamesListErrorCopyWithImpl<$Res>
     extends _$FavoriteGamesListStateCopyWithImpl<$Res>
-    implements $FavoriteGamesListErrorCopyWith<$Res> {
-  _$FavoriteGamesListErrorCopyWithImpl(FavoriteGamesListError _value,
-      $Res Function(FavoriteGamesListError) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListError));
+    implements _$$FavoriteGamesListErrorCopyWith<$Res> {
+  __$$FavoriteGamesListErrorCopyWithImpl(_$FavoriteGamesListError _value,
+      $Res Function(_$FavoriteGamesListError) _then)
+      : super(_value, (v) => _then(v as _$FavoriteGamesListError));
 
   @override
-  FavoriteGamesListError get _value => super._value as FavoriteGamesListError;
+  _$FavoriteGamesListError get _value =>
+      super._value as _$FavoriteGamesListError;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(FavoriteGamesListError(
+    return _then(_$FavoriteGamesListError(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -2917,7 +2865,7 @@ class _$FavoriteGamesListError implements FavoriteGamesListError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListError &&
+            other is _$FavoriteGamesListError &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -2927,8 +2875,8 @@ class _$FavoriteGamesListError implements FavoriteGamesListError {
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListErrorCopyWith<FavoriteGamesListError> get copyWith =>
-      _$FavoriteGamesListErrorCopyWithImpl<FavoriteGamesListError>(
+  _$$FavoriteGamesListErrorCopyWith<_$FavoriteGamesListError> get copyWith =>
+      __$$FavoriteGamesListErrorCopyWithImpl<_$FavoriteGamesListError>(
           this, _$identity);
 
   @override
@@ -3007,11 +2955,11 @@ class _$FavoriteGamesListError implements FavoriteGamesListError {
 }
 
 abstract class FavoriteGamesListError implements FavoriteGamesListState {
-  const factory FavoriteGamesListError(String message) =
+  const factory FavoriteGamesListError(final String message) =
       _$FavoriteGamesListError;
 
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoriteGamesListErrorCopyWith<FavoriteGamesListError> get copyWith =>
+  _$$FavoriteGamesListErrorCopyWith<_$FavoriteGamesListError> get copyWith =>
       throw _privateConstructorUsedError;
 }

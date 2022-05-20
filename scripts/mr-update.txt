@@ -1,0 +1,5 @@
+============================  
+Codemagic Build Link:  
+
+**BUILD_TYPE**
+VERSION: [NAME](URL)  
