@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'game.dart';
@@ -11,50 +12,11 @@ part of 'game.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Game _$GameFromJson(Map<String, dynamic> json) {
   return _Game.fromJson(json);
 }
-
-/// @nodoc
-class _$GameTearOff {
-  const _$GameTearOff();
-
-  _Game call(
-      int id,
-      String title,
-      String thumbnail,
-      String shortDescription,
-      String gameUrl,
-      String genre,
-      String platform,
-      String publisher,
-      String developer,
-      DateTime releaseDate,
-      String freetogameProfileUrl) {
-    return _Game(
-      id,
-      title,
-      thumbnail,
-      shortDescription,
-      gameUrl,
-      genre,
-      platform,
-      publisher,
-      developer,
-      releaseDate,
-      freetogameProfileUrl,
-    );
-  }
-
-  Game fromJson(Map<String, Object?> json) {
-    return Game.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Game = _$GameTearOff();
 
 /// @nodoc
 mixin _$Game {
@@ -165,9 +127,9 @@ class _$GameCopyWithImpl<$Res> implements $GameCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GameCopyWith<$Res> implements $GameCopyWith<$Res> {
-  factory _$GameCopyWith(_Game value, $Res Function(_Game) then) =
-      __$GameCopyWithImpl<$Res>;
+abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
+  factory _$$_GameCopyWith(_$_Game value, $Res Function(_$_Game) then) =
+      __$$_GameCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -184,13 +146,13 @@ abstract class _$GameCopyWith<$Res> implements $GameCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
-    implements _$GameCopyWith<$Res> {
-  __$GameCopyWithImpl(_Game _value, $Res Function(_Game) _then)
-      : super(_value, (v) => _then(v as _Game));
+class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
+    implements _$$_GameCopyWith<$Res> {
+  __$$_GameCopyWithImpl(_$_Game _value, $Res Function(_$_Game) _then)
+      : super(_value, (v) => _then(v as _$_Game));
 
   @override
-  _Game get _value => super._value as _Game;
+  _$_Game get _value => super._value as _$_Game;
 
   @override
   $Res call({
@@ -206,7 +168,7 @@ class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
     Object? releaseDate = freezed,
     Object? freetogameProfileUrl = freezed,
   }) {
-    return _then(_Game(
+    return _then(_$_Game(
       id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -306,7 +268,7 @@ class _$_Game implements _Game {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Game &&
+            other is _$_Game &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.thumbnail, thumbnail) &&
@@ -323,6 +285,7 @@ class _$_Game implements _Game {
                 .equals(other.freetogameProfileUrl, freetogameProfileUrl));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -340,8 +303,8 @@ class _$_Game implements _Game {
 
   @JsonKey(ignore: true)
   @override
-  _$GameCopyWith<_Game> get copyWith =>
-      __$GameCopyWithImpl<_Game>(this, _$identity);
+  _$$_GameCopyWith<_$_Game> get copyWith =>
+      __$$_GameCopyWithImpl<_$_Game>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -351,43 +314,43 @@ class _$_Game implements _Game {
 
 abstract class _Game implements Game {
   const factory _Game(
-      int id,
-      String title,
-      String thumbnail,
-      String shortDescription,
-      String gameUrl,
-      String genre,
-      String platform,
-      String publisher,
-      String developer,
-      DateTime releaseDate,
-      String freetogameProfileUrl) = _$_Game;
+      final int id,
+      final String title,
+      final String thumbnail,
+      final String shortDescription,
+      final String gameUrl,
+      final String genre,
+      final String platform,
+      final String publisher,
+      final String developer,
+      final DateTime releaseDate,
+      final String freetogameProfileUrl) = _$_Game;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
 
   @override
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get thumbnail;
+  String get thumbnail => throw _privateConstructorUsedError;
   @override
-  String get shortDescription;
+  String get shortDescription => throw _privateConstructorUsedError;
   @override
-  String get gameUrl;
+  String get gameUrl => throw _privateConstructorUsedError;
   @override
-  String get genre;
+  String get genre => throw _privateConstructorUsedError;
   @override
-  String get platform;
+  String get platform => throw _privateConstructorUsedError;
   @override
-  String get publisher;
+  String get publisher => throw _privateConstructorUsedError;
   @override
-  String get developer;
+  String get developer => throw _privateConstructorUsedError;
   @override
-  DateTime get releaseDate;
+  DateTime get releaseDate => throw _privateConstructorUsedError;
   @override
-  String get freetogameProfileUrl;
+  String get freetogameProfileUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GameCopyWith<_Game> get copyWith => throw _privateConstructorUsedError;
+  _$$_GameCopyWith<_$_Game> get copyWith => throw _privateConstructorUsedError;
 }

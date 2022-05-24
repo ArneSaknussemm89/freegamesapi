@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-04-19 14:31:27</td>
+            <td class="headerValue">2022-05-22 22:26:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -66,15 +66,15 @@
 <a name="4"><span class="lineNum">       4 </span>            : import 'package:freegamesexample/features/games/application/services/favorites_service.dart';</a>
 <a name="5"><span class="lineNum">       5 </span>            : import 'package:freegamesexample/features/games/domain/value_objects/add_favorite_game_params.dart';</a>
 <a name="6"><span class="lineNum">       6 </span>            : </a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          4 : final addFavoriteGamesUseCaseProvider =</span></a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          4 :     Provider.autoDispose&lt;AddFavoriteGameUseCase&gt;((ref) {</span></a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          4 :   final favoritesService = ref.watch(favoriteGamesServiceProvider);</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineCov">          2 :   return AddFavoriteGameUseCase(favoritesService: favoritesService);</span></a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          4 : }, dependencies: [favoriteGamesServiceProvider]);</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          6 : final addFavoriteGamesUseCaseProvider =</span></a>
+<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          6 :     Provider.autoDispose&lt;AddFavoriteGameUseCase&gt;((ref) {</span></a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          6 :   final favoritesService = ref.watch(favoriteGamesServiceProvider);</span></a>
+<a name="10"><span class="lineNum">      10 </span><span class="lineCov">          3 :   return AddFavoriteGameUseCase(favoritesService: favoritesService);</span></a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          6 : }, dependencies: [favoriteGamesServiceProvider]);</span></a>
 <a name="12"><span class="lineNum">      12 </span>            : </a>
 <a name="13"><span class="lineNum">      13 </span>            : class AddFavoriteGameUseCase extends AsyncUseCaseWithParams&lt;Exception, Void,</a>
 <a name="14"><span class="lineNum">      14 </span>            :     AddFavoriteGameUseCaseParams&gt; {</a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          2 :   const AddFavoriteGameUseCase({required this.favoritesService});</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          3 :   const AddFavoriteGameUseCase({required this.favoritesService});</span></a>
 <a name="16"><span class="lineNum">      16 </span>            : </a>
 <a name="17"><span class="lineNum">      17 </span>            :   final FavoriteGamesService favoritesService;</a>
 <a name="18"><span class="lineNum">      18 </span>            : </a>

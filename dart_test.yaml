@@ -1,0 +1,53 @@
+timeout: 1m
+
+# Test tags are used by the Flutter test framework to group tests together.
+tags:
+  # Application style elements.
+  bloc:
+    retry: 1
+  service:
+    retry: 1
+  use_case:
+    retry: 1
+    
+  # Data style elements.
+  adapter:
+    retry: 1
+  repository:
+    retry: 1
+    
+  # Domain style elements
+  model:
+    retry: 1
+  value_object:
+    retry: 1
+    
+  # Presentation style elements.
+  widget:
+    retry: 1
+  screen:
+    retry: 1
+  utility:
+    retry: 1
+    
+  # Infrastructure style elements.
+  firebase:
+    retry: 1
+  firestore:
+    retry: 1
+  auth:
+    retry: 1
+  user:
+    retry: 1
+
+  # Feature style elements.
+  games:
+    retry: 1
+  favorites:
+    retry: 1
+    
+  # Basic elements.
+  stream:
+    retry: 1
+  future:
+    retry: 1

@@ -32,6 +32,9 @@
 /build/
 /test/coverage_helper_test.dart
 
+# Android related
+android/*.jks
+
 # Web related
 lib/generated_plugin_registrant.dart
 

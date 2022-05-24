@@ -24,10 +24,10 @@ class SquishSwitch extends StatefulWidget {
   final Matrix4? transform;
 
   @override
-  _SquishSwitchState createState() => _SquishSwitchState();
+  SquishSwitchState createState() => SquishSwitchState();
 }
 
-class _SquishSwitchState extends State<SquishSwitch> with AnimationMixin {
+class SquishSwitchState extends State<SquishSwitch> with AnimationMixin {
   final Duration duration = 300.milliseconds;
 
   void toggleAnimation() {

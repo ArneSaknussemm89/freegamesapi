@@ -3,6 +3,7 @@ part of layouts;
 class TabletLayout extends StatelessWidget {
   const TabletLayout({
     required this.bodyBuilder,
+    this.sidebarBuilder,
     this.bottomNav,
     this.fab,
     this.appBar,
@@ -14,6 +15,7 @@ class TabletLayout extends StatelessWidget {
   }) : super(key: key);
 
   final WidgetBuilder bodyBuilder;
+  final WidgetBuilder? sidebarBuilder;
 
   final Widget? bottomNav;
   final Widget? fab;
@@ -26,6 +28,11 @@ class TabletLayout extends StatelessWidget {
   Widget _buildLayout(BuildContext context, int sidebarWidth) {
     return Row(
       children: <Widget>[
+        if (sidebarBuilder != null)
+          ConstrainedBox(
+            constraints: BoxConstraints.expand(width: sidebarWidth.toDouble()),
+            child: sidebarBuilder!(context),
+          ),
         Expanded(
           child: Scaffold(
             backgroundColor: backgroundColor,
@@ -34,8 +41,7 @@ class TabletLayout extends StatelessWidget {
             bottomNavigationBar: bottomNav,
             floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
             floatingActionButton: showFab ? fab : null,
-            persistentFooterButtons:
-                bottomButtons.isNotEmpty ? [...bottomButtons] : null,
+            persistentFooterButtons: bottomButtons.isNotEmpty ? [...bottomButtons] : null,
             body: bodyBuilder(context),
           ),
         ),

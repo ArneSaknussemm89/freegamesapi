@@ -16,16 +16,11 @@ where:
 
 # run unit and widget tests
 runTests () {
-  dir=`pwd`
-  flutter packages get
-  echo "run analyzer in $dir"
-  flutter analyze
-  echo "run dartfmt in $dir"
-  flutter format --fix -n lib
-  echo "running tests in $dir"
-  # run tests with coverage
-  flutter test --coverage || error=true
-  lcov --remove coverage/lcov.info 'lib/*/*.gr.dart' 'lib/*/*.freezed.dart' 'lib/*/*.g.dart' -o coverage/lcov.info 
+    dir=`pwd`
+    echo "running tests in $dir"
+    # run tests with coverage
+    flutter test --coverage || error=true
+    lcov --remove coverage/lcov.info 'lib/*/*.gr.dart' 'lib/*/*.freezed.dart' 'lib/*/*.g.dart' -o coverage/lcov.info 
 }
 
 if ! [[ -d .git ]]; then printf "\nError: not in root of repo"; show_help; fi

@@ -153,6 +153,12 @@ void main() {
       expect(b, isNotNull);
     });
 
+    test('can read filter provider', () {
+      final c = createContainer();
+      final filter = c.read(favoriteGamesListFiltersProvider);
+      expect(filter, GamesListFilter.all);
+    });
+
     test('adding add favorite event should call handleAddFavorite', () async {
       final root = createContainer(
         overrides: [
@@ -177,6 +183,36 @@ void main() {
         TestConstants.kTestGame1,
       ) as FavoriteGamesListAddFavorite;
       await bloc.handleAddFavorite(event, null);
+      await delay(1);
+      expect(bloc.state, isA<FavoriteGamesListLoaded>());
+
+      sub.close();
+    });
+
+    test('adding remove favorite event should call handleRemoveFavorite', () async {
+      final root = createContainer(
+        overrides: [
+          firebaseAuthProvider.overrideWithValue(auth),
+          cloudFirestoreProvider.overrideWithValue(fakeFirestore),
+          appFirestoreServiceProvider.overrideWithValue(appService),
+          authenticationBlocProvider.overrideWithValue(authBloc),
+        ],
+      );
+      final c = createContainer(
+        parent: root,
+      );
+
+      final listener = Listener<FavoriteGamesListState>();
+      final sub = c.listen<FavoriteGamesListState>(favoriteGamesListBlocProvider, listener);
+      final bloc = c.read(favoriteGamesListBlocProvider.notifier);
+
+      expect(sub.read(), isA<FavoriteGamesListLoading>());
+
+      final event = FavoriteGamesListEvent.removeFavorite(
+        TestConstants.testUser.uid,
+        TestConstants.kTestGame1,
+      ) as FavoriteGamesListRemoveFavorite;
+      await bloc.handleRemoveFavorite(event, null);
       await delay(1);
       expect(bloc.state, isA<FavoriteGamesListLoaded>());
 

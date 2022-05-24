@@ -10,62 +10,62 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
-        plugins:
-                - dart_code_metrics
+  plugins:
+    - dart_code_metrics
 
-        errors:
-                avoid_print: false
-                avoid_relative_lib_imports: false
-                constant_identifier_names: false
-                sized_box_for_whitespace: false
+  errors:
+    avoid_print: false
+    avoid_relative_lib_imports: false
+    constant_identifier_names: false
+    sized_box_for_whitespace: false
 
-        exclude:
-                - android/**
-                - ios/**
-                - build/**
-                - lib/**/*.g.dart
-                - lib/**/*.freezed.dart
-                - test/**/*.mocks.dart
-                - test/*.mocks.dart
+  exclude:
+    - android/**
+    - ios/**
+    - build/**
+    - lib/**/*.g.dart
+    - lib/**/*.freezed.dart
+    - test/**/*.mocks.dart
+    - test/*.mocks.dart
 
 # Dart code metrics options.
 dart_code_metrics:
-        metrics:
-                technical-debt:
-                        threshold: 1
-                        todo-cost: 2
-                        ignore-cost: 2
-                        ignore-for-file-cost: 4
-                        as-dynamic-cost: 8
-                        deprecated-annotation-cost: 3
-                        file-nullsafety-migration-cost: 8
-                        unit-type: "Hours"
+  metrics:
+    technical-debt:
+      threshold: 1
+      todo-cost: 2
+      ignore-cost: 2
+      ignore-for-file-cost: 4
+      as-dynamic-cost: 8
+      deprecated-annotation-cost: 3
+      file-nullsafety-migration-cost: 8
+      unit-type: "Hours"
 
-        rules:
-                - avoid_missing_enum_constant_in_map:
-                          severity: error
-                - avoid-nested-conditional-expressions:
-                          severity: warning
-                          acceptable-level: 2
-                - avoid-unnecessary-type-assertsions:
-                          severity: error
-                - avoid-unnecessary-type-casts:
-                          severity: warning
-                - avoid-unused-parameters:
-                          severity: performance
-                - binary_expression_operand_order:
-                          severity: warning
-                - no_boolean_literal_compare:
-                          severity: warning
-                - no_empty_block:
-                          severity: warning
-                - no_equal_then_else:
-                          severity: warning
-                - prefer_async_await:
-                          severity: warning
-                - prefer_first:
-                          severity: warning
-                - prefer_last:
-                          severity: warning
-                - prefer_trailing_comma:
-                          severity: warning
+  rules:
+    - avoid_missing_enum_constant_in_map:
+        severity: error
+    - avoid-nested-conditional-expressions:
+        severity: warning
+        acceptable-level: 2
+    - avoid-unnecessary-type-assertsions:
+        severity: error
+    - avoid-unnecessary-type-casts:
+        severity: warning
+    - avoid-unused-parameters:
+        severity: warning
+    - binary_expression_operand_order:
+        severity: warning
+    - no_boolean_literal_compare:
+        severity: warning
+    - no_empty_block:
+        severity: warning
+    - no_equal_then_else:
+        severity: warning
+    - prefer_async_await:
+        severity: warning
+    - prefer_first:
+        severity: warning
+    - prefer_last:
+        severity: warning
+    - prefer_trailing_comma:
+        severity: warning
