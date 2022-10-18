@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'game.dart';
@@ -11,50 +12,11 @@ part of 'game.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Game _$GameFromJson(Map<String, dynamic> json) {
   return _Game.fromJson(json);
 }
-
-/// @nodoc
-class _$GameTearOff {
-  const _$GameTearOff();
-
-  _Game call(
-      int id,
-      String title,
-      String thumbnail,
-      String shortDescription,
-      String gameUrl,
-      String genre,
-      String platform,
-      String publisher,
-      String developer,
-      DateTime releaseDate,
-      String freetogameProfileUrl) {
-    return _Game(
-      id,
-      title,
-      thumbnail,
-      shortDescription,
-      gameUrl,
-      genre,
-      platform,
-      publisher,
-      developer,
-      releaseDate,
-      freetogameProfileUrl,
-    );
-  }
-
-  Game fromJson(Map<String, Object?> json) {
-    return Game.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Game = _$GameTearOff();
 
 /// @nodoc
 mixin _$Game {
@@ -78,7 +40,8 @@ mixin _$Game {
 /// @nodoc
 abstract class $GameCopyWith<$Res> {
   factory $GameCopyWith(Game value, $Res Function(Game) then) =
-      _$GameCopyWithImpl<$Res>;
+      _$GameCopyWithImpl<$Res, Game>;
+  @useResult
   $Res call(
       {int id,
       String title,
@@ -94,81 +57,85 @@ abstract class $GameCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GameCopyWithImpl<$Res> implements $GameCopyWith<$Res> {
+class _$GameCopyWithImpl<$Res, $Val extends Game>
+    implements $GameCopyWith<$Res> {
   _$GameCopyWithImpl(this._value, this._then);
 
-  final Game _value;
   // ignore: unused_field
-  final $Res Function(Game) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? title = freezed,
-    Object? thumbnail = freezed,
-    Object? shortDescription = freezed,
-    Object? gameUrl = freezed,
-    Object? genre = freezed,
-    Object? platform = freezed,
-    Object? publisher = freezed,
-    Object? developer = freezed,
-    Object? releaseDate = freezed,
-    Object? freetogameProfileUrl = freezed,
+    Object? id = null,
+    Object? title = null,
+    Object? thumbnail = null,
+    Object? shortDescription = null,
+    Object? gameUrl = null,
+    Object? genre = null,
+    Object? platform = null,
+    Object? publisher = null,
+    Object? developer = null,
+    Object? releaseDate = null,
+    Object? freetogameProfileUrl = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnail: thumbnail == freezed
+      thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
-      shortDescription: shortDescription == freezed
+      shortDescription: null == shortDescription
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
               as String,
-      gameUrl: gameUrl == freezed
+      gameUrl: null == gameUrl
           ? _value.gameUrl
           : gameUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      genre: genre == freezed
+      genre: null == genre
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
               as String,
-      platform: platform == freezed
+      platform: null == platform
           ? _value.platform
           : platform // ignore: cast_nullable_to_non_nullable
               as String,
-      publisher: publisher == freezed
+      publisher: null == publisher
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
               as String,
-      developer: developer == freezed
+      developer: null == developer
           ? _value.developer
           : developer // ignore: cast_nullable_to_non_nullable
               as String,
-      releaseDate: releaseDate == freezed
+      releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      freetogameProfileUrl: freetogameProfileUrl == freezed
+      freetogameProfileUrl: null == freetogameProfileUrl
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$GameCopyWith<$Res> implements $GameCopyWith<$Res> {
-  factory _$GameCopyWith(_Game value, $Res Function(_Game) then) =
-      __$GameCopyWithImpl<$Res>;
+abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
+  factory _$$_GameCopyWith(_$_Game value, $Res Function(_$_Game) then) =
+      __$$_GameCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       String title,
@@ -184,70 +151,68 @@ abstract class _$GameCopyWith<$Res> implements $GameCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res>
-    implements _$GameCopyWith<$Res> {
-  __$GameCopyWithImpl(_Game _value, $Res Function(_Game) _then)
-      : super(_value, (v) => _then(v as _Game));
+class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
+    implements _$$_GameCopyWith<$Res> {
+  __$$_GameCopyWithImpl(_$_Game _value, $Res Function(_$_Game) _then)
+      : super(_value, _then);
 
-  @override
-  _Game get _value => super._value as _Game;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? title = freezed,
-    Object? thumbnail = freezed,
-    Object? shortDescription = freezed,
-    Object? gameUrl = freezed,
-    Object? genre = freezed,
-    Object? platform = freezed,
-    Object? publisher = freezed,
-    Object? developer = freezed,
-    Object? releaseDate = freezed,
-    Object? freetogameProfileUrl = freezed,
+    Object? id = null,
+    Object? title = null,
+    Object? thumbnail = null,
+    Object? shortDescription = null,
+    Object? gameUrl = null,
+    Object? genre = null,
+    Object? platform = null,
+    Object? publisher = null,
+    Object? developer = null,
+    Object? releaseDate = null,
+    Object? freetogameProfileUrl = null,
   }) {
-    return _then(_Game(
-      id == freezed
+    return _then(_$_Game(
+      null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title == freezed
+      null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnail == freezed
+      null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
-      shortDescription == freezed
+      null == shortDescription
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
               as String,
-      gameUrl == freezed
+      null == gameUrl
           ? _value.gameUrl
           : gameUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      genre == freezed
+      null == genre
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
               as String,
-      platform == freezed
+      null == platform
           ? _value.platform
           : platform // ignore: cast_nullable_to_non_nullable
               as String,
-      publisher == freezed
+      null == publisher
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
               as String,
-      developer == freezed
+      null == developer
           ? _value.developer
           : developer // ignore: cast_nullable_to_non_nullable
               as String,
-      releaseDate == freezed
+      null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      freetogameProfileUrl == freezed
+      null == freetogameProfileUrl
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String,
@@ -306,62 +271,70 @@ class _$_Game implements _Game {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Game &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.thumbnail, thumbnail) &&
-            const DeepCollectionEquality()
-                .equals(other.shortDescription, shortDescription) &&
-            const DeepCollectionEquality().equals(other.gameUrl, gameUrl) &&
-            const DeepCollectionEquality().equals(other.genre, genre) &&
-            const DeepCollectionEquality().equals(other.platform, platform) &&
-            const DeepCollectionEquality().equals(other.publisher, publisher) &&
-            const DeepCollectionEquality().equals(other.developer, developer) &&
-            const DeepCollectionEquality()
-                .equals(other.releaseDate, releaseDate) &&
-            const DeepCollectionEquality()
-                .equals(other.freetogameProfileUrl, freetogameProfileUrl));
+            other is _$_Game &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.thumbnail, thumbnail) ||
+                other.thumbnail == thumbnail) &&
+            (identical(other.shortDescription, shortDescription) ||
+                other.shortDescription == shortDescription) &&
+            (identical(other.gameUrl, gameUrl) || other.gameUrl == gameUrl) &&
+            (identical(other.genre, genre) || other.genre == genre) &&
+            (identical(other.platform, platform) ||
+                other.platform == platform) &&
+            (identical(other.publisher, publisher) ||
+                other.publisher == publisher) &&
+            (identical(other.developer, developer) ||
+                other.developer == developer) &&
+            (identical(other.releaseDate, releaseDate) ||
+                other.releaseDate == releaseDate) &&
+            (identical(other.freetogameProfileUrl, freetogameProfileUrl) ||
+                other.freetogameProfileUrl == freetogameProfileUrl));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(thumbnail),
-      const DeepCollectionEquality().hash(shortDescription),
-      const DeepCollectionEquality().hash(gameUrl),
-      const DeepCollectionEquality().hash(genre),
-      const DeepCollectionEquality().hash(platform),
-      const DeepCollectionEquality().hash(publisher),
-      const DeepCollectionEquality().hash(developer),
-      const DeepCollectionEquality().hash(releaseDate),
-      const DeepCollectionEquality().hash(freetogameProfileUrl));
 
   @JsonKey(ignore: true)
   @override
-  _$GameCopyWith<_Game> get copyWith =>
-      __$GameCopyWithImpl<_Game>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      title,
+      thumbnail,
+      shortDescription,
+      gameUrl,
+      genre,
+      platform,
+      publisher,
+      developer,
+      releaseDate,
+      freetogameProfileUrl);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GameCopyWith<_$_Game> get copyWith =>
+      __$$_GameCopyWithImpl<_$_Game>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GameToJson(this);
+    return _$$_GameToJson(
+      this,
+    );
   }
 }
 
 abstract class _Game implements Game {
   const factory _Game(
-      int id,
-      String title,
-      String thumbnail,
-      String shortDescription,
-      String gameUrl,
-      String genre,
-      String platform,
-      String publisher,
-      String developer,
-      DateTime releaseDate,
-      String freetogameProfileUrl) = _$_Game;
+      final int id,
+      final String title,
+      final String thumbnail,
+      final String shortDescription,
+      final String gameUrl,
+      final String genre,
+      final String platform,
+      final String publisher,
+      final String developer,
+      final DateTime releaseDate,
+      final String freetogameProfileUrl) = _$_Game;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
 
@@ -389,5 +362,5 @@ abstract class _Game implements Game {
   String get freetogameProfileUrl;
   @override
   @JsonKey(ignore: true)
-  _$GameCopyWith<_Game> get copyWith => throw _privateConstructorUsedError;
+  _$$_GameCopyWith<_$_Game> get copyWith => throw _privateConstructorUsedError;
 }

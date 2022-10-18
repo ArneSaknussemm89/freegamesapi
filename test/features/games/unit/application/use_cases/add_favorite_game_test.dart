@@ -115,7 +115,7 @@ void main() {
         parent: root,
       );
 
-      final useCase = container.read(addFavoriteGamesUseCaseProvider);
+      final useCase = container.read(addFavoriteGameUseCaseProvider);
 
       expect(useCase, isNotNull);
       expect(useCase.favoritesService, service);

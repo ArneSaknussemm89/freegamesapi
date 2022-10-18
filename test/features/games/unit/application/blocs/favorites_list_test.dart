@@ -5,13 +5,17 @@ import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:riverbloc/riverbloc.dart';
+import 'package:supercharged/supercharged.dart';
 
+// Global feature elements.
 import 'package:freegamesexample/application/blocs/authentication.dart';
 import 'package:freegamesexample/application/services/cloud_firestore.dart';
 import 'package:freegamesexample/application/services/firebase_auth.dart';
 import 'package:freegamesexample/core/adapters.dart';
 import 'package:freegamesexample/data/adapters/dio_adapter.dart';
 import 'package:freegamesexample/data/constants.dart';
+
+// Games feature elements.
 import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
 import 'package:freegamesexample/features/games/application/use_cases/add_favorite_game.dart';
 import 'package:freegamesexample/features/games/application/use_cases/fetch_all_games.dart';
@@ -25,9 +29,25 @@ import 'package:freegamesexample/features/games/presentation/view_models/game.da
 import '../../../../../utils.dart';
 
 const kTestFavoriteGamesBlocErrorMessage = 'Failed fetching favorite games.';
-
+FavoriteGamesListState getTestGamesListState(FavoriteGamesBloc bloc, AuthenticationBloc authBloc) =>
+    FavoriteGamesListState.loaded(
+      [],
+      TestConstants.testGames,
+      TestConstants.testGames
+          .map(
+            (g) => GameVM(
+              game: g,
+              bloc: bloc,
+              auth: authBloc.state,
+            ),
+          )
+          .toList(),
+    );
 void main() {
   group('FavoriteGamesBloc', () {
+    final Listener<FavoriteGamesListState> listener = Listener<FavoriteGamesListState>();
+
+    // Variables initialized for each test.
     late ProviderContainer container;
     late GameApiDataSource dataSource;
     late List<AuthenticationState> authStates;
@@ -128,168 +148,81 @@ void main() {
           cloudFirestoreProvider.overrideWithValue(fakeFirestore),
           appFirestoreServiceProvider.overrideWithValue(appService),
           authenticationBlocProvider.overrideWithValue(authBloc),
+          addFavoriteGameUseCaseProvider.overrideWithValue(addFavoriteGameUseCase),
+          removeFavoriteGameUseCaseProvider.overrideWithValue(removeFavoriteGameUseCase),
+          fetchUserFavoritesUseCaseProvider.overrideWithValue(fetchUserFavoritesUseCase),
+          mergeGameFavoritesUseCaseProvider.overrideWithValue(mergeGameFavoritesUseCase),
+          fetchAllGamesUseCaseProvider.overrideWithValue(fetchAllGamesUseCase),
         ],
       );
     });
 
     tearDown(() {
       container.dispose();
+      fakeFirestore.dump();
     });
 
     test('can read provider', () async {
-      final c = createContainer(
-        overrides: [
-          firebaseAuthProvider.overrideWithValue(auth),
-          cloudFirestoreProvider.overrideWithValue(fakeFirestore),
-          appFirestoreServiceProvider.overrideWithValue(appService),
-          authenticationBlocProvider.overrideWithValue(authBloc),
-        ],
-      );
-      final b = c.read(favoriteGamesListBlocProvider.notifier);
-      final state = c.read(favoriteGamesListBlocProvider);
-      await delay(1);
+      final b = container.read(favoriteGamesListBlocProvider.notifier);
+      final state = container.read(favoriteGamesListBlocProvider);
+      await delayMilliseconds(16);
       expect(state, isNotNull);
       expect(state, isA<FavoriteGamesListLoading>());
       expect(b, isNotNull);
     });
 
     test('adding add favorite event should call handleAddFavorite', () async {
-      final root = createContainer(
-        overrides: [
-          firebaseAuthProvider.overrideWithValue(auth),
-          cloudFirestoreProvider.overrideWithValue(fakeFirestore),
-          appFirestoreServiceProvider.overrideWithValue(appService),
-          authenticationBlocProvider.overrideWithValue(authBloc),
-        ],
-      );
-      final c = createContainer(
-        parent: root,
-      );
-
-      final listener = Listener<FavoriteGamesListState>();
-      final sub = c.listen<FavoriteGamesListState>(favoriteGamesListBlocProvider, listener);
-      final bloc = c.read(favoriteGamesListBlocProvider.notifier);
+      final sub = container.listen<FavoriteGamesListState>(favoriteGamesListBlocProvider, listener);
+      final bloc = container.read(favoriteGamesListBlocProvider.notifier);
 
       expect(sub.read(), isA<FavoriteGamesListLoading>());
 
-      final FavoriteGamesListAddFavorite event = FavoriteGamesListEvent.addFavorite(
+      final event = FavoriteGamesListEvent.addFavorite(
         TestConstants.testUser.uid,
         TestConstants.kTestGame1,
-      ) as FavoriteGamesListAddFavorite;
-      await bloc.handleAddFavorite(event, null);
-      await delay(1);
+      );
+      bloc.add(event);
+      await delayMilliseconds(16);
       expect(bloc.state, isA<FavoriteGamesListLoaded>());
 
       sub.close();
     });
 
-    blocTest<FavoriteGamesBloc, FavoriteGamesListState>(
-      'intializing should load games and favorites',
-      build: () => FavoriteGamesBloc(
-        read: container.read,
-        firestoreService: appService,
-        addFavoriteGameUseCase: addFavoriteGameUseCase,
-        removeFavoriteGameUseCase: removeFavoriteGameUseCase,
-        fetchUserFavoritesUseCase: fetchUserFavoritesUseCase,
-        mergeGameFavoritesUseCase: mergeGameFavoritesUseCase,
-        fetchAllGamesUseCase: fetchAllGamesUseCase,
-      ),
-      verify: (bloc) => [
-        // Two states, one for loading games and one for loading favorites.
-        const FavoriteGamesListState.loading(),
-        const FavoriteGamesListState.loaded([], []),
-        FavoriteGamesListState.loaded([], TestConstants.testGames),
-        FavoriteGamesListState.loaded(
-          [],
-          TestConstants.testGames,
-          TestConstants.testGames
-              .map(
-                (g) => GameVM(
-                  game: g,
-                  bloc: bloc,
-                  auth: authBloc.state,
-                ),
-              )
-              .toList(),
-        ),
-      ],
-    );
+    test('intializing should load games and favorites', () async {
+      final sub = container.listen<FavoriteGamesListState>(favoriteGamesListBlocProvider, listener);
+      // Build provider.
+      container.read(favoriteGamesListBlocProvider);
 
-    blocTest<FavoriteGamesBloc, FavoriteGamesListState>(
-      'refresh event should refresh the list of games and favorites',
-      build: () => FavoriteGamesBloc(
-        read: container.read,
-        firestoreService: appService,
-        addFavoriteGameUseCase: addFavoriteGameUseCase,
-        removeFavoriteGameUseCase: removeFavoriteGameUseCase,
-        fetchUserFavoritesUseCase: fetchUserFavoritesUseCase,
-        mergeGameFavoritesUseCase: mergeGameFavoritesUseCase,
-        fetchAllGamesUseCase: fetchAllGamesUseCase,
-      ),
-      seed: () => FavoriteGamesListState.loaded(
-        [],
-        TestConstants.testGames,
-      ),
-      act: (b) => b.add(const FavoriteGamesListEvent.refresh()),
-      verify: (bloc) => [
-        // Starting seeded state, and then refresh should trigger a couple.
-        FavoriteGamesListState.loaded([], TestConstants.testGames),
-        const FavoriteGamesListState.loading(),
-        FavoriteGamesListState.loaded([], TestConstants.testGames),
-        FavoriteGamesListState.loaded(
-          [],
-          TestConstants.testGames,
-          TestConstants.testGames
-              .map(
-                (g) => GameVM(
-                  game: g,
-                  bloc: bloc,
-                  auth: authBloc.state,
-                ),
-              )
-              .toList(),
-        ),
-      ],
-    );
+      // Wait for futures.
+      await delayMilliseconds(16);
 
-    blocTest<FavoriteGamesBloc, FavoriteGamesListState>(
-      'set error event should set error state',
-      build: () => FavoriteGamesBloc(
-        read: container.read,
-        firestoreService: appService,
-        addFavoriteGameUseCase: addFavoriteGameUseCase,
-        removeFavoriteGameUseCase: removeFavoriteGameUseCase,
-        fetchUserFavoritesUseCase: fetchUserFavoritesUseCase,
-        mergeGameFavoritesUseCase: mergeGameFavoritesUseCase,
-        fetchAllGamesUseCase: fetchAllGamesUseCase,
-      ),
-      seed: () => const FavoriteGamesListState.loading(),
-      act: (b) => b.add(const FavoriteGamesListEvent.hasError(kTestFavoriteGamesBlocErrorMessage)),
-      verify: (bloc) => [
-        // Starting seeded state, and then refresh should trigger a couple.
-        const FavoriteGamesListState.loading(),
-        const FavoriteGamesListState.error(kTestFavoriteGamesBlocErrorMessage),
-      ],
-    );
+      final updated = container.read(favoriteGamesListBlocProvider);
+      expect(updated, isA<FavoriteGamesListLoaded>());
+      sub.close();
+    });
 
-    blocTest<FavoriteGamesBloc, FavoriteGamesListState>(
-      'adding add favorite event should refresh the states',
-      build: () => FavoriteGamesBloc(
-        read: container.read,
-        firestoreService: appService,
-        addFavoriteGameUseCase: addFavoriteGameUseCase,
-        removeFavoriteGameUseCase: removeFavoriteGameUseCase,
-        fetchUserFavoritesUseCase: fetchUserFavoritesUseCase,
-        mergeGameFavoritesUseCase: mergeGameFavoritesUseCase,
-        fetchAllGamesUseCase: fetchAllGamesUseCase,
-      ),
-      seed: () => const FavoriteGamesListState.loading(),
-      act: (b) => b.add(FavoriteGamesListEvent.addFavorite(TestConstants.testUser.uid, TestConstants.kTestGame1)),
-      verify: (bloc) {
-        return [
-          // Starting seeded state, and then refresh should trigger a couple.
-          const FavoriteGamesListState.loading(),
-          FavoriteGamesListState.loaded([], TestConstants.testGames),
+    test('refresh event should refresh the list of games and favorites', () async {
+      // Set up states watcher.
+      List<FavoriteGamesListState> states = [];
+      // Create listener that fills the states.
+      final sub = container.listen<FavoriteGamesListState>(favoriteGamesListBlocProvider, (prev, next) {
+        states.add(next);
+      });
+      final bloc = container.read(favoriteGamesListBlocProvider.notifier);
+      await delayMilliseconds(16);
+
+      // Re-read
+      container.read(favoriteGamesListBlocProvider);
+      expect(states.last, isA<FavoriteGamesListLoaded>());
+      // Clear states list.
+      states.clear();
+      // Refresh bloc.
+      bloc.add(const FavoriteGamesListEvent.refresh());
+      container.read(favoriteGamesListBlocProvider);
+      await delayMilliseconds(16);
+      expect(
+        states.last,
+        equals(
           FavoriteGamesListState.loaded(
             [],
             TestConstants.testGames,
@@ -303,8 +236,62 @@ void main() {
                 )
                 .toList(),
           ),
-        ];
-      },
-    );
+        ),
+      );
+
+      sub.close();
+    });
+
+    test('set error event should set error state', () async {
+      final sub = container.listen(favoriteGamesListBlocProvider, listener);
+      // Build provider.
+      container.read(favoriteGamesListBlocProvider);
+
+      // Wait for futures.
+      await delayMilliseconds(16);
+
+      final updated = container.read(favoriteGamesListBlocProvider);
+      expect(updated, isA<FavoriteGamesListLoaded>());
+
+      container.read(favoriteGamesListBlocProvider.notifier).add(
+            FavoriteGamesListEvent.hasError(
+              Exception(kTestFavoriteGamesBlocErrorMessage),
+            ),
+          );
+
+      await delayMilliseconds(16);
+      final state = container.read(favoriteGamesListBlocProvider);
+      expect(state, isA<FavoriteGamesListError>());
+      sub.close();
+    });
+
+    test('set error event should set error state', () async {
+      final states = <FavoriteGamesListState>[];
+      final sub = container.listen<FavoriteGamesListState>(
+        favoriteGamesListBlocProvider,
+        (prev, next) {
+          states.add(next);
+        },
+      );
+      // Build provider.
+      container.read(favoriteGamesListBlocProvider);
+
+      // Wait for futures.
+      await delayMilliseconds(16);
+
+      final updated = container.read(favoriteGamesListBlocProvider);
+      expect(updated, isA<FavoriteGamesListLoaded>());
+
+      container.read(favoriteGamesListBlocProvider.notifier).add(
+            FavoriteGamesListEvent.hasError(
+              Exception(kTestFavoriteGamesBlocErrorMessage),
+            ),
+          );
+
+      container.read(favoriteGamesListBlocProvider);
+      await delayMilliseconds(16);
+      expect(states.last, isA<FavoriteGamesListError>());
+      sub.close();
+    });
   });
 }

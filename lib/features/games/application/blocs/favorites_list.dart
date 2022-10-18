@@ -40,14 +40,16 @@ final favoriteGamesListFiltersProvider = StateProvider.autoDispose<GamesListFilt
 final favoriteGamesListBlocProvider = BlocProvider.autoDispose<FavoriteGamesBloc, FavoriteGamesListState>(
   (ref) {
     final firestoreService = ref.watch(appFirestoreServiceProvider);
-    final addFavoriteGameUseCase = ref.watch(addFavoriteGamesUseCaseProvider);
-    final removeFavoriteGameUseCase = ref.watch(removeFavoriteGamesUseCaseProvider);
+    final authState = ref.watch(authenticationBlocProvider);
+    final addFavoriteGameUseCase = ref.watch(addFavoriteGameUseCaseProvider);
+    final removeFavoriteGameUseCase = ref.watch(removeFavoriteGameUseCaseProvider);
     final fetchUserFavoritesUseCase = ref.watch(fetchUserFavoritesUseCaseProvider);
     final mergeGameFavoritesUseCase = ref.watch(mergeGameFavoritesUseCaseProvider);
     final fetchAllGamesUseCase = ref.watch(fetchAllGamesUseCaseProvider);
 
     final bloc = FavoriteGamesBloc(
-      read: ref.read,
+      ref: ref,
+      authState: authState,
       firestoreService: firestoreService,
       addFavoriteGameUseCase: addFavoriteGameUseCase,
       removeFavoriteGameUseCase: removeFavoriteGameUseCase,
@@ -59,11 +61,21 @@ final favoriteGamesListBlocProvider = BlocProvider.autoDispose<FavoriteGamesBloc
 
     return bloc;
   },
+  dependencies: [
+    appFirestoreServiceProvider,
+    authenticationBlocProvider,
+    addFavoriteGameUseCaseProvider,
+    removeFavoriteGameUseCaseProvider,
+    fetchUserFavoritesUseCaseProvider,
+    mergeGameFavoritesUseCaseProvider,
+    fetchAllGamesUseCaseProvider,
+  ],
 );
 
 class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesListState> {
   FavoriteGamesBloc({
-    required this.read,
+    required this.ref,
+    required this.authState,
     required this.firestoreService,
     required this.addFavoriteGameUseCase,
     required this.removeFavoriteGameUseCase,
@@ -72,12 +84,17 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
     required this.fetchAllGamesUseCase,
   }) : super(initialState: const FavoriteGamesListState.loading()) {
     add(const FavoriteGamesListEvent.fetchAll());
-    _favoritesSubscription = firestoreService.favorites.snapshots().listen((event) {
-      add(const FavoriteGamesListEvent.fetchFavorites());
-    });
+    authState.whenOrNull(
+      authenticated: (user) {
+        _favoritesSubscription = firestoreService.favorites.snapshots().listen((event) {
+          add(const FavoriteGamesListEvent.fetchFavorites());
+        });
+      },
+    );
   }
 
-  final Reader read;
+  final Ref ref;
+  final AuthenticationState authState;
   final AppFirestoreService firestoreService;
   final AddFavoriteGameUseCase addFavoriteGameUseCase;
   final RemoveFavoriteGameUseCase removeFavoriteGameUseCase;
@@ -85,11 +102,11 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
   final MergeGameFavoritesUseCase mergeGameFavoritesUseCase;
   final FetchAllGamesUseCase fetchAllGamesUseCase;
 
-  late final StreamSubscription _favoritesSubscription;
+  StreamSubscription? _favoritesSubscription;
 
   @override
   Future<void> close() async {
-    _favoritesSubscription.cancel();
+    _favoritesSubscription?.cancel();
     super.close();
   }
 
@@ -140,6 +157,11 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
               (FavoriteGamesListRefresh event, state) => const FavoriteGamesListState.loading(),
               handleRefresh,
             ),
+            _$FavoriteGamesListHasError: transition(
+              (FavoriteGamesListHasError event, state) => FavoriteGamesListState.error(
+                event.error.toString(),
+              ),
+            ),
           },
           _$FavoriteGamesListError: {
             _$FavoriteGamesListRetry: transitionWithEffect(
@@ -155,7 +177,7 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
       );
 
   Future<void> handleFetchAll(_, __) async {
-    final auth = read(authenticationBlocProvider);
+    final auth = ref.read(authenticationBlocProvider);
 
     auth.whenOrNull(
       authenticated: (user) async {
@@ -181,7 +203,7 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
   }
 
   Future<void> handleFetchFavorites(_, __) async {
-    final auth = read(authenticationBlocProvider);
+    final auth = ref.read(authenticationBlocProvider);
 
     auth.whenOrNull(
       authenticated: (user) async {
@@ -201,18 +223,14 @@ class FavoriteGamesBloc extends GraphBloc<FavoriteGamesListEvent, FavoriteGamesL
   }
 
   Future<void> handleRefresh(_, __) async {
-    final auth = read(authenticationBlocProvider);
+    final auth = ref.read(authenticationBlocProvider);
 
     auth.whenOrNull(
       authenticated: (user) async {
         final result = await fetchUserFavoritesUseCase.execute(user.uid.toFetchUserFavoritesUseCaseParams);
         result.when(
-          success: (favorites) => add(
-            FavoriteGamesListEvent.setFavorites(favorites),
-          ),
-          failure: (error, trace) => add(
-            FavoriteGamesListEvent.hasError(error),
-          ),
+          success: (favorites) => add(const FavoriteGamesListEvent.fetchAll()),
+          failure: (error, trace) => add(FavoriteGamesListEvent.hasError(error)),
         );
       },
     );

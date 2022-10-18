@@ -11,16 +11,16 @@ class GamesFilterWidget extends ConsumerWidget {
     final notifier = ref.watch(favoriteGamesListFiltersProvider.notifier);
 
     return ToggleButtons(
-      children: const [
-        Icon(Icons.list),
-        Icon(Icons.favorite),
-      ],
       onPressed: (selectedIndex) => notifier.state = selectedIndex == 0
           ? GamesListFilter.all
           : GamesListFilter.onlyFavorites,
       isSelected: [
         filter == GamesListFilter.all,
         filter == GamesListFilter.onlyFavorites,
+      ],
+      children: const [
+        Icon(Icons.list),
+        Icon(Icons.favorite),
       ],
     );
   }

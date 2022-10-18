@@ -41,8 +41,9 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
       cancelToken: options.cancelToken,
     );
     final statusCode = response.statusCode ?? 500;
-    if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+    final data = response.data;
+    if ((statusCode >= 200 && statusCode < 300) && data != null) {
+      return AdapterResponse.success(data);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -57,8 +58,9 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
       cancelToken: options.cancelToken,
     );
     final statusCode = response.statusCode ?? 500;
-    if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+    final data = response.data;
+    if ((statusCode >= 200 && statusCode < 300) && data != null) {
+      return AdapterResponse.success(data);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -73,8 +75,9 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
       cancelToken: options.cancelToken,
     );
     final statusCode = response.statusCode ?? 500;
-    if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+    final data = response.data;
+    if ((statusCode >= 200 && statusCode < 300) && data != null) {
+      return AdapterResponse.success(data);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -89,8 +92,9 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
       cancelToken: options.cancelToken,
     );
     final statusCode = response.statusCode ?? 500;
-    if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+    final data = response.data;
+    if ((statusCode >= 200 && statusCode < 300) && data != null) {
+      return AdapterResponse.success(data);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }
@@ -104,8 +108,9 @@ class DioAdapter extends AsyncAdapter<AdapterResponse, DioAdapterOptions> {
       cancelToken: options.cancelToken,
     );
     final statusCode = response.statusCode ?? 500;
-    if ((statusCode >= 200 && statusCode < 300) && response.data != null) {
-      return AdapterResponse.success(response.data!);
+    final data = response.data;
+    if ((statusCode >= 200 && statusCode < 300) && data != null) {
+      return AdapterResponse.success(data);
     } else {
       return AdapterResponse.failure(response.statusMessage, StackTrace.current);
     }

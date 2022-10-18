@@ -4,7 +4,7 @@ import 'package:freegamesexample/core/use_cases.dart';
 import 'package:freegamesexample/features/games/application/services/favorites_service.dart';
 import 'package:freegamesexample/features/games/domain/value_objects/remove_favorite_game_params.dart';
 
-final removeFavoriteGamesUseCaseProvider =
+final removeFavoriteGameUseCaseProvider =
     Provider.autoDispose<RemoveFavoriteGameUseCase>((ref) {
   final favoritesService = ref.watch(favoriteGamesServiceProvider);
   return RemoveFavoriteGameUseCase(favoritesService: favoritesService);

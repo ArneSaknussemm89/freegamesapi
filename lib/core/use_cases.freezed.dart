@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'use_cases.dart';
@@ -11,28 +12,7 @@ part of 'use_cases.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UseCaseResultTearOff {
-  const _$UseCaseResultTearOff();
-
-  UseCaseResultFailure<E, T> failure<E, T>(Object? error, StackTrace trace) {
-    return UseCaseResultFailure<E, T>(
-      error,
-      trace,
-    );
-  }
-
-  UseCaseResultSuccess<E, T> success<E, T>(T data) {
-    return UseCaseResultSuccess<E, T>(
-      data,
-    );
-  }
-}
-
-/// @nodoc
-const $UseCaseResult = _$UseCaseResultTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UseCaseResult<E, T> {
@@ -44,8 +24,8 @@ mixin _$UseCaseResult<E, T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Object? error, StackTrace trace)? failure,
-    TResult Function(T data)? success,
+    TResult? Function(Object? error, StackTrace trace)? failure,
+    TResult? Function(T data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,8 +43,8 @@ mixin _$UseCaseResult<E, T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UseCaseResultFailure<E, T> value)? failure,
-    TResult Function(UseCaseResultSuccess<E, T> value)? success,
+    TResult? Function(UseCaseResultFailure<E, T> value)? failure,
+    TResult? Function(UseCaseResultSuccess<E, T> value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,47 +60,47 @@ mixin _$UseCaseResult<E, T> {
 abstract class $UseCaseResultCopyWith<E, T, $Res> {
   factory $UseCaseResultCopyWith(
           UseCaseResult<E, T> value, $Res Function(UseCaseResult<E, T>) then) =
-      _$UseCaseResultCopyWithImpl<E, T, $Res>;
+      _$UseCaseResultCopyWithImpl<E, T, $Res, UseCaseResult<E, T>>;
 }
 
 /// @nodoc
-class _$UseCaseResultCopyWithImpl<E, T, $Res>
+class _$UseCaseResultCopyWithImpl<E, T, $Res, $Val extends UseCaseResult<E, T>>
     implements $UseCaseResultCopyWith<E, T, $Res> {
   _$UseCaseResultCopyWithImpl(this._value, this._then);
 
-  final UseCaseResult<E, T> _value;
   // ignore: unused_field
-  final $Res Function(UseCaseResult<E, T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $UseCaseResultFailureCopyWith<E, T, $Res> {
-  factory $UseCaseResultFailureCopyWith(UseCaseResultFailure<E, T> value,
-          $Res Function(UseCaseResultFailure<E, T>) then) =
-      _$UseCaseResultFailureCopyWithImpl<E, T, $Res>;
+abstract class _$$UseCaseResultFailureCopyWith<E, T, $Res> {
+  factory _$$UseCaseResultFailureCopyWith(_$UseCaseResultFailure<E, T> value,
+          $Res Function(_$UseCaseResultFailure<E, T>) then) =
+      __$$UseCaseResultFailureCopyWithImpl<E, T, $Res>;
+  @useResult
   $Res call({Object? error, StackTrace trace});
 }
 
 /// @nodoc
-class _$UseCaseResultFailureCopyWithImpl<E, T, $Res>
-    extends _$UseCaseResultCopyWithImpl<E, T, $Res>
-    implements $UseCaseResultFailureCopyWith<E, T, $Res> {
-  _$UseCaseResultFailureCopyWithImpl(UseCaseResultFailure<E, T> _value,
-      $Res Function(UseCaseResultFailure<E, T>) _then)
-      : super(_value, (v) => _then(v as UseCaseResultFailure<E, T>));
+class __$$UseCaseResultFailureCopyWithImpl<E, T, $Res>
+    extends _$UseCaseResultCopyWithImpl<E, T, $Res,
+        _$UseCaseResultFailure<E, T>>
+    implements _$$UseCaseResultFailureCopyWith<E, T, $Res> {
+  __$$UseCaseResultFailureCopyWithImpl(_$UseCaseResultFailure<E, T> _value,
+      $Res Function(_$UseCaseResultFailure<E, T>) _then)
+      : super(_value, _then);
 
-  @override
-  UseCaseResultFailure<E, T> get _value =>
-      super._value as UseCaseResultFailure<E, T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
-    Object? trace = freezed,
+    Object? trace = null,
   }) {
-    return _then(UseCaseResultFailure<E, T>(
-      error == freezed ? _value.error : error,
-      trace == freezed
+    return _then(_$UseCaseResultFailure<E, T>(
+      freezed == error ? _value.error : error,
+      null == trace
           ? _value.trace
           : trace // ignore: cast_nullable_to_non_nullable
               as StackTrace,
@@ -147,23 +127,21 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UseCaseResultFailure<E, T> &&
+            other is _$UseCaseResultFailure<E, T> &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.trace, trace));
+            (identical(other.trace, trace) || other.trace == trace));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(trace));
+      runtimeType, const DeepCollectionEquality().hash(error), trace);
 
   @JsonKey(ignore: true)
   @override
-  $UseCaseResultFailureCopyWith<E, T, UseCaseResultFailure<E, T>>
-      get copyWith =>
-          _$UseCaseResultFailureCopyWithImpl<E, T, UseCaseResultFailure<E, T>>(
-              this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UseCaseResultFailureCopyWith<E, T, _$UseCaseResultFailure<E, T>>
+      get copyWith => __$$UseCaseResultFailureCopyWithImpl<E, T,
+          _$UseCaseResultFailure<E, T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -177,8 +155,8 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Object? error, StackTrace trace)? failure,
-    TResult Function(T data)? success,
+    TResult? Function(Object? error, StackTrace trace)? failure,
+    TResult? Function(T data)? success,
   }) {
     return failure?.call(error, trace);
   }
@@ -208,8 +186,8 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UseCaseResultFailure<E, T> value)? failure,
-    TResult Function(UseCaseResultSuccess<E, T> value)? success,
+    TResult? Function(UseCaseResultFailure<E, T> value)? failure,
+    TResult? Function(UseCaseResultSuccess<E, T> value)? success,
   }) {
     return failure?.call(this);
   }
@@ -229,42 +207,42 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
 }
 
 abstract class UseCaseResultFailure<E, T> implements UseCaseResult<E, T> {
-  const factory UseCaseResultFailure(Object? error, StackTrace trace) =
+  const factory UseCaseResultFailure(
+          final Object? error, final StackTrace trace) =
       _$UseCaseResultFailure<E, T>;
 
   Object? get error;
   StackTrace get trace;
   @JsonKey(ignore: true)
-  $UseCaseResultFailureCopyWith<E, T, UseCaseResultFailure<E, T>>
+  _$$UseCaseResultFailureCopyWith<E, T, _$UseCaseResultFailure<E, T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UseCaseResultSuccessCopyWith<E, T, $Res> {
-  factory $UseCaseResultSuccessCopyWith(UseCaseResultSuccess<E, T> value,
-          $Res Function(UseCaseResultSuccess<E, T>) then) =
-      _$UseCaseResultSuccessCopyWithImpl<E, T, $Res>;
+abstract class _$$UseCaseResultSuccessCopyWith<E, T, $Res> {
+  factory _$$UseCaseResultSuccessCopyWith(_$UseCaseResultSuccess<E, T> value,
+          $Res Function(_$UseCaseResultSuccess<E, T>) then) =
+      __$$UseCaseResultSuccessCopyWithImpl<E, T, $Res>;
+  @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class _$UseCaseResultSuccessCopyWithImpl<E, T, $Res>
-    extends _$UseCaseResultCopyWithImpl<E, T, $Res>
-    implements $UseCaseResultSuccessCopyWith<E, T, $Res> {
-  _$UseCaseResultSuccessCopyWithImpl(UseCaseResultSuccess<E, T> _value,
-      $Res Function(UseCaseResultSuccess<E, T>) _then)
-      : super(_value, (v) => _then(v as UseCaseResultSuccess<E, T>));
+class __$$UseCaseResultSuccessCopyWithImpl<E, T, $Res>
+    extends _$UseCaseResultCopyWithImpl<E, T, $Res,
+        _$UseCaseResultSuccess<E, T>>
+    implements _$$UseCaseResultSuccessCopyWith<E, T, $Res> {
+  __$$UseCaseResultSuccessCopyWithImpl(_$UseCaseResultSuccess<E, T> _value,
+      $Res Function(_$UseCaseResultSuccess<E, T>) _then)
+      : super(_value, _then);
 
-  @override
-  UseCaseResultSuccess<E, T> get _value =>
-      super._value as UseCaseResultSuccess<E, T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(UseCaseResultSuccess<E, T>(
-      data == freezed
+    return _then(_$UseCaseResultSuccess<E, T>(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T,
@@ -289,7 +267,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UseCaseResultSuccess<E, T> &&
+            other is _$UseCaseResultSuccess<E, T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -299,10 +277,10 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
 
   @JsonKey(ignore: true)
   @override
-  $UseCaseResultSuccessCopyWith<E, T, UseCaseResultSuccess<E, T>>
-      get copyWith =>
-          _$UseCaseResultSuccessCopyWithImpl<E, T, UseCaseResultSuccess<E, T>>(
-              this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UseCaseResultSuccessCopyWith<E, T, _$UseCaseResultSuccess<E, T>>
+      get copyWith => __$$UseCaseResultSuccessCopyWithImpl<E, T,
+          _$UseCaseResultSuccess<E, T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -316,8 +294,8 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Object? error, StackTrace trace)? failure,
-    TResult Function(T data)? success,
+    TResult? Function(Object? error, StackTrace trace)? failure,
+    TResult? Function(T data)? success,
   }) {
     return success?.call(data);
   }
@@ -347,8 +325,8 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UseCaseResultFailure<E, T> value)? failure,
-    TResult Function(UseCaseResultSuccess<E, T> value)? success,
+    TResult? Function(UseCaseResultFailure<E, T> value)? failure,
+    TResult? Function(UseCaseResultSuccess<E, T> value)? success,
   }) {
     return success?.call(this);
   }
@@ -368,10 +346,11 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
 }
 
 abstract class UseCaseResultSuccess<E, T> implements UseCaseResult<E, T> {
-  const factory UseCaseResultSuccess(T data) = _$UseCaseResultSuccess<E, T>;
+  const factory UseCaseResultSuccess(final T data) =
+      _$UseCaseResultSuccess<E, T>;
 
   T get data;
   @JsonKey(ignore: true)
-  $UseCaseResultSuccessCopyWith<E, T, UseCaseResultSuccess<E, T>>
+  _$$UseCaseResultSuccessCopyWith<E, T, _$UseCaseResultSuccess<E, T>>
       get copyWith => throw _privateConstructorUsedError;
 }
