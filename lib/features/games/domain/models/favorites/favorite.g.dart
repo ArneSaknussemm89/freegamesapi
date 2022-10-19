@@ -7,7 +7,7 @@ part of 'favorite.dart';
 // **************************************************************************
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, require_trailing_commas, prefer_single_quotes, prefer_double_quotes, use_super_parameters
 
 class _Sentinel {
   const _Sentinel();
@@ -21,7 +21,7 @@ const _sentinel = _Sentinel();
 abstract class FavoriteGameCollectionReference
     implements
         FavoriteGameQuery,
-        FirestoreCollectionReference<FavoriteGameQuerySnapshot> {
+        FirestoreCollectionReference<FavoriteGame, FavoriteGameQuerySnapshot> {
   factory FavoriteGameCollectionReference([
     FirebaseFirestore? firestore,
   ]) = _$FavoriteGameCollectionReference;
@@ -39,6 +39,9 @@ abstract class FavoriteGameCollectionReference
   ) {
     return value.toJson();
   }
+
+  @override
+  CollectionReference<FavoriteGame> get reference;
 
   @override
   FavoriteGameDocumentReference doc([String? id]);
@@ -63,7 +66,7 @@ class _$FavoriteGameCollectionReference extends _$FavoriteGameQuery
 
   _$FavoriteGameCollectionReference._(
     CollectionReference<FavoriteGame> reference,
-  ) : super(reference, reference);
+  ) : super(reference, $referenceWithoutCursor: reference);
 
   String get path => reference.path;
 
@@ -73,6 +76,10 @@ class _$FavoriteGameCollectionReference extends _$FavoriteGameQuery
 
   @override
   FavoriteGameDocumentReference doc([String? id]) {
+    assert(
+      id == null || id.split('/').length == 1,
+      'The document ID cannot be from a different collection',
+    );
     return FavoriteGameDocumentReference(
       reference.doc(id),
     );
@@ -96,8 +103,8 @@ class _$FavoriteGameCollectionReference extends _$FavoriteGameQuery
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
-abstract class FavoriteGameDocumentReference
-    extends FirestoreDocumentReference<FavoriteGameDocumentSnapshot> {
+abstract class FavoriteGameDocumentReference extends FirestoreDocumentReference<
+    FavoriteGame, FavoriteGameDocumentSnapshot> {
   factory FavoriteGameDocumentReference(
           DocumentReference<FavoriteGame> reference) =
       _$FavoriteGameDocumentReference;
@@ -118,18 +125,48 @@ abstract class FavoriteGameDocumentReference
   @override
   Future<void> delete();
 
+  /// Updates data on the document. Data will be merged with any existing
+  /// document data.
+  ///
+  /// If no document exists yet, the update will fail.
   Future<void> update({
     int gameId,
+    FieldValue gameIdFieldValue,
     String ownerId,
+    FieldValue ownerIdFieldValue,
+    DateTime savedOn,
+    FieldValue savedOnFieldValue,
     List<Object?> props,
+    FieldValue propsFieldValue,
+    bool? stringify,
+    FieldValue stringifyFieldValue,
+    int hashCode,
+    FieldValue hashCodeFieldValue,
   });
 
-  Future<void> set(FavoriteGame value);
+  /// Updates fields in the current document using the transaction API.
+  ///
+  /// The update will fail if applied to a document that does not exist.
+  void transactionUpdate(
+    Transaction transaction, {
+    int gameId,
+    FieldValue gameIdFieldValue,
+    String ownerId,
+    FieldValue ownerIdFieldValue,
+    DateTime savedOn,
+    FieldValue savedOnFieldValue,
+    List<Object?> props,
+    FieldValue propsFieldValue,
+    bool? stringify,
+    FieldValue stringifyFieldValue,
+    int hashCode,
+    FieldValue hashCodeFieldValue,
+  });
 }
 
-class _$FavoriteGameDocumentReference
-    extends FirestoreDocumentReference<FavoriteGameDocumentSnapshot>
-    implements FavoriteGameDocumentReference {
+class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
+    FavoriteGame,
+    FavoriteGameDocumentSnapshot> implements FavoriteGameDocumentReference {
   _$FavoriteGameDocumentReference(this.reference);
 
   @override
@@ -161,26 +198,126 @@ class _$FavoriteGameDocumentReference
   }
 
   @override
-  Future<void> delete() {
-    return reference.delete();
+  Future<FavoriteGameDocumentSnapshot> transactionGet(Transaction transaction) {
+    return transaction.get(reference).then((snapshot) {
+      return FavoriteGameDocumentSnapshot._(
+        snapshot,
+        snapshot.data(),
+      );
+    });
   }
 
   Future<void> update({
     Object? gameId = _sentinel,
+    FieldValue? gameIdFieldValue,
     Object? ownerId = _sentinel,
+    FieldValue? ownerIdFieldValue,
+    Object? savedOn = _sentinel,
+    FieldValue? savedOnFieldValue,
     Object? props = _sentinel,
+    FieldValue? propsFieldValue,
+    Object? stringify = _sentinel,
+    FieldValue? stringifyFieldValue,
+    Object? hashCode = _sentinel,
+    FieldValue? hashCodeFieldValue,
   }) async {
+    assert(
+      gameId == _sentinel || gameIdFieldValue == null,
+      "Cannot specify both gameId and gameIdFieldValue",
+    );
+    assert(
+      ownerId == _sentinel || ownerIdFieldValue == null,
+      "Cannot specify both ownerId and ownerIdFieldValue",
+    );
+    assert(
+      savedOn == _sentinel || savedOnFieldValue == null,
+      "Cannot specify both savedOn and savedOnFieldValue",
+    );
+    assert(
+      props == _sentinel || propsFieldValue == null,
+      "Cannot specify both props and propsFieldValue",
+    );
+    assert(
+      stringify == _sentinel || stringifyFieldValue == null,
+      "Cannot specify both stringify and stringifyFieldValue",
+    );
+    assert(
+      hashCode == _sentinel || hashCodeFieldValue == null,
+      "Cannot specify both hashCode and hashCodeFieldValue",
+    );
     final json = {
-      if (gameId != _sentinel) "gameId": gameId as int,
-      if (ownerId != _sentinel) "ownerId": ownerId as String,
-      if (props != _sentinel) "props": props as List<Object?>,
+      if (gameId != _sentinel) 'gameId': gameId as int,
+      if (gameIdFieldValue != null) 'gameId': gameIdFieldValue,
+      if (ownerId != _sentinel) 'ownerId': ownerId as String,
+      if (ownerIdFieldValue != null) 'ownerId': ownerIdFieldValue,
+      if (savedOn != _sentinel) 'savedOn': savedOn as DateTime,
+      if (savedOnFieldValue != null) 'savedOn': savedOnFieldValue,
+      if (props != _sentinel) 'props': props as List<Object?>,
+      if (propsFieldValue != null) 'props': propsFieldValue,
+      if (stringify != _sentinel) 'stringify': stringify as bool?,
+      if (stringifyFieldValue != null) 'stringify': stringifyFieldValue,
+      if (hashCode != _sentinel) 'hashCode': hashCode as int,
+      if (hashCodeFieldValue != null) 'hashCode': hashCodeFieldValue,
     };
 
     return reference.update(json);
   }
 
-  Future<void> set(FavoriteGame value) {
-    return reference.set(value);
+  void transactionUpdate(
+    Transaction transaction, {
+    Object? gameId = _sentinel,
+    FieldValue? gameIdFieldValue,
+    Object? ownerId = _sentinel,
+    FieldValue? ownerIdFieldValue,
+    Object? savedOn = _sentinel,
+    FieldValue? savedOnFieldValue,
+    Object? props = _sentinel,
+    FieldValue? propsFieldValue,
+    Object? stringify = _sentinel,
+    FieldValue? stringifyFieldValue,
+    Object? hashCode = _sentinel,
+    FieldValue? hashCodeFieldValue,
+  }) {
+    assert(
+      gameId == _sentinel || gameIdFieldValue == null,
+      "Cannot specify both gameId and gameIdFieldValue",
+    );
+    assert(
+      ownerId == _sentinel || ownerIdFieldValue == null,
+      "Cannot specify both ownerId and ownerIdFieldValue",
+    );
+    assert(
+      savedOn == _sentinel || savedOnFieldValue == null,
+      "Cannot specify both savedOn and savedOnFieldValue",
+    );
+    assert(
+      props == _sentinel || propsFieldValue == null,
+      "Cannot specify both props and propsFieldValue",
+    );
+    assert(
+      stringify == _sentinel || stringifyFieldValue == null,
+      "Cannot specify both stringify and stringifyFieldValue",
+    );
+    assert(
+      hashCode == _sentinel || hashCodeFieldValue == null,
+      "Cannot specify both hashCode and hashCodeFieldValue",
+    );
+    final json = {
+      if (gameId != _sentinel) 'gameId': gameId as int,
+      if (gameIdFieldValue != null) 'gameId': gameIdFieldValue,
+      if (ownerId != _sentinel) 'ownerId': ownerId as String,
+      if (ownerIdFieldValue != null) 'ownerId': ownerIdFieldValue,
+      if (savedOn != _sentinel) 'savedOn': savedOn as DateTime,
+      if (savedOnFieldValue != null) 'savedOn': savedOnFieldValue,
+      if (props != _sentinel) 'props': props as List<Object?>,
+      if (propsFieldValue != null) 'props': propsFieldValue,
+      if (stringify != _sentinel) 'stringify': stringify as bool?,
+      if (stringifyFieldValue != null) 'stringify': stringifyFieldValue,
+      if (hashCode != _sentinel) 'hashCode': hashCode as int,
+      if (hashCodeFieldValue != null) 'hashCode': hashCodeFieldValue,
+    };
+
+    transaction.update(reference, json);
   }
 
   @override
@@ -195,7 +332,8 @@ class _$FavoriteGameDocumentReference
   int get hashCode => Object.hash(runtimeType, parent, id);
 }
 
-class FavoriteGameDocumentSnapshot extends FirestoreDocumentSnapshot {
+class FavoriteGameDocumentSnapshot
+    extends FirestoreDocumentSnapshot<FavoriteGame> {
   FavoriteGameDocumentSnapshot._(
     this.snapshot,
     this.data,
@@ -216,13 +354,89 @@ class FavoriteGameDocumentSnapshot extends FirestoreDocumentSnapshot {
 }
 
 abstract class FavoriteGameQuery
-    implements QueryReference<FavoriteGameQuerySnapshot> {
+    implements QueryReference<FavoriteGame, FavoriteGameQuerySnapshot> {
   @override
   FavoriteGameQuery limit(int limit);
 
   @override
   FavoriteGameQuery limitToLast(int limit);
 
+  /// Perform an order query based on a [FieldPath].
+  ///
+  /// This method is considered unsafe as it does check that the field path
+  /// maps to a valid property or that parameters such as [isEqualTo] receive
+  /// a value of the correct type.
+  ///
+  /// If possible, instead use the more explicit variant of order queries:
+  ///
+  /// **AVOID**:
+  /// ```dart
+  /// collection.orderByFieldPath(
+  ///   FieldPath.fromString('title'),
+  ///   startAt: 'title',
+  /// );
+  /// ```
+  ///
+  /// **PREFER**:
+  /// ```dart
+  /// collection.orderByTitle(startAt: 'title');
+  /// ```
+  FavoriteGameQuery orderByFieldPath(
+    FieldPath fieldPath, {
+    bool descending = false,
+    Object? startAt,
+    Object? startAfter,
+    Object? endAt,
+    Object? endBefore,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  });
+
+  /// Perform a where query based on a [FieldPath].
+  ///
+  /// This method is considered unsafe as it does check that the field path
+  /// maps to a valid property or that parameters such as [isEqualTo] receive
+  /// a value of the correct type.
+  ///
+  /// If possible, instead use the more explicit variant of where queries:
+  ///
+  /// **AVOID**:
+  /// ```dart
+  /// collection.whereFieldPath(FieldPath.fromString('title'), isEqualTo: 'title');
+  /// ```
+  ///
+  /// **PREFER**:
+  /// ```dart
+  /// collection.whereTitle(isEqualTo: 'title');
+  /// ```
+  FavoriteGameQuery whereFieldPath(
+    FieldPath fieldPath, {
+    Object? isEqualTo,
+    Object? isNotEqualTo,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  });
+
+  FavoriteGameQuery whereDocumentId({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+  });
   FavoriteGameQuery whereGameId({
     int? isEqualTo,
     int? isNotEqualTo,
@@ -245,6 +459,17 @@ abstract class FavoriteGameQuery
     List<String>? whereIn,
     List<String>? whereNotIn,
   });
+  FavoriteGameQuery whereSavedOn({
+    DateTime? isEqualTo,
+    DateTime? isNotEqualTo,
+    DateTime? isLessThan,
+    DateTime? isLessThanOrEqualTo,
+    DateTime? isGreaterThan,
+    DateTime? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<DateTime>? whereIn,
+    List<DateTime>? whereNotIn,
+  });
   FavoriteGameQuery whereProps({
     List<Object?>? isEqualTo,
     List<Object?>? isNotEqualTo,
@@ -253,7 +478,42 @@ abstract class FavoriteGameQuery
     List<Object?>? isGreaterThan,
     List<Object?>? isGreaterThanOrEqualTo,
     bool? isNull,
+    Object? arrayContains,
     List<Object?>? arrayContainsAny,
+  });
+  FavoriteGameQuery whereStringify({
+    bool? isEqualTo,
+    bool? isNotEqualTo,
+    bool? isLessThan,
+    bool? isLessThanOrEqualTo,
+    bool? isGreaterThan,
+    bool? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<bool?>? whereIn,
+    List<bool?>? whereNotIn,
+  });
+  FavoriteGameQuery whereHashCode({
+    int? isEqualTo,
+    int? isNotEqualTo,
+    int? isLessThan,
+    int? isLessThanOrEqualTo,
+    int? isGreaterThan,
+    int? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<int>? whereIn,
+    List<int>? whereNotIn,
+  });
+
+  FavoriteGameQuery orderByDocumentId({
+    bool descending = false,
+    String startAt,
+    String startAfter,
+    String endAt,
+    String endBefore,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
   });
 
   FavoriteGameQuery orderByGameId({
@@ -280,6 +540,18 @@ abstract class FavoriteGameQuery
     FavoriteGameDocumentSnapshot? startAfterDocument,
   });
 
+  FavoriteGameQuery orderBySavedOn({
+    bool descending = false,
+    DateTime startAt,
+    DateTime startAfter,
+    DateTime endAt,
+    DateTime endBefore,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  });
+
   FavoriteGameQuery orderByProps({
     bool descending = false,
     List<Object?> startAt,
@@ -291,19 +563,45 @@ abstract class FavoriteGameQuery
     FavoriteGameDocumentSnapshot? endBeforeDocument,
     FavoriteGameDocumentSnapshot? startAfterDocument,
   });
+
+  FavoriteGameQuery orderByStringify({
+    bool descending = false,
+    bool? startAt,
+    bool? startAfter,
+    bool? endAt,
+    bool? endBefore,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  });
+
+  FavoriteGameQuery orderByHashCode({
+    bool descending = false,
+    int startAt,
+    int startAfter,
+    int endAt,
+    int endBefore,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  });
 }
 
-class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
+class _$FavoriteGameQuery
+    extends QueryReference<FavoriteGame, FavoriteGameQuerySnapshot>
     implements FavoriteGameQuery {
   _$FavoriteGameQuery(
-    this.reference,
-    this._collection,
-  );
+    this._collection, {
+    required Query<FavoriteGame> $referenceWithoutCursor,
+    $QueryCursor $queryCursor = const $QueryCursor(),
+  }) : super(
+          $referenceWithoutCursor: $referenceWithoutCursor,
+          $queryCursor: $queryCursor,
+        );
 
   final CollectionReference<Object?> _collection;
-
-  @override
-  final Query<FavoriteGame> reference;
 
   FavoriteGameQuerySnapshot _decodeSnapshot(
     QuerySnapshot<FavoriteGame> snapshot,
@@ -341,16 +639,153 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
   @override
   FavoriteGameQuery limit(int limit) {
     return _$FavoriteGameQuery(
-      reference.limit(limit),
       _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.limit(limit),
+      $queryCursor: $queryCursor,
     );
   }
 
   @override
   FavoriteGameQuery limitToLast(int limit) {
     return _$FavoriteGameQuery(
-      reference.limitToLast(limit),
       _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.limitToLast(limit),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  FavoriteGameQuery orderByFieldPath(
+    FieldPath fieldPath, {
+    bool descending = false,
+    Object? startAt = _sentinel,
+    Object? startAfter = _sentinel,
+    Object? endAt = _sentinel,
+    Object? endBefore = _sentinel,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  }) {
+    final query =
+        $referenceWithoutCursor.orderBy(fieldPath, descending: descending);
+    var queryCursor = $queryCursor;
+
+    if (startAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
+    }
+    if (startAfterDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
+    }
+    if (endAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
+    }
+    if (endBeforeDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
+    }
+
+    if (startAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
+    }
+    if (startAfter != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
+    }
+    if (endAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
+    }
+    if (endBefore != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
+    }
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
+    );
+  }
+
+  FavoriteGameQuery whereFieldPath(
+    FieldPath fieldPath, {
+    Object? isEqualTo,
+    Object? isNotEqualTo,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        fieldPath,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        arrayContains: arrayContains,
+        arrayContainsAny: arrayContainsAny,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+        isNull: isNull,
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  FavoriteGameQuery whereDocumentId({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        FieldPath.documentId,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        isNull: isNull,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+      ),
+      $queryCursor: $queryCursor,
     );
   }
 
@@ -366,8 +801,9 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
     List<int>? whereNotIn,
   }) {
     return _$FavoriteGameQuery(
-      reference.where(
-        'gameId',
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['gameId']!,
         isEqualTo: isEqualTo,
         isNotEqualTo: isNotEqualTo,
         isLessThan: isLessThan,
@@ -378,7 +814,7 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
         whereIn: whereIn,
         whereNotIn: whereNotIn,
       ),
-      _collection,
+      $queryCursor: $queryCursor,
     );
   }
 
@@ -394,8 +830,9 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
     List<String>? whereNotIn,
   }) {
     return _$FavoriteGameQuery(
-      reference.where(
-        'ownerId',
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['ownerId']!,
         isEqualTo: isEqualTo,
         isNotEqualTo: isNotEqualTo,
         isLessThan: isLessThan,
@@ -406,7 +843,36 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
         whereIn: whereIn,
         whereNotIn: whereNotIn,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  FavoriteGameQuery whereSavedOn({
+    DateTime? isEqualTo,
+    DateTime? isNotEqualTo,
+    DateTime? isLessThan,
+    DateTime? isLessThanOrEqualTo,
+    DateTime? isGreaterThan,
+    DateTime? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<DateTime>? whereIn,
+    List<DateTime>? whereNotIn,
+  }) {
+    return _$FavoriteGameQuery(
       _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['savedOn']!,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        isNull: isNull,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+      ),
+      $queryCursor: $queryCursor,
     );
   }
 
@@ -418,11 +884,13 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
     List<Object?>? isGreaterThan,
     List<Object?>? isGreaterThanOrEqualTo,
     bool? isNull,
+    Object? arrayContains,
     List<Object?>? arrayContainsAny,
   }) {
     return _$FavoriteGameQuery(
-      reference.where(
-        'props',
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['props']!,
         isEqualTo: isEqualTo,
         isNotEqualTo: isNotEqualTo,
         isLessThan: isLessThan,
@@ -430,9 +898,140 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
         isGreaterThan: isGreaterThan,
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         isNull: isNull,
+        arrayContains: arrayContains,
         arrayContainsAny: arrayContainsAny,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  FavoriteGameQuery whereStringify({
+    bool? isEqualTo,
+    bool? isNotEqualTo,
+    bool? isLessThan,
+    bool? isLessThanOrEqualTo,
+    bool? isGreaterThan,
+    bool? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<bool?>? whereIn,
+    List<bool?>? whereNotIn,
+  }) {
+    return _$FavoriteGameQuery(
       _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['stringify']!,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        isNull: isNull,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  FavoriteGameQuery whereHashCode({
+    int? isEqualTo,
+    int? isNotEqualTo,
+    int? isLessThan,
+    int? isLessThanOrEqualTo,
+    int? isGreaterThan,
+    int? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<int>? whereIn,
+    List<int>? whereNotIn,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['hashCode']!,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        isNull: isNull,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  FavoriteGameQuery orderByDocumentId({
+    bool descending = false,
+    Object? startAt = _sentinel,
+    Object? startAfter = _sentinel,
+    Object? endAt = _sentinel,
+    Object? endBefore = _sentinel,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  }) {
+    final query = $referenceWithoutCursor.orderBy(FieldPath.documentId,
+        descending: descending);
+    var queryCursor = $queryCursor;
+
+    if (startAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
+    }
+    if (startAfterDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
+    }
+    if (endAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
+    }
+    if (endBeforeDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
+    }
+
+    if (startAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
+    }
+    if (startAfter != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
+    }
+    if (endAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
+    }
+    if (endBefore != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
+    }
+
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
     );
   }
 
@@ -447,35 +1046,65 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
     FavoriteGameDocumentSnapshot? endBeforeDocument,
     FavoriteGameDocumentSnapshot? startAfterDocument,
   }) {
-    var query = reference.orderBy('gameId', descending: descending);
+    final query = $referenceWithoutCursor
+        .orderBy(_$FavoriteGameFieldMap['gameId']!, descending: descending);
+    var queryCursor = $queryCursor;
 
     if (startAtDocument != null) {
-      query = query.startAtDocument(startAtDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
     }
     if (startAfterDocument != null) {
-      query = query.startAfterDocument(startAfterDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
     }
     if (endAtDocument != null) {
-      query = query.endAtDocument(endAtDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
     }
     if (endBeforeDocument != null) {
-      query = query.endBeforeDocument(endBeforeDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
     }
 
     if (startAt != _sentinel) {
-      query = query.startAt([startAt]);
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
     }
     if (startAfter != _sentinel) {
-      query = query.startAfter([startAfter]);
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
     }
     if (endAt != _sentinel) {
-      query = query.endAt([endAt]);
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
     }
     if (endBefore != _sentinel) {
-      query = query.endBefore([endBefore]);
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
     }
 
-    return _$FavoriteGameQuery(query, _collection);
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
+    );
   }
 
   FavoriteGameQuery orderByOwnerId({
@@ -489,35 +1118,137 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
     FavoriteGameDocumentSnapshot? endBeforeDocument,
     FavoriteGameDocumentSnapshot? startAfterDocument,
   }) {
-    var query = reference.orderBy('ownerId', descending: descending);
+    final query = $referenceWithoutCursor
+        .orderBy(_$FavoriteGameFieldMap['ownerId']!, descending: descending);
+    var queryCursor = $queryCursor;
 
     if (startAtDocument != null) {
-      query = query.startAtDocument(startAtDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
     }
     if (startAfterDocument != null) {
-      query = query.startAfterDocument(startAfterDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
     }
     if (endAtDocument != null) {
-      query = query.endAtDocument(endAtDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
     }
     if (endBeforeDocument != null) {
-      query = query.endBeforeDocument(endBeforeDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
     }
 
     if (startAt != _sentinel) {
-      query = query.startAt([startAt]);
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
     }
     if (startAfter != _sentinel) {
-      query = query.startAfter([startAfter]);
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
     }
     if (endAt != _sentinel) {
-      query = query.endAt([endAt]);
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
     }
     if (endBefore != _sentinel) {
-      query = query.endBefore([endBefore]);
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
     }
 
-    return _$FavoriteGameQuery(query, _collection);
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
+    );
+  }
+
+  FavoriteGameQuery orderBySavedOn({
+    bool descending = false,
+    Object? startAt = _sentinel,
+    Object? startAfter = _sentinel,
+    Object? endAt = _sentinel,
+    Object? endBefore = _sentinel,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  }) {
+    final query = $referenceWithoutCursor
+        .orderBy(_$FavoriteGameFieldMap['savedOn']!, descending: descending);
+    var queryCursor = $queryCursor;
+
+    if (startAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
+    }
+    if (startAfterDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
+    }
+    if (endAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
+    }
+    if (endBeforeDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
+    }
+
+    if (startAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
+    }
+    if (startAfter != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
+    }
+    if (endAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
+    }
+    if (endBefore != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
+    }
+
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
+    );
   }
 
   FavoriteGameQuery orderByProps({
@@ -531,35 +1262,209 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
     FavoriteGameDocumentSnapshot? endBeforeDocument,
     FavoriteGameDocumentSnapshot? startAfterDocument,
   }) {
-    var query = reference.orderBy('props', descending: descending);
+    final query = $referenceWithoutCursor
+        .orderBy(_$FavoriteGameFieldMap['props']!, descending: descending);
+    var queryCursor = $queryCursor;
 
     if (startAtDocument != null) {
-      query = query.startAtDocument(startAtDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
     }
     if (startAfterDocument != null) {
-      query = query.startAfterDocument(startAfterDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
     }
     if (endAtDocument != null) {
-      query = query.endAtDocument(endAtDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
     }
     if (endBeforeDocument != null) {
-      query = query.endBeforeDocument(endBeforeDocument.snapshot);
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
     }
 
     if (startAt != _sentinel) {
-      query = query.startAt([startAt]);
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
     }
     if (startAfter != _sentinel) {
-      query = query.startAfter([startAfter]);
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
     }
     if (endAt != _sentinel) {
-      query = query.endAt([endAt]);
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
     }
     if (endBefore != _sentinel) {
-      query = query.endBefore([endBefore]);
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
     }
 
-    return _$FavoriteGameQuery(query, _collection);
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
+    );
+  }
+
+  FavoriteGameQuery orderByStringify({
+    bool descending = false,
+    Object? startAt = _sentinel,
+    Object? startAfter = _sentinel,
+    Object? endAt = _sentinel,
+    Object? endBefore = _sentinel,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  }) {
+    final query = $referenceWithoutCursor
+        .orderBy(_$FavoriteGameFieldMap['stringify']!, descending: descending);
+    var queryCursor = $queryCursor;
+
+    if (startAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
+    }
+    if (startAfterDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
+    }
+    if (endAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
+    }
+    if (endBeforeDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
+    }
+
+    if (startAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
+    }
+    if (startAfter != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
+    }
+    if (endAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
+    }
+    if (endBefore != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
+    }
+
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
+    );
+  }
+
+  FavoriteGameQuery orderByHashCode({
+    bool descending = false,
+    Object? startAt = _sentinel,
+    Object? startAfter = _sentinel,
+    Object? endAt = _sentinel,
+    Object? endBefore = _sentinel,
+    FavoriteGameDocumentSnapshot? startAtDocument,
+    FavoriteGameDocumentSnapshot? endAtDocument,
+    FavoriteGameDocumentSnapshot? endBeforeDocument,
+    FavoriteGameDocumentSnapshot? startAfterDocument,
+  }) {
+    final query = $referenceWithoutCursor
+        .orderBy(_$FavoriteGameFieldMap['hashCode']!, descending: descending);
+    var queryCursor = $queryCursor;
+
+    if (startAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAt: const [],
+        startAtDocumentSnapshot: startAtDocument.snapshot,
+      );
+    }
+    if (startAfterDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: const [],
+        startAfterDocumentSnapshot: startAfterDocument.snapshot,
+      );
+    }
+    if (endAtDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endAt: const [],
+        endAtDocumentSnapshot: endAtDocument.snapshot,
+      );
+    }
+    if (endBeforeDocument != null) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: const [],
+        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
+      );
+    }
+
+    if (startAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAt: [...queryCursor.startAt, startAt],
+        startAtDocumentSnapshot: null,
+      );
+    }
+    if (startAfter != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        startAfter: [...queryCursor.startAfter, startAfter],
+        startAfterDocumentSnapshot: null,
+      );
+    }
+    if (endAt != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endAt: [...queryCursor.endAt, endAt],
+        endAtDocumentSnapshot: null,
+      );
+    }
+    if (endBefore != _sentinel) {
+      queryCursor = queryCursor.copyWith(
+        endBefore: [...queryCursor.endBefore, endBefore],
+        endBeforeDocumentSnapshot: null,
+      );
+    }
+
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: query,
+      $queryCursor: queryCursor,
+    );
   }
 
   @override
@@ -573,8 +1478,8 @@ class _$FavoriteGameQuery extends QueryReference<FavoriteGameQuerySnapshot>
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
-class FavoriteGameQuerySnapshot
-    extends FirestoreQuerySnapshot<FavoriteGameQueryDocumentSnapshot> {
+class FavoriteGameQuerySnapshot extends FirestoreQuerySnapshot<FavoriteGame,
+    FavoriteGameQueryDocumentSnapshot> {
   FavoriteGameQuerySnapshot._(
     this.snapshot,
     this.docs,
@@ -590,7 +1495,8 @@ class FavoriteGameQuerySnapshot
   final List<FirestoreDocumentChange<FavoriteGameDocumentSnapshot>> docChanges;
 }
 
-class FavoriteGameQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
+class FavoriteGameQueryDocumentSnapshot
+    extends FirestoreQueryDocumentSnapshot<FavoriteGame>
     implements FavoriteGameDocumentSnapshot {
   FavoriteGameQueryDocumentSnapshot._(this.snapshot, this.data);
 
@@ -613,12 +1519,19 @@ class FavoriteGameQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
 FavoriteGame _$FavoriteGameFromJson(Map<String, dynamic> json) => FavoriteGame(
       gameId: json['gameId'] as int,
       ownerId: json['ownerId'] as String,
-      savedOn: DateTime.parse(json['savedOn'] as String),
+      savedOn: const FirestoreDateTimeConverter()
+          .fromJson(json['savedOn'] as Timestamp),
     );
+
+const _$FavoriteGameFieldMap = <String, String>{
+  'gameId': 'gameId',
+  'ownerId': 'ownerId',
+  'savedOn': 'savedOn',
+};
 
 Map<String, dynamic> _$FavoriteGameToJson(FavoriteGame instance) =>
     <String, dynamic>{
       'gameId': instance.gameId,
       'ownerId': instance.ownerId,
-      'savedOn': instance.savedOn.toIso8601String(),
+      'savedOn': const FirestoreDateTimeConverter().toJson(instance.savedOn),
     };

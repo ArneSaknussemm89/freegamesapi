@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'authentication.dart';
@@ -11,29 +12,7 @@ part of 'authentication.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthenticationEventTearOff {
-  const _$AuthenticationEventTearOff();
-
-  SignInWithPhoneNumber signInWithPhoneNumber() {
-    return const SignInWithPhoneNumber();
-  }
-
-  Authenticate authenticate(User user) {
-    return Authenticate(
-      user,
-    );
-  }
-
-  Unauthenticate unauthenticate() {
-    return const Unauthenticate();
-  }
-}
-
-/// @nodoc
-const $AuthenticationEvent = _$AuthenticationEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthenticationEvent {
@@ -46,9 +25,9 @@ mixin _$AuthenticationEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithPhoneNumber,
-    TResult Function(User user)? authenticate,
-    TResult Function()? unauthenticate,
+    TResult? Function()? signInWithPhoneNumber,
+    TResult? Function(User user)? authenticate,
+    TResult? Function()? unauthenticate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,9 +48,9 @@ mixin _$AuthenticationEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
-    TResult Function(Authenticate value)? authenticate,
-    TResult Function(Unauthenticate value)? unauthenticate,
+    TResult? Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
+    TResult? Function(Authenticate value)? authenticate,
+    TResult? Function(Unauthenticate value)? unauthenticate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,36 +67,34 @@ mixin _$AuthenticationEvent {
 abstract class $AuthenticationEventCopyWith<$Res> {
   factory $AuthenticationEventCopyWith(
           AuthenticationEvent value, $Res Function(AuthenticationEvent) then) =
-      _$AuthenticationEventCopyWithImpl<$Res>;
+      _$AuthenticationEventCopyWithImpl<$Res, AuthenticationEvent>;
 }
 
 /// @nodoc
-class _$AuthenticationEventCopyWithImpl<$Res>
+class _$AuthenticationEventCopyWithImpl<$Res, $Val extends AuthenticationEvent>
     implements $AuthenticationEventCopyWith<$Res> {
   _$AuthenticationEventCopyWithImpl(this._value, this._then);
 
-  final AuthenticationEvent _value;
   // ignore: unused_field
-  final $Res Function(AuthenticationEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $SignInWithPhoneNumberCopyWith<$Res> {
-  factory $SignInWithPhoneNumberCopyWith(SignInWithPhoneNumber value,
-          $Res Function(SignInWithPhoneNumber) then) =
-      _$SignInWithPhoneNumberCopyWithImpl<$Res>;
+abstract class _$$SignInWithPhoneNumberCopyWith<$Res> {
+  factory _$$SignInWithPhoneNumberCopyWith(_$SignInWithPhoneNumber value,
+          $Res Function(_$SignInWithPhoneNumber) then) =
+      __$$SignInWithPhoneNumberCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignInWithPhoneNumberCopyWithImpl<$Res>
-    extends _$AuthenticationEventCopyWithImpl<$Res>
-    implements $SignInWithPhoneNumberCopyWith<$Res> {
-  _$SignInWithPhoneNumberCopyWithImpl(
-      SignInWithPhoneNumber _value, $Res Function(SignInWithPhoneNumber) _then)
-      : super(_value, (v) => _then(v as SignInWithPhoneNumber));
-
-  @override
-  SignInWithPhoneNumber get _value => super._value as SignInWithPhoneNumber;
+class __$$SignInWithPhoneNumberCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res, _$SignInWithPhoneNumber>
+    implements _$$SignInWithPhoneNumberCopyWith<$Res> {
+  __$$SignInWithPhoneNumberCopyWithImpl(_$SignInWithPhoneNumber _value,
+      $Res Function(_$SignInWithPhoneNumber) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -133,7 +110,7 @@ class _$SignInWithPhoneNumber implements SignInWithPhoneNumber {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SignInWithPhoneNumber);
+        (other.runtimeType == runtimeType && other is _$SignInWithPhoneNumber);
   }
 
   @override
@@ -152,9 +129,9 @@ class _$SignInWithPhoneNumber implements SignInWithPhoneNumber {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithPhoneNumber,
-    TResult Function(User user)? authenticate,
-    TResult Function()? unauthenticate,
+    TResult? Function()? signInWithPhoneNumber,
+    TResult? Function(User user)? authenticate,
+    TResult? Function()? unauthenticate,
   }) {
     return signInWithPhoneNumber?.call();
   }
@@ -187,9 +164,9 @@ class _$SignInWithPhoneNumber implements SignInWithPhoneNumber {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
-    TResult Function(Authenticate value)? authenticate,
-    TResult Function(Unauthenticate value)? unauthenticate,
+    TResult? Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
+    TResult? Function(Authenticate value)? authenticate,
+    TResult? Function(Unauthenticate value)? unauthenticate,
   }) {
     return signInWithPhoneNumber?.call(this);
   }
@@ -214,30 +191,29 @@ abstract class SignInWithPhoneNumber implements AuthenticationEvent {
 }
 
 /// @nodoc
-abstract class $AuthenticateCopyWith<$Res> {
-  factory $AuthenticateCopyWith(
-          Authenticate value, $Res Function(Authenticate) then) =
-      _$AuthenticateCopyWithImpl<$Res>;
+abstract class _$$AuthenticateCopyWith<$Res> {
+  factory _$$AuthenticateCopyWith(
+          _$Authenticate value, $Res Function(_$Authenticate) then) =
+      __$$AuthenticateCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 }
 
 /// @nodoc
-class _$AuthenticateCopyWithImpl<$Res>
-    extends _$AuthenticationEventCopyWithImpl<$Res>
-    implements $AuthenticateCopyWith<$Res> {
-  _$AuthenticateCopyWithImpl(
-      Authenticate _value, $Res Function(Authenticate) _then)
-      : super(_value, (v) => _then(v as Authenticate));
+class __$$AuthenticateCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res, _$Authenticate>
+    implements _$$AuthenticateCopyWith<$Res> {
+  __$$AuthenticateCopyWithImpl(
+      _$Authenticate _value, $Res Function(_$Authenticate) _then)
+      : super(_value, _then);
 
-  @override
-  Authenticate get _value => super._value as Authenticate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
-    return _then(Authenticate(
-      user == freezed
+    return _then(_$Authenticate(
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -262,18 +238,18 @@ class _$Authenticate implements Authenticate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Authenticate &&
-            const DeepCollectionEquality().equals(other.user, user));
+            other is _$Authenticate &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
-  $AuthenticateCopyWith<Authenticate> get copyWith =>
-      _$AuthenticateCopyWithImpl<Authenticate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AuthenticateCopyWith<_$Authenticate> get copyWith =>
+      __$$AuthenticateCopyWithImpl<_$Authenticate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -288,9 +264,9 @@ class _$Authenticate implements Authenticate {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithPhoneNumber,
-    TResult Function(User user)? authenticate,
-    TResult Function()? unauthenticate,
+    TResult? Function()? signInWithPhoneNumber,
+    TResult? Function(User user)? authenticate,
+    TResult? Function()? unauthenticate,
   }) {
     return authenticate?.call(user);
   }
@@ -323,9 +299,9 @@ class _$Authenticate implements Authenticate {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
-    TResult Function(Authenticate value)? authenticate,
-    TResult Function(Unauthenticate value)? unauthenticate,
+    TResult? Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
+    TResult? Function(Authenticate value)? authenticate,
+    TResult? Function(Unauthenticate value)? unauthenticate,
   }) {
     return authenticate?.call(this);
   }
@@ -346,31 +322,28 @@ class _$Authenticate implements Authenticate {
 }
 
 abstract class Authenticate implements AuthenticationEvent {
-  const factory Authenticate(User user) = _$Authenticate;
+  const factory Authenticate(final User user) = _$Authenticate;
 
   User get user;
   @JsonKey(ignore: true)
-  $AuthenticateCopyWith<Authenticate> get copyWith =>
+  _$$AuthenticateCopyWith<_$Authenticate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UnauthenticateCopyWith<$Res> {
-  factory $UnauthenticateCopyWith(
-          Unauthenticate value, $Res Function(Unauthenticate) then) =
-      _$UnauthenticateCopyWithImpl<$Res>;
+abstract class _$$UnauthenticateCopyWith<$Res> {
+  factory _$$UnauthenticateCopyWith(
+          _$Unauthenticate value, $Res Function(_$Unauthenticate) then) =
+      __$$UnauthenticateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnauthenticateCopyWithImpl<$Res>
-    extends _$AuthenticationEventCopyWithImpl<$Res>
-    implements $UnauthenticateCopyWith<$Res> {
-  _$UnauthenticateCopyWithImpl(
-      Unauthenticate _value, $Res Function(Unauthenticate) _then)
-      : super(_value, (v) => _then(v as Unauthenticate));
-
-  @override
-  Unauthenticate get _value => super._value as Unauthenticate;
+class __$$UnauthenticateCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res, _$Unauthenticate>
+    implements _$$UnauthenticateCopyWith<$Res> {
+  __$$UnauthenticateCopyWithImpl(
+      _$Unauthenticate _value, $Res Function(_$Unauthenticate) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -386,7 +359,7 @@ class _$Unauthenticate implements Unauthenticate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Unauthenticate);
+        (other.runtimeType == runtimeType && other is _$Unauthenticate);
   }
 
   @override
@@ -405,9 +378,9 @@ class _$Unauthenticate implements Unauthenticate {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithPhoneNumber,
-    TResult Function(User user)? authenticate,
-    TResult Function()? unauthenticate,
+    TResult? Function()? signInWithPhoneNumber,
+    TResult? Function(User user)? authenticate,
+    TResult? Function()? unauthenticate,
   }) {
     return unauthenticate?.call();
   }
@@ -440,9 +413,9 @@ class _$Unauthenticate implements Unauthenticate {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
-    TResult Function(Authenticate value)? authenticate,
-    TResult Function(Unauthenticate value)? unauthenticate,
+    TResult? Function(SignInWithPhoneNumber value)? signInWithPhoneNumber,
+    TResult? Function(Authenticate value)? authenticate,
+    TResult? Function(Unauthenticate value)? unauthenticate,
   }) {
     return unauthenticate?.call(this);
   }
@@ -467,28 +440,6 @@ abstract class Unauthenticate implements AuthenticationEvent {
 }
 
 /// @nodoc
-class _$AuthenticationStateTearOff {
-  const _$AuthenticationStateTearOff();
-
-  Uninitialized uninitialized() {
-    return const Uninitialized();
-  }
-
-  Unauthenticated unauthenticated() {
-    return const Unauthenticated();
-  }
-
-  Authenticated authenticated(User user) {
-    return Authenticated(
-      user,
-    );
-  }
-}
-
-/// @nodoc
-const $AuthenticationState = _$AuthenticationStateTearOff();
-
-/// @nodoc
 mixin _$AuthenticationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -499,9 +450,9 @@ mixin _$AuthenticationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function()? unauthenticated,
-    TResult Function(User user)? authenticated,
+    TResult? Function()? uninitialized,
+    TResult? Function()? unauthenticated,
+    TResult? Function(User user)? authenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -521,9 +472,9 @@ mixin _$AuthenticationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Uninitialized value)? uninitialized,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
+    TResult? Function(Uninitialized value)? uninitialized,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Authenticated value)? authenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -540,36 +491,34 @@ mixin _$AuthenticationState {
 abstract class $AuthenticationStateCopyWith<$Res> {
   factory $AuthenticationStateCopyWith(
           AuthenticationState value, $Res Function(AuthenticationState) then) =
-      _$AuthenticationStateCopyWithImpl<$Res>;
+      _$AuthenticationStateCopyWithImpl<$Res, AuthenticationState>;
 }
 
 /// @nodoc
-class _$AuthenticationStateCopyWithImpl<$Res>
+class _$AuthenticationStateCopyWithImpl<$Res, $Val extends AuthenticationState>
     implements $AuthenticationStateCopyWith<$Res> {
   _$AuthenticationStateCopyWithImpl(this._value, this._then);
 
-  final AuthenticationState _value;
   // ignore: unused_field
-  final $Res Function(AuthenticationState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $UninitializedCopyWith<$Res> {
-  factory $UninitializedCopyWith(
-          Uninitialized value, $Res Function(Uninitialized) then) =
-      _$UninitializedCopyWithImpl<$Res>;
+abstract class _$$UninitializedCopyWith<$Res> {
+  factory _$$UninitializedCopyWith(
+          _$Uninitialized value, $Res Function(_$Uninitialized) then) =
+      __$$UninitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UninitializedCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res>
-    implements $UninitializedCopyWith<$Res> {
-  _$UninitializedCopyWithImpl(
-      Uninitialized _value, $Res Function(Uninitialized) _then)
-      : super(_value, (v) => _then(v as Uninitialized));
-
-  @override
-  Uninitialized get _value => super._value as Uninitialized;
+class __$$UninitializedCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$Uninitialized>
+    implements _$$UninitializedCopyWith<$Res> {
+  __$$UninitializedCopyWithImpl(
+      _$Uninitialized _value, $Res Function(_$Uninitialized) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -585,7 +534,7 @@ class _$Uninitialized implements Uninitialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Uninitialized);
+        (other.runtimeType == runtimeType && other is _$Uninitialized);
   }
 
   @override
@@ -604,9 +553,9 @@ class _$Uninitialized implements Uninitialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function()? unauthenticated,
-    TResult Function(User user)? authenticated,
+    TResult? Function()? uninitialized,
+    TResult? Function()? unauthenticated,
+    TResult? Function(User user)? authenticated,
   }) {
     return uninitialized?.call();
   }
@@ -638,9 +587,9 @@ class _$Uninitialized implements Uninitialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Uninitialized value)? uninitialized,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
+    TResult? Function(Uninitialized value)? uninitialized,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Authenticated value)? authenticated,
   }) {
     return uninitialized?.call(this);
   }
@@ -665,22 +614,19 @@ abstract class Uninitialized implements AuthenticationState {
 }
 
 /// @nodoc
-abstract class $UnauthenticatedCopyWith<$Res> {
-  factory $UnauthenticatedCopyWith(
-          Unauthenticated value, $Res Function(Unauthenticated) then) =
-      _$UnauthenticatedCopyWithImpl<$Res>;
+abstract class _$$UnauthenticatedCopyWith<$Res> {
+  factory _$$UnauthenticatedCopyWith(
+          _$Unauthenticated value, $Res Function(_$Unauthenticated) then) =
+      __$$UnauthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnauthenticatedCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res>
-    implements $UnauthenticatedCopyWith<$Res> {
-  _$UnauthenticatedCopyWithImpl(
-      Unauthenticated _value, $Res Function(Unauthenticated) _then)
-      : super(_value, (v) => _then(v as Unauthenticated));
-
-  @override
-  Unauthenticated get _value => super._value as Unauthenticated;
+class __$$UnauthenticatedCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$Unauthenticated>
+    implements _$$UnauthenticatedCopyWith<$Res> {
+  __$$UnauthenticatedCopyWithImpl(
+      _$Unauthenticated _value, $Res Function(_$Unauthenticated) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -696,7 +642,7 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Unauthenticated);
+        (other.runtimeType == runtimeType && other is _$Unauthenticated);
   }
 
   @override
@@ -715,9 +661,9 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function()? unauthenticated,
-    TResult Function(User user)? authenticated,
+    TResult? Function()? uninitialized,
+    TResult? Function()? unauthenticated,
+    TResult? Function(User user)? authenticated,
   }) {
     return unauthenticated?.call();
   }
@@ -749,9 +695,9 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Uninitialized value)? uninitialized,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
+    TResult? Function(Uninitialized value)? uninitialized,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Authenticated value)? authenticated,
   }) {
     return unauthenticated?.call(this);
   }
@@ -776,30 +722,29 @@ abstract class Unauthenticated implements AuthenticationState {
 }
 
 /// @nodoc
-abstract class $AuthenticatedCopyWith<$Res> {
-  factory $AuthenticatedCopyWith(
-          Authenticated value, $Res Function(Authenticated) then) =
-      _$AuthenticatedCopyWithImpl<$Res>;
+abstract class _$$AuthenticatedCopyWith<$Res> {
+  factory _$$AuthenticatedCopyWith(
+          _$Authenticated value, $Res Function(_$Authenticated) then) =
+      __$$AuthenticatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 }
 
 /// @nodoc
-class _$AuthenticatedCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res>
-    implements $AuthenticatedCopyWith<$Res> {
-  _$AuthenticatedCopyWithImpl(
-      Authenticated _value, $Res Function(Authenticated) _then)
-      : super(_value, (v) => _then(v as Authenticated));
+class __$$AuthenticatedCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$Authenticated>
+    implements _$$AuthenticatedCopyWith<$Res> {
+  __$$AuthenticatedCopyWithImpl(
+      _$Authenticated _value, $Res Function(_$Authenticated) _then)
+      : super(_value, _then);
 
-  @override
-  Authenticated get _value => super._value as Authenticated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
-    return _then(Authenticated(
-      user == freezed
+    return _then(_$Authenticated(
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -824,18 +769,18 @@ class _$Authenticated implements Authenticated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Authenticated &&
-            const DeepCollectionEquality().equals(other.user, user));
+            other is _$Authenticated &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
-  $AuthenticatedCopyWith<Authenticated> get copyWith =>
-      _$AuthenticatedCopyWithImpl<Authenticated>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AuthenticatedCopyWith<_$Authenticated> get copyWith =>
+      __$$AuthenticatedCopyWithImpl<_$Authenticated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -850,9 +795,9 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? uninitialized,
-    TResult Function()? unauthenticated,
-    TResult Function(User user)? authenticated,
+    TResult? Function()? uninitialized,
+    TResult? Function()? unauthenticated,
+    TResult? Function(User user)? authenticated,
   }) {
     return authenticated?.call(user);
   }
@@ -884,9 +829,9 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Uninitialized value)? uninitialized,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
+    TResult? Function(Uninitialized value)? uninitialized,
+    TResult? Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Authenticated value)? authenticated,
   }) {
     return authenticated?.call(this);
   }
@@ -907,10 +852,10 @@ class _$Authenticated implements Authenticated {
 }
 
 abstract class Authenticated implements AuthenticationState {
-  const factory Authenticated(User user) = _$Authenticated;
+  const factory Authenticated(final User user) = _$Authenticated;
 
   User get user;
   @JsonKey(ignore: true)
-  $AuthenticatedCopyWith<Authenticated> get copyWith =>
+  _$$AuthenticatedCopyWith<_$Authenticated> get copyWith =>
       throw _privateConstructorUsedError;
 }

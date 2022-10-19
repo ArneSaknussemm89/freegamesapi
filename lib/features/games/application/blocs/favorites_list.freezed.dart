@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'favorites_list.dart';
@@ -11,77 +12,7 @@ part of 'favorites_list.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FavoriteGamesListEventTearOff {
-  const _$FavoriteGamesListEventTearOff();
-
-  FavoriteGamesListFetchAll fetchAll() {
-    return const FavoriteGamesListFetchAll();
-  }
-
-  FavoriteGamesListFetchGames fetchGames() {
-    return const FavoriteGamesListFetchGames();
-  }
-
-  FavoriteGamesListFetchFavorites fetchFavorites() {
-    return const FavoriteGamesListFetchFavorites();
-  }
-
-  FavoriteGamesListSetGames setGames(List<Game> games) {
-    return FavoriteGamesListSetGames(
-      games,
-    );
-  }
-
-  FavoriteGamesListSetFavorites setFavorites(List<FavoriteGame> favorites) {
-    return FavoriteGamesListSetFavorites(
-      favorites,
-    );
-  }
-
-  FavoriteGamesListMerge merge() {
-    return const FavoriteGamesListMerge();
-  }
-
-  FavoriteGamesListFinishMerging finishMerging(List<GameVM> viewModels) {
-    return FavoriteGamesListFinishMerging(
-      viewModels,
-    );
-  }
-
-  FavoriteGamesListAddFavorite addFavorite(String uid, Game game) {
-    return FavoriteGamesListAddFavorite(
-      uid,
-      game,
-    );
-  }
-
-  FavoriteGamesListRemoveFavorite removeFavorite(String uid, Game game) {
-    return FavoriteGamesListRemoveFavorite(
-      uid,
-      game,
-    );
-  }
-
-  FavoriteGamesListHasError hasError(Object? error) {
-    return FavoriteGamesListHasError(
-      error,
-    );
-  }
-
-  FavoriteGamesListRetry retry() {
-    return const FavoriteGamesListRetry();
-  }
-
-  FavoriteGamesListRefresh refresh() {
-    return const FavoriteGamesListRefresh();
-  }
-}
-
-/// @nodoc
-const $FavoriteGamesListEvent = _$FavoriteGamesListEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FavoriteGamesListEvent {
@@ -103,18 +34,18 @@ mixin _$FavoriteGamesListEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -155,18 +86,18 @@ mixin _$FavoriteGamesListEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -192,37 +123,37 @@ mixin _$FavoriteGamesListEvent {
 abstract class $FavoriteGamesListEventCopyWith<$Res> {
   factory $FavoriteGamesListEventCopyWith(FavoriteGamesListEvent value,
           $Res Function(FavoriteGamesListEvent) then) =
-      _$FavoriteGamesListEventCopyWithImpl<$Res>;
+      _$FavoriteGamesListEventCopyWithImpl<$Res, FavoriteGamesListEvent>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListEventCopyWithImpl<$Res>
+class _$FavoriteGamesListEventCopyWithImpl<$Res,
+        $Val extends FavoriteGamesListEvent>
     implements $FavoriteGamesListEventCopyWith<$Res> {
   _$FavoriteGamesListEventCopyWithImpl(this._value, this._then);
 
-  final FavoriteGamesListEvent _value;
   // ignore: unused_field
-  final $Res Function(FavoriteGamesListEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFetchAllCopyWith<$Res> {
-  factory $FavoriteGamesListFetchAllCopyWith(FavoriteGamesListFetchAll value,
-          $Res Function(FavoriteGamesListFetchAll) then) =
-      _$FavoriteGamesListFetchAllCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFetchAllCopyWith<$Res> {
+  factory _$$FavoriteGamesListFetchAllCopyWith(
+          _$FavoriteGamesListFetchAll value,
+          $Res Function(_$FavoriteGamesListFetchAll) then) =
+      __$$FavoriteGamesListFetchAllCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListFetchAllCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFetchAllCopyWith<$Res> {
-  _$FavoriteGamesListFetchAllCopyWithImpl(FavoriteGamesListFetchAll _value,
-      $Res Function(FavoriteGamesListFetchAll) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFetchAll));
-
-  @override
-  FavoriteGamesListFetchAll get _value =>
-      super._value as FavoriteGamesListFetchAll;
+class __$$FavoriteGamesListFetchAllCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListFetchAll>
+    implements _$$FavoriteGamesListFetchAllCopyWith<$Res> {
+  __$$FavoriteGamesListFetchAllCopyWithImpl(_$FavoriteGamesListFetchAll _value,
+      $Res Function(_$FavoriteGamesListFetchAll) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -239,7 +170,7 @@ class _$FavoriteGamesListFetchAll implements FavoriteGamesListFetchAll {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFetchAll);
+            other is _$FavoriteGamesListFetchAll);
   }
 
   @override
@@ -267,18 +198,18 @@ class _$FavoriteGamesListFetchAll implements FavoriteGamesListFetchAll {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return fetchAll?.call();
   }
@@ -331,18 +262,18 @@ class _$FavoriteGamesListFetchAll implements FavoriteGamesListFetchAll {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return fetchAll?.call(this);
   }
@@ -376,24 +307,22 @@ abstract class FavoriteGamesListFetchAll implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFetchGamesCopyWith<$Res> {
-  factory $FavoriteGamesListFetchGamesCopyWith(
-          FavoriteGamesListFetchGames value,
-          $Res Function(FavoriteGamesListFetchGames) then) =
-      _$FavoriteGamesListFetchGamesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFetchGamesCopyWith<$Res> {
+  factory _$$FavoriteGamesListFetchGamesCopyWith(
+          _$FavoriteGamesListFetchGames value,
+          $Res Function(_$FavoriteGamesListFetchGames) then) =
+      __$$FavoriteGamesListFetchGamesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListFetchGamesCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFetchGamesCopyWith<$Res> {
-  _$FavoriteGamesListFetchGamesCopyWithImpl(FavoriteGamesListFetchGames _value,
-      $Res Function(FavoriteGamesListFetchGames) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFetchGames));
-
-  @override
-  FavoriteGamesListFetchGames get _value =>
-      super._value as FavoriteGamesListFetchGames;
+class __$$FavoriteGamesListFetchGamesCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListFetchGames>
+    implements _$$FavoriteGamesListFetchGamesCopyWith<$Res> {
+  __$$FavoriteGamesListFetchGamesCopyWithImpl(
+      _$FavoriteGamesListFetchGames _value,
+      $Res Function(_$FavoriteGamesListFetchGames) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -410,7 +339,7 @@ class _$FavoriteGamesListFetchGames implements FavoriteGamesListFetchGames {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFetchGames);
+            other is _$FavoriteGamesListFetchGames);
   }
 
   @override
@@ -438,18 +367,18 @@ class _$FavoriteGamesListFetchGames implements FavoriteGamesListFetchGames {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return fetchGames?.call();
   }
@@ -502,18 +431,18 @@ class _$FavoriteGamesListFetchGames implements FavoriteGamesListFetchGames {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return fetchGames?.call(this);
   }
@@ -547,25 +476,22 @@ abstract class FavoriteGamesListFetchGames implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFetchFavoritesCopyWith<$Res> {
-  factory $FavoriteGamesListFetchFavoritesCopyWith(
-          FavoriteGamesListFetchFavorites value,
-          $Res Function(FavoriteGamesListFetchFavorites) then) =
-      _$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFetchFavoritesCopyWith<$Res> {
+  factory _$$FavoriteGamesListFetchFavoritesCopyWith(
+          _$FavoriteGamesListFetchFavorites value,
+          $Res Function(_$FavoriteGamesListFetchFavorites) then) =
+      __$$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFetchFavoritesCopyWith<$Res> {
-  _$FavoriteGamesListFetchFavoritesCopyWithImpl(
-      FavoriteGamesListFetchFavorites _value,
-      $Res Function(FavoriteGamesListFetchFavorites) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFetchFavorites));
-
-  @override
-  FavoriteGamesListFetchFavorites get _value =>
-      super._value as FavoriteGamesListFetchFavorites;
+class __$$FavoriteGamesListFetchFavoritesCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListFetchFavorites>
+    implements _$$FavoriteGamesListFetchFavoritesCopyWith<$Res> {
+  __$$FavoriteGamesListFetchFavoritesCopyWithImpl(
+      _$FavoriteGamesListFetchFavorites _value,
+      $Res Function(_$FavoriteGamesListFetchFavorites) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -583,7 +509,7 @@ class _$FavoriteGamesListFetchFavorites
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFetchFavorites);
+            other is _$FavoriteGamesListFetchFavorites);
   }
 
   @override
@@ -611,18 +537,18 @@ class _$FavoriteGamesListFetchFavorites
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return fetchFavorites?.call();
   }
@@ -675,18 +601,18 @@ class _$FavoriteGamesListFetchFavorites
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return fetchFavorites?.call(this);
   }
@@ -722,32 +648,32 @@ abstract class FavoriteGamesListFetchFavorites
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListSetGamesCopyWith<$Res> {
-  factory $FavoriteGamesListSetGamesCopyWith(FavoriteGamesListSetGames value,
-          $Res Function(FavoriteGamesListSetGames) then) =
-      _$FavoriteGamesListSetGamesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListSetGamesCopyWith<$Res> {
+  factory _$$FavoriteGamesListSetGamesCopyWith(
+          _$FavoriteGamesListSetGames value,
+          $Res Function(_$FavoriteGamesListSetGames) then) =
+      __$$FavoriteGamesListSetGamesCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Game> games});
 }
 
 /// @nodoc
-class _$FavoriteGamesListSetGamesCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListSetGamesCopyWith<$Res> {
-  _$FavoriteGamesListSetGamesCopyWithImpl(FavoriteGamesListSetGames _value,
-      $Res Function(FavoriteGamesListSetGames) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListSetGames));
+class __$$FavoriteGamesListSetGamesCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListSetGames>
+    implements _$$FavoriteGamesListSetGamesCopyWith<$Res> {
+  __$$FavoriteGamesListSetGamesCopyWithImpl(_$FavoriteGamesListSetGames _value,
+      $Res Function(_$FavoriteGamesListSetGames) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListSetGames get _value =>
-      super._value as FavoriteGamesListSetGames;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? games = freezed,
+    Object? games = null,
   }) {
-    return _then(FavoriteGamesListSetGames(
-      games == freezed
-          ? _value.games
+    return _then(_$FavoriteGamesListSetGames(
+      null == games
+          ? _value._games
           : games // ignore: cast_nullable_to_non_nullable
               as List<Game>,
     ));
@@ -757,10 +683,14 @@ class _$FavoriteGamesListSetGamesCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
-  const _$FavoriteGamesListSetGames(this.games);
+  const _$FavoriteGamesListSetGames(final List<Game> games) : _games = games;
 
+  final List<Game> _games;
   @override
-  final List<Game> games;
+  List<Game> get games {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_games);
+  }
 
   @override
   String toString() {
@@ -771,19 +701,20 @@ class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListSetGames &&
-            const DeepCollectionEquality().equals(other.games, games));
+            other is _$FavoriteGamesListSetGames &&
+            const DeepCollectionEquality().equals(other._games, _games));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(games));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_games));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListSetGamesCopyWith<FavoriteGamesListSetGames> get copyWith =>
-      _$FavoriteGamesListSetGamesCopyWithImpl<FavoriteGamesListSetGames>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListSetGamesCopyWith<_$FavoriteGamesListSetGames>
+      get copyWith => __$$FavoriteGamesListSetGamesCopyWithImpl<
+          _$FavoriteGamesListSetGames>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -807,18 +738,18 @@ class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return setGames?.call(games);
   }
@@ -871,18 +802,18 @@ class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return setGames?.call(this);
   }
@@ -912,44 +843,43 @@ class _$FavoriteGamesListSetGames implements FavoriteGamesListSetGames {
 }
 
 abstract class FavoriteGamesListSetGames implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListSetGames(List<Game> games) =
+  const factory FavoriteGamesListSetGames(final List<Game> games) =
       _$FavoriteGamesListSetGames;
 
   List<Game> get games;
   @JsonKey(ignore: true)
-  $FavoriteGamesListSetGamesCopyWith<FavoriteGamesListSetGames> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FavoriteGamesListSetGamesCopyWith<_$FavoriteGamesListSetGames>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListSetFavoritesCopyWith<$Res> {
-  factory $FavoriteGamesListSetFavoritesCopyWith(
-          FavoriteGamesListSetFavorites value,
-          $Res Function(FavoriteGamesListSetFavorites) then) =
-      _$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListSetFavoritesCopyWith<$Res> {
+  factory _$$FavoriteGamesListSetFavoritesCopyWith(
+          _$FavoriteGamesListSetFavorites value,
+          $Res Function(_$FavoriteGamesListSetFavorites) then) =
+      __$$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<FavoriteGame> favorites});
 }
 
 /// @nodoc
-class _$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListSetFavoritesCopyWith<$Res> {
-  _$FavoriteGamesListSetFavoritesCopyWithImpl(
-      FavoriteGamesListSetFavorites _value,
-      $Res Function(FavoriteGamesListSetFavorites) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListSetFavorites));
+class __$$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListSetFavorites>
+    implements _$$FavoriteGamesListSetFavoritesCopyWith<$Res> {
+  __$$FavoriteGamesListSetFavoritesCopyWithImpl(
+      _$FavoriteGamesListSetFavorites _value,
+      $Res Function(_$FavoriteGamesListSetFavorites) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListSetFavorites get _value =>
-      super._value as FavoriteGamesListSetFavorites;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? favorites = freezed,
+    Object? favorites = null,
   }) {
-    return _then(FavoriteGamesListSetFavorites(
-      favorites == freezed
-          ? _value.favorites
+    return _then(_$FavoriteGamesListSetFavorites(
+      null == favorites
+          ? _value._favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<FavoriteGame>,
     ));
@@ -959,10 +889,15 @@ class _$FavoriteGamesListSetFavoritesCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
-  const _$FavoriteGamesListSetFavorites(this.favorites);
+  const _$FavoriteGamesListSetFavorites(final List<FavoriteGame> favorites)
+      : _favorites = favorites;
 
+  final List<FavoriteGame> _favorites;
   @override
-  final List<FavoriteGame> favorites;
+  List<FavoriteGame> get favorites {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favorites);
+  }
 
   @override
   String toString() {
@@ -973,19 +908,21 @@ class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListSetFavorites &&
-            const DeepCollectionEquality().equals(other.favorites, favorites));
+            other is _$FavoriteGamesListSetFavorites &&
+            const DeepCollectionEquality()
+                .equals(other._favorites, _favorites));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(favorites));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_favorites));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListSetFavoritesCopyWith<FavoriteGamesListSetFavorites>
-      get copyWith => _$FavoriteGamesListSetFavoritesCopyWithImpl<
-          FavoriteGamesListSetFavorites>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListSetFavoritesCopyWith<_$FavoriteGamesListSetFavorites>
+      get copyWith => __$$FavoriteGamesListSetFavoritesCopyWithImpl<
+          _$FavoriteGamesListSetFavorites>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1009,18 +946,18 @@ class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return setFavorites?.call(favorites);
   }
@@ -1073,18 +1010,18 @@ class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return setFavorites?.call(this);
   }
@@ -1114,32 +1051,29 @@ class _$FavoriteGamesListSetFavorites implements FavoriteGamesListSetFavorites {
 }
 
 abstract class FavoriteGamesListSetFavorites implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListSetFavorites(List<FavoriteGame> favorites) =
-      _$FavoriteGamesListSetFavorites;
+  const factory FavoriteGamesListSetFavorites(
+      final List<FavoriteGame> favorites) = _$FavoriteGamesListSetFavorites;
 
   List<FavoriteGame> get favorites;
   @JsonKey(ignore: true)
-  $FavoriteGamesListSetFavoritesCopyWith<FavoriteGamesListSetFavorites>
+  _$$FavoriteGamesListSetFavoritesCopyWith<_$FavoriteGamesListSetFavorites>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListMergeCopyWith<$Res> {
-  factory $FavoriteGamesListMergeCopyWith(FavoriteGamesListMerge value,
-          $Res Function(FavoriteGamesListMerge) then) =
-      _$FavoriteGamesListMergeCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListMergeCopyWith<$Res> {
+  factory _$$FavoriteGamesListMergeCopyWith(_$FavoriteGamesListMerge value,
+          $Res Function(_$FavoriteGamesListMerge) then) =
+      __$$FavoriteGamesListMergeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListMergeCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListMergeCopyWith<$Res> {
-  _$FavoriteGamesListMergeCopyWithImpl(FavoriteGamesListMerge _value,
-      $Res Function(FavoriteGamesListMerge) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListMerge));
-
-  @override
-  FavoriteGamesListMerge get _value => super._value as FavoriteGamesListMerge;
+class __$$FavoriteGamesListMergeCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res, _$FavoriteGamesListMerge>
+    implements _$$FavoriteGamesListMergeCopyWith<$Res> {
+  __$$FavoriteGamesListMergeCopyWithImpl(_$FavoriteGamesListMerge _value,
+      $Res Function(_$FavoriteGamesListMerge) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1155,7 +1089,7 @@ class _$FavoriteGamesListMerge implements FavoriteGamesListMerge {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListMerge);
+        (other.runtimeType == runtimeType && other is _$FavoriteGamesListMerge);
   }
 
   @override
@@ -1183,18 +1117,18 @@ class _$FavoriteGamesListMerge implements FavoriteGamesListMerge {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return merge?.call();
   }
@@ -1247,18 +1181,18 @@ class _$FavoriteGamesListMerge implements FavoriteGamesListMerge {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return merge?.call(this);
   }
@@ -1292,34 +1226,33 @@ abstract class FavoriteGamesListMerge implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListFinishMergingCopyWith<$Res> {
-  factory $FavoriteGamesListFinishMergingCopyWith(
-          FavoriteGamesListFinishMerging value,
-          $Res Function(FavoriteGamesListFinishMerging) then) =
-      _$FavoriteGamesListFinishMergingCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListFinishMergingCopyWith<$Res> {
+  factory _$$FavoriteGamesListFinishMergingCopyWith(
+          _$FavoriteGamesListFinishMerging value,
+          $Res Function(_$FavoriteGamesListFinishMerging) then) =
+      __$$FavoriteGamesListFinishMergingCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<GameVM> viewModels});
 }
 
 /// @nodoc
-class _$FavoriteGamesListFinishMergingCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListFinishMergingCopyWith<$Res> {
-  _$FavoriteGamesListFinishMergingCopyWithImpl(
-      FavoriteGamesListFinishMerging _value,
-      $Res Function(FavoriteGamesListFinishMerging) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListFinishMerging));
+class __$$FavoriteGamesListFinishMergingCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListFinishMerging>
+    implements _$$FavoriteGamesListFinishMergingCopyWith<$Res> {
+  __$$FavoriteGamesListFinishMergingCopyWithImpl(
+      _$FavoriteGamesListFinishMerging _value,
+      $Res Function(_$FavoriteGamesListFinishMerging) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListFinishMerging get _value =>
-      super._value as FavoriteGamesListFinishMerging;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? viewModels = freezed,
+    Object? viewModels = null,
   }) {
-    return _then(FavoriteGamesListFinishMerging(
-      viewModels == freezed
-          ? _value.viewModels
+    return _then(_$FavoriteGamesListFinishMerging(
+      null == viewModels
+          ? _value._viewModels
           : viewModels // ignore: cast_nullable_to_non_nullable
               as List<GameVM>,
     ));
@@ -1330,10 +1263,15 @@ class _$FavoriteGamesListFinishMergingCopyWithImpl<$Res>
 
 class _$FavoriteGamesListFinishMerging
     implements FavoriteGamesListFinishMerging {
-  const _$FavoriteGamesListFinishMerging(this.viewModels);
+  const _$FavoriteGamesListFinishMerging(final List<GameVM> viewModels)
+      : _viewModels = viewModels;
 
+  final List<GameVM> _viewModels;
   @override
-  final List<GameVM> viewModels;
+  List<GameVM> get viewModels {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_viewModels);
+  }
 
   @override
   String toString() {
@@ -1344,20 +1282,21 @@ class _$FavoriteGamesListFinishMerging
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListFinishMerging &&
+            other is _$FavoriteGamesListFinishMerging &&
             const DeepCollectionEquality()
-                .equals(other.viewModels, viewModels));
+                .equals(other._viewModels, _viewModels));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(viewModels));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_viewModels));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListFinishMergingCopyWith<FavoriteGamesListFinishMerging>
-      get copyWith => _$FavoriteGamesListFinishMergingCopyWithImpl<
-          FavoriteGamesListFinishMerging>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListFinishMergingCopyWith<_$FavoriteGamesListFinishMerging>
+      get copyWith => __$$FavoriteGamesListFinishMergingCopyWithImpl<
+          _$FavoriteGamesListFinishMerging>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1381,18 +1320,18 @@ class _$FavoriteGamesListFinishMerging
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return finishMerging?.call(viewModels);
   }
@@ -1445,18 +1384,18 @@ class _$FavoriteGamesListFinishMerging
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return finishMerging?.call(this);
   }
@@ -1487,50 +1426,49 @@ class _$FavoriteGamesListFinishMerging
 
 abstract class FavoriteGamesListFinishMerging
     implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListFinishMerging(List<GameVM> viewModels) =
+  const factory FavoriteGamesListFinishMerging(final List<GameVM> viewModels) =
       _$FavoriteGamesListFinishMerging;
 
   List<GameVM> get viewModels;
   @JsonKey(ignore: true)
-  $FavoriteGamesListFinishMergingCopyWith<FavoriteGamesListFinishMerging>
+  _$$FavoriteGamesListFinishMergingCopyWith<_$FavoriteGamesListFinishMerging>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListAddFavoriteCopyWith<$Res> {
-  factory $FavoriteGamesListAddFavoriteCopyWith(
-          FavoriteGamesListAddFavorite value,
-          $Res Function(FavoriteGamesListAddFavorite) then) =
-      _$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListAddFavoriteCopyWith<$Res> {
+  factory _$$FavoriteGamesListAddFavoriteCopyWith(
+          _$FavoriteGamesListAddFavorite value,
+          $Res Function(_$FavoriteGamesListAddFavorite) then) =
+      __$$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>;
+  @useResult
   $Res call({String uid, Game game});
 
   $GameCopyWith<$Res> get game;
 }
 
 /// @nodoc
-class _$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListAddFavoriteCopyWith<$Res> {
-  _$FavoriteGamesListAddFavoriteCopyWithImpl(
-      FavoriteGamesListAddFavorite _value,
-      $Res Function(FavoriteGamesListAddFavorite) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListAddFavorite));
+class __$$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListAddFavorite>
+    implements _$$FavoriteGamesListAddFavoriteCopyWith<$Res> {
+  __$$FavoriteGamesListAddFavoriteCopyWithImpl(
+      _$FavoriteGamesListAddFavorite _value,
+      $Res Function(_$FavoriteGamesListAddFavorite) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListAddFavorite get _value =>
-      super._value as FavoriteGamesListAddFavorite;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
-    Object? game = freezed,
+    Object? uid = null,
+    Object? game = null,
   }) {
-    return _then(FavoriteGamesListAddFavorite(
-      uid == freezed
+    return _then(_$FavoriteGamesListAddFavorite(
+      null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      game == freezed
+      null == game
           ? _value.game
           : game // ignore: cast_nullable_to_non_nullable
               as Game,
@@ -1538,6 +1476,7 @@ class _$FavoriteGamesListAddFavoriteCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $GameCopyWith<$Res> get game {
     return $GameCopyWith<$Res>(_value.game, (value) {
       return _then(_value.copyWith(game: value));
@@ -1564,22 +1503,20 @@ class _$FavoriteGamesListAddFavorite implements FavoriteGamesListAddFavorite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListAddFavorite &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.game, game));
+            other is _$FavoriteGamesListAddFavorite &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.game, game) || other.game == game));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(game));
+  int get hashCode => Object.hash(runtimeType, uid, game);
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListAddFavoriteCopyWith<FavoriteGamesListAddFavorite>
-      get copyWith => _$FavoriteGamesListAddFavoriteCopyWithImpl<
-          FavoriteGamesListAddFavorite>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListAddFavoriteCopyWith<_$FavoriteGamesListAddFavorite>
+      get copyWith => __$$FavoriteGamesListAddFavoriteCopyWithImpl<
+          _$FavoriteGamesListAddFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1603,18 +1540,18 @@ class _$FavoriteGamesListAddFavorite implements FavoriteGamesListAddFavorite {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return addFavorite?.call(uid, game);
   }
@@ -1667,18 +1604,18 @@ class _$FavoriteGamesListAddFavorite implements FavoriteGamesListAddFavorite {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return addFavorite?.call(this);
   }
@@ -1708,51 +1645,50 @@ class _$FavoriteGamesListAddFavorite implements FavoriteGamesListAddFavorite {
 }
 
 abstract class FavoriteGamesListAddFavorite implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListAddFavorite(String uid, Game game) =
-      _$FavoriteGamesListAddFavorite;
+  const factory FavoriteGamesListAddFavorite(
+      final String uid, final Game game) = _$FavoriteGamesListAddFavorite;
 
   String get uid;
   Game get game;
   @JsonKey(ignore: true)
-  $FavoriteGamesListAddFavoriteCopyWith<FavoriteGamesListAddFavorite>
+  _$$FavoriteGamesListAddFavoriteCopyWith<_$FavoriteGamesListAddFavorite>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
-  factory $FavoriteGamesListRemoveFavoriteCopyWith(
-          FavoriteGamesListRemoveFavorite value,
-          $Res Function(FavoriteGamesListRemoveFavorite) then) =
-      _$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
+  factory _$$FavoriteGamesListRemoveFavoriteCopyWith(
+          _$FavoriteGamesListRemoveFavorite value,
+          $Res Function(_$FavoriteGamesListRemoveFavorite) then) =
+      __$$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>;
+  @useResult
   $Res call({String uid, Game game});
 
   $GameCopyWith<$Res> get game;
 }
 
 /// @nodoc
-class _$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
-  _$FavoriteGamesListRemoveFavoriteCopyWithImpl(
-      FavoriteGamesListRemoveFavorite _value,
-      $Res Function(FavoriteGamesListRemoveFavorite) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListRemoveFavorite));
+class __$$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListRemoveFavorite>
+    implements _$$FavoriteGamesListRemoveFavoriteCopyWith<$Res> {
+  __$$FavoriteGamesListRemoveFavoriteCopyWithImpl(
+      _$FavoriteGamesListRemoveFavorite _value,
+      $Res Function(_$FavoriteGamesListRemoveFavorite) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListRemoveFavorite get _value =>
-      super._value as FavoriteGamesListRemoveFavorite;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
-    Object? game = freezed,
+    Object? uid = null,
+    Object? game = null,
   }) {
-    return _then(FavoriteGamesListRemoveFavorite(
-      uid == freezed
+    return _then(_$FavoriteGamesListRemoveFavorite(
+      null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      game == freezed
+      null == game
           ? _value.game
           : game // ignore: cast_nullable_to_non_nullable
               as Game,
@@ -1760,6 +1696,7 @@ class _$FavoriteGamesListRemoveFavoriteCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $GameCopyWith<$Res> get game {
     return $GameCopyWith<$Res>(_value.game, (value) {
       return _then(_value.copyWith(game: value));
@@ -1787,22 +1724,20 @@ class _$FavoriteGamesListRemoveFavorite
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListRemoveFavorite &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.game, game));
+            other is _$FavoriteGamesListRemoveFavorite &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.game, game) || other.game == game));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(game));
+  int get hashCode => Object.hash(runtimeType, uid, game);
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListRemoveFavoriteCopyWith<FavoriteGamesListRemoveFavorite>
-      get copyWith => _$FavoriteGamesListRemoveFavoriteCopyWithImpl<
-          FavoriteGamesListRemoveFavorite>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListRemoveFavoriteCopyWith<_$FavoriteGamesListRemoveFavorite>
+      get copyWith => __$$FavoriteGamesListRemoveFavoriteCopyWithImpl<
+          _$FavoriteGamesListRemoveFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1826,18 +1761,18 @@ class _$FavoriteGamesListRemoveFavorite
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return removeFavorite?.call(uid, game);
   }
@@ -1890,18 +1825,18 @@ class _$FavoriteGamesListRemoveFavorite
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return removeFavorite?.call(this);
   }
@@ -1932,42 +1867,42 @@ class _$FavoriteGamesListRemoveFavorite
 
 abstract class FavoriteGamesListRemoveFavorite
     implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListRemoveFavorite(String uid, Game game) =
-      _$FavoriteGamesListRemoveFavorite;
+  const factory FavoriteGamesListRemoveFavorite(
+      final String uid, final Game game) = _$FavoriteGamesListRemoveFavorite;
 
   String get uid;
   Game get game;
   @JsonKey(ignore: true)
-  $FavoriteGamesListRemoveFavoriteCopyWith<FavoriteGamesListRemoveFavorite>
+  _$$FavoriteGamesListRemoveFavoriteCopyWith<_$FavoriteGamesListRemoveFavorite>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListHasErrorCopyWith<$Res> {
-  factory $FavoriteGamesListHasErrorCopyWith(FavoriteGamesListHasError value,
-          $Res Function(FavoriteGamesListHasError) then) =
-      _$FavoriteGamesListHasErrorCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListHasErrorCopyWith<$Res> {
+  factory _$$FavoriteGamesListHasErrorCopyWith(
+          _$FavoriteGamesListHasError value,
+          $Res Function(_$FavoriteGamesListHasError) then) =
+      __$$FavoriteGamesListHasErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({Object? error});
 }
 
 /// @nodoc
-class _$FavoriteGamesListHasErrorCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListHasErrorCopyWith<$Res> {
-  _$FavoriteGamesListHasErrorCopyWithImpl(FavoriteGamesListHasError _value,
-      $Res Function(FavoriteGamesListHasError) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListHasError));
+class __$$FavoriteGamesListHasErrorCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListHasError>
+    implements _$$FavoriteGamesListHasErrorCopyWith<$Res> {
+  __$$FavoriteGamesListHasErrorCopyWithImpl(_$FavoriteGamesListHasError _value,
+      $Res Function(_$FavoriteGamesListHasError) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListHasError get _value =>
-      super._value as FavoriteGamesListHasError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(FavoriteGamesListHasError(
-      error == freezed ? _value.error : error,
+    return _then(_$FavoriteGamesListHasError(
+      freezed == error ? _value.error : error,
     ));
   }
 }
@@ -1989,7 +1924,7 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListHasError &&
+            other is _$FavoriteGamesListHasError &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -1999,9 +1934,10 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListHasErrorCopyWith<FavoriteGamesListHasError> get copyWith =>
-      _$FavoriteGamesListHasErrorCopyWithImpl<FavoriteGamesListHasError>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListHasErrorCopyWith<_$FavoriteGamesListHasError>
+      get copyWith => __$$FavoriteGamesListHasErrorCopyWithImpl<
+          _$FavoriteGamesListHasError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2025,18 +1961,18 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return hasError?.call(error);
   }
@@ -2089,18 +2025,18 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return hasError?.call(this);
   }
@@ -2130,32 +2066,29 @@ class _$FavoriteGamesListHasError implements FavoriteGamesListHasError {
 }
 
 abstract class FavoriteGamesListHasError implements FavoriteGamesListEvent {
-  const factory FavoriteGamesListHasError(Object? error) =
+  const factory FavoriteGamesListHasError(final Object? error) =
       _$FavoriteGamesListHasError;
 
   Object? get error;
   @JsonKey(ignore: true)
-  $FavoriteGamesListHasErrorCopyWith<FavoriteGamesListHasError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FavoriteGamesListHasErrorCopyWith<_$FavoriteGamesListHasError>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListRetryCopyWith<$Res> {
-  factory $FavoriteGamesListRetryCopyWith(FavoriteGamesListRetry value,
-          $Res Function(FavoriteGamesListRetry) then) =
-      _$FavoriteGamesListRetryCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListRetryCopyWith<$Res> {
+  factory _$$FavoriteGamesListRetryCopyWith(_$FavoriteGamesListRetry value,
+          $Res Function(_$FavoriteGamesListRetry) then) =
+      __$$FavoriteGamesListRetryCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListRetryCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListRetryCopyWith<$Res> {
-  _$FavoriteGamesListRetryCopyWithImpl(FavoriteGamesListRetry _value,
-      $Res Function(FavoriteGamesListRetry) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListRetry));
-
-  @override
-  FavoriteGamesListRetry get _value => super._value as FavoriteGamesListRetry;
+class __$$FavoriteGamesListRetryCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res, _$FavoriteGamesListRetry>
+    implements _$$FavoriteGamesListRetryCopyWith<$Res> {
+  __$$FavoriteGamesListRetryCopyWithImpl(_$FavoriteGamesListRetry _value,
+      $Res Function(_$FavoriteGamesListRetry) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2171,7 +2104,7 @@ class _$FavoriteGamesListRetry implements FavoriteGamesListRetry {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListRetry);
+        (other.runtimeType == runtimeType && other is _$FavoriteGamesListRetry);
   }
 
   @override
@@ -2199,18 +2132,18 @@ class _$FavoriteGamesListRetry implements FavoriteGamesListRetry {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return retry?.call();
   }
@@ -2263,18 +2196,18 @@ class _$FavoriteGamesListRetry implements FavoriteGamesListRetry {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return retry?.call(this);
   }
@@ -2308,23 +2241,20 @@ abstract class FavoriteGamesListRetry implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListRefreshCopyWith<$Res> {
-  factory $FavoriteGamesListRefreshCopyWith(FavoriteGamesListRefresh value,
-          $Res Function(FavoriteGamesListRefresh) then) =
-      _$FavoriteGamesListRefreshCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListRefreshCopyWith<$Res> {
+  factory _$$FavoriteGamesListRefreshCopyWith(_$FavoriteGamesListRefresh value,
+          $Res Function(_$FavoriteGamesListRefresh) then) =
+      __$$FavoriteGamesListRefreshCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListRefreshCopyWithImpl<$Res>
-    extends _$FavoriteGamesListEventCopyWithImpl<$Res>
-    implements $FavoriteGamesListRefreshCopyWith<$Res> {
-  _$FavoriteGamesListRefreshCopyWithImpl(FavoriteGamesListRefresh _value,
-      $Res Function(FavoriteGamesListRefresh) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListRefresh));
-
-  @override
-  FavoriteGamesListRefresh get _value =>
-      super._value as FavoriteGamesListRefresh;
+class __$$FavoriteGamesListRefreshCopyWithImpl<$Res>
+    extends _$FavoriteGamesListEventCopyWithImpl<$Res,
+        _$FavoriteGamesListRefresh>
+    implements _$$FavoriteGamesListRefreshCopyWith<$Res> {
+  __$$FavoriteGamesListRefreshCopyWithImpl(_$FavoriteGamesListRefresh _value,
+      $Res Function(_$FavoriteGamesListRefresh) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2340,7 +2270,8 @@ class _$FavoriteGamesListRefresh implements FavoriteGamesListRefresh {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListRefresh);
+        (other.runtimeType == runtimeType &&
+            other is _$FavoriteGamesListRefresh);
   }
 
   @override
@@ -2368,18 +2299,18 @@ class _$FavoriteGamesListRefresh implements FavoriteGamesListRefresh {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchAll,
-    TResult Function()? fetchGames,
-    TResult Function()? fetchFavorites,
-    TResult Function(List<Game> games)? setGames,
-    TResult Function(List<FavoriteGame> favorites)? setFavorites,
-    TResult Function()? merge,
-    TResult Function(List<GameVM> viewModels)? finishMerging,
-    TResult Function(String uid, Game game)? addFavorite,
-    TResult Function(String uid, Game game)? removeFavorite,
-    TResult Function(Object? error)? hasError,
-    TResult Function()? retry,
-    TResult Function()? refresh,
+    TResult? Function()? fetchAll,
+    TResult? Function()? fetchGames,
+    TResult? Function()? fetchFavorites,
+    TResult? Function(List<Game> games)? setGames,
+    TResult? Function(List<FavoriteGame> favorites)? setFavorites,
+    TResult? Function()? merge,
+    TResult? Function(List<GameVM> viewModels)? finishMerging,
+    TResult? Function(String uid, Game game)? addFavorite,
+    TResult? Function(String uid, Game game)? removeFavorite,
+    TResult? Function(Object? error)? hasError,
+    TResult? Function()? retry,
+    TResult? Function()? refresh,
   }) {
     return refresh?.call();
   }
@@ -2432,18 +2363,18 @@ class _$FavoriteGamesListRefresh implements FavoriteGamesListRefresh {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListFetchAll value)? fetchAll,
-    TResult Function(FavoriteGamesListFetchGames value)? fetchGames,
-    TResult Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
-    TResult Function(FavoriteGamesListSetGames value)? setGames,
-    TResult Function(FavoriteGamesListSetFavorites value)? setFavorites,
-    TResult Function(FavoriteGamesListMerge value)? merge,
-    TResult Function(FavoriteGamesListFinishMerging value)? finishMerging,
-    TResult Function(FavoriteGamesListAddFavorite value)? addFavorite,
-    TResult Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
-    TResult Function(FavoriteGamesListHasError value)? hasError,
-    TResult Function(FavoriteGamesListRetry value)? retry,
-    TResult Function(FavoriteGamesListRefresh value)? refresh,
+    TResult? Function(FavoriteGamesListFetchAll value)? fetchAll,
+    TResult? Function(FavoriteGamesListFetchGames value)? fetchGames,
+    TResult? Function(FavoriteGamesListFetchFavorites value)? fetchFavorites,
+    TResult? Function(FavoriteGamesListSetGames value)? setGames,
+    TResult? Function(FavoriteGamesListSetFavorites value)? setFavorites,
+    TResult? Function(FavoriteGamesListMerge value)? merge,
+    TResult? Function(FavoriteGamesListFinishMerging value)? finishMerging,
+    TResult? Function(FavoriteGamesListAddFavorite value)? addFavorite,
+    TResult? Function(FavoriteGamesListRemoveFavorite value)? removeFavorite,
+    TResult? Function(FavoriteGamesListHasError value)? hasError,
+    TResult? Function(FavoriteGamesListRetry value)? retry,
+    TResult? Function(FavoriteGamesListRefresh value)? refresh,
   }) {
     return refresh?.call(this);
   }
@@ -2477,33 +2408,6 @@ abstract class FavoriteGamesListRefresh implements FavoriteGamesListEvent {
 }
 
 /// @nodoc
-class _$FavoriteGamesListStateTearOff {
-  const _$FavoriteGamesListStateTearOff();
-
-  FavoriteGamesListLoading loading() {
-    return const FavoriteGamesListLoading();
-  }
-
-  FavoriteGamesListLoaded loaded(List<FavoriteGame> favorites, List<Game> games,
-      [List<GameVM> viewModels = const []]) {
-    return FavoriteGamesListLoaded(
-      favorites,
-      games,
-      viewModels,
-    );
-  }
-
-  FavoriteGamesListError error(String message) {
-    return FavoriteGamesListError(
-      message,
-    );
-  }
-}
-
-/// @nodoc
-const $FavoriteGamesListState = _$FavoriteGamesListStateTearOff();
-
-/// @nodoc
 mixin _$FavoriteGamesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -2516,11 +2420,11 @@ mixin _$FavoriteGamesListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FavoriteGame> favorites, List<Game> games,
+    TResult? Function()? loading,
+    TResult? Function(List<FavoriteGame> favorites, List<Game> games,
             List<GameVM> viewModels)?
         loaded,
-    TResult Function(String message)? error,
+    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2542,9 +2446,9 @@ mixin _$FavoriteGamesListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListLoading value)? loading,
-    TResult Function(FavoriteGamesListLoaded value)? loaded,
-    TResult Function(FavoriteGamesListError value)? error,
+    TResult? Function(FavoriteGamesListLoading value)? loading,
+    TResult? Function(FavoriteGamesListLoaded value)? loaded,
+    TResult? Function(FavoriteGamesListError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2561,37 +2465,36 @@ mixin _$FavoriteGamesListState {
 abstract class $FavoriteGamesListStateCopyWith<$Res> {
   factory $FavoriteGamesListStateCopyWith(FavoriteGamesListState value,
           $Res Function(FavoriteGamesListState) then) =
-      _$FavoriteGamesListStateCopyWithImpl<$Res>;
+      _$FavoriteGamesListStateCopyWithImpl<$Res, FavoriteGamesListState>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListStateCopyWithImpl<$Res>
+class _$FavoriteGamesListStateCopyWithImpl<$Res,
+        $Val extends FavoriteGamesListState>
     implements $FavoriteGamesListStateCopyWith<$Res> {
   _$FavoriteGamesListStateCopyWithImpl(this._value, this._then);
 
-  final FavoriteGamesListState _value;
   // ignore: unused_field
-  final $Res Function(FavoriteGamesListState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListLoadingCopyWith<$Res> {
-  factory $FavoriteGamesListLoadingCopyWith(FavoriteGamesListLoading value,
-          $Res Function(FavoriteGamesListLoading) then) =
-      _$FavoriteGamesListLoadingCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListLoadingCopyWith<$Res> {
+  factory _$$FavoriteGamesListLoadingCopyWith(_$FavoriteGamesListLoading value,
+          $Res Function(_$FavoriteGamesListLoading) then) =
+      __$$FavoriteGamesListLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoriteGamesListLoadingCopyWithImpl<$Res>
-    extends _$FavoriteGamesListStateCopyWithImpl<$Res>
-    implements $FavoriteGamesListLoadingCopyWith<$Res> {
-  _$FavoriteGamesListLoadingCopyWithImpl(FavoriteGamesListLoading _value,
-      $Res Function(FavoriteGamesListLoading) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListLoading));
-
-  @override
-  FavoriteGamesListLoading get _value =>
-      super._value as FavoriteGamesListLoading;
+class __$$FavoriteGamesListLoadingCopyWithImpl<$Res>
+    extends _$FavoriteGamesListStateCopyWithImpl<$Res,
+        _$FavoriteGamesListLoading>
+    implements _$$FavoriteGamesListLoadingCopyWith<$Res> {
+  __$$FavoriteGamesListLoadingCopyWithImpl(_$FavoriteGamesListLoading _value,
+      $Res Function(_$FavoriteGamesListLoading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2607,7 +2510,8 @@ class _$FavoriteGamesListLoading implements FavoriteGamesListLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FavoriteGamesListLoading);
+        (other.runtimeType == runtimeType &&
+            other is _$FavoriteGamesListLoading);
   }
 
   @override
@@ -2628,11 +2532,11 @@ class _$FavoriteGamesListLoading implements FavoriteGamesListLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FavoriteGame> favorites, List<Game> games,
+    TResult? Function()? loading,
+    TResult? Function(List<FavoriteGame> favorites, List<Game> games,
             List<GameVM> viewModels)?
         loaded,
-    TResult Function(String message)? error,
+    TResult? Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -2666,9 +2570,9 @@ class _$FavoriteGamesListLoading implements FavoriteGamesListLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListLoading value)? loading,
-    TResult Function(FavoriteGamesListLoaded value)? loaded,
-    TResult Function(FavoriteGamesListError value)? error,
+    TResult? Function(FavoriteGamesListLoading value)? loading,
+    TResult? Function(FavoriteGamesListLoaded value)? loaded,
+    TResult? Function(FavoriteGamesListError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -2693,10 +2597,11 @@ abstract class FavoriteGamesListLoading implements FavoriteGamesListState {
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListLoadedCopyWith<$Res> {
-  factory $FavoriteGamesListLoadedCopyWith(FavoriteGamesListLoaded value,
-          $Res Function(FavoriteGamesListLoaded) then) =
-      _$FavoriteGamesListLoadedCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListLoadedCopyWith<$Res> {
+  factory _$$FavoriteGamesListLoadedCopyWith(_$FavoriteGamesListLoaded value,
+          $Res Function(_$FavoriteGamesListLoaded) then) =
+      __$$FavoriteGamesListLoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {List<FavoriteGame> favorites,
       List<Game> games,
@@ -2704,33 +2609,32 @@ abstract class $FavoriteGamesListLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FavoriteGamesListLoadedCopyWithImpl<$Res>
-    extends _$FavoriteGamesListStateCopyWithImpl<$Res>
-    implements $FavoriteGamesListLoadedCopyWith<$Res> {
-  _$FavoriteGamesListLoadedCopyWithImpl(FavoriteGamesListLoaded _value,
-      $Res Function(FavoriteGamesListLoaded) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListLoaded));
+class __$$FavoriteGamesListLoadedCopyWithImpl<$Res>
+    extends _$FavoriteGamesListStateCopyWithImpl<$Res,
+        _$FavoriteGamesListLoaded>
+    implements _$$FavoriteGamesListLoadedCopyWith<$Res> {
+  __$$FavoriteGamesListLoadedCopyWithImpl(_$FavoriteGamesListLoaded _value,
+      $Res Function(_$FavoriteGamesListLoaded) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListLoaded get _value => super._value as FavoriteGamesListLoaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? favorites = freezed,
-    Object? games = freezed,
-    Object? viewModels = freezed,
+    Object? favorites = null,
+    Object? games = null,
+    Object? viewModels = null,
   }) {
-    return _then(FavoriteGamesListLoaded(
-      favorites == freezed
-          ? _value.favorites
+    return _then(_$FavoriteGamesListLoaded(
+      null == favorites
+          ? _value._favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<FavoriteGame>,
-      games == freezed
-          ? _value.games
+      null == games
+          ? _value._games
           : games // ignore: cast_nullable_to_non_nullable
               as List<Game>,
-      viewModels == freezed
-          ? _value.viewModels
+      null == viewModels
+          ? _value._viewModels
           : viewModels // ignore: cast_nullable_to_non_nullable
               as List<GameVM>,
     ));
@@ -2740,16 +2644,34 @@ class _$FavoriteGamesListLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
-  const _$FavoriteGamesListLoaded(this.favorites, this.games,
-      [this.viewModels = const []]);
+  const _$FavoriteGamesListLoaded(
+      final List<FavoriteGame> favorites, final List<Game> games,
+      [final List<GameVM> viewModels = const []])
+      : _favorites = favorites,
+        _games = games,
+        _viewModels = viewModels;
 
+  final List<FavoriteGame> _favorites;
   @override
-  final List<FavoriteGame> favorites;
+  List<FavoriteGame> get favorites {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favorites);
+  }
+
+  final List<Game> _games;
   @override
-  final List<Game> games;
+  List<Game> get games {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_games);
+  }
+
+  final List<GameVM> _viewModels;
+  @override
   @JsonKey()
-  @override
-  final List<GameVM> viewModels;
+  List<GameVM> get viewModels {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_viewModels);
+  }
 
   @override
   String toString() {
@@ -2760,24 +2682,26 @@ class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListLoaded &&
-            const DeepCollectionEquality().equals(other.favorites, favorites) &&
-            const DeepCollectionEquality().equals(other.games, games) &&
+            other is _$FavoriteGamesListLoaded &&
             const DeepCollectionEquality()
-                .equals(other.viewModels, viewModels));
+                .equals(other._favorites, _favorites) &&
+            const DeepCollectionEquality().equals(other._games, _games) &&
+            const DeepCollectionEquality()
+                .equals(other._viewModels, _viewModels));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(favorites),
-      const DeepCollectionEquality().hash(games),
-      const DeepCollectionEquality().hash(viewModels));
+      const DeepCollectionEquality().hash(_favorites),
+      const DeepCollectionEquality().hash(_games),
+      const DeepCollectionEquality().hash(_viewModels));
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListLoadedCopyWith<FavoriteGamesListLoaded> get copyWith =>
-      _$FavoriteGamesListLoadedCopyWithImpl<FavoriteGamesListLoaded>(
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListLoadedCopyWith<_$FavoriteGamesListLoaded> get copyWith =>
+      __$$FavoriteGamesListLoadedCopyWithImpl<_$FavoriteGamesListLoaded>(
           this, _$identity);
 
   @override
@@ -2795,11 +2719,11 @@ class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FavoriteGame> favorites, List<Game> games,
+    TResult? Function()? loading,
+    TResult? Function(List<FavoriteGame> favorites, List<Game> games,
             List<GameVM> viewModels)?
         loaded,
-    TResult Function(String message)? error,
+    TResult? Function(String message)? error,
   }) {
     return loaded?.call(favorites, games, viewModels);
   }
@@ -2833,9 +2757,9 @@ class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListLoading value)? loading,
-    TResult Function(FavoriteGamesListLoaded value)? loaded,
-    TResult Function(FavoriteGamesListError value)? error,
+    TResult? Function(FavoriteGamesListLoading value)? loading,
+    TResult? Function(FavoriteGamesListLoaded value)? loaded,
+    TResult? Function(FavoriteGamesListError value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -2857,42 +2781,41 @@ class _$FavoriteGamesListLoaded implements FavoriteGamesListLoaded {
 
 abstract class FavoriteGamesListLoaded implements FavoriteGamesListState {
   const factory FavoriteGamesListLoaded(
-      List<FavoriteGame> favorites, List<Game> games,
-      [List<GameVM> viewModels]) = _$FavoriteGamesListLoaded;
+      final List<FavoriteGame> favorites, final List<Game> games,
+      [final List<GameVM> viewModels]) = _$FavoriteGamesListLoaded;
 
   List<FavoriteGame> get favorites;
   List<Game> get games;
   List<GameVM> get viewModels;
   @JsonKey(ignore: true)
-  $FavoriteGamesListLoadedCopyWith<FavoriteGamesListLoaded> get copyWith =>
+  _$$FavoriteGamesListLoadedCopyWith<_$FavoriteGamesListLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FavoriteGamesListErrorCopyWith<$Res> {
-  factory $FavoriteGamesListErrorCopyWith(FavoriteGamesListError value,
-          $Res Function(FavoriteGamesListError) then) =
-      _$FavoriteGamesListErrorCopyWithImpl<$Res>;
+abstract class _$$FavoriteGamesListErrorCopyWith<$Res> {
+  factory _$$FavoriteGamesListErrorCopyWith(_$FavoriteGamesListError value,
+          $Res Function(_$FavoriteGamesListError) then) =
+      __$$FavoriteGamesListErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$FavoriteGamesListErrorCopyWithImpl<$Res>
-    extends _$FavoriteGamesListStateCopyWithImpl<$Res>
-    implements $FavoriteGamesListErrorCopyWith<$Res> {
-  _$FavoriteGamesListErrorCopyWithImpl(FavoriteGamesListError _value,
-      $Res Function(FavoriteGamesListError) _then)
-      : super(_value, (v) => _then(v as FavoriteGamesListError));
+class __$$FavoriteGamesListErrorCopyWithImpl<$Res>
+    extends _$FavoriteGamesListStateCopyWithImpl<$Res, _$FavoriteGamesListError>
+    implements _$$FavoriteGamesListErrorCopyWith<$Res> {
+  __$$FavoriteGamesListErrorCopyWithImpl(_$FavoriteGamesListError _value,
+      $Res Function(_$FavoriteGamesListError) _then)
+      : super(_value, _then);
 
-  @override
-  FavoriteGamesListError get _value => super._value as FavoriteGamesListError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(FavoriteGamesListError(
-      message == freezed
+    return _then(_$FavoriteGamesListError(
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2917,18 +2840,18 @@ class _$FavoriteGamesListError implements FavoriteGamesListError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FavoriteGamesListError &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$FavoriteGamesListError &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $FavoriteGamesListErrorCopyWith<FavoriteGamesListError> get copyWith =>
-      _$FavoriteGamesListErrorCopyWithImpl<FavoriteGamesListError>(
+  @pragma('vm:prefer-inline')
+  _$$FavoriteGamesListErrorCopyWith<_$FavoriteGamesListError> get copyWith =>
+      __$$FavoriteGamesListErrorCopyWithImpl<_$FavoriteGamesListError>(
           this, _$identity);
 
   @override
@@ -2946,11 +2869,11 @@ class _$FavoriteGamesListError implements FavoriteGamesListError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FavoriteGame> favorites, List<Game> games,
+    TResult? Function()? loading,
+    TResult? Function(List<FavoriteGame> favorites, List<Game> games,
             List<GameVM> viewModels)?
         loaded,
-    TResult Function(String message)? error,
+    TResult? Function(String message)? error,
   }) {
     return error?.call(message);
   }
@@ -2984,9 +2907,9 @@ class _$FavoriteGamesListError implements FavoriteGamesListError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FavoriteGamesListLoading value)? loading,
-    TResult Function(FavoriteGamesListLoaded value)? loaded,
-    TResult Function(FavoriteGamesListError value)? error,
+    TResult? Function(FavoriteGamesListLoading value)? loading,
+    TResult? Function(FavoriteGamesListLoaded value)? loaded,
+    TResult? Function(FavoriteGamesListError value)? error,
   }) {
     return error?.call(this);
   }
@@ -3007,11 +2930,11 @@ class _$FavoriteGamesListError implements FavoriteGamesListError {
 }
 
 abstract class FavoriteGamesListError implements FavoriteGamesListState {
-  const factory FavoriteGamesListError(String message) =
+  const factory FavoriteGamesListError(final String message) =
       _$FavoriteGamesListError;
 
   String get message;
   @JsonKey(ignore: true)
-  $FavoriteGamesListErrorCopyWith<FavoriteGamesListError> get copyWith =>
+  _$$FavoriteGamesListErrorCopyWith<_$FavoriteGamesListError> get copyWith =>
       throw _privateConstructorUsedError;
 }
