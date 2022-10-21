@@ -16,9 +16,25 @@ const kVoid = Void._();
 
 @freezed
 class UseCaseResult<E, T> with _$UseCaseResult<E, T> {
-  const factory UseCaseResult.failure(Object? error, StackTrace trace) =
+  const factory UseCaseResult.failure(E error, StackTrace trace) =
       UseCaseResultFailure<E, T>;
   const factory UseCaseResult.success(T data) = UseCaseResultSuccess<E, T>;
+}
+
+mixin ProviderUseCase<E, T> on Object {
+  UseCaseResult<E, T> execute();
+}
+
+mixin ProviderUseCaseWithParams<E, T, P> on Object {
+  UseCaseResult<E, T> execute(P params);
+}
+
+mixin ProviderAsyncUseCase<E, T> on Object {
+  Future<UseCaseResult<E, T>> execute();
+}
+
+mixin ProviderAsyncUseCaseWithParams<E, T, P> on Object {
+  Future<UseCaseResult<E, T>> execute(P params);
 }
 
 abstract class UseCase<E, T> extends UseCaseBase {

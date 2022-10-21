@@ -1,6 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:riverbloc/riverbloc.dart';
 
 import 'package:freegamesexample/application/blocs/authentication.dart';
 import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
@@ -12,35 +11,11 @@ import '../../../../../utils.dart';
 
 void main() {
   group('MergeGameFavoritesUseCase', () {
-    late MockAuthenticationBloc auth;
-    late List<AuthenticationState> authStates;
     late MergeGameFavoritesUseCaseParams params;
     late MergeGameFavoritesUseCaseParams onlyFavsParams;
-    late MockFavoriteGamesBloc bloc;
 
     setUp(() {
-      auth = MockAuthenticationBloc();
-      bloc = MockFavoriteGamesBloc();
-      authStates = [
-        const AuthenticationState.uninitialized(),
-        AuthenticationState.authenticated(TestConstants.testUser),
-      ];
-      whenListen(
-        auth,
-        Stream.fromIterable(authStates),
-        initialState: const AuthenticationState.uninitialized(),
-      );
-      params = MergeGameFavoritesUseCaseParams(
-        bloc: bloc,
-        favorites: TestConstants.testFavorites,
-        games: TestConstants.testGames,
-      );
-      onlyFavsParams = MergeGameFavoritesUseCaseParams(
-        bloc: bloc,
-        favorites: TestConstants.testFavorites,
-        games: TestConstants.testGames,
-        filter: GamesListFilter.onlyFavorites,
-      );
+      
     });
 
     test('can be instantiated', () async {

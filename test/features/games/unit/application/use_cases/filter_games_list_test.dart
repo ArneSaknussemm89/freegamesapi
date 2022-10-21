@@ -17,16 +17,9 @@ import '../../../../../utils.dart';
 void main() {
   group('FilterGamesListUseCase', () {
     late FakeFirebaseFirestore fakeFirestore;
-    late AuthenticationBloc authBloc;
-    late MockFavoriteGamesBloc bloc;
-    late List<AuthenticationState> authStates;
-    late List<FavoriteGamesListState> blocStates;
     late CollectionReference<FavoriteGame> favorites;
 
     setUp(() async {
-      bloc = MockFavoriteGamesBloc();
-      authBloc = MockAuthenticationBloc();
-
       // Set up favorites.
       fakeFirestore = FakeFirebaseFirestore();
       favorites = fakeFirestore.collection(AppConstants.favoritesFirebaseKey).withConverter<FavoriteGame>(
@@ -42,28 +35,6 @@ void main() {
           savedOn: DateTime.now(),
         ),
       );
-
-      final favs = await favorites.get();
-
-      authStates = [
-        const AuthenticationState.uninitialized(),
-        AuthenticationState.authenticated(TestConstants.testUser),
-      ];
-      blocStates = [
-        const FavoriteGamesListState.loading(),
-        FavoriteGamesListState.loaded(favs.docs.map((s) => s.data()).toList(), TestConstants.testGames),
-      ];
-
-      whenListen(
-        authBloc,
-        Stream.fromIterable(authStates),
-        initialState: const AuthenticationState.uninitialized(),
-      );
-      whenListen(
-        bloc,
-        Stream.fromIterable(blocStates),
-        initialState: const FavoriteGamesListState.loading(),
-      );
     });
 
     // When all done, clear firestore.
@@ -72,76 +43,6 @@ void main() {
     test('can be instantiated', () {
       const useCase = FilterGamesListUseCase();
       expect(useCase, isNotNull);
-    });
-
-    test('all filter shows all games', () async {
-      addTearDown(() async {
-        await authBloc.stream.drain();
-        await bloc.stream.drain();
-      });
-
-      // Make sure the states are correct.
-      final favs = await favorites.get();
-      final f = favs.docs.map((s) => s.data().gameId).toSet();
-
-      await expectLater(authBloc.stream, emitsInOrder(authStates));
-      await expectLater(bloc.stream, emitsInOrder(blocStates));
-
-      final viewModels = TestConstants.testGames
-          .map(
-            (game) => GameVM(
-              auth: authBloc.state,
-              bloc: bloc,
-              game: game,
-              favorite: f.contains(game.id),
-            ),
-          )
-          .toList();
-
-      const useCase = FilterGamesListUseCase();
-      final params = FilterGamesListUseCaseParams(games: viewModels, filter: GamesListFilter.all);
-      final result = useCase.execute(params);
-
-      expect(result, isA<UseCaseResultSuccess<Object?, List<GameVM>>>());
-
-      result.whenOrNull(success: (list) {
-        expect(list.length, 3);
-      });
-    });
-
-    test('favorites filter only shows favorites', () async {
-      addTearDown(() async {
-        await authBloc.stream.drain();
-        await bloc.stream.drain();
-      });
-
-      // Make sure the states are correct.
-      final favs = await favorites.get();
-      final f = favs.docs.map((s) => s.data().gameId).toSet();
-
-      await expectLater(authBloc.stream, emitsInOrder(authStates));
-      await expectLater(bloc.stream, emitsInOrder(blocStates));
-
-      final viewModels = TestConstants.testGames
-          .map(
-            (game) => GameVM(
-              auth: authBloc.state,
-              bloc: bloc,
-              game: game,
-              favorite: f.contains(game.id),
-            ),
-          )
-          .toList();
-
-      const useCase = FilterGamesListUseCase();
-      final params = FilterGamesListUseCaseParams(games: viewModels, filter: GamesListFilter.onlyFavorites);
-      final result = useCase.execute(params);
-
-      expect(result, isA<UseCaseResultSuccess<Object?, List<GameVM>>>());
-
-      result.whenOrNull(success: (list) {
-        expect(list.length, 1);
-      });
     });
 
     test('can read provider', () {

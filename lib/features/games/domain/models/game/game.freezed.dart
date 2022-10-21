@@ -24,13 +24,14 @@ mixin _$Game {
   String get title => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
   String get shortDescription => throw _privateConstructorUsedError;
+  DateTime get releaseDate => throw _privateConstructorUsedError;
   String get gameUrl => throw _privateConstructorUsedError;
   String get genre => throw _privateConstructorUsedError;
   String get platform => throw _privateConstructorUsedError;
   String get publisher => throw _privateConstructorUsedError;
   String get developer => throw _privateConstructorUsedError;
-  DateTime get releaseDate => throw _privateConstructorUsedError;
   String get freetogameProfileUrl => throw _privateConstructorUsedError;
+  bool get isFavorite => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,13 +48,14 @@ abstract class $GameCopyWith<$Res> {
       String title,
       String thumbnail,
       String shortDescription,
+      DateTime releaseDate,
       String gameUrl,
       String genre,
       String platform,
       String publisher,
       String developer,
-      DateTime releaseDate,
-      String freetogameProfileUrl});
+      String freetogameProfileUrl,
+      bool isFavorite});
 }
 
 /// @nodoc
@@ -73,13 +75,14 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
     Object? title = null,
     Object? thumbnail = null,
     Object? shortDescription = null,
+    Object? releaseDate = null,
     Object? gameUrl = null,
     Object? genre = null,
     Object? platform = null,
     Object? publisher = null,
     Object? developer = null,
-    Object? releaseDate = null,
     Object? freetogameProfileUrl = null,
+    Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -98,6 +101,10 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
               as String,
+      releaseDate: null == releaseDate
+          ? _value.releaseDate
+          : releaseDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       gameUrl: null == gameUrl
           ? _value.gameUrl
           : gameUrl // ignore: cast_nullable_to_non_nullable
@@ -118,14 +125,14 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           ? _value.developer
           : developer // ignore: cast_nullable_to_non_nullable
               as String,
-      releaseDate: null == releaseDate
-          ? _value.releaseDate
-          : releaseDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       freetogameProfileUrl: null == freetogameProfileUrl
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -141,13 +148,14 @@ abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
       String title,
       String thumbnail,
       String shortDescription,
+      DateTime releaseDate,
       String gameUrl,
       String genre,
       String platform,
       String publisher,
       String developer,
-      DateTime releaseDate,
-      String freetogameProfileUrl});
+      String freetogameProfileUrl,
+      bool isFavorite});
 }
 
 /// @nodoc
@@ -163,59 +171,64 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
     Object? title = null,
     Object? thumbnail = null,
     Object? shortDescription = null,
+    Object? releaseDate = null,
     Object? gameUrl = null,
     Object? genre = null,
     Object? platform = null,
     Object? publisher = null,
     Object? developer = null,
-    Object? releaseDate = null,
     Object? freetogameProfileUrl = null,
+    Object? isFavorite = null,
   }) {
     return _then(_$_Game(
-      null == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      null == title
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      null == thumbnail
+      thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
-      null == shortDescription
+      shortDescription: null == shortDescription
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
               as String,
-      null == gameUrl
-          ? _value.gameUrl
-          : gameUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == genre
-          ? _value.genre
-          : genre // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == platform
-          ? _value.platform
-          : platform // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == publisher
-          ? _value.publisher
-          : publisher // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == developer
-          ? _value.developer
-          : developer // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == releaseDate
+      releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      null == freetogameProfileUrl
+      gameUrl: null == gameUrl
+          ? _value.gameUrl
+          : gameUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      genre: null == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
+      platform: null == platform
+          ? _value.platform
+          : platform // ignore: cast_nullable_to_non_nullable
+              as String,
+      publisher: null == publisher
+          ? _value.publisher
+          : publisher // ignore: cast_nullable_to_non_nullable
+              as String,
+      developer: null == developer
+          ? _value.developer
+          : developer // ignore: cast_nullable_to_non_nullable
+              as String,
+      freetogameProfileUrl: null == freetogameProfileUrl
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -225,17 +238,18 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _$_Game implements _Game {
   const _$_Game(
-      this.id,
-      this.title,
-      this.thumbnail,
-      this.shortDescription,
-      this.gameUrl,
-      this.genre,
-      this.platform,
-      this.publisher,
-      this.developer,
-      this.releaseDate,
-      this.freetogameProfileUrl);
+      {required this.id,
+      required this.title,
+      required this.thumbnail,
+      required this.shortDescription,
+      required this.releaseDate,
+      this.gameUrl = '',
+      this.genre = '',
+      this.platform = '',
+      this.publisher = '',
+      this.developer = '',
+      this.freetogameProfileUrl = '',
+      this.isFavorite = false});
 
   factory _$_Game.fromJson(Map<String, dynamic> json) => _$$_GameFromJson(json);
 
@@ -248,23 +262,32 @@ class _$_Game implements _Game {
   @override
   final String shortDescription;
   @override
-  final String gameUrl;
-  @override
-  final String genre;
-  @override
-  final String platform;
-  @override
-  final String publisher;
-  @override
-  final String developer;
-  @override
   final DateTime releaseDate;
   @override
+  @JsonKey()
+  final String gameUrl;
+  @override
+  @JsonKey()
+  final String genre;
+  @override
+  @JsonKey()
+  final String platform;
+  @override
+  @JsonKey()
+  final String publisher;
+  @override
+  @JsonKey()
+  final String developer;
+  @override
+  @JsonKey()
   final String freetogameProfileUrl;
+  @override
+  @JsonKey()
+  final bool isFavorite;
 
   @override
   String toString() {
-    return 'Game(id: $id, title: $title, thumbnail: $thumbnail, shortDescription: $shortDescription, gameUrl: $gameUrl, genre: $genre, platform: $platform, publisher: $publisher, developer: $developer, releaseDate: $releaseDate, freetogameProfileUrl: $freetogameProfileUrl)';
+    return 'Game(id: $id, title: $title, thumbnail: $thumbnail, shortDescription: $shortDescription, releaseDate: $releaseDate, gameUrl: $gameUrl, genre: $genre, platform: $platform, publisher: $publisher, developer: $developer, freetogameProfileUrl: $freetogameProfileUrl, isFavorite: $isFavorite)';
   }
 
   @override
@@ -278,6 +301,8 @@ class _$_Game implements _Game {
                 other.thumbnail == thumbnail) &&
             (identical(other.shortDescription, shortDescription) ||
                 other.shortDescription == shortDescription) &&
+            (identical(other.releaseDate, releaseDate) ||
+                other.releaseDate == releaseDate) &&
             (identical(other.gameUrl, gameUrl) || other.gameUrl == gameUrl) &&
             (identical(other.genre, genre) || other.genre == genre) &&
             (identical(other.platform, platform) ||
@@ -286,10 +311,10 @@ class _$_Game implements _Game {
                 other.publisher == publisher) &&
             (identical(other.developer, developer) ||
                 other.developer == developer) &&
-            (identical(other.releaseDate, releaseDate) ||
-                other.releaseDate == releaseDate) &&
             (identical(other.freetogameProfileUrl, freetogameProfileUrl) ||
-                other.freetogameProfileUrl == freetogameProfileUrl));
+                other.freetogameProfileUrl == freetogameProfileUrl) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite));
   }
 
   @JsonKey(ignore: true)
@@ -300,13 +325,14 @@ class _$_Game implements _Game {
       title,
       thumbnail,
       shortDescription,
+      releaseDate,
       gameUrl,
       genre,
       platform,
       publisher,
       developer,
-      releaseDate,
-      freetogameProfileUrl);
+      freetogameProfileUrl,
+      isFavorite);
 
   @JsonKey(ignore: true)
   @override
@@ -324,17 +350,18 @@ class _$_Game implements _Game {
 
 abstract class _Game implements Game {
   const factory _Game(
-      final int id,
-      final String title,
-      final String thumbnail,
-      final String shortDescription,
+      {required final int id,
+      required final String title,
+      required final String thumbnail,
+      required final String shortDescription,
+      required final DateTime releaseDate,
       final String gameUrl,
       final String genre,
       final String platform,
       final String publisher,
       final String developer,
-      final DateTime releaseDate,
-      final String freetogameProfileUrl) = _$_Game;
+      final String freetogameProfileUrl,
+      final bool isFavorite}) = _$_Game;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
 
@@ -347,6 +374,8 @@ abstract class _Game implements Game {
   @override
   String get shortDescription;
   @override
+  DateTime get releaseDate;
+  @override
   String get gameUrl;
   @override
   String get genre;
@@ -357,9 +386,9 @@ abstract class _Game implements Game {
   @override
   String get developer;
   @override
-  DateTime get releaseDate;
-  @override
   String get freetogameProfileUrl;
+  @override
+  bool get isFavorite;
   @override
   @JsonKey(ignore: true)
   _$$_GameCopyWith<_$_Game> get copyWith => throw _privateConstructorUsedError;

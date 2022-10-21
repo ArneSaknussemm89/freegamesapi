@@ -1,33 +1,34 @@
 import 'package:dio/dio.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+/// Core elements
 import 'package:freegamesexample/core/use_cases.dart';
 import 'package:freegamesexample/data/adapters/dio_adapter.dart';
+
+/// Games feature elements
 import 'package:freegamesexample/features/games/data/data_sources/games_api.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
-final fetchAllGamesUseCaseProvider = Provider.autoDispose<FetchAllGamesUseCase>((ref) {
-  final dataSource = ref.watch(gamesApiDataSourceProvider);
-  final adapter = ref.watch(
-    dioAdapterProvider(
-      BaseOptions(baseUrl: dataSource.baseUrl),
-    ),
-  );
+part 'fetch_all_games.g.dart';
 
-  return FetchAllGamesUseCase(adapter: adapter, dataSource: dataSource);
-}, dependencies: [gamesApiDataSourceProvider, dioAdapterProvider]);
+@riverpod
+class FetchAllGamesUseCase extends _$FetchAllGamesUseCase with ProviderAsyncUseCase<Object, List<Game>> {
+  @override
+  Future<UseCaseResult<Object, List<Game>>> build() {
+    dataSource = ref.watch(gamesApiDataSourceProvider);
+    adapter = ref.watch(
+      dioAdapterProvider(
+        BaseOptions(baseUrl: dataSource.baseUrl),
+      ),
+    );
+    return execute();
+  }
 
-class FetchAllGamesUseCase extends AsyncUseCase<Object?, List<Game>> {
-  const FetchAllGamesUseCase({
-    required this.adapter,
-    required this.dataSource,
-  });
-
-  final DioAdapter adapter;
-  final GameApiDataSource dataSource;
+  late final DioAdapter adapter;
+  late final GameApiDataSource dataSource;
 
   @override
-  Future<UseCaseResult<Object?, List<Game>>> execute() async {
+  Future<UseCaseResult<Object, List<Game>>> execute() async {
     final response = await adapter.get<List<dynamic>>(
       DioAdapterOptions(
         path: dataSource.gamesEndpoint,
@@ -36,9 +37,13 @@ class FetchAllGamesUseCase extends AsyncUseCase<Object?, List<Game>> {
 
     return response.when(
       success: (data) {
-        return UseCaseResult.success(data.map((dynamic game) => Game.fromJson(game as Map<String, dynamic>)).toList());
+        return UseCaseResult.success(
+          data.map((game) {
+            return Game.fromJson(game as Map<String, dynamic>);
+          }).toList(),
+        );
       },
-      failure: UseCaseResult.failure,
+      failure: (exception, stackTrace) => UseCaseResult.failure(exception ?? Exception('Failure.'), stackTrace),
     );
   }
 }

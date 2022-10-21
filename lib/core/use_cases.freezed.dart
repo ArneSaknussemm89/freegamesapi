@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UseCaseResult<E, T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Object? error, StackTrace trace) failure,
+    required TResult Function(E error, StackTrace trace) failure,
     required TResult Function(T data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Object? error, StackTrace trace)? failure,
+    TResult? Function(E error, StackTrace trace)? failure,
     TResult? Function(T data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Object? error, StackTrace trace)? failure,
+    TResult Function(E error, StackTrace trace)? failure,
     TResult Function(T data)? success,
     required TResult orElse(),
   }) =>
@@ -80,7 +80,7 @@ abstract class _$$UseCaseResultFailureCopyWith<E, T, $Res> {
           $Res Function(_$UseCaseResultFailure<E, T>) then) =
       __$$UseCaseResultFailureCopyWithImpl<E, T, $Res>;
   @useResult
-  $Res call({Object? error, StackTrace trace});
+  $Res call({E error, StackTrace trace});
 }
 
 /// @nodoc
@@ -95,11 +95,14 @@ class __$$UseCaseResultFailureCopyWithImpl<E, T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
     Object? trace = null,
   }) {
     return _then(_$UseCaseResultFailure<E, T>(
-      freezed == error ? _value.error : error,
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as E,
       null == trace
           ? _value.trace
           : trace // ignore: cast_nullable_to_non_nullable
@@ -114,7 +117,7 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   const _$UseCaseResultFailure(this.error, this.trace);
 
   @override
-  final Object? error;
+  final E error;
   @override
   final StackTrace trace;
 
@@ -146,7 +149,7 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Object? error, StackTrace trace) failure,
+    required TResult Function(E error, StackTrace trace) failure,
     required TResult Function(T data) success,
   }) {
     return failure(error, trace);
@@ -155,7 +158,7 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Object? error, StackTrace trace)? failure,
+    TResult? Function(E error, StackTrace trace)? failure,
     TResult? Function(T data)? success,
   }) {
     return failure?.call(error, trace);
@@ -164,7 +167,7 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Object? error, StackTrace trace)? failure,
+    TResult Function(E error, StackTrace trace)? failure,
     TResult Function(T data)? success,
     required TResult orElse(),
   }) {
@@ -207,11 +210,10 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
 }
 
 abstract class UseCaseResultFailure<E, T> implements UseCaseResult<E, T> {
-  const factory UseCaseResultFailure(
-          final Object? error, final StackTrace trace) =
+  const factory UseCaseResultFailure(final E error, final StackTrace trace) =
       _$UseCaseResultFailure<E, T>;
 
-  Object? get error;
+  E get error;
   StackTrace get trace;
   @JsonKey(ignore: true)
   _$$UseCaseResultFailureCopyWith<E, T, _$UseCaseResultFailure<E, T>>
@@ -285,7 +287,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Object? error, StackTrace trace) failure,
+    required TResult Function(E error, StackTrace trace) failure,
     required TResult Function(T data) success,
   }) {
     return success(data);
@@ -294,7 +296,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Object? error, StackTrace trace)? failure,
+    TResult? Function(E error, StackTrace trace)? failure,
     TResult? Function(T data)? success,
   }) {
     return success?.call(data);
@@ -303,7 +305,7 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Object? error, StackTrace trace)? failure,
+    TResult Function(E error, StackTrace trace)? failure,
     TResult Function(T data)? success,
     required TResult orElse(),
   }) {

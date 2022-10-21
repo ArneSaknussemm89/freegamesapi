@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
-import 'package:freegamesexample/features/games/presentation/view_models/game.dart';
+import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
 class FilterGamesListUseCaseParams extends Equatable {
   const FilterGamesListUseCaseParams({
@@ -9,7 +9,7 @@ class FilterGamesListUseCaseParams extends Equatable {
     required this.filter,
   });
 
-  final List<GameVM> games;
+  final List<Game> games;
   final GamesListFilter filter;
 
   @override

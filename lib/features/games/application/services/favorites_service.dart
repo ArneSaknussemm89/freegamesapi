@@ -1,17 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+// Core elements.
 import 'package:freegamesexample/application/services/cloud_firestore.dart';
+
+// Games feature elements.
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
-final favoriteGamesServiceProvider = Provider.autoDispose<FavoriteGamesService>((ref) {
-  final appFirestore = ref.watch(appFirestoreServiceProvider);
-  return FavoriteGamesService(appFirestore: appFirestore);
-}, dependencies: [appFirestoreServiceProvider]);
+part 'favorites_service.g.dart';
 
-class FavoriteGamesService {
-  const FavoriteGamesService({required this.appFirestore});
+@riverpod
+class FavoriteGamesService extends _$FavoriteGamesService {
+  FavoriteGamesService({required this.appFirestore});
+
+  @override
+  FavoriteGamesService build() {
+    final firestore = ref.watch(appFirestoreServiceProvider);
+    return FavoriteGamesService(appFirestore: firestore);
+  }
 
   final AppFirestoreService appFirestore;
 

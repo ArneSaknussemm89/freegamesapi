@@ -8,19 +8,20 @@ part 'game.g.dart';
 @freezed
 class Game with _$Game {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Game(
-    int id,
-    String title,
-    String thumbnail,
-    String shortDescription,
-    String gameUrl,
-    String genre,
-    String platform,
-    String publisher,
-    String developer,
-    DateTime releaseDate,
-    String freetogameProfileUrl,
-  ) = _Game;
+  const factory Game({
+    required int id,
+    required String title,
+    required String thumbnail,
+    required String shortDescription,
+    required DateTime releaseDate,
+    @Default('') String gameUrl,
+    @Default('') String genre,
+    @Default('') String platform,
+    @Default('') String publisher,
+    @Default('') String developer,
+    @Default('') String freetogameProfileUrl,
+    @Default(false) bool isFavorite,
+  }) = _Game;
 
   factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 }
