@@ -516,7 +516,7 @@ packages:
     source: hosted
     version: "3.2.0"
   flutter_hooks:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_hooks
       url: "https://pub.dartlang.org"

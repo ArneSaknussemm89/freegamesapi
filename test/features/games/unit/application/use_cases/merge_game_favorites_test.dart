@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:freegamesexample/application/blocs/authentication.dart';
+import 'package:freegamesexample/core/application/providers/authentication.dart';
 import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
 import 'package:freegamesexample/features/games/application/use_cases/merge_game_favorites.dart';
 import 'package:freegamesexample/features/games/domain/value_objects/merge_game_favorites_params.dart';

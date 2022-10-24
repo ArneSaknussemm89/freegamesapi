@@ -29,76 +29,13 @@ class _SystemHash {
   }
 }
 
-String $fetchGamesListHash() => r'af486042ef1a210b69a0f09fcfbcf3cb66282d2a';
+String $fetchAllGamesHash() => r'cc77f485fccc2625b1f3247e47e0635e3fe0e7c2';
 
-/// See also [fetchGamesList].
-class FetchGamesListProvider
-    extends AutoDisposeFutureProvider<UseCaseResult<Object?, List<Game>>> {
-  FetchGamesListProvider({
-    required this.filter,
-  }) : super(
-          (ref) => fetchGamesList(
-            ref,
-            filter: filter,
-          ),
-          from: fetchGamesListProvider,
-          name: r'fetchGamesListProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : $fetchGamesListHash,
-        );
-
-  final GamesListFilter filter;
-
-  @override
-  bool operator ==(Object other) {
-    return other is FetchGamesListProvider && other.filter == filter;
-  }
-
-  @override
-  int get hashCode {
-    var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, filter.hashCode);
-
-    return _SystemHash.finish(hash);
-  }
-}
-
-typedef FetchGamesListRef
-    = AutoDisposeFutureProviderRef<UseCaseResult<Object?, List<Game>>>;
-
-/// See also [fetchGamesList].
-final fetchGamesListProvider = FetchGamesListFamily();
-
-class FetchGamesListFamily
-    extends Family<AsyncValue<UseCaseResult<Object?, List<Game>>>> {
-  FetchGamesListFamily();
-
-  FetchGamesListProvider call({
-    required GamesListFilter filter,
-  }) {
-    return FetchGamesListProvider(
-      filter: filter,
-    );
-  }
-
-  @override
-  AutoDisposeFutureProvider<UseCaseResult<Object?, List<Game>>>
-      getProviderOverride(
-    covariant FetchGamesListProvider provider,
-  ) {
-    return call(
-      filter: provider.filter,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'fetchGamesListProvider';
-}
+/// See also [fetchAllGames].
+final fetchAllGamesProvider = AutoDisposeFutureProvider<List<Game>>(
+  fetchAllGames,
+  name: r'fetchAllGamesProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : $fetchAllGamesHash,
+);
+typedef FetchAllGamesRef = AutoDisposeFutureProviderRef<List<Game>>;

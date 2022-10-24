@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:riverpod/riverpod.dart';
 
-import 'package:freegamesexample/application/services/cloud_firestore.dart';
+import 'package:freegamesexample/core/application/services/cloud_firestore.dart';
 import 'package:freegamesexample/core/use_cases.dart';
-import 'package:freegamesexample/domain/models/app_user.dart';
-import 'package:freegamesexample/domain/value_objects/create_firestore_user_params.dart';
+import 'package:freegamesexample/core/domain/models/app_user.dart';
+import 'package:freegamesexample/core/domain/value_objects/create_firestore_user_params.dart';
 
 final createFirestoreAppUserUseCaseProvider = Provider.autoDispose(
   (ref) {
@@ -26,8 +26,7 @@ class CreateFirestoreAppUserUseCase
 
   final AppFirestoreService service;
 
-  @override
-  Future<UseCaseResult<Exception, AppUser>> execute(
+  Future<UseCaseResult<Exception, AppUser>> call(
     CreateFirestoreAppUserUseCaseParams params,
   ) async {
     try {

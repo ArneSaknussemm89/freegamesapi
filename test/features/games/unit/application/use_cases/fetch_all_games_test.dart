@@ -3,7 +3,7 @@ import 'package:mocktail/mocktail.dart';
 
 import 'package:freegamesexample/core/adapters.dart';
 import 'package:freegamesexample/core/use_cases.dart';
-import 'package:freegamesexample/data/adapters/dio_adapter.dart';
+import 'package:freegamesexample/core/data/adapters/dio_adapter.dart';
 import 'package:freegamesexample/features/games/application/use_cases/fetch_all_games.dart';
 import 'package:freegamesexample/features/games/data/data_sources/games_api.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';

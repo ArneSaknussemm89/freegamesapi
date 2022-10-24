@@ -21,54 +21,26 @@ class UseCaseResult<E, T> with _$UseCaseResult<E, T> {
   const factory UseCaseResult.success(T data) = UseCaseResultSuccess<E, T>;
 }
 
-mixin ProviderUseCase<E, T> on Object {
-  UseCaseResult<E, T> execute();
-}
-
-mixin ProviderUseCaseWithParams<E, T, P> on Object {
-  UseCaseResult<E, T> execute(P params);
-}
-
-mixin ProviderAsyncUseCase<E, T> on Object {
-  Future<UseCaseResult<E, T>> execute();
-}
-
-mixin ProviderAsyncUseCaseWithParams<E, T, P> on Object {
-  Future<UseCaseResult<E, T>> execute(P params);
-}
-
 abstract class UseCase<E, T> extends UseCaseBase {
   const UseCase();
-
-  UseCaseResult<E, T> execute();
 }
 
 abstract class UseCaseWithParams<E, T, P> extends UseCaseBase {
   const UseCaseWithParams();
-
-  UseCaseResult<E, T> execute(P params);
 }
 
 abstract class AsyncUseCase<E, T> extends UseCaseBase {
   const AsyncUseCase();
-
-  Future<UseCaseResult<E, T>> execute();
 }
 
 abstract class AsyncUseCaseWithParams<E, T, P> extends UseCaseBase {
   const AsyncUseCaseWithParams();
-
-  Future<UseCaseResult<E, T>> execute(P params);
 }
 
 abstract class StreamUseCase<E, T> extends UseCaseBase {
   const StreamUseCase();
-
-  Stream<UseCaseResult<E, T>> execute();
 }
 
 abstract class StreamUseCaseWithParams<E, T, P> extends UseCaseBase {
   const StreamUseCaseWithParams();
-
-  Stream<UseCaseResult<E, T>> execute(P params);
 }

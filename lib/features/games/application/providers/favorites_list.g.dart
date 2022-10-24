@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fetch_all_games.dart';
+part of 'favorites_list.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,23 +29,16 @@ class _SystemHash {
   }
 }
 
-String $FetchAllGamesUseCaseHash() =>
-    r'ea3e7c229a633d6330142ce22946be3ab09abd5b';
+String $fetchUserFavoritesHash() => r'50ab019c5b90ff5825915c5ef00c7237b102626f';
 
-/// See also [FetchAllGamesUseCase].
-final fetchAllGamesUseCaseProvider = AutoDisposeAsyncNotifierProvider<
-    FetchAllGamesUseCase, UseCaseResult<Object, List<Game>>>(
-  FetchAllGamesUseCase.new,
-  name: r'fetchAllGamesUseCaseProvider',
+/// See also [fetchUserFavorites].
+final fetchUserFavoritesProvider =
+    AutoDisposeFutureProvider<List<FavoriteGame>>(
+  fetchUserFavorites,
+  name: r'fetchUserFavoritesProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $FetchAllGamesUseCaseHash,
+      : $fetchUserFavoritesHash,
 );
-typedef FetchAllGamesUseCaseRef
-    = AutoDisposeAsyncNotifierProviderRef<UseCaseResult<Object, List<Game>>>;
-
-abstract class _$FetchAllGamesUseCase
-    extends AutoDisposeAsyncNotifier<UseCaseResult<Object, List<Game>>> {
-  @override
-  FutureOr<UseCaseResult<Object, List<Game>>> build();
-}
+typedef FetchUserFavoritesRef
+    = AutoDisposeFutureProviderRef<List<FavoriteGame>>;

@@ -3,9 +3,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:freegamesexample/application/blocs/authentication.dart';
+import 'package:freegamesexample/core/application/providers/authentication.dart';
 import 'package:freegamesexample/core/use_cases.dart';
-import 'package:freegamesexample/data/constants.dart';
+import 'package:freegamesexample/core/data/constants.dart';
 import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
 import 'package:freegamesexample/features/games/application/use_cases/filter_games_list.dart';
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';

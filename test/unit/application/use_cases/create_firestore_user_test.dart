@@ -3,10 +3,10 @@ import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'package:freegamesexample/application/use_cases/create_firestore_user.dart';
+import 'package:freegamesexample/core/application/use_cases/create_firestore_user.dart';
 import 'package:freegamesexample/core/use_cases.dart';
-import 'package:freegamesexample/data/constants.dart';
-import 'package:freegamesexample/domain/models/app_user.dart';
+import 'package:freegamesexample/core/data/constants.dart';
+import 'package:freegamesexample/core/domain/models/app_user.dart';
 
 import '../../../utils.dart';
 

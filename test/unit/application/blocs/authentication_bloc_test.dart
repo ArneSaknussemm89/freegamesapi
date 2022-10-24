@@ -3,14 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freegamesexample/application/services/firebase_auth.dart';
+import 'package:freegamesexample/core/application/services/firebase_auth.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
-import 'package:freegamesexample/application/blocs/authentication.dart';
-import 'package:freegamesexample/application/services/cloud_firestore.dart';
-import 'package:freegamesexample/application/use_cases/create_firestore_user.dart';
-import 'package:freegamesexample/domain/models/app_user.dart';
+import 'package:freegamesexample/core/application/providers/authentication.dart';
+import 'package:freegamesexample/core/application/services/cloud_firestore.dart';
+import 'package:freegamesexample/core/application/use_cases/create_firestore_user.dart';
+import 'package:freegamesexample/core/domain/models/app_user.dart';
 
 import '../../../utils.dart';
 

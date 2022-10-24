@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:freegamesexample/domain/models/app_user.dart';
+import 'package:freegamesexample/core/domain/models/app_user.dart';
 
 const kTestAppUserId = 'test_user_id';
 const kTestAppUserName = 'test_user_name';

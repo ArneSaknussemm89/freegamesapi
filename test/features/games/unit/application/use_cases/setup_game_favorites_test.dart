@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:riverbloc/riverbloc.dart';
 
-import 'package:freegamesexample/application/blocs/authentication.dart';
+import 'package:freegamesexample/core/application/providers/authentication.dart';
 import 'package:freegamesexample/features/games/application/use_cases/merge_game_favorites.dart';
 import 'package:freegamesexample/features/games/application/use_cases/setup_game_favorites.dart';
 import 'package:freegamesexample/features/games/domain/value_objects/setup_game_favorites_params.dart';

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:freegamesexample/domain/models/app_user.dart';
+import 'package:freegamesexample/core/domain/models/app_user.dart';
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
 
 // Provider for the firestore. Skipping from coverage because Firebase products are already well tested on

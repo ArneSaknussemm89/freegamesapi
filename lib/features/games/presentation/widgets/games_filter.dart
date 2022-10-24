@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
+
+// Games feature elements.
+import 'package:freegamesexample/features/games/application/providers/games_list_filter.dart';
+import 'package:freegamesexample/features/games/domain/value_objects/games_list_filter.dart';
 
 class GamesFilterWidget extends ConsumerWidget {
   const GamesFilterWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final filter = ref.watch(favoriteGamesListFiltersProvider);
-    final notifier = ref.watch(favoriteGamesListFiltersProvider.notifier);
+    final filter = ref.watch(gamesListFilterNotifierProvider);
+    final notifier = ref.watch(gamesListFilterNotifierProvider.notifier);
 
     return ToggleButtons(
-      onPressed: (selectedIndex) => notifier.state = selectedIndex == 0
-          ? GamesListFilter.all
-          : GamesListFilter.onlyFavorites,
+      onPressed: notifier.setFilter,
       isSelected: [
         filter == GamesListFilter.all,
         filter == GamesListFilter.onlyFavorites,

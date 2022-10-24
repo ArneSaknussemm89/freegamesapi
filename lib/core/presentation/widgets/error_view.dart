@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import 'package:freegamesexample/presentation/constants.dart';
+import 'package:freegamesexample/core/presentation/constants.dart';
 
 class ErrorViewWidget extends StatelessWidget {
   const ErrorViewWidget({Key? key, this.error, this.trace}) : super(key: key);

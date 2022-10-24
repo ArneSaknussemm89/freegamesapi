@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'package:freegamesexample/application/services/cloud_firestore.dart';
-import 'package:freegamesexample/domain/models/app_user.dart';
+import 'package:freegamesexample/core/application/services/cloud_firestore.dart';
+import 'package:freegamesexample/core/domain/models/app_user.dart';
 import 'package:freegamesexample/features/games/application/services/favorites_service.dart';
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';

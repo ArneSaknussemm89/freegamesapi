@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:equatable/equatable.dart';
-import 'package:freegamesexample/domain/domain.dart';
+import 'package:freegamesexample/core/domain/domain.dart';
 
 part 'favorite.g.dart';
 

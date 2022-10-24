@@ -1,40 +1,53 @@
 import 'package:dio/dio.dart';
-import 'package:riverbloc/riverbloc.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:freegamesexample/data/adapters/dio_adapter.dart';
-import 'package:freegamesexample/data/repositories/repository.dart';
-import 'package:freegamesexample/features/games/application/use_cases/fetch_all_games.dart';
+// Core elements.
+import 'package:freegamesexample/core/data/adapters/dio_adapter.dart';
+import 'package:freegamesexample/core/data/repositories/repository.dart';
+
+// Games feature elements.
 import 'package:freegamesexample/features/games/data/data_sources/games_api.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
-// The default provider for this repository.
-final gamesRepositoryProvider = Provider.autoDispose<GamesRepository>((ref) {
-  final dataSource = ref.watch(gamesApiDataSourceProvider);
-  final adapter = ref.watch(dioAdapterProvider(BaseOptions(baseUrl: dataSource.baseUrl)));
-  final fetchAllGamesUseCase = ref.watch(fetchAllGamesUseCaseProvider);
+part 'games.g.dart';
 
-  return GamesRepository(
-    adapter: adapter,
-    fetchAllGamesUseCase: fetchAllGamesUseCase,
+@riverpod
+GamesRepository gamesRepository(GamesRepositoryRef ref) {
+  final dataSource = ref.watch(gamesApiDataSourceProvider);
+  final adapter = ref.watch(
+    dioAdapterProvider(
+      BaseOptions(baseUrl: dataSource.baseUrl),
+    ),
   );
-}, dependencies: [gamesApiDataSourceProvider, dioAdapterProvider, fetchAllGamesUseCaseProvider]);
+
+  return GamesRepository(adapter: adapter, dataSource: dataSource);
+}
 
 class GamesRepository extends Repository<Game, DioAdapter> {
-  GamesRepository({
-    required DioAdapter adapter,
-    required this.fetchAllGamesUseCase,
-  }) : super(adapter: adapter);
+  const GamesRepository({
+    required super.adapter,
+    required this.dataSource,
+  });
 
-  final FetchAllGamesUseCase fetchAllGamesUseCase;
+  final GameApiDataSource dataSource;
 
   Future<List<Game>> getAllGames() async {
-    final result = await fetchAllGamesUseCase.execute();
+    final response = await adapter.get<List<dynamic>>(
+      DioAdapterOptions(
+        path: dataSource.gamesEndpoint,
+      ),
+    );
 
-    return result.when(
+    return response.when(
       success: (data) {
-        return data;
+        return data.map((game) {
+          return Game.fromJson(game as Map<String, dynamic>);
+        }).toList();
       },
-      failure: (error, trace) => const <Game>[],
+      failure: (exception, stackTrace) {
+        // @TODO: Crashlytics report here maybe
+        return <Game>[];
+      },
     );
   }
 }

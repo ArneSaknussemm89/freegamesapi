@@ -4,7 +4,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:riverpod/riverpod.dart';
 
 import 'package:freegamesexample/core/use_cases.dart';
-import 'package:freegamesexample/data/constants.dart';
+import 'package:freegamesexample/core/data/constants.dart';
 import 'package:freegamesexample/features/games/application/services/favorites_service.dart';
 import 'package:freegamesexample/features/games/application/use_cases/add_favorite_game.dart';
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';

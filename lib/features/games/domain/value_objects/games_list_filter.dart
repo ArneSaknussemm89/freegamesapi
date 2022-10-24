@@ -1,9 +1,10 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part 'games_list_filter.g.dart';
-
-@JsonEnum()
+@JsonEnum(valueField: 'code')
 enum GamesListFilter {
-  all,
-  onlyFavorites,
+  all('all'),
+  onlyFavorites('favorites');
+
+  const GamesListFilter(this.code);
+  final String code;
 }

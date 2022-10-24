@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'favorites_service.dart';
+part of 'filtered_games_list.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,15 +29,14 @@ class _SystemHash {
   }
 }
 
-String $favoriteGamesServiceHash() =>
-    r'418b279520687081dfb5aefa478496774e601a8e';
+String $fetchFilteredGamesHash() => r'f41b45a55669db0e8dea73a4f0b8b898c5c3b89e';
 
-/// See also [favoriteGamesService].
-final favoriteGamesServiceProvider = AutoDisposeProvider<FavoriteGamesService>(
-  favoriteGamesService,
-  name: r'favoriteGamesServiceProvider',
+/// See also [fetchFilteredGames].
+final fetchFilteredGamesProvider = AutoDisposeFutureProvider<List<Game>>(
+  fetchFilteredGames,
+  name: r'fetchFilteredGamesProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $favoriteGamesServiceHash,
+      : $fetchFilteredGamesHash,
 );
-typedef FavoriteGamesServiceRef = AutoDisposeProviderRef<FavoriteGamesService>;
+typedef FetchFilteredGamesRef = AutoDisposeFutureProviderRef<List<Game>>;

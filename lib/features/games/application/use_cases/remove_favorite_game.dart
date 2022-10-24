@@ -1,6 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Core elements.
 import 'package:freegamesexample/core/use_cases.dart';
+
+// Games feature elements.
 import 'package:freegamesexample/features/games/application/services/favorites_service.dart';
 import 'package:freegamesexample/features/games/domain/value_objects/remove_favorite_game_params.dart';
 
@@ -16,11 +19,10 @@ class RemoveFavoriteGameUseCase extends AsyncUseCaseWithParams<Exception, Void,
 
   final FavoriteGamesService favoritesService;
 
-  @override
-  Future<UseCaseResult<Exception, Void>> execute(
+  Future<UseCaseResult<Exception, Void>> call(
       RemoveFavoriteGameUseCaseParams params) async {
     try {
-      await favoritesService.removeFavorite(params.uid, params.game);
+      await favoritesService.removeFavorite(params.game);
       return const UseCaseResult.success(kVoid);
     } on Exception catch (exception) {
       return UseCaseResult.failure(exception, StackTrace.current);

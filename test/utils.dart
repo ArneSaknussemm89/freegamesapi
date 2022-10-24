@@ -6,11 +6,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:riverpod/riverpod.dart';
 
-import 'package:freegamesexample/application/blocs/authentication.dart';
-import 'package:freegamesexample/application/services/cloud_firestore.dart';
-import 'package:freegamesexample/application/use_cases/create_firestore_user.dart';
-import 'package:freegamesexample/data/adapters/dio_adapter.dart';
-import 'package:freegamesexample/data/constants.dart';
+import 'package:freegamesexample/core/application/providers/authentication.dart';
+import 'package:freegamesexample/core/application/services/cloud_firestore.dart';
+import 'package:freegamesexample/core/application/use_cases/create_firestore_user.dart';
+import 'package:freegamesexample/core/data/adapters/dio_adapter.dart';
+import 'package:freegamesexample/core/data/constants.dart';
 import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
 import 'package:freegamesexample/features/games/application/services/favorites_service.dart';
 import 'package:freegamesexample/features/games/application/use_cases/add_favorite_game.dart';

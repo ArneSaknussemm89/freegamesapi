@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'favorites_service.dart';
+part of 'authentication.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,15 +29,35 @@ class _SystemHash {
   }
 }
 
-String $favoriteGamesServiceHash() =>
-    r'418b279520687081dfb5aefa478496774e601a8e';
+String $AuthenticationServiceHash() =>
+    r'4e06243c1fef73abb33d17d5ec08d82127351143';
 
-/// See also [favoriteGamesService].
-final favoriteGamesServiceProvider = AutoDisposeProvider<FavoriteGamesService>(
-  favoriteGamesService,
-  name: r'favoriteGamesServiceProvider',
+/// See also [AuthenticationService].
+final authenticationServiceProvider =
+    AutoDisposeNotifierProvider<AuthenticationService, AuthenticationState>(
+  AuthenticationService.new,
+  name: r'authenticationServiceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $favoriteGamesServiceHash,
+      : $AuthenticationServiceHash,
 );
-typedef FavoriteGamesServiceRef = AutoDisposeProviderRef<FavoriteGamesService>;
+typedef AuthenticationServiceRef
+    = AutoDisposeNotifierProviderRef<AuthenticationState>;
+
+abstract class _$AuthenticationService
+    extends AutoDisposeNotifier<AuthenticationState> {
+  @override
+  AuthenticationState build();
+}
+
+String $authStateChangesHash() => r'386ea079ca75ac54d471519e1565d88b5c2efc08';
+
+/// See also [authStateChanges].
+final authStateChangesProvider = AutoDisposeProvider<Stream<User?>>(
+  authStateChanges,
+  name: r'authStateChangesProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : $authStateChangesHash,
+);
+typedef AuthStateChangesRef = AutoDisposeProviderRef<Stream<User?>>;

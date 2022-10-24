@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterfire_ui/auth.dart';
 
-import 'package:freegamesexample/application/services/firebase_auth.dart';
+import 'package:freegamesexample/core/application/services/firebase_auth.dart';
 import 'package:freegamesexample/routing/router.dart';
 
 class LoginPage extends ConsumerWidget {
