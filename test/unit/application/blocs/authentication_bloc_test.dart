@@ -20,7 +20,7 @@ const kTestFirebaseAuthUserPassword = 'testpassword';
 void main() {
   group('AuthenticationBloc', () {
     late FakeFirebaseFirestore fakeFirestore;
-    late AuthenticationBloc authBloc;
+    late AuthenticationService authService;
     late MockAppFirestoreService service;
     late MockFirebaseAuth auth;
     late CreateFirestoreAppUserUseCase useCase;
@@ -42,7 +42,6 @@ void main() {
 
       // Set up classes.
       useCase = CreateFirestoreAppUserUseCase(service: service);
-      authBloc = AuthenticationBloc(auth: auth, createFirestoreAppUserUseCase: useCase);
       fakeUser = MockUser(
         uid: 'mock_uid',
         email: kTestFirebaseAuthUserEmail,
@@ -51,7 +50,8 @@ void main() {
     });
 
     test('initial state is uninitialized', () {
-      expect(authBloc.state, const AuthenticationState.uninitialized());
+      final container = createContainer();
+      expect(container.read(authenticationServiceProvider), const AuthenticationState.uninitialized());
     });
 
     test('can login with username and password', () async {
@@ -62,8 +62,8 @@ void main() {
         });
       });
 
-      final testBloc = AuthenticationBloc(auth: auth, createFirestoreAppUserUseCase: useCase);
-
+      final container = createContainer();
+      final sub = container.listen<AuthenticationState>(authenticationServiceProvider, (_, __) {});
       final result = await auth.createUserWithEmailAndPassword(
         email: kTestFirebaseAuthUserEmail,
         password: kTestFirebaseAuthUserPassword,
@@ -73,15 +73,16 @@ void main() {
       expect(result, isNotNull);
       expect(result.user!.email, kTestFirebaseAuthUserEmail);
 
-      // Pump event to the bloc.
-      testBloc.add(AuthenticationEvent.authenticate(result.user!));
-
       // Wait for firestore to be updated with documents.
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
+
+      // Auth service should now be in auth state.
+      expect(container.read(authenticationServiceProvider), isA<Authenticated>());
 
       // Firestore user should exist.
       final docs = await fakeFirestore.collection('users').get();
       expect(docs.docs.length, 1);
+      sub.close();
     });
 
     test('existing user returns user and does not create duplicate', () async {
@@ -92,8 +93,8 @@ void main() {
         });
       });
 
-      final testBloc = AuthenticationBloc(auth: auth, createFirestoreAppUserUseCase: useCase);
-
+      final container = createContainer();
+      final sub = container.listen<AuthenticationState>(authenticationServiceProvider, (_, __) {});
       final result = await auth.createUserWithEmailAndPassword(
         email: kTestFirebaseAuthUserEmail,
         password: kTestFirebaseAuthUserPassword,
@@ -103,11 +104,10 @@ void main() {
       expect(result, isNotNull);
       expect(result.user!.email, kTestFirebaseAuthUserEmail);
 
-      // Pump event to the bloc.
-      testBloc.add(AuthenticationEvent.authenticate(result.user!));
-
       // Wait for firestore to be updated with documents.
       await Future.delayed(const Duration(seconds: 1));
+
+      expect(container.read(authenticationServiceProvider), isA<Authenticated>());
 
       // Firestore user should exist.
       final docs = await fakeFirestore.collection('users').get();
@@ -124,14 +124,16 @@ void main() {
       expect(newResult, isNotNull);
       expect(newResult.user!.email, kTestFirebaseAuthUserEmail);
 
-      testBloc.add(AuthenticationEvent.authenticate(newResult.user!));
-
       // Wait for firestore to be updated with documents.
       await Future.delayed(const Duration(seconds: 1));
+
+      // Auth service should now be in auth state.
+      expect(container.read(authenticationServiceProvider), isA<Authenticated>());
 
       // Should still only be one user.
       final newDocs = await fakeFirestore.collection('users').get();
       expect(newDocs.docs.length, 1);
+      sub.close();
     });
 
     test('can read bloc state from provider', () {
@@ -142,38 +144,15 @@ void main() {
         ],
       );
       final container = createContainer(parent: root);
-
-      final state = container.read(authenticationBlocProvider);
-      final bloc = container.read(authenticationBlocProvider.notifier);
+      final sub = container.listen<AuthenticationState>(authenticationServiceProvider, (_, __) {});
+      final state = container.read(authenticationServiceProvider);
+      final service = container.read(authenticationServiceProvider.notifier);
 
       expect(state, isNotNull);
       expect(state, isA<Uninitialized>());
-      expect(bloc, isNotNull);
-      expect(bloc, isA<AuthenticationBloc>());
+      expect(service, isNotNull);
+      expect(service, isA<AuthenticationService>());
+      sub.close();
     });
-
-    blocTest<AuthenticationBloc, AuthenticationState>(
-      'emits Authenticated when AuthenticationEvent.authenticate is added',
-      build: () => authBloc,
-      act: (bloc) => bloc.add(
-        AuthenticationEvent.authenticate(fakeUser),
-      ),
-      expect: () => [
-        AuthenticationState.authenticated(fakeUser),
-      ],
-    );
-
-    blocTest<AuthenticationBloc, AuthenticationState>(
-      'emits Unauthenticated when AuthenticationEvent.unauthenticate is added',
-      build: () => authBloc,
-      act: (bloc) {
-        bloc.add(AuthenticationEvent.authenticate(fakeUser));
-        bloc.add(const AuthenticationEvent.unauthenticate());
-      },
-      expect: () => [
-        AuthenticationState.authenticated(fakeUser),
-        const AuthenticationState.unauthenticated(),
-      ],
-    );
   });
 }

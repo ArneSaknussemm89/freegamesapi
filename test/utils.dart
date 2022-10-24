@@ -1,4 +1,3 @@
-import 'package:bloc_test/bloc_test.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
@@ -6,19 +5,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:riverpod/riverpod.dart';
 
-import 'package:freegamesexample/core/application/providers/authentication.dart';
 import 'package:freegamesexample/core/application/services/cloud_firestore.dart';
 import 'package:freegamesexample/core/application/use_cases/create_firestore_user.dart';
 import 'package:freegamesexample/core/data/adapters/dio_adapter.dart';
 import 'package:freegamesexample/core/data/constants.dart';
-import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
 import 'package:freegamesexample/features/games/application/services/favorites_service.dart';
-import 'package:freegamesexample/features/games/application/use_cases/add_favorite_game.dart';
 import 'package:freegamesexample/features/games/data/data_sources/games_api.dart';
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
-class MockAddFavoriteGameUseCase extends Mock implements AddFavoriteGameUseCase {}
 
 class MockAppFirestoreService extends Mock implements AppFirestoreService {}
 
@@ -38,11 +33,6 @@ class Listener<T> extends Mock {
 Future<void> delay(int seconds) => Future.delayed(Duration(seconds: seconds));
 Future<void> delayMilliseconds(int milliseconds) => Future.delayed(Duration(milliseconds: milliseconds));
 
-class MockFavoriteGamesBloc extends MockBloc<FavoriteGamesListEvent, FavoriteGamesListState>
-    implements FavoriteGamesBloc {}
-
-class MockAuthenticationBloc extends MockBloc<AuthenticationEvent, AuthenticationState> implements AuthenticationBloc {}
-
 class TestConstants {
   static final kTestDateTime = DateTime(2022, 1, 1);
   static const kTestFirebaseAuthUserEmail = 'testfirebaseauthuser@gmail.vom';
@@ -57,45 +47,45 @@ class TestConstants {
   );
 
   static final Game kTestGame1 = Game(
-    1,
-    'Game Test 1',
-    'https://placehold.it/150x150',
-    'test',
-    'https://google.com',
-    'Action/Adventure',
-    'Mac OS, Windows, Linux',
-    'Test Publisher',
-    'Test Developer',
-    kTestDateTime,
-    'https://fake.freetogame.com/test',
+    id: 1,
+    title: 'Game Test 1',
+    thumbnail: 'https://placehold.it/150x150',
+    shortDescription: 'test',
+    gameUrl: 'https://google.com',
+    genre: 'Action/Adventure',
+    platform: 'Mac OS, Windows, Linux',
+    publisher: 'Test Publisher',
+    developer: 'Test Developer',
+    releaseDate: kTestDateTime,
+    freetogameProfileUrl: 'https://fake.freetogame.com/test',
   );
 
   static final Game kTestGame2 = Game(
-    2,
-    'Game Test 2',
-    'https://placehold.it/150x150',
-    'test',
-    'https://google.com',
-    'Action/Adventure',
-    'Mac OS, Windows, Linux',
-    'Test Publisher',
-    'Test Developer',
-    kTestDateTime,
-    'https://fake.freetogame.com/test',
+    id: 2,
+    title: 'Game Test 2',
+    thumbnail: 'https://placehold.it/150x150',
+    shortDescription: 'test',
+    gameUrl: 'https://google.com',
+    genre: 'Action/Adventure',
+    platform: 'Mac OS, Windows, Linux',
+    publisher: 'Test Publisher',
+    developer: 'Test Developer',
+    releaseDate: kTestDateTime,
+    freetogameProfileUrl: 'https://fake.freetogame.com/test',
   );
 
   static final Game kTestGame3 = Game(
-    3,
-    'Game Test 3',
-    'https://placehold.it/150x150',
-    'test',
-    'https://google.com',
-    'Action/Adventure',
-    'Mac OS, Windows, Linux',
-    'Test Publisher',
-    'Test Developer',
-    kTestDateTime,
-    'https://fake.freetogame.com/test',
+    id: 3,
+    title: 'Game Test 3',
+    thumbnail: 'https://placehold.it/150x150',
+    shortDescription: 'test',
+    gameUrl: 'https://google.com',
+    genre: 'Action/Adventure',
+    platform: 'Mac OS, Windows, Linux',
+    publisher: 'Test Publisher',
+    developer: 'Test Developer',
+    releaseDate: kTestDateTime,
+    freetogameProfileUrl: 'https://fake.freetogame.com/test',
   );
 
   static final List<Game> testGames = [

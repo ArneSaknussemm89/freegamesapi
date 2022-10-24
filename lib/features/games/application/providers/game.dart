@@ -20,7 +20,7 @@ Future<Game?> fetchOneGame(FetchOneGameRef ref, {required int id, bool checkFavo
           try {
             final game = data.firstWhere((game) => game.id == id);
             return game.copyWith(isFavorite: fav?.gameId == game.id);
-          } on StateError catch (e) {
+          } on StateError catch (_) {
             // @TODO: Add crashlytics
             return null;
           }

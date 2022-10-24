@@ -27,17 +27,17 @@ void main() {
       fakeFirestore = FakeFirebaseFirestore();
       service = MockAppFirestoreService();
       testGame = Game(
-        kTestAddFavoriteGameId,
-        'Game Test 1',
-        'https://placehold.it/150x150',
-        'test',
-        'https://google.com',
-        'Action/Adventure',
-        'Mac OS, Windows, Linux',
-        'Test Publisher',
-        'Test Developer',
-        testAddFavoriteSavedOn,
-        'https://fake.freetogame.com/test',
+        id: kTestAddFavoriteGameId,
+        title: 'Game Test 1',
+        thumbnail: 'https://placehold.it/150x150',
+        shortDescription: 'test',
+        gameUrl: 'https://google.com',
+        genre: 'Action/Adventure',
+        platform: 'Mac OS, Windows, Linux',
+        publisher: 'Test Publisher',
+        developer: 'Test Developer',
+        releaseDate: testAddFavoriteSavedOn,
+        freetogameProfileUrl: 'https://fake.freetogame.com/test',
       );
       when(() => service.firestore).thenReturn(fakeFirestore);
       when(() => service.favorites).thenReturn(
@@ -55,9 +55,9 @@ void main() {
     });
 
     test('can instantiate', () async {
-      final favs = FavoriteGamesService(appFirestore: service);
-      expect(favs, isNotNull);
-      expect(favs.appFirestore, service);
+      final container = createContainer();
+      expect(container.read(favoriteGamesServiceProvider), isNotNull);
+      expect(container.read(favoriteGamesServiceProvider).service, service);
     });
 
     test('can add favorite', () async {
@@ -68,8 +68,8 @@ void main() {
         });
       });
 
-      final favs = FavoriteGamesService(appFirestore: service);
-      await favs.addFavorite(kTestAddFavoriteOwnerId, testGame);
+      final container = createContainer();
+      await container.read(favoriteGamesServiceProvider).addFavorite(testGame);
       final docs = await fakeFirestore.collection('favorites').get();
       expect(docs.docs.length, 1);
     });
@@ -83,13 +83,13 @@ void main() {
       });
 
       // Start by adding a favorite.
-      final favs = FavoriteGamesService(appFirestore: service);
-      await favs.addFavorite(kTestAddFavoriteOwnerId, testGame);
+      final container = createContainer();
+      await container.read(favoriteGamesServiceProvider).addFavorite(testGame);
       final docs = await fakeFirestore.collection('favorites').get();
       expect(docs.docs.length, 1);
 
       // Now remove it.
-      await favs.removeFavorite(kTestAddFavoriteOwnerId, testGame);
+      await container.read(favoriteGamesServiceProvider).removeFavorite(testGame);
       final newDocs = await fakeFirestore.collection('favorites').get();
       expect(newDocs.docs.length, 0);
     });

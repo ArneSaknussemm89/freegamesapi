@@ -38,7 +38,7 @@ void main() {
       addTearDown(() async => clearFirestore(fakeFirestore));
 
       final useCase = CreateFirestoreAppUserUseCase(service: service);
-      final result = await useCase.execute(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
+      final result = await useCase(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
       expect(result, isA<UseCaseResultSuccess<Exception, AppUser>>());
 
       await delay(1);
@@ -51,7 +51,7 @@ void main() {
       addTearDown(() async => clearFirestore(fakeFirestore));
 
       final useCase = CreateFirestoreAppUserUseCase(service: service);
-      final result = await useCase.execute(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
+      final result = await useCase(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
       expect(result, isA<UseCaseResultSuccess<Exception, AppUser>>());
 
       await delay(1);
@@ -59,7 +59,7 @@ void main() {
       final docs = await service.users.get();
       expect(docs.docs.length, 1);
 
-      final result2 = await useCase.execute(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
+      final result2 = await useCase(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
       expect(result2, isA<UseCaseResultSuccess<Exception, AppUser>>());
       expect(result.mapOrNull(success: (res) => res.data.uid), TestConstants.testUser.uid);
       expect(result2.mapOrNull(success: (res) => res.data.uid), TestConstants.testUser.uid);
@@ -71,7 +71,7 @@ void main() {
       when(() => service.users.doc).thenThrow(Exception(kTestCreateFirestoreUserExceptionMessage));
 
       final useCase = CreateFirestoreAppUserUseCase(service: service);
-      final result = await useCase.execute(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
+      final result = await useCase(TestConstants.testUser.toCreateFirestoreAppUserUseCaseParams);
       expect(result, isA<UseCaseResultFailure<Exception, AppUser>>());
     });
   });
