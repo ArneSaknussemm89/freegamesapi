@@ -25,6 +25,7 @@ class GamesListingPage extends ConsumerWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          TextButton(onPressed: onPressed, child: child),
           const GamesFilterWidget().padding(bottom: Spacing.four),
           state.when(
             loading: const CircularProgressIndicator.adaptive().center,
