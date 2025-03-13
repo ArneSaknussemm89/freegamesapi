@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'game.dart';
 
@@ -12,7 +12,7 @@ part of 'game.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Game _$GameFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
@@ -157,8 +157,13 @@ mixin _$Game {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this Game to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GameCopyWith<Game> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -192,6 +197,8 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -262,9 +269,10 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
 }
 
 /// @nodoc
-abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
-  factory _$$_GameCopyWith(_$_Game value, $Res Function(_$_Game) then) =
-      __$$_GameCopyWithImpl<$Res>;
+abstract class _$$GameImplCopyWith<$Res> implements $GameCopyWith<$Res> {
+  factory _$$GameImplCopyWith(
+          _$GameImpl value, $Res Function(_$GameImpl) then) =
+      __$$GameImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -283,11 +291,14 @@ abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
-    implements _$$_GameCopyWith<$Res> {
-  __$$_GameCopyWithImpl(_$_Game _value, $Res Function(_$_Game) _then)
+class __$$GameImplCopyWithImpl<$Res>
+    extends _$GameCopyWithImpl<$Res, _$GameImpl>
+    implements _$$GameImplCopyWith<$Res> {
+  __$$GameImplCopyWithImpl(_$GameImpl _value, $Res Function(_$GameImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -304,7 +315,7 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
     Object? freetogameProfileUrl = null,
     Object? isFavorite = null,
   }) {
-    return _then(_$_Game(
+    return _then(_$GameImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -360,8 +371,8 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_Game implements _Game {
-  const _$_Game(
+class _$GameImpl implements _Game {
+  const _$GameImpl(
       {required this.id,
       required this.title,
       required this.thumbnail,
@@ -377,7 +388,8 @@ class _$_Game implements _Game {
       final String? $type})
       : $type = $type ?? 'default';
 
-  factory _$_Game.fromJson(Map<String, dynamic> json) => _$$_GameFromJson(json);
+  factory _$GameImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameImplFromJson(json);
 
   @override
   final int id;
@@ -420,10 +432,10 @@ class _$_Game implements _Game {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Game &&
+            other is _$GameImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.thumbnail, thumbnail) ||
@@ -446,7 +458,7 @@ class _$_Game implements _Game {
                 other.isFavorite == isFavorite));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -463,11 +475,13 @@ class _$_Game implements _Game {
       freetogameProfileUrl,
       isFavorite);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GameCopyWith<_$_Game> get copyWith =>
-      __$$_GameCopyWithImpl<_$_Game>(this, _$identity);
+  _$$GameImplCopyWith<_$GameImpl> get copyWith =>
+      __$$GameImplCopyWithImpl<_$GameImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -647,7 +661,7 @@ class _$_Game implements _Game {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GameToJson(
+    return _$$GameImplToJson(
       this,
     );
   }
@@ -666,9 +680,9 @@ abstract class _Game implements Game {
       final String publisher,
       final String developer,
       final String freetogameProfileUrl,
-      final bool isFavorite}) = _$_Game;
+      final bool isFavorite}) = _$GameImpl;
 
-  factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
+  factory _Game.fromJson(Map<String, dynamic> json) = _$GameImpl.fromJson;
 
   @override
   int get id;
@@ -694,16 +708,21 @@ abstract class _Game implements Game {
   String get freetogameProfileUrl;
   @override
   bool get isFavorite;
+
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_GameCopyWith<_$_Game> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameImplCopyWith<_$GameImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_GameNotFoundCopyWith<$Res> implements $GameCopyWith<$Res> {
-  factory _$$_GameNotFoundCopyWith(
-          _$_GameNotFound value, $Res Function(_$_GameNotFound) then) =
-      __$$_GameNotFoundCopyWithImpl<$Res>;
+abstract class _$$GameNotFoundImplCopyWith<$Res>
+    implements $GameCopyWith<$Res> {
+  factory _$$GameNotFoundImplCopyWith(
+          _$GameNotFoundImpl value, $Res Function(_$GameNotFoundImpl) then) =
+      __$$GameNotFoundImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -722,13 +741,15 @@ abstract class _$$_GameNotFoundCopyWith<$Res> implements $GameCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_GameNotFoundCopyWithImpl<$Res>
-    extends _$GameCopyWithImpl<$Res, _$_GameNotFound>
-    implements _$$_GameNotFoundCopyWith<$Res> {
-  __$$_GameNotFoundCopyWithImpl(
-      _$_GameNotFound _value, $Res Function(_$_GameNotFound) _then)
+class __$$GameNotFoundImplCopyWithImpl<$Res>
+    extends _$GameCopyWithImpl<$Res, _$GameNotFoundImpl>
+    implements _$$GameNotFoundImplCopyWith<$Res> {
+  __$$GameNotFoundImplCopyWithImpl(
+      _$GameNotFoundImpl _value, $Res Function(_$GameNotFoundImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -745,7 +766,7 @@ class __$$_GameNotFoundCopyWithImpl<$Res>
     Object? isFavorite = null,
     Object? releaseDate = null,
   }) {
-    return _then(_$_GameNotFound(
+    return _then(_$GameNotFoundImpl(
       null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -800,8 +821,8 @@ class __$$_GameNotFoundCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GameNotFound implements _GameNotFound {
-  _$_GameNotFound(
+class _$GameNotFoundImpl implements _GameNotFound {
+  _$GameNotFoundImpl(
       [this.id = 0,
       this.title = '',
       this.thumbnail = '',
@@ -817,8 +838,8 @@ class _$_GameNotFound implements _GameNotFound {
       final String? $type])
       : $type = $type ?? 'notFound';
 
-  factory _$_GameNotFound.fromJson(Map<String, dynamic> json) =>
-      _$$_GameNotFoundFromJson(json);
+  factory _$GameNotFoundImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameNotFoundImplFromJson(json);
 
   @override
   @JsonKey()
@@ -866,10 +887,10 @@ class _$_GameNotFound implements _GameNotFound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GameNotFound &&
+            other is _$GameNotFoundImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.thumbnail, thumbnail) ||
@@ -892,7 +913,7 @@ class _$_GameNotFound implements _GameNotFound {
                 other.releaseDate == releaseDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -909,11 +930,13 @@ class _$_GameNotFound implements _GameNotFound {
       isFavorite,
       releaseDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GameNotFoundCopyWith<_$_GameNotFound> get copyWith =>
-      __$$_GameNotFoundCopyWithImpl<_$_GameNotFound>(this, _$identity);
+  _$$GameNotFoundImplCopyWith<_$GameNotFoundImpl> get copyWith =>
+      __$$GameNotFoundImplCopyWithImpl<_$GameNotFoundImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1093,7 +1116,7 @@ class _$_GameNotFound implements _GameNotFound {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GameNotFoundToJson(
+    return _$$GameNotFoundImplToJson(
       this,
     );
   }
@@ -1112,10 +1135,10 @@ abstract class _GameNotFound implements Game {
       final String developer,
       final String freetogameProfileUrl,
       final bool isFavorite,
-      final DateTime releaseDate]) = _$_GameNotFound;
+      final DateTime releaseDate]) = _$GameNotFoundImpl;
 
   factory _GameNotFound.fromJson(Map<String, dynamic> json) =
-      _$_GameNotFound.fromJson;
+      _$GameNotFoundImpl.fromJson;
 
   @override
   int get id;
@@ -1141,8 +1164,11 @@ abstract class _GameNotFound implements Game {
   bool get isFavorite;
   @override
   DateTime get releaseDate;
+
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_GameNotFoundCopyWith<_$_GameNotFound> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameNotFoundImplCopyWith<_$GameNotFoundImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

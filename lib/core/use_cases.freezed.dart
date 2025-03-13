@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'use_cases.dart';
 
@@ -12,7 +12,7 @@ part of 'use_cases.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UseCaseResult<E, T> {
@@ -72,34 +72,41 @@ class _$UseCaseResultCopyWithImpl<E, T, $Res, $Val extends UseCaseResult<E, T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of UseCaseResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$UseCaseResultFailureCopyWith<E, T, $Res> {
-  factory _$$UseCaseResultFailureCopyWith(_$UseCaseResultFailure<E, T> value,
-          $Res Function(_$UseCaseResultFailure<E, T>) then) =
-      __$$UseCaseResultFailureCopyWithImpl<E, T, $Res>;
+abstract class _$$UseCaseResultFailureImplCopyWith<E, T, $Res> {
+  factory _$$UseCaseResultFailureImplCopyWith(
+          _$UseCaseResultFailureImpl<E, T> value,
+          $Res Function(_$UseCaseResultFailureImpl<E, T>) then) =
+      __$$UseCaseResultFailureImplCopyWithImpl<E, T, $Res>;
   @useResult
   $Res call({E error, StackTrace trace});
 }
 
 /// @nodoc
-class __$$UseCaseResultFailureCopyWithImpl<E, T, $Res>
+class __$$UseCaseResultFailureImplCopyWithImpl<E, T, $Res>
     extends _$UseCaseResultCopyWithImpl<E, T, $Res,
-        _$UseCaseResultFailure<E, T>>
-    implements _$$UseCaseResultFailureCopyWith<E, T, $Res> {
-  __$$UseCaseResultFailureCopyWithImpl(_$UseCaseResultFailure<E, T> _value,
-      $Res Function(_$UseCaseResultFailure<E, T>) _then)
+        _$UseCaseResultFailureImpl<E, T>>
+    implements _$$UseCaseResultFailureImplCopyWith<E, T, $Res> {
+  __$$UseCaseResultFailureImplCopyWithImpl(
+      _$UseCaseResultFailureImpl<E, T> _value,
+      $Res Function(_$UseCaseResultFailureImpl<E, T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of UseCaseResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = null,
+    Object? error = freezed,
     Object? trace = null,
   }) {
-    return _then(_$UseCaseResultFailure<E, T>(
-      null == error
+    return _then(_$UseCaseResultFailureImpl<E, T>(
+      freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as E,
@@ -113,8 +120,8 @@ class __$$UseCaseResultFailureCopyWithImpl<E, T, $Res>
 
 /// @nodoc
 
-class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
-  const _$UseCaseResultFailure(this.error, this.trace);
+class _$UseCaseResultFailureImpl<E, T> implements UseCaseResultFailure<E, T> {
+  const _$UseCaseResultFailureImpl(this.error, this.trace);
 
   @override
   final E error;
@@ -127,10 +134,10 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UseCaseResultFailure<E, T> &&
+            other is _$UseCaseResultFailureImpl<E, T> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.trace, trace) || other.trace == trace));
   }
@@ -139,12 +146,14 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(error), trace);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UseCaseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UseCaseResultFailureCopyWith<E, T, _$UseCaseResultFailure<E, T>>
-      get copyWith => __$$UseCaseResultFailureCopyWithImpl<E, T,
-          _$UseCaseResultFailure<E, T>>(this, _$identity);
+  _$$UseCaseResultFailureImplCopyWith<E, T, _$UseCaseResultFailureImpl<E, T>>
+      get copyWith => __$$UseCaseResultFailureImplCopyWithImpl<E, T,
+          _$UseCaseResultFailureImpl<E, T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -211,40 +220,47 @@ class _$UseCaseResultFailure<E, T> implements UseCaseResultFailure<E, T> {
 
 abstract class UseCaseResultFailure<E, T> implements UseCaseResult<E, T> {
   const factory UseCaseResultFailure(final E error, final StackTrace trace) =
-      _$UseCaseResultFailure<E, T>;
+      _$UseCaseResultFailureImpl<E, T>;
 
   E get error;
   StackTrace get trace;
-  @JsonKey(ignore: true)
-  _$$UseCaseResultFailureCopyWith<E, T, _$UseCaseResultFailure<E, T>>
+
+  /// Create a copy of UseCaseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UseCaseResultFailureImplCopyWith<E, T, _$UseCaseResultFailureImpl<E, T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UseCaseResultSuccessCopyWith<E, T, $Res> {
-  factory _$$UseCaseResultSuccessCopyWith(_$UseCaseResultSuccess<E, T> value,
-          $Res Function(_$UseCaseResultSuccess<E, T>) then) =
-      __$$UseCaseResultSuccessCopyWithImpl<E, T, $Res>;
+abstract class _$$UseCaseResultSuccessImplCopyWith<E, T, $Res> {
+  factory _$$UseCaseResultSuccessImplCopyWith(
+          _$UseCaseResultSuccessImpl<E, T> value,
+          $Res Function(_$UseCaseResultSuccessImpl<E, T>) then) =
+      __$$UseCaseResultSuccessImplCopyWithImpl<E, T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$UseCaseResultSuccessCopyWithImpl<E, T, $Res>
+class __$$UseCaseResultSuccessImplCopyWithImpl<E, T, $Res>
     extends _$UseCaseResultCopyWithImpl<E, T, $Res,
-        _$UseCaseResultSuccess<E, T>>
-    implements _$$UseCaseResultSuccessCopyWith<E, T, $Res> {
-  __$$UseCaseResultSuccessCopyWithImpl(_$UseCaseResultSuccess<E, T> _value,
-      $Res Function(_$UseCaseResultSuccess<E, T>) _then)
+        _$UseCaseResultSuccessImpl<E, T>>
+    implements _$$UseCaseResultSuccessImplCopyWith<E, T, $Res> {
+  __$$UseCaseResultSuccessImplCopyWithImpl(
+      _$UseCaseResultSuccessImpl<E, T> _value,
+      $Res Function(_$UseCaseResultSuccessImpl<E, T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of UseCaseResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? data = freezed,
   }) {
-    return _then(_$UseCaseResultSuccess<E, T>(
-      null == data
+    return _then(_$UseCaseResultSuccessImpl<E, T>(
+      freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T,
@@ -254,8 +270,8 @@ class __$$UseCaseResultSuccessCopyWithImpl<E, T, $Res>
 
 /// @nodoc
 
-class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
-  const _$UseCaseResultSuccess(this.data);
+class _$UseCaseResultSuccessImpl<E, T> implements UseCaseResultSuccess<E, T> {
+  const _$UseCaseResultSuccessImpl(this.data);
 
   @override
   final T data;
@@ -266,10 +282,10 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UseCaseResultSuccess<E, T> &&
+            other is _$UseCaseResultSuccessImpl<E, T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -277,12 +293,14 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UseCaseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UseCaseResultSuccessCopyWith<E, T, _$UseCaseResultSuccess<E, T>>
-      get copyWith => __$$UseCaseResultSuccessCopyWithImpl<E, T,
-          _$UseCaseResultSuccess<E, T>>(this, _$identity);
+  _$$UseCaseResultSuccessImplCopyWith<E, T, _$UseCaseResultSuccessImpl<E, T>>
+      get copyWith => __$$UseCaseResultSuccessImplCopyWithImpl<E, T,
+          _$UseCaseResultSuccessImpl<E, T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -349,10 +367,13 @@ class _$UseCaseResultSuccess<E, T> implements UseCaseResultSuccess<E, T> {
 
 abstract class UseCaseResultSuccess<E, T> implements UseCaseResult<E, T> {
   const factory UseCaseResultSuccess(final T data) =
-      _$UseCaseResultSuccess<E, T>;
+      _$UseCaseResultSuccessImpl<E, T>;
 
   T get data;
-  @JsonKey(ignore: true)
-  _$$UseCaseResultSuccessCopyWith<E, T, _$UseCaseResultSuccess<E, T>>
+
+  /// Create a copy of UseCaseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UseCaseResultSuccessImplCopyWith<E, T, _$UseCaseResultSuccessImpl<E, T>>
       get copyWith => throw _privateConstructorUsedError;
 }

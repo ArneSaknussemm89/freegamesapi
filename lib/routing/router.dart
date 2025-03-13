@@ -1,29 +1,27 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/empty_router_widgets.dart';
-import 'package:flutter/material.dart';
 
+import 'package:freegamesexample/core/presentation/widgets/empty_router_page.dart';
 import 'package:freegamesexample/features/games/presentation/screens/listing_page.dart';
 import 'package:freegamesexample/features/games/presentation/my_favorites.dart';
 import 'package:freegamesexample/features/login/presentation/entry.dart';
 
 part 'router.gr.dart';
 
-@AdaptiveAutoRouter(
-  replaceInRouteName: 'Page,Route',
-  routes: <AutoRoute>[
-    AdaptiveRoute(page: LoginPage, path: '/login', initial: true),
-    AdaptiveRoute(
-      page: EmptyRouterPage,
-      path: '/games',
-      name: 'GamesRootRoute',
-      children: <AutoRoute>[
-        AdaptiveRoute(
-          page: GamesListingPage,
-          path: '',
+@AutoRouterConfig(replaceInRouteName: 'Page,Route')
+class AppRouter extends RootStackRouter {
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(page: LoginRoute.page, path: '/login', initial: true),
+        AutoRoute(
+          page: EmptyRouterRoute.page,
+          path: '/games',
+          children: <AutoRoute>[
+            AutoRoute(
+              page: GamesListingRoute.page,
+              path: '',
+            ),
+            AutoRoute(page: FavoriteGamesRoute.page, path: 'favorites'),
+          ],
         ),
-        AdaptiveRoute(page: FavoriteGamesPage, path: 'favorites'),
-      ],
-    ),
-  ],
-)
-class AppRouter extends _$AppRouter {}
+      ];
+}

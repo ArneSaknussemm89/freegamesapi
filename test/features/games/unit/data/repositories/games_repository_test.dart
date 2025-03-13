@@ -4,7 +4,6 @@ import 'package:mocktail/mocktail.dart';
 
 import 'package:freegamesexample/core/adapters.dart';
 import 'package:freegamesexample/core/data/adapters/dio_adapter.dart';
-import 'package:freegamesexample/features/games/application/use_cases/fetch_all_games.dart';
 import 'package:freegamesexample/features/games/data/data_sources/games_api.dart';
 import 'package:freegamesexample/features/games/data/repositories/games.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
@@ -19,49 +18,48 @@ void main() {
     late List<Game> games;
     late List<dynamic> deserializedGames;
     late MockDioAdapter adapter;
-    late FetchAllGamesUseCase useCase;
     late GameApiDataSource dataSource;
 
     setUp(() {
       games = [
         Game(
-          1,
-          'Game Test 1',
-          'https://placehold.it/150x150',
-          'test',
-          'https://google.com',
-          'Action/Adventure',
-          'Mac OS, Windows, Linux',
-          'Test Publisher',
-          'Test Developer',
-          testDate,
-          'https://fake.freetogame.com/test',
+          id: 1,
+          title: 'Game Test 1',
+          thumbnail: 'https://placehold.it/150x150',
+          shortDescription: 'test',
+          gameUrl: 'https://google.com',
+          genre: 'Action/Adventure',
+          platform: 'Mac OS, Windows, Linux',
+          publisher: 'Test Publisher',
+          developer: 'Test Developer',
+          releaseDate: testDate,
+          freetogameProfileUrl: 'https://fake.freetogame.com/test',
         ),
         Game(
-          2,
-          'Game Test 2',
-          'https://placehold.it/150x150',
-          'test',
-          'https://google.com',
-          'Action/Adventure',
-          'Mac OS, Windows, Linux',
-          'Test Publisher',
-          'Test Developer',
-          testDate,
-          'https://fake.freetogame.com/test',
+          id: 2,
+          title: 'Game Test 2',
+          thumbnail: 'https://placehold.it/150x150',
+          shortDescription: 'test',
+          gameUrl: 'https://google.com',
+          genre: 'Action/Adventure',
+          platform: 'Mac OS, Windows, Linux',
+          publisher: 'Test Publisher',
+          developer: 'Test Developer',
+          releaseDate: testDate,
+          freetogameProfileUrl: 'https://fake.freetogame.com/test',
         ),
         Game(
-          3,
-          'Game Test 3',
-          'https://placehold.it/150x150',
-          'test',
-          'https://google.com',
-          'Action/Adventure',
-          'Mac OS, Windows, Linux',
-          'Test Publisher',
-          'Test Developer',
-          testDate,
-          'https://fake.freetogame.com/test',
+          id: 3,
+          title: 'Game Test 3',
+          thumbnail: 'https://placehold.it/150x150',
+          shortDescription: 'test',
+          gameUrl: 'https://google.com',
+          genre: 'Action/Adventure',
+          platform: 'Mac OS, Windows, Linux',
+          publisher: 'Test Publisher',
+          developer: 'Test Developer',
+          releaseDate: testDate,
+          freetogameProfileUrl: 'https://fake.freetogame.com/test',
         ),
       ];
 
@@ -117,17 +115,15 @@ void main() {
       ).thenAnswer(
         (_) async => AdapterResponse.success(deserializedGames),
       );
-
-      useCase = FetchAllGamesUseCase(adapter: adapter, dataSource: dataSource);
     });
 
     test('can instantiate', () async {
-      final repository = GamesRepository(adapter: adapter, fetchAllGamesUseCase: useCase);
+      final repository = GamesRepository(adapter: adapter, dataSource: dataSource);
       expect(repository, isNotNull);
     });
 
     test('can get all games', () async {
-      final repository = GamesRepository(adapter: adapter, fetchAllGamesUseCase: useCase);
+      final repository = GamesRepository(adapter: adapter, dataSource: dataSource);
       final result = await repository.getAllGames();
       expect(result, games);
     });
@@ -141,7 +137,7 @@ void main() {
         (_) async => const AdapterResponse.failure(failureMessage, StackTrace.empty),
       );
 
-      final repository = GamesRepository(adapter: adapter, fetchAllGamesUseCase: useCase);
+      final repository = GamesRepository(adapter: adapter, dataSource: dataSource);
       final result = await repository.getAllGames();
       expect(result, const []);
     });

@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
+import 'package:riverpod/riverpod.dart';
 // Core elements.
 import 'package:freegamesexample/core/application/providers/authentication.dart';
 
@@ -15,7 +15,7 @@ import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 part 'filtered_games_list.g.dart';
 
 @riverpod
-Future<List<Game>> fetchFilteredGames(FetchFilteredGamesRef ref) async {
+Future<List<Game>> fetchFilteredGames(Ref ref) async {
   final filter = ref.watch(gamesListFilterNotifierProvider);
   final repository = ref.watch(gamesRepositoryProvider);
   final auth = ref.watch(authenticationServiceProvider);

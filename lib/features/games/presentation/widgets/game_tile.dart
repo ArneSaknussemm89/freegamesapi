@@ -29,9 +29,9 @@ class GameTileWidget extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Text('Game not found', style: Theme.of(context).textTheme.headline6).padding(all: 10),
+              Text('Game not found', style: Theme.of(context).textTheme.headlineLarge).padding(all: 10),
               ElevatedButton.icon(
-                onPressed: router.pop,
+                onPressed: router.maybePop,
                 icon: const Icon(Icons.arrow_back_ios_new),
                 label: const Text('Go Back'),
               ),

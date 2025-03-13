@@ -1,5 +1,6 @@
 import 'package:freegamesexample/features/games/application/providers/favorites_list.dart';
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // Game feature elements.
@@ -9,7 +10,7 @@ import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 part 'game.g.dart';
 
 @riverpod
-Future<Game?> fetchOneGame(FetchOneGameRef ref, {required int id, bool checkFavorite = false}) async {
+Future<Game?> fetchOneGame(Ref ref, {required int id, bool checkFavorite = false}) async {
   final games = ref.watch(fetchAllGamesProvider);
   final favorite = ref.watch(fetchOneFavoriteProvider(id: id));
   return favorite.when(
@@ -33,7 +34,7 @@ Future<Game?> fetchOneGame(FetchOneGameRef ref, {required int id, bool checkFavo
 }
 
 @riverpod
-Future<FavoriteGame?> fetchOneFavorite(FetchOneFavoriteRef ref, {required int id}) async {
+Future<FavoriteGame?> fetchOneFavorite(Ref ref, {required int id}) async {
   final favorites = ref.watch(fetchUserFavoritesProvider);
   return favorites.maybeWhen(
     orElse: () => null,

@@ -49,7 +49,7 @@ class AppEntry extends ConsumerWidget {
       primaryColorDark: Colors.deepOrange[700]!,
       primaryColorLight: Colors.deepOrange[100]!,
       valueIndicatorTextStyle:
-          GoogleFonts.roboto(textStyle: textTheme.overline),
+          GoogleFonts.roboto(textStyle: textTheme.bodySmall),
     );
 
     return GestureDetector(
@@ -63,13 +63,7 @@ class AppEntry extends ConsumerWidget {
       },
       child: MaterialApp.router(
         key: key,
-        routerDelegate: router.delegate(
-          initialRoutes: [
-            if (authed) const GamesRootRoute(),
-            if (!authed) const LoginRoute(),
-          ],
-        ),
-        routeInformationParser: router.defaultRouteParser(),
+        routerConfig: router.config(),
         debugShowCheckedModeBanner: false,
         title: 'Todo Application',
         theme: ThemeData(
@@ -83,26 +77,22 @@ class AppEntry extends ConsumerWidget {
             backgroundColor: Colors.grey[300]!,
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             labelStyle: GoogleFonts.neuton(
-              textStyle: textTheme.caption?.copyWith(color: Colors.black87),
+              textStyle: textTheme.labelSmall?.copyWith(color: Colors.black87),
             ),
             secondaryLabelStyle: GoogleFonts.neuton(
-              textStyle: textTheme.caption?.copyWith(color: Colors.white),
+              textStyle: textTheme.labelSmall?.copyWith(color: Colors.white),
             ),
             secondarySelectedColor: Colors.deepOrange,
             selectedColor: Colors.deepOrange,
             disabledColor: Colors.grey[300]!,
           ),
           textTheme: GoogleFonts.ralewayTextTheme(textTheme).copyWith(
-            caption: GoogleFonts.neuton(textStyle: textTheme.caption),
-            bodyText1: GoogleFonts.neuton(textStyle: textTheme.bodyText1),
-            bodyText2: GoogleFonts.neuton(textStyle: textTheme.bodyText2),
-            headline1: GoogleFonts.roboto(textStyle: textTheme.headline1),
-            headline2: GoogleFonts.roboto(textStyle: textTheme.headline2),
-            headline3: GoogleFonts.roboto(textStyle: textTheme.headline3),
-            headline4: GoogleFonts.roboto(textStyle: textTheme.headline4),
-            headline5: GoogleFonts.roboto(textStyle: textTheme.headline5),
-            headline6: GoogleFonts.roboto(textStyle: textTheme.headline6),
-            subtitle1: GoogleFonts.neuton(textStyle: textTheme.subtitle1),
+            bodySmall: GoogleFonts.neuton(textStyle: textTheme.bodySmall),
+            bodyMedium: GoogleFonts.neuton(textStyle: textTheme.bodyMedium),
+            bodyLarge: GoogleFonts.roboto(textStyle: textTheme.bodyLarge),
+            headlineSmall: GoogleFonts.roboto(textStyle: textTheme.headlineSmall),
+            headlineMedium: GoogleFonts.roboto(textStyle: textTheme.headlineMedium),
+            headlineLarge: GoogleFonts.roboto(textStyle: textTheme.headlineLarge),
           ),
         ),
       ),

@@ -4,10 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterfire_ui/auth.dart';
 
 import 'package:freegamesexample/core/application/services/firebase_auth.dart';
-import 'package:freegamesexample/routing/router.dart';
 
+@RoutePage()
 class LoginPage extends ConsumerWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -37,13 +37,7 @@ class LoginPage extends ConsumerWidget {
       actions: [
         AuthStateChangeAction<SignedIn>(
           (context, state) {
-            context.router.navigate(
-              const GamesRootRoute(
-                children: [
-                  GamesListingRoute(),
-                ],
-              ),
-            );
+            context.router.navigateNamed('/games');
           },
         ),
       ],

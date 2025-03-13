@@ -1,4 +1,7 @@
+import 'dart:developer' as developer;
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpod/riverpod.dart';
 
 // Core elements.
 import 'package:freegamesexample/core/application/providers/authentication.dart';
@@ -10,7 +13,7 @@ import 'package:freegamesexample/features/games/domain/models/favorites/favorite
 part 'favorites_list.g.dart';
 
 @riverpod
-Future<List<FavoriteGame>> fetchUserFavorites(FetchUserFavoritesRef ref) async {
+Future<List<FavoriteGame>> fetchUserFavorites(Ref ref) async {
   final firestoreService = ref.watch(appFirestoreServiceProvider);
   final auth = ref.watch(authenticationServiceProvider);
 
@@ -29,6 +32,7 @@ Future<List<FavoriteGame>> fetchUserFavorites(FetchUserFavoritesRef ref) async {
     );
   } on Exception catch (e) {
     // @TODO: Add crashlytics
+    developer.log('Error fetching user favorites: $e');
     return [];
   }
 }

@@ -6,58 +6,39 @@ part of 'authentication.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
-
-/// Copied from Dart SDK
-class _SystemHash {
-  _SystemHash._();
-
-  static int combine(int hash, int value) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + value);
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-    return hash ^ (hash >> 6);
-  }
-
-  static int finish(int hash) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-    // ignore: parameter_assignments
-    hash = hash ^ (hash >> 11);
-    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-  }
-}
-
-String $AuthenticationServiceHash() =>
-    r'4e06243c1fef73abb33d17d5ec08d82127351143';
-
-/// See also [AuthenticationService].
-final authenticationServiceProvider =
-    AutoDisposeNotifierProvider<AuthenticationService, AuthenticationState>(
-  AuthenticationService.new,
-  name: r'authenticationServiceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : $AuthenticationServiceHash,
-);
-typedef AuthenticationServiceRef
-    = AutoDisposeNotifierProviderRef<AuthenticationState>;
-
-abstract class _$AuthenticationService
-    extends AutoDisposeNotifier<AuthenticationState> {
-  @override
-  AuthenticationState build();
-}
-
-String $authStateChangesHash() => r'386ea079ca75ac54d471519e1565d88b5c2efc08';
+String _$authStateChangesHash() => r'5f8861723c359af3f00d0995225ba1df8c413368';
 
 /// See also [authStateChanges].
-final authStateChangesProvider = AutoDisposeProvider<Stream<User?>>(
+@ProviderFor(authStateChanges)
+final authStateChangesProvider = AutoDisposeStreamProvider<User?>.internal(
   authStateChanges,
   name: r'authStateChangesProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $authStateChangesHash,
+      : _$authStateChangesHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
-typedef AuthStateChangesRef = AutoDisposeProviderRef<Stream<User?>>;
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AuthStateChangesRef = AutoDisposeStreamProviderRef<User?>;
+String _$authenticationServiceHash() =>
+    r'aae251e378c131a06557058166904acc2f92cb32';
+
+/// See also [AuthenticationService].
+@ProviderFor(AuthenticationService)
+final authenticationServiceProvider = AutoDisposeNotifierProvider<
+    AuthenticationService, AuthenticationState>.internal(
+  AuthenticationService.new,
+  name: r'authenticationServiceProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$authenticationServiceHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$AuthenticationService = AutoDisposeNotifier<AuthenticationState>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

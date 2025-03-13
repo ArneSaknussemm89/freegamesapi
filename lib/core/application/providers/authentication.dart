@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpod/riverpod.dart';
 
 // Core elements.
 import 'package:freegamesexample/core/application/services/firebase_auth.dart';
@@ -12,7 +13,7 @@ part 'authentication.freezed.dart';
 part 'authentication.g.dart';
 
 @riverpod
-Stream<User?> authStateChanges(AuthStateChangesRef ref) {
+Stream<User?> authStateChanges(Ref ref) {
   final auth = ref.watch(firebaseAuthProvider);
   return auth.authStateChanges();
 }
@@ -21,24 +22,17 @@ Stream<User?> authStateChanges(AuthStateChangesRef ref) {
 // this bloc accordingly.
 @riverpod
 class AuthenticationService extends _$AuthenticationService {
-  AuthenticationService({
-    required this.auth,
-    required this.createFirestoreAppUserUseCase,
-  });
-
   @override
   AuthenticationState build() {
-    ref.watch(authStateChangesProvider);
-    if (auth.currentUser != null) {
-      createFirestoreAppUserUseCase(auth.currentUser!.toCreateFirestoreAppUserUseCaseParams);
-      return AuthenticationState.authenticated(auth.currentUser!);
+    final currentUser = ref.watch(authStateChangesProvider).requireValue;
+    final createFirestoreAppUserUseCase = ref.watch(createFirestoreAppUserUseCaseProvider);
+    if (currentUser != null) {
+      createFirestoreAppUserUseCase(currentUser.toCreateFirestoreAppUserUseCaseParams);
+      return AuthenticationState.authenticated(currentUser);
     } else {
       return const AuthenticationState.unauthenticated();
     }
   }
-
-  final FirebaseAuth auth;
-  final CreateFirestoreAppUserUseCase createFirestoreAppUserUseCase;
 }
 
 @freezed

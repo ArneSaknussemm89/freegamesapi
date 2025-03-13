@@ -7,7 +7,9 @@ part of 'favorite.dart';
 // **************************************************************************
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, require_trailing_commas, prefer_single_quotes, prefer_double_quotes, use_super_parameters
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, require_trailing_commas, prefer_single_quotes, prefer_double_quotes, use_super_parameters, duplicate_ignore
+// ignore_for_file: type=lint
+// ignore_for_file: invalid_use_of_internal_member
 
 class _Sentinel {
   const _Sentinel();
@@ -136,12 +138,6 @@ abstract class FavoriteGameDocumentReference extends FirestoreDocumentReference<
     FieldValue ownerIdFieldValue,
     DateTime savedOn,
     FieldValue savedOnFieldValue,
-    List<Object?> props,
-    FieldValue propsFieldValue,
-    bool? stringify,
-    FieldValue stringifyFieldValue,
-    int hashCode,
-    FieldValue hashCodeFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -155,12 +151,6 @@ abstract class FavoriteGameDocumentReference extends FirestoreDocumentReference<
     FieldValue ownerIdFieldValue,
     DateTime savedOn,
     FieldValue savedOnFieldValue,
-    List<Object?> props,
-    FieldValue propsFieldValue,
-    bool? stringify,
-    FieldValue stringifyFieldValue,
-    int hashCode,
-    FieldValue hashCodeFieldValue,
   });
 }
 
@@ -179,32 +169,17 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
 
   @override
   Stream<FavoriteGameDocumentSnapshot> snapshots() {
-    return reference.snapshots().map((snapshot) {
-      return FavoriteGameDocumentSnapshot._(
-        snapshot,
-        snapshot.data(),
-      );
-    });
+    return reference.snapshots().map(FavoriteGameDocumentSnapshot._);
   }
 
   @override
   Future<FavoriteGameDocumentSnapshot> get([GetOptions? options]) {
-    return reference.get(options).then((snapshot) {
-      return FavoriteGameDocumentSnapshot._(
-        snapshot,
-        snapshot.data(),
-      );
-    });
+    return reference.get(options).then(FavoriteGameDocumentSnapshot._);
   }
 
   @override
   Future<FavoriteGameDocumentSnapshot> transactionGet(Transaction transaction) {
-    return transaction.get(reference).then((snapshot) {
-      return FavoriteGameDocumentSnapshot._(
-        snapshot,
-        snapshot.data(),
-      );
-    });
+    return transaction.get(reference).then(FavoriteGameDocumentSnapshot._);
   }
 
   Future<void> update({
@@ -214,12 +189,6 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
     FieldValue? ownerIdFieldValue,
     Object? savedOn = _sentinel,
     FieldValue? savedOnFieldValue,
-    Object? props = _sentinel,
-    FieldValue? propsFieldValue,
-    Object? stringify = _sentinel,
-    FieldValue? stringifyFieldValue,
-    Object? hashCode = _sentinel,
-    FieldValue? hashCodeFieldValue,
   }) async {
     assert(
       gameId == _sentinel || gameIdFieldValue == null,
@@ -233,31 +202,22 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
       savedOn == _sentinel || savedOnFieldValue == null,
       "Cannot specify both savedOn and savedOnFieldValue",
     );
-    assert(
-      props == _sentinel || propsFieldValue == null,
-      "Cannot specify both props and propsFieldValue",
-    );
-    assert(
-      stringify == _sentinel || stringifyFieldValue == null,
-      "Cannot specify both stringify and stringifyFieldValue",
-    );
-    assert(
-      hashCode == _sentinel || hashCodeFieldValue == null,
-      "Cannot specify both hashCode and hashCodeFieldValue",
-    );
     final json = {
-      if (gameId != _sentinel) 'gameId': gameId as int,
-      if (gameIdFieldValue != null) 'gameId': gameIdFieldValue,
-      if (ownerId != _sentinel) 'ownerId': ownerId as String,
-      if (ownerIdFieldValue != null) 'ownerId': ownerIdFieldValue,
-      if (savedOn != _sentinel) 'savedOn': savedOn as DateTime,
-      if (savedOnFieldValue != null) 'savedOn': savedOnFieldValue,
-      if (props != _sentinel) 'props': props as List<Object?>,
-      if (propsFieldValue != null) 'props': propsFieldValue,
-      if (stringify != _sentinel) 'stringify': stringify as bool?,
-      if (stringifyFieldValue != null) 'stringify': stringifyFieldValue,
-      if (hashCode != _sentinel) 'hashCode': hashCode as int,
-      if (hashCodeFieldValue != null) 'hashCode': hashCodeFieldValue,
+      if (gameId != _sentinel)
+        _$FavoriteGameFieldMap['gameId']!:
+            _$FavoriteGamePerFieldToJson.gameId(gameId as int),
+      if (gameIdFieldValue != null)
+        _$FavoriteGameFieldMap['gameId']!: gameIdFieldValue,
+      if (ownerId != _sentinel)
+        _$FavoriteGameFieldMap['ownerId']!:
+            _$FavoriteGamePerFieldToJson.ownerId(ownerId as String),
+      if (ownerIdFieldValue != null)
+        _$FavoriteGameFieldMap['ownerId']!: ownerIdFieldValue,
+      if (savedOn != _sentinel)
+        _$FavoriteGameFieldMap['savedOn']!:
+            _$FavoriteGamePerFieldToJson.savedOn(savedOn as DateTime),
+      if (savedOnFieldValue != null)
+        _$FavoriteGameFieldMap['savedOn']!: savedOnFieldValue,
     };
 
     return reference.update(json);
@@ -271,12 +231,6 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
     FieldValue? ownerIdFieldValue,
     Object? savedOn = _sentinel,
     FieldValue? savedOnFieldValue,
-    Object? props = _sentinel,
-    FieldValue? propsFieldValue,
-    Object? stringify = _sentinel,
-    FieldValue? stringifyFieldValue,
-    Object? hashCode = _sentinel,
-    FieldValue? hashCodeFieldValue,
   }) {
     assert(
       gameId == _sentinel || gameIdFieldValue == null,
@@ -290,31 +244,22 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
       savedOn == _sentinel || savedOnFieldValue == null,
       "Cannot specify both savedOn and savedOnFieldValue",
     );
-    assert(
-      props == _sentinel || propsFieldValue == null,
-      "Cannot specify both props and propsFieldValue",
-    );
-    assert(
-      stringify == _sentinel || stringifyFieldValue == null,
-      "Cannot specify both stringify and stringifyFieldValue",
-    );
-    assert(
-      hashCode == _sentinel || hashCodeFieldValue == null,
-      "Cannot specify both hashCode and hashCodeFieldValue",
-    );
     final json = {
-      if (gameId != _sentinel) 'gameId': gameId as int,
-      if (gameIdFieldValue != null) 'gameId': gameIdFieldValue,
-      if (ownerId != _sentinel) 'ownerId': ownerId as String,
-      if (ownerIdFieldValue != null) 'ownerId': ownerIdFieldValue,
-      if (savedOn != _sentinel) 'savedOn': savedOn as DateTime,
-      if (savedOnFieldValue != null) 'savedOn': savedOnFieldValue,
-      if (props != _sentinel) 'props': props as List<Object?>,
-      if (propsFieldValue != null) 'props': propsFieldValue,
-      if (stringify != _sentinel) 'stringify': stringify as bool?,
-      if (stringifyFieldValue != null) 'stringify': stringifyFieldValue,
-      if (hashCode != _sentinel) 'hashCode': hashCode as int,
-      if (hashCodeFieldValue != null) 'hashCode': hashCodeFieldValue,
+      if (gameId != _sentinel)
+        _$FavoriteGameFieldMap['gameId']!:
+            _$FavoriteGamePerFieldToJson.gameId(gameId as int),
+      if (gameIdFieldValue != null)
+        _$FavoriteGameFieldMap['gameId']!: gameIdFieldValue,
+      if (ownerId != _sentinel)
+        _$FavoriteGameFieldMap['ownerId']!:
+            _$FavoriteGamePerFieldToJson.ownerId(ownerId as String),
+      if (ownerIdFieldValue != null)
+        _$FavoriteGameFieldMap['ownerId']!: ownerIdFieldValue,
+      if (savedOn != _sentinel)
+        _$FavoriteGameFieldMap['savedOn']!:
+            _$FavoriteGamePerFieldToJson.savedOn(savedOn as DateTime),
+      if (savedOnFieldValue != null)
+        _$FavoriteGameFieldMap['savedOn']!: savedOnFieldValue,
     };
 
     transaction.update(reference, json);
@@ -332,27 +277,6 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
   int get hashCode => Object.hash(runtimeType, parent, id);
 }
 
-class FavoriteGameDocumentSnapshot
-    extends FirestoreDocumentSnapshot<FavoriteGame> {
-  FavoriteGameDocumentSnapshot._(
-    this.snapshot,
-    this.data,
-  );
-
-  @override
-  final DocumentSnapshot<FavoriteGame> snapshot;
-
-  @override
-  FavoriteGameDocumentReference get reference {
-    return FavoriteGameDocumentReference(
-      snapshot.reference,
-    );
-  }
-
-  @override
-  final FavoriteGame? data;
-}
-
 abstract class FavoriteGameQuery
     implements QueryReference<FavoriteGame, FavoriteGameQuerySnapshot> {
   @override
@@ -360,6 +284,86 @@ abstract class FavoriteGameQuery
 
   @override
   FavoriteGameQuery limitToLast(int limit);
+
+  /// Perform a where query based on a [FieldPath].
+  ///
+  /// This method is considered unsafe as it does check that the field path
+  /// maps to a valid property or that parameters such as [isEqualTo] receive
+  /// a value of the correct type.
+  ///
+  /// If possible, instead use the more explicit variant of where queries:
+  ///
+  /// **AVOID**:
+  /// ```dart
+  /// collection.whereFieldPath(FieldPath.fromString('title'), isEqualTo: 'title');
+  /// ```
+  ///
+  /// **PREFER**:
+  /// ```dart
+  /// collection.whereTitle(isEqualTo: 'title');
+  /// ```
+  FavoriteGameQuery whereFieldPath(
+    Object fieldPath, {
+    Object? isEqualTo,
+    Object? isNotEqualTo,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  });
+
+  FavoriteGameQuery whereDocumentId({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  });
+
+  FavoriteGameQuery whereGameId({
+    int? isEqualTo,
+    int? isNotEqualTo,
+    int? isLessThan,
+    int? isLessThanOrEqualTo,
+    int? isGreaterThan,
+    int? isGreaterThanOrEqualTo,
+    List<int>? whereIn,
+    List<int>? whereNotIn,
+    bool? isNull,
+  });
+
+  FavoriteGameQuery whereOwnerId({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  });
+
+  FavoriteGameQuery whereSavedOn({
+    DateTime? isEqualTo,
+    DateTime? isNotEqualTo,
+    DateTime? isLessThan,
+    DateTime? isLessThanOrEqualTo,
+    DateTime? isGreaterThan,
+    DateTime? isGreaterThanOrEqualTo,
+    List<DateTime>? whereIn,
+    List<DateTime>? whereNotIn,
+    bool? isNull,
+  });
 
   /// Perform an order query based on a [FieldPath].
   ///
@@ -382,126 +386,16 @@ abstract class FavoriteGameQuery
   /// collection.orderByTitle(startAt: 'title');
   /// ```
   FavoriteGameQuery orderByFieldPath(
-    FieldPath fieldPath, {
+    Object fieldPath, {
     bool descending = false,
-    Object? startAt,
-    Object? startAfter,
-    Object? endAt,
-    Object? endBefore,
+    Object startAt,
+    Object startAfter,
+    Object endAt,
+    Object endBefore,
     FavoriteGameDocumentSnapshot? startAtDocument,
     FavoriteGameDocumentSnapshot? endAtDocument,
     FavoriteGameDocumentSnapshot? endBeforeDocument,
     FavoriteGameDocumentSnapshot? startAfterDocument,
-  });
-
-  /// Perform a where query based on a [FieldPath].
-  ///
-  /// This method is considered unsafe as it does check that the field path
-  /// maps to a valid property or that parameters such as [isEqualTo] receive
-  /// a value of the correct type.
-  ///
-  /// If possible, instead use the more explicit variant of where queries:
-  ///
-  /// **AVOID**:
-  /// ```dart
-  /// collection.whereFieldPath(FieldPath.fromString('title'), isEqualTo: 'title');
-  /// ```
-  ///
-  /// **PREFER**:
-  /// ```dart
-  /// collection.whereTitle(isEqualTo: 'title');
-  /// ```
-  FavoriteGameQuery whereFieldPath(
-    FieldPath fieldPath, {
-    Object? isEqualTo,
-    Object? isNotEqualTo,
-    Object? isLessThan,
-    Object? isLessThanOrEqualTo,
-    Object? isGreaterThan,
-    Object? isGreaterThanOrEqualTo,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-    List<Object?>? whereIn,
-    List<Object?>? whereNotIn,
-    bool? isNull,
-  });
-
-  FavoriteGameQuery whereDocumentId({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  FavoriteGameQuery whereGameId({
-    int? isEqualTo,
-    int? isNotEqualTo,
-    int? isLessThan,
-    int? isLessThanOrEqualTo,
-    int? isGreaterThan,
-    int? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<int>? whereIn,
-    List<int>? whereNotIn,
-  });
-  FavoriteGameQuery whereOwnerId({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  FavoriteGameQuery whereSavedOn({
-    DateTime? isEqualTo,
-    DateTime? isNotEqualTo,
-    DateTime? isLessThan,
-    DateTime? isLessThanOrEqualTo,
-    DateTime? isGreaterThan,
-    DateTime? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<DateTime>? whereIn,
-    List<DateTime>? whereNotIn,
-  });
-  FavoriteGameQuery whereProps({
-    List<Object?>? isEqualTo,
-    List<Object?>? isNotEqualTo,
-    List<Object?>? isLessThan,
-    List<Object?>? isLessThanOrEqualTo,
-    List<Object?>? isGreaterThan,
-    List<Object?>? isGreaterThanOrEqualTo,
-    bool? isNull,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-  });
-  FavoriteGameQuery whereStringify({
-    bool? isEqualTo,
-    bool? isNotEqualTo,
-    bool? isLessThan,
-    bool? isLessThanOrEqualTo,
-    bool? isGreaterThan,
-    bool? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<bool?>? whereIn,
-    List<bool?>? whereNotIn,
-  });
-  FavoriteGameQuery whereHashCode({
-    int? isEqualTo,
-    int? isNotEqualTo,
-    int? isLessThan,
-    int? isLessThanOrEqualTo,
-    int? isGreaterThan,
-    int? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<int>? whereIn,
-    List<int>? whereNotIn,
   });
 
   FavoriteGameQuery orderByDocumentId({
@@ -551,42 +445,6 @@ abstract class FavoriteGameQuery
     FavoriteGameDocumentSnapshot? endBeforeDocument,
     FavoriteGameDocumentSnapshot? startAfterDocument,
   });
-
-  FavoriteGameQuery orderByProps({
-    bool descending = false,
-    List<Object?> startAt,
-    List<Object?> startAfter,
-    List<Object?> endAt,
-    List<Object?> endBefore,
-    FavoriteGameDocumentSnapshot? startAtDocument,
-    FavoriteGameDocumentSnapshot? endAtDocument,
-    FavoriteGameDocumentSnapshot? endBeforeDocument,
-    FavoriteGameDocumentSnapshot? startAfterDocument,
-  });
-
-  FavoriteGameQuery orderByStringify({
-    bool descending = false,
-    bool? startAt,
-    bool? startAfter,
-    bool? endAt,
-    bool? endBefore,
-    FavoriteGameDocumentSnapshot? startAtDocument,
-    FavoriteGameDocumentSnapshot? endAtDocument,
-    FavoriteGameDocumentSnapshot? endBeforeDocument,
-    FavoriteGameDocumentSnapshot? startAfterDocument,
-  });
-
-  FavoriteGameQuery orderByHashCode({
-    bool descending = false,
-    int startAt,
-    int startAfter,
-    int endAt,
-    int endBefore,
-    FavoriteGameDocumentSnapshot? startAtDocument,
-    FavoriteGameDocumentSnapshot? endAtDocument,
-    FavoriteGameDocumentSnapshot? endBeforeDocument,
-    FavoriteGameDocumentSnapshot? startAfterDocument,
-  });
 }
 
 class _$FavoriteGameQuery
@@ -603,37 +461,18 @@ class _$FavoriteGameQuery
 
   final CollectionReference<Object?> _collection;
 
-  FavoriteGameQuerySnapshot _decodeSnapshot(
-    QuerySnapshot<FavoriteGame> snapshot,
-  ) {
-    final docs = snapshot.docs.map((e) {
-      return FavoriteGameQueryDocumentSnapshot._(e, e.data());
-    }).toList();
-
-    final docChanges = snapshot.docChanges.map((change) {
-      return FirestoreDocumentChange<FavoriteGameDocumentSnapshot>(
-        type: change.type,
-        oldIndex: change.oldIndex,
-        newIndex: change.newIndex,
-        doc: FavoriteGameDocumentSnapshot._(change.doc, change.doc.data()),
-      );
-    }).toList();
-
-    return FavoriteGameQuerySnapshot._(
-      snapshot,
-      docs,
-      docChanges,
-    );
-  }
-
   @override
   Stream<FavoriteGameQuerySnapshot> snapshots([SnapshotOptions? options]) {
-    return reference.snapshots().map(_decodeSnapshot);
+    return reference
+        .snapshots()
+        .map(FavoriteGameQuerySnapshot._fromQuerySnapshot);
   }
 
   @override
   Future<FavoriteGameQuerySnapshot> get([GetOptions? options]) {
-    return reference.get(options).then(_decodeSnapshot);
+    return reference
+        .get(options)
+        .then(FavoriteGameQuerySnapshot._fromQuerySnapshot);
   }
 
   @override
@@ -654,8 +493,217 @@ class _$FavoriteGameQuery
     );
   }
 
+  @override
+  FavoriteGameQuery whereFieldPath(
+    Object fieldPath, {
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        fieldPath,
+        isEqualTo: isEqualTo != _sentinel ? isEqualTo : null,
+        isNotEqualTo: isNotEqualTo != _sentinel ? isNotEqualTo : null,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        arrayContains: arrayContains,
+        arrayContainsAny: arrayContainsAny,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
+  FavoriteGameQuery whereDocumentId({
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        FieldPath.documentId,
+        isEqualTo: isEqualTo != _sentinel ? isEqualTo : null,
+        isNotEqualTo: isNotEqualTo != _sentinel ? isNotEqualTo : null,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
+  FavoriteGameQuery whereGameId({
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    List<int>? whereIn,
+    List<int>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['gameId']!,
+        isEqualTo: isEqualTo != _sentinel
+            ? _$FavoriteGamePerFieldToJson.gameId(isEqualTo as int)
+            : null,
+        isNotEqualTo: isNotEqualTo != _sentinel
+            ? _$FavoriteGamePerFieldToJson.gameId(isNotEqualTo as int)
+            : null,
+        isLessThan: isLessThan != null
+            ? _$FavoriteGamePerFieldToJson.gameId(isLessThan as int)
+            : null,
+        isLessThanOrEqualTo: isLessThanOrEqualTo != null
+            ? _$FavoriteGamePerFieldToJson.gameId(isLessThanOrEqualTo as int)
+            : null,
+        isGreaterThan: isGreaterThan != null
+            ? _$FavoriteGamePerFieldToJson.gameId(isGreaterThan as int)
+            : null,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo != null
+            ? _$FavoriteGamePerFieldToJson.gameId(isGreaterThanOrEqualTo as int)
+            : null,
+        whereIn: whereIn?.map((e) => _$FavoriteGamePerFieldToJson.gameId(e)),
+        whereNotIn:
+            whereNotIn?.map((e) => _$FavoriteGamePerFieldToJson.gameId(e)),
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
+  FavoriteGameQuery whereOwnerId({
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['ownerId']!,
+        isEqualTo: isEqualTo != _sentinel
+            ? _$FavoriteGamePerFieldToJson.ownerId(isEqualTo as String)
+            : null,
+        isNotEqualTo: isNotEqualTo != _sentinel
+            ? _$FavoriteGamePerFieldToJson.ownerId(isNotEqualTo as String)
+            : null,
+        isLessThan: isLessThan != null
+            ? _$FavoriteGamePerFieldToJson.ownerId(isLessThan as String)
+            : null,
+        isLessThanOrEqualTo: isLessThanOrEqualTo != null
+            ? _$FavoriteGamePerFieldToJson
+                .ownerId(isLessThanOrEqualTo as String)
+            : null,
+        isGreaterThan: isGreaterThan != null
+            ? _$FavoriteGamePerFieldToJson.ownerId(isGreaterThan as String)
+            : null,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo != null
+            ? _$FavoriteGamePerFieldToJson
+                .ownerId(isGreaterThanOrEqualTo as String)
+            : null,
+        whereIn: whereIn?.map((e) => _$FavoriteGamePerFieldToJson.ownerId(e)),
+        whereNotIn:
+            whereNotIn?.map((e) => _$FavoriteGamePerFieldToJson.ownerId(e)),
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
+  FavoriteGameQuery whereSavedOn({
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    List<DateTime>? whereIn,
+    List<DateTime>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$FavoriteGameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$FavoriteGameFieldMap['savedOn']!,
+        isEqualTo: isEqualTo != _sentinel
+            ? _$FavoriteGamePerFieldToJson.savedOn(isEqualTo as DateTime)
+            : null,
+        isNotEqualTo: isNotEqualTo != _sentinel
+            ? _$FavoriteGamePerFieldToJson.savedOn(isNotEqualTo as DateTime)
+            : null,
+        isLessThan: isLessThan != null
+            ? _$FavoriteGamePerFieldToJson.savedOn(isLessThan as DateTime)
+            : null,
+        isLessThanOrEqualTo: isLessThanOrEqualTo != null
+            ? _$FavoriteGamePerFieldToJson
+                .savedOn(isLessThanOrEqualTo as DateTime)
+            : null,
+        isGreaterThan: isGreaterThan != null
+            ? _$FavoriteGamePerFieldToJson.savedOn(isGreaterThan as DateTime)
+            : null,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo != null
+            ? _$FavoriteGamePerFieldToJson
+                .savedOn(isGreaterThanOrEqualTo as DateTime)
+            : null,
+        whereIn: whereIn?.map((e) => _$FavoriteGamePerFieldToJson.savedOn(e)),
+        whereNotIn:
+            whereNotIn?.map((e) => _$FavoriteGamePerFieldToJson.savedOn(e)),
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
   FavoriteGameQuery orderByFieldPath(
-    FieldPath fieldPath, {
+    Object fieldPath, {
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
@@ -719,6 +767,7 @@ class _$FavoriteGameQuery
         endBeforeDocumentSnapshot: null,
       );
     }
+
     return _$FavoriteGameQuery(
       _collection,
       $referenceWithoutCursor: query,
@@ -726,243 +775,7 @@ class _$FavoriteGameQuery
     );
   }
 
-  FavoriteGameQuery whereFieldPath(
-    FieldPath fieldPath, {
-    Object? isEqualTo,
-    Object? isNotEqualTo,
-    Object? isLessThan,
-    Object? isLessThanOrEqualTo,
-    Object? isGreaterThan,
-    Object? isGreaterThanOrEqualTo,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-    List<Object?>? whereIn,
-    List<Object?>? whereNotIn,
-    bool? isNull,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        fieldPath,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        arrayContains: arrayContains,
-        arrayContainsAny: arrayContainsAny,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-        isNull: isNull,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  FavoriteGameQuery whereDocumentId({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        FieldPath.documentId,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  FavoriteGameQuery whereGameId({
-    int? isEqualTo,
-    int? isNotEqualTo,
-    int? isLessThan,
-    int? isLessThanOrEqualTo,
-    int? isGreaterThan,
-    int? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<int>? whereIn,
-    List<int>? whereNotIn,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$FavoriteGameFieldMap['gameId']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  FavoriteGameQuery whereOwnerId({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$FavoriteGameFieldMap['ownerId']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  FavoriteGameQuery whereSavedOn({
-    DateTime? isEqualTo,
-    DateTime? isNotEqualTo,
-    DateTime? isLessThan,
-    DateTime? isLessThanOrEqualTo,
-    DateTime? isGreaterThan,
-    DateTime? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<DateTime>? whereIn,
-    List<DateTime>? whereNotIn,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$FavoriteGameFieldMap['savedOn']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  FavoriteGameQuery whereProps({
-    List<Object?>? isEqualTo,
-    List<Object?>? isNotEqualTo,
-    List<Object?>? isLessThan,
-    List<Object?>? isLessThanOrEqualTo,
-    List<Object?>? isGreaterThan,
-    List<Object?>? isGreaterThanOrEqualTo,
-    bool? isNull,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$FavoriteGameFieldMap['props']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        arrayContains: arrayContains,
-        arrayContainsAny: arrayContainsAny,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  FavoriteGameQuery whereStringify({
-    bool? isEqualTo,
-    bool? isNotEqualTo,
-    bool? isLessThan,
-    bool? isLessThanOrEqualTo,
-    bool? isGreaterThan,
-    bool? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<bool?>? whereIn,
-    List<bool?>? whereNotIn,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$FavoriteGameFieldMap['stringify']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  FavoriteGameQuery whereHashCode({
-    int? isEqualTo,
-    int? isNotEqualTo,
-    int? isLessThan,
-    int? isLessThanOrEqualTo,
-    int? isGreaterThan,
-    int? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<int>? whereIn,
-    List<int>? whereNotIn,
-  }) {
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$FavoriteGameFieldMap['hashCode']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
+  @override
   FavoriteGameQuery orderByDocumentId({
     bool descending = false,
     Object? startAt = _sentinel,
@@ -1035,6 +848,7 @@ class _$FavoriteGameQuery
     );
   }
 
+  @override
   FavoriteGameQuery orderByGameId({
     bool descending = false,
     Object? startAt = _sentinel,
@@ -1107,6 +921,7 @@ class _$FavoriteGameQuery
     );
   }
 
+  @override
   FavoriteGameQuery orderByOwnerId({
     bool descending = false,
     Object? startAt = _sentinel,
@@ -1179,6 +994,7 @@ class _$FavoriteGameQuery
     );
   }
 
+  @override
   FavoriteGameQuery orderBySavedOn({
     bool descending = false,
     Object? startAt = _sentinel,
@@ -1251,222 +1067,6 @@ class _$FavoriteGameQuery
     );
   }
 
-  FavoriteGameQuery orderByProps({
-    bool descending = false,
-    Object? startAt = _sentinel,
-    Object? startAfter = _sentinel,
-    Object? endAt = _sentinel,
-    Object? endBefore = _sentinel,
-    FavoriteGameDocumentSnapshot? startAtDocument,
-    FavoriteGameDocumentSnapshot? endAtDocument,
-    FavoriteGameDocumentSnapshot? endBeforeDocument,
-    FavoriteGameDocumentSnapshot? startAfterDocument,
-  }) {
-    final query = $referenceWithoutCursor
-        .orderBy(_$FavoriteGameFieldMap['props']!, descending: descending);
-    var queryCursor = $queryCursor;
-
-    if (startAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAt: const [],
-        startAtDocumentSnapshot: startAtDocument.snapshot,
-      );
-    }
-    if (startAfterDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: const [],
-        startAfterDocumentSnapshot: startAfterDocument.snapshot,
-      );
-    }
-    if (endAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endAt: const [],
-        endAtDocumentSnapshot: endAtDocument.snapshot,
-      );
-    }
-    if (endBeforeDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: const [],
-        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
-      );
-    }
-
-    if (startAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAt: [...queryCursor.startAt, startAt],
-        startAtDocumentSnapshot: null,
-      );
-    }
-    if (startAfter != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: [...queryCursor.startAfter, startAfter],
-        startAfterDocumentSnapshot: null,
-      );
-    }
-    if (endAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endAt: [...queryCursor.endAt, endAt],
-        endAtDocumentSnapshot: null,
-      );
-    }
-    if (endBefore != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: [...queryCursor.endBefore, endBefore],
-        endBeforeDocumentSnapshot: null,
-      );
-    }
-
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: query,
-      $queryCursor: queryCursor,
-    );
-  }
-
-  FavoriteGameQuery orderByStringify({
-    bool descending = false,
-    Object? startAt = _sentinel,
-    Object? startAfter = _sentinel,
-    Object? endAt = _sentinel,
-    Object? endBefore = _sentinel,
-    FavoriteGameDocumentSnapshot? startAtDocument,
-    FavoriteGameDocumentSnapshot? endAtDocument,
-    FavoriteGameDocumentSnapshot? endBeforeDocument,
-    FavoriteGameDocumentSnapshot? startAfterDocument,
-  }) {
-    final query = $referenceWithoutCursor
-        .orderBy(_$FavoriteGameFieldMap['stringify']!, descending: descending);
-    var queryCursor = $queryCursor;
-
-    if (startAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAt: const [],
-        startAtDocumentSnapshot: startAtDocument.snapshot,
-      );
-    }
-    if (startAfterDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: const [],
-        startAfterDocumentSnapshot: startAfterDocument.snapshot,
-      );
-    }
-    if (endAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endAt: const [],
-        endAtDocumentSnapshot: endAtDocument.snapshot,
-      );
-    }
-    if (endBeforeDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: const [],
-        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
-      );
-    }
-
-    if (startAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAt: [...queryCursor.startAt, startAt],
-        startAtDocumentSnapshot: null,
-      );
-    }
-    if (startAfter != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: [...queryCursor.startAfter, startAfter],
-        startAfterDocumentSnapshot: null,
-      );
-    }
-    if (endAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endAt: [...queryCursor.endAt, endAt],
-        endAtDocumentSnapshot: null,
-      );
-    }
-    if (endBefore != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: [...queryCursor.endBefore, endBefore],
-        endBeforeDocumentSnapshot: null,
-      );
-    }
-
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: query,
-      $queryCursor: queryCursor,
-    );
-  }
-
-  FavoriteGameQuery orderByHashCode({
-    bool descending = false,
-    Object? startAt = _sentinel,
-    Object? startAfter = _sentinel,
-    Object? endAt = _sentinel,
-    Object? endBefore = _sentinel,
-    FavoriteGameDocumentSnapshot? startAtDocument,
-    FavoriteGameDocumentSnapshot? endAtDocument,
-    FavoriteGameDocumentSnapshot? endBeforeDocument,
-    FavoriteGameDocumentSnapshot? startAfterDocument,
-  }) {
-    final query = $referenceWithoutCursor
-        .orderBy(_$FavoriteGameFieldMap['hashCode']!, descending: descending);
-    var queryCursor = $queryCursor;
-
-    if (startAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAt: const [],
-        startAtDocumentSnapshot: startAtDocument.snapshot,
-      );
-    }
-    if (startAfterDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: const [],
-        startAfterDocumentSnapshot: startAfterDocument.snapshot,
-      );
-    }
-    if (endAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endAt: const [],
-        endAtDocumentSnapshot: endAtDocument.snapshot,
-      );
-    }
-    if (endBeforeDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: const [],
-        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
-      );
-    }
-
-    if (startAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAt: [...queryCursor.startAt, startAt],
-        startAtDocumentSnapshot: null,
-      );
-    }
-    if (startAfter != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: [...queryCursor.startAfter, startAfter],
-        startAfterDocumentSnapshot: null,
-      );
-    }
-    if (endAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endAt: [...queryCursor.endAt, endAt],
-        endAtDocumentSnapshot: null,
-      );
-    }
-    if (endBefore != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: [...queryCursor.endBefore, endBefore],
-        endBeforeDocumentSnapshot: null,
-      );
-    }
-
-    return _$FavoriteGameQuery(
-      _collection,
-      $referenceWithoutCursor: query,
-      $queryCursor: queryCursor,
-    );
-  }
-
   @override
   bool operator ==(Object other) {
     return other is _$FavoriteGameQuery &&
@@ -1478,6 +1078,24 @@ class _$FavoriteGameQuery
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
+class FavoriteGameDocumentSnapshot
+    extends FirestoreDocumentSnapshot<FavoriteGame> {
+  FavoriteGameDocumentSnapshot._(this.snapshot) : data = snapshot.data();
+
+  @override
+  final DocumentSnapshot<FavoriteGame> snapshot;
+
+  @override
+  FavoriteGameDocumentReference get reference {
+    return FavoriteGameDocumentReference(
+      snapshot.reference,
+    );
+  }
+
+  @override
+  final FavoriteGame? data;
+}
+
 class FavoriteGameQuerySnapshot extends FirestoreQuerySnapshot<FavoriteGame,
     FavoriteGameQueryDocumentSnapshot> {
   FavoriteGameQuerySnapshot._(
@@ -1485,6 +1103,39 @@ class FavoriteGameQuerySnapshot extends FirestoreQuerySnapshot<FavoriteGame,
     this.docs,
     this.docChanges,
   );
+
+  factory FavoriteGameQuerySnapshot._fromQuerySnapshot(
+    QuerySnapshot<FavoriteGame> snapshot,
+  ) {
+    final docs =
+        snapshot.docs.map(FavoriteGameQueryDocumentSnapshot._).toList();
+
+    final docChanges = snapshot.docChanges.map((change) {
+      return _decodeDocumentChange(
+        change,
+        FavoriteGameDocumentSnapshot._,
+      );
+    }).toList();
+
+    return FavoriteGameQuerySnapshot._(
+      snapshot,
+      docs,
+      docChanges,
+    );
+  }
+
+  static FirestoreDocumentChange<FavoriteGameDocumentSnapshot>
+      _decodeDocumentChange<T>(
+    DocumentChange<T> docChange,
+    FavoriteGameDocumentSnapshot Function(DocumentSnapshot<T> doc) decodeDoc,
+  ) {
+    return FirestoreDocumentChange<FavoriteGameDocumentSnapshot>(
+      type: docChange.type,
+      oldIndex: docChange.oldIndex,
+      newIndex: docChange.newIndex,
+      doc: decodeDoc(docChange.doc),
+    );
+  }
 
   final QuerySnapshot<FavoriteGame> snapshot;
 
@@ -1498,18 +1149,18 @@ class FavoriteGameQuerySnapshot extends FirestoreQuerySnapshot<FavoriteGame,
 class FavoriteGameQueryDocumentSnapshot
     extends FirestoreQueryDocumentSnapshot<FavoriteGame>
     implements FavoriteGameDocumentSnapshot {
-  FavoriteGameQueryDocumentSnapshot._(this.snapshot, this.data);
+  FavoriteGameQueryDocumentSnapshot._(this.snapshot) : data = snapshot.data();
 
   @override
   final QueryDocumentSnapshot<FavoriteGame> snapshot;
 
   @override
+  final FavoriteGame data;
+
+  @override
   FavoriteGameDocumentReference get reference {
     return FavoriteGameDocumentReference(snapshot.reference);
   }
-
-  @override
-  final FavoriteGame data;
 }
 
 // **************************************************************************
@@ -1517,7 +1168,7 @@ class FavoriteGameQueryDocumentSnapshot
 // **************************************************************************
 
 FavoriteGame _$FavoriteGameFromJson(Map<String, dynamic> json) => FavoriteGame(
-      gameId: json['gameId'] as int,
+      gameId: (json['gameId'] as num).toInt(),
       ownerId: json['ownerId'] as String,
       savedOn: const FirestoreDateTimeConverter()
           .fromJson(json['savedOn'] as Timestamp),

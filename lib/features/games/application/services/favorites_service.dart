@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // Core elements.
@@ -12,7 +13,7 @@ import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 part 'favorites_service.g.dart';
 
 @riverpod
-FavoriteGamesService favoriteGamesService(FavoriteGamesServiceRef ref) {
+FavoriteGamesService favoriteGamesService(Ref ref) {
   final service = ref.watch(appFirestoreServiceProvider);
   final auth = ref.watch(authenticationServiceProvider);
   return FavoriteGamesService(service: service, auth: auth);

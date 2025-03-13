@@ -1,17 +1,22 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freegamesexample/features/games/application/providers/favorites_list.dart';
-import 'package:freegamesexample/features/games/application/providers/game.dart';
-import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+// Games feature elements.
+import 'package:freegamesexample/features/games/application/providers/favorites_list.dart';
+import 'package:freegamesexample/features/games/application/providers/game.dart';
+import 'package:freegamesexample/features/games/domain/models/game/game.dart';
+
+// Core elements.
 import 'package:freegamesexample/core/presentation/constants.dart';
 import 'package:freegamesexample/core/presentation/layouts/layouts.dart';
 import 'package:freegamesexample/core/presentation/widgets/error_view.dart';
 
+@RoutePage()
 class FavoriteGamesPage extends StatelessWidget {
-  const FavoriteGamesPage({Key? key}) : super(key: key);
+  const FavoriteGamesPage({super.key});
 
   Widget mobile(BuildContext context) {
     return MobileLayout(bodyBuilder: (context) => const FavoriteGamesPageBody());
@@ -32,7 +37,7 @@ class FavoriteGamesPage extends StatelessWidget {
 }
 
 class FavoriteGamesPageBody extends ConsumerWidget {
-  const FavoriteGamesPageBody({Key? key}) : super(key: key);
+  const FavoriteGamesPageBody({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

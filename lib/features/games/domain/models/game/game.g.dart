@@ -6,8 +6,8 @@ part of 'game.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Game _$$_GameFromJson(Map<String, dynamic> json) => _$_Game(
-      id: json['id'] as int,
+_$GameImpl _$$GameImplFromJson(Map<String, dynamic> json) => _$GameImpl(
+      id: (json['id'] as num).toInt(),
       title: json['title'] as String,
       thumbnail: json['thumbnail'] as String,
       shortDescription: json['short_description'] as String,
@@ -22,7 +22,8 @@ _$_Game _$$_GameFromJson(Map<String, dynamic> json) => _$_Game(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_GameToJson(_$_Game instance) => <String, dynamic>{
+Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'thumbnail': instance.thumbnail,
@@ -38,9 +39,9 @@ Map<String, dynamic> _$$_GameToJson(_$_Game instance) => <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$_GameNotFound _$$_GameNotFoundFromJson(Map<String, dynamic> json) =>
-    _$_GameNotFound(
-      json['id'] as int? ?? 0,
+_$GameNotFoundImpl _$$GameNotFoundImplFromJson(Map<String, dynamic> json) =>
+    _$GameNotFoundImpl(
+      (json['id'] as num?)?.toInt() ?? 0,
       json['title'] as String? ?? '',
       json['thumbnail'] as String? ?? '',
       json['shortDescription'] as String? ?? '',
@@ -57,7 +58,7 @@ _$_GameNotFound _$$_GameNotFoundFromJson(Map<String, dynamic> json) =>
       json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_GameNotFoundToJson(_$_GameNotFound instance) =>
+Map<String, dynamic> _$$GameNotFoundImplToJson(_$GameNotFoundImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

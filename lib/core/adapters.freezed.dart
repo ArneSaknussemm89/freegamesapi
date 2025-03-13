@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'adapters.dart';
 
@@ -12,7 +12,7 @@ part of 'adapters.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AdapterResponse<T> {
@@ -72,32 +72,40 @@ class _$AdapterResponseCopyWithImpl<T, $Res, $Val extends AdapterResponse<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdapterResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$AdapterResponseSuccessCopyWith<T, $Res> {
-  factory _$$AdapterResponseSuccessCopyWith(_$AdapterResponseSuccess<T> value,
-          $Res Function(_$AdapterResponseSuccess<T>) then) =
-      __$$AdapterResponseSuccessCopyWithImpl<T, $Res>;
+abstract class _$$AdapterResponseSuccessImplCopyWith<T, $Res> {
+  factory _$$AdapterResponseSuccessImplCopyWith(
+          _$AdapterResponseSuccessImpl<T> value,
+          $Res Function(_$AdapterResponseSuccessImpl<T>) then) =
+      __$$AdapterResponseSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$AdapterResponseSuccessCopyWithImpl<T, $Res>
-    extends _$AdapterResponseCopyWithImpl<T, $Res, _$AdapterResponseSuccess<T>>
-    implements _$$AdapterResponseSuccessCopyWith<T, $Res> {
-  __$$AdapterResponseSuccessCopyWithImpl(_$AdapterResponseSuccess<T> _value,
-      $Res Function(_$AdapterResponseSuccess<T>) _then)
+class __$$AdapterResponseSuccessImplCopyWithImpl<T, $Res>
+    extends _$AdapterResponseCopyWithImpl<T, $Res,
+        _$AdapterResponseSuccessImpl<T>>
+    implements _$$AdapterResponseSuccessImplCopyWith<T, $Res> {
+  __$$AdapterResponseSuccessImplCopyWithImpl(
+      _$AdapterResponseSuccessImpl<T> _value,
+      $Res Function(_$AdapterResponseSuccessImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdapterResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? data = freezed,
   }) {
-    return _then(_$AdapterResponseSuccess<T>(
-      null == data
+    return _then(_$AdapterResponseSuccessImpl<T>(
+      freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T,
@@ -107,8 +115,8 @@ class __$$AdapterResponseSuccessCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$AdapterResponseSuccess<T> implements AdapterResponseSuccess<T> {
-  const _$AdapterResponseSuccess(this.data);
+class _$AdapterResponseSuccessImpl<T> implements AdapterResponseSuccess<T> {
+  const _$AdapterResponseSuccessImpl(this.data);
 
   @override
   final T data;
@@ -119,10 +127,10 @@ class _$AdapterResponseSuccess<T> implements AdapterResponseSuccess<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AdapterResponseSuccess<T> &&
+            other is _$AdapterResponseSuccessImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -130,12 +138,14 @@ class _$AdapterResponseSuccess<T> implements AdapterResponseSuccess<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdapterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AdapterResponseSuccessCopyWith<T, _$AdapterResponseSuccess<T>>
-      get copyWith => __$$AdapterResponseSuccessCopyWithImpl<T,
-          _$AdapterResponseSuccess<T>>(this, _$identity);
+  _$$AdapterResponseSuccessImplCopyWith<T, _$AdapterResponseSuccessImpl<T>>
+      get copyWith => __$$AdapterResponseSuccessImplCopyWithImpl<T,
+          _$AdapterResponseSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -202,38 +212,46 @@ class _$AdapterResponseSuccess<T> implements AdapterResponseSuccess<T> {
 
 abstract class AdapterResponseSuccess<T> implements AdapterResponse<T> {
   const factory AdapterResponseSuccess(final T data) =
-      _$AdapterResponseSuccess<T>;
+      _$AdapterResponseSuccessImpl<T>;
 
   T get data;
-  @JsonKey(ignore: true)
-  _$$AdapterResponseSuccessCopyWith<T, _$AdapterResponseSuccess<T>>
+
+  /// Create a copy of AdapterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AdapterResponseSuccessImplCopyWith<T, _$AdapterResponseSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AdapterResponseFailureCopyWith<T, $Res> {
-  factory _$$AdapterResponseFailureCopyWith(_$AdapterResponseFailure<T> value,
-          $Res Function(_$AdapterResponseFailure<T>) then) =
-      __$$AdapterResponseFailureCopyWithImpl<T, $Res>;
+abstract class _$$AdapterResponseFailureImplCopyWith<T, $Res> {
+  factory _$$AdapterResponseFailureImplCopyWith(
+          _$AdapterResponseFailureImpl<T> value,
+          $Res Function(_$AdapterResponseFailureImpl<T>) then) =
+      __$$AdapterResponseFailureImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({Object? error, StackTrace trace});
 }
 
 /// @nodoc
-class __$$AdapterResponseFailureCopyWithImpl<T, $Res>
-    extends _$AdapterResponseCopyWithImpl<T, $Res, _$AdapterResponseFailure<T>>
-    implements _$$AdapterResponseFailureCopyWith<T, $Res> {
-  __$$AdapterResponseFailureCopyWithImpl(_$AdapterResponseFailure<T> _value,
-      $Res Function(_$AdapterResponseFailure<T>) _then)
+class __$$AdapterResponseFailureImplCopyWithImpl<T, $Res>
+    extends _$AdapterResponseCopyWithImpl<T, $Res,
+        _$AdapterResponseFailureImpl<T>>
+    implements _$$AdapterResponseFailureImplCopyWith<T, $Res> {
+  __$$AdapterResponseFailureImplCopyWithImpl(
+      _$AdapterResponseFailureImpl<T> _value,
+      $Res Function(_$AdapterResponseFailureImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdapterResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
     Object? trace = null,
   }) {
-    return _then(_$AdapterResponseFailure<T>(
+    return _then(_$AdapterResponseFailureImpl<T>(
       freezed == error ? _value.error : error,
       null == trace
           ? _value.trace
@@ -245,8 +263,8 @@ class __$$AdapterResponseFailureCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$AdapterResponseFailure<T> implements AdapterResponseFailure<T> {
-  const _$AdapterResponseFailure(this.error, this.trace);
+class _$AdapterResponseFailureImpl<T> implements AdapterResponseFailure<T> {
+  const _$AdapterResponseFailureImpl(this.error, this.trace);
 
   @override
   final Object? error;
@@ -259,10 +277,10 @@ class _$AdapterResponseFailure<T> implements AdapterResponseFailure<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AdapterResponseFailure<T> &&
+            other is _$AdapterResponseFailureImpl<T> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.trace, trace) || other.trace == trace));
   }
@@ -271,12 +289,14 @@ class _$AdapterResponseFailure<T> implements AdapterResponseFailure<T> {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(error), trace);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdapterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AdapterResponseFailureCopyWith<T, _$AdapterResponseFailure<T>>
-      get copyWith => __$$AdapterResponseFailureCopyWithImpl<T,
-          _$AdapterResponseFailure<T>>(this, _$identity);
+  _$$AdapterResponseFailureImplCopyWith<T, _$AdapterResponseFailureImpl<T>>
+      get copyWith => __$$AdapterResponseFailureImplCopyWithImpl<T,
+          _$AdapterResponseFailureImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -344,11 +364,14 @@ class _$AdapterResponseFailure<T> implements AdapterResponseFailure<T> {
 abstract class AdapterResponseFailure<T> implements AdapterResponse<T> {
   const factory AdapterResponseFailure(
           final Object? error, final StackTrace trace) =
-      _$AdapterResponseFailure<T>;
+      _$AdapterResponseFailureImpl<T>;
 
   Object? get error;
   StackTrace get trace;
-  @JsonKey(ignore: true)
-  _$$AdapterResponseFailureCopyWith<T, _$AdapterResponseFailure<T>>
+
+  /// Create a copy of AdapterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AdapterResponseFailureImplCopyWith<T, _$AdapterResponseFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

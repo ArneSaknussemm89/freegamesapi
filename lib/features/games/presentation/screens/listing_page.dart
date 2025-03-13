@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:styled_widget/styled_widget.dart';
@@ -11,8 +12,9 @@ import 'package:freegamesexample/features/games/application/providers/filtered_g
 import 'package:freegamesexample/features/games/presentation/widgets/game_tile.dart';
 import 'package:freegamesexample/features/games/presentation/widgets/games_filter.dart';
 
+@RoutePage()
 class GamesListingPage extends ConsumerWidget {
-  const GamesListingPage({Key? key}) : super(key: key);
+  const GamesListingPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +27,6 @@ class GamesListingPage extends ConsumerWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextButton(onPressed: onPressed, child: child),
           const GamesFilterWidget().padding(bottom: Spacing.four),
           state.when(
             loading: const CircularProgressIndicator.adaptive().center,

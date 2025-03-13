@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // Core elements.
@@ -12,7 +13,7 @@ import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 part 'games.g.dart';
 
 @riverpod
-GamesRepository gamesRepository(GamesRepositoryRef ref) {
+GamesRepository gamesRepository(Ref ref) {
   final dataSource = ref.watch(gamesApiDataSourceProvider);
   final adapter = ref.watch(
     dioAdapterProvider(

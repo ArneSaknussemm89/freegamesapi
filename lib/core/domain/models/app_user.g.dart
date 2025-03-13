@@ -7,7 +7,9 @@ part of 'app_user.dart';
 // **************************************************************************
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, require_trailing_commas, prefer_single_quotes, prefer_double_quotes, use_super_parameters
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, require_trailing_commas, prefer_single_quotes, prefer_double_quotes, use_super_parameters, duplicate_ignore
+// ignore_for_file: type=lint
+// ignore_for_file: invalid_use_of_internal_member
 
 class _Sentinel {
   const _Sentinel();
@@ -131,12 +133,6 @@ abstract class AppUserDocumentReference
     FieldValue uidFieldValue,
     String displayName,
     FieldValue displayNameFieldValue,
-    List<Object?> props,
-    FieldValue propsFieldValue,
-    bool? stringify,
-    FieldValue stringifyFieldValue,
-    int hashCode,
-    FieldValue hashCodeFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -148,12 +144,6 @@ abstract class AppUserDocumentReference
     FieldValue uidFieldValue,
     String displayName,
     FieldValue displayNameFieldValue,
-    List<Object?> props,
-    FieldValue propsFieldValue,
-    bool? stringify,
-    FieldValue stringifyFieldValue,
-    int hashCode,
-    FieldValue hashCodeFieldValue,
   });
 }
 
@@ -172,32 +162,17 @@ class _$AppUserDocumentReference
 
   @override
   Stream<AppUserDocumentSnapshot> snapshots() {
-    return reference.snapshots().map((snapshot) {
-      return AppUserDocumentSnapshot._(
-        snapshot,
-        snapshot.data(),
-      );
-    });
+    return reference.snapshots().map(AppUserDocumentSnapshot._);
   }
 
   @override
   Future<AppUserDocumentSnapshot> get([GetOptions? options]) {
-    return reference.get(options).then((snapshot) {
-      return AppUserDocumentSnapshot._(
-        snapshot,
-        snapshot.data(),
-      );
-    });
+    return reference.get(options).then(AppUserDocumentSnapshot._);
   }
 
   @override
   Future<AppUserDocumentSnapshot> transactionGet(Transaction transaction) {
-    return transaction.get(reference).then((snapshot) {
-      return AppUserDocumentSnapshot._(
-        snapshot,
-        snapshot.data(),
-      );
-    });
+    return transaction.get(reference).then(AppUserDocumentSnapshot._);
   }
 
   Future<void> update({
@@ -205,12 +180,6 @@ class _$AppUserDocumentReference
     FieldValue? uidFieldValue,
     Object? displayName = _sentinel,
     FieldValue? displayNameFieldValue,
-    Object? props = _sentinel,
-    FieldValue? propsFieldValue,
-    Object? stringify = _sentinel,
-    FieldValue? stringifyFieldValue,
-    Object? hashCode = _sentinel,
-    FieldValue? hashCodeFieldValue,
   }) async {
     assert(
       uid == _sentinel || uidFieldValue == null,
@@ -220,29 +189,15 @@ class _$AppUserDocumentReference
       displayName == _sentinel || displayNameFieldValue == null,
       "Cannot specify both displayName and displayNameFieldValue",
     );
-    assert(
-      props == _sentinel || propsFieldValue == null,
-      "Cannot specify both props and propsFieldValue",
-    );
-    assert(
-      stringify == _sentinel || stringifyFieldValue == null,
-      "Cannot specify both stringify and stringifyFieldValue",
-    );
-    assert(
-      hashCode == _sentinel || hashCodeFieldValue == null,
-      "Cannot specify both hashCode and hashCodeFieldValue",
-    );
     final json = {
-      if (uid != _sentinel) 'uid': uid as String,
-      if (uidFieldValue != null) 'uid': uidFieldValue,
-      if (displayName != _sentinel) 'displayName': displayName as String,
-      if (displayNameFieldValue != null) 'displayName': displayNameFieldValue,
-      if (props != _sentinel) 'props': props as List<Object?>,
-      if (propsFieldValue != null) 'props': propsFieldValue,
-      if (stringify != _sentinel) 'stringify': stringify as bool?,
-      if (stringifyFieldValue != null) 'stringify': stringifyFieldValue,
-      if (hashCode != _sentinel) 'hashCode': hashCode as int,
-      if (hashCodeFieldValue != null) 'hashCode': hashCodeFieldValue,
+      if (uid != _sentinel)
+        _$AppUserFieldMap['uid']!: _$AppUserPerFieldToJson.uid(uid as String),
+      if (uidFieldValue != null) _$AppUserFieldMap['uid']!: uidFieldValue,
+      if (displayName != _sentinel)
+        _$AppUserFieldMap['displayName']!:
+            _$AppUserPerFieldToJson.displayName(displayName as String),
+      if (displayNameFieldValue != null)
+        _$AppUserFieldMap['displayName']!: displayNameFieldValue,
     };
 
     return reference.update(json);
@@ -254,12 +209,6 @@ class _$AppUserDocumentReference
     FieldValue? uidFieldValue,
     Object? displayName = _sentinel,
     FieldValue? displayNameFieldValue,
-    Object? props = _sentinel,
-    FieldValue? propsFieldValue,
-    Object? stringify = _sentinel,
-    FieldValue? stringifyFieldValue,
-    Object? hashCode = _sentinel,
-    FieldValue? hashCodeFieldValue,
   }) {
     assert(
       uid == _sentinel || uidFieldValue == null,
@@ -269,29 +218,15 @@ class _$AppUserDocumentReference
       displayName == _sentinel || displayNameFieldValue == null,
       "Cannot specify both displayName and displayNameFieldValue",
     );
-    assert(
-      props == _sentinel || propsFieldValue == null,
-      "Cannot specify both props and propsFieldValue",
-    );
-    assert(
-      stringify == _sentinel || stringifyFieldValue == null,
-      "Cannot specify both stringify and stringifyFieldValue",
-    );
-    assert(
-      hashCode == _sentinel || hashCodeFieldValue == null,
-      "Cannot specify both hashCode and hashCodeFieldValue",
-    );
     final json = {
-      if (uid != _sentinel) 'uid': uid as String,
-      if (uidFieldValue != null) 'uid': uidFieldValue,
-      if (displayName != _sentinel) 'displayName': displayName as String,
-      if (displayNameFieldValue != null) 'displayName': displayNameFieldValue,
-      if (props != _sentinel) 'props': props as List<Object?>,
-      if (propsFieldValue != null) 'props': propsFieldValue,
-      if (stringify != _sentinel) 'stringify': stringify as bool?,
-      if (stringifyFieldValue != null) 'stringify': stringifyFieldValue,
-      if (hashCode != _sentinel) 'hashCode': hashCode as int,
-      if (hashCodeFieldValue != null) 'hashCode': hashCodeFieldValue,
+      if (uid != _sentinel)
+        _$AppUserFieldMap['uid']!: _$AppUserPerFieldToJson.uid(uid as String),
+      if (uidFieldValue != null) _$AppUserFieldMap['uid']!: uidFieldValue,
+      if (displayName != _sentinel)
+        _$AppUserFieldMap['displayName']!:
+            _$AppUserPerFieldToJson.displayName(displayName as String),
+      if (displayNameFieldValue != null)
+        _$AppUserFieldMap['displayName']!: displayNameFieldValue,
     };
 
     transaction.update(reference, json);
@@ -309,26 +244,6 @@ class _$AppUserDocumentReference
   int get hashCode => Object.hash(runtimeType, parent, id);
 }
 
-class AppUserDocumentSnapshot extends FirestoreDocumentSnapshot<AppUser> {
-  AppUserDocumentSnapshot._(
-    this.snapshot,
-    this.data,
-  );
-
-  @override
-  final DocumentSnapshot<AppUser> snapshot;
-
-  @override
-  AppUserDocumentReference get reference {
-    return AppUserDocumentReference(
-      snapshot.reference,
-    );
-  }
-
-  @override
-  final AppUser? data;
-}
-
 abstract class AppUserQuery
     implements QueryReference<AppUser, AppUserQuerySnapshot> {
   @override
@@ -336,6 +251,74 @@ abstract class AppUserQuery
 
   @override
   AppUserQuery limitToLast(int limit);
+
+  /// Perform a where query based on a [FieldPath].
+  ///
+  /// This method is considered unsafe as it does check that the field path
+  /// maps to a valid property or that parameters such as [isEqualTo] receive
+  /// a value of the correct type.
+  ///
+  /// If possible, instead use the more explicit variant of where queries:
+  ///
+  /// **AVOID**:
+  /// ```dart
+  /// collection.whereFieldPath(FieldPath.fromString('title'), isEqualTo: 'title');
+  /// ```
+  ///
+  /// **PREFER**:
+  /// ```dart
+  /// collection.whereTitle(isEqualTo: 'title');
+  /// ```
+  AppUserQuery whereFieldPath(
+    Object fieldPath, {
+    Object? isEqualTo,
+    Object? isNotEqualTo,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  });
+
+  AppUserQuery whereDocumentId({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  });
+
+  AppUserQuery whereUid({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  });
+
+  AppUserQuery whereDisplayName({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  });
 
   /// Perform an order query based on a [FieldPath].
   ///
@@ -358,115 +341,16 @@ abstract class AppUserQuery
   /// collection.orderByTitle(startAt: 'title');
   /// ```
   AppUserQuery orderByFieldPath(
-    FieldPath fieldPath, {
+    Object fieldPath, {
     bool descending = false,
-    Object? startAt,
-    Object? startAfter,
-    Object? endAt,
-    Object? endBefore,
+    Object startAt,
+    Object startAfter,
+    Object endAt,
+    Object endBefore,
     AppUserDocumentSnapshot? startAtDocument,
     AppUserDocumentSnapshot? endAtDocument,
     AppUserDocumentSnapshot? endBeforeDocument,
     AppUserDocumentSnapshot? startAfterDocument,
-  });
-
-  /// Perform a where query based on a [FieldPath].
-  ///
-  /// This method is considered unsafe as it does check that the field path
-  /// maps to a valid property or that parameters such as [isEqualTo] receive
-  /// a value of the correct type.
-  ///
-  /// If possible, instead use the more explicit variant of where queries:
-  ///
-  /// **AVOID**:
-  /// ```dart
-  /// collection.whereFieldPath(FieldPath.fromString('title'), isEqualTo: 'title');
-  /// ```
-  ///
-  /// **PREFER**:
-  /// ```dart
-  /// collection.whereTitle(isEqualTo: 'title');
-  /// ```
-  AppUserQuery whereFieldPath(
-    FieldPath fieldPath, {
-    Object? isEqualTo,
-    Object? isNotEqualTo,
-    Object? isLessThan,
-    Object? isLessThanOrEqualTo,
-    Object? isGreaterThan,
-    Object? isGreaterThanOrEqualTo,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-    List<Object?>? whereIn,
-    List<Object?>? whereNotIn,
-    bool? isNull,
-  });
-
-  AppUserQuery whereDocumentId({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  AppUserQuery whereUid({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  AppUserQuery whereDisplayName({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  AppUserQuery whereProps({
-    List<Object?>? isEqualTo,
-    List<Object?>? isNotEqualTo,
-    List<Object?>? isLessThan,
-    List<Object?>? isLessThanOrEqualTo,
-    List<Object?>? isGreaterThan,
-    List<Object?>? isGreaterThanOrEqualTo,
-    bool? isNull,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-  });
-  AppUserQuery whereStringify({
-    bool? isEqualTo,
-    bool? isNotEqualTo,
-    bool? isLessThan,
-    bool? isLessThanOrEqualTo,
-    bool? isGreaterThan,
-    bool? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<bool?>? whereIn,
-    List<bool?>? whereNotIn,
-  });
-  AppUserQuery whereHashCode({
-    int? isEqualTo,
-    int? isNotEqualTo,
-    int? isLessThan,
-    int? isLessThanOrEqualTo,
-    int? isGreaterThan,
-    int? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<int>? whereIn,
-    List<int>? whereNotIn,
   });
 
   AppUserQuery orderByDocumentId({
@@ -504,42 +388,6 @@ abstract class AppUserQuery
     AppUserDocumentSnapshot? endBeforeDocument,
     AppUserDocumentSnapshot? startAfterDocument,
   });
-
-  AppUserQuery orderByProps({
-    bool descending = false,
-    List<Object?> startAt,
-    List<Object?> startAfter,
-    List<Object?> endAt,
-    List<Object?> endBefore,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
-  });
-
-  AppUserQuery orderByStringify({
-    bool descending = false,
-    bool? startAt,
-    bool? startAfter,
-    bool? endAt,
-    bool? endBefore,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
-  });
-
-  AppUserQuery orderByHashCode({
-    bool descending = false,
-    int startAt,
-    int startAfter,
-    int endAt,
-    int endBefore,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
-  });
 }
 
 class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
@@ -555,37 +403,14 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
 
   final CollectionReference<Object?> _collection;
 
-  AppUserQuerySnapshot _decodeSnapshot(
-    QuerySnapshot<AppUser> snapshot,
-  ) {
-    final docs = snapshot.docs.map((e) {
-      return AppUserQueryDocumentSnapshot._(e, e.data());
-    }).toList();
-
-    final docChanges = snapshot.docChanges.map((change) {
-      return FirestoreDocumentChange<AppUserDocumentSnapshot>(
-        type: change.type,
-        oldIndex: change.oldIndex,
-        newIndex: change.newIndex,
-        doc: AppUserDocumentSnapshot._(change.doc, change.doc.data()),
-      );
-    }).toList();
-
-    return AppUserQuerySnapshot._(
-      snapshot,
-      docs,
-      docChanges,
-    );
-  }
-
   @override
   Stream<AppUserQuerySnapshot> snapshots([SnapshotOptions? options]) {
-    return reference.snapshots().map(_decodeSnapshot);
+    return reference.snapshots().map(AppUserQuerySnapshot._fromQuerySnapshot);
   }
 
   @override
   Future<AppUserQuerySnapshot> get([GetOptions? options]) {
-    return reference.get(options).then(_decodeSnapshot);
+    return reference.get(options).then(AppUserQuerySnapshot._fromQuerySnapshot);
   }
 
   @override
@@ -606,8 +431,168 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
     );
   }
 
+  @override
+  AppUserQuery whereFieldPath(
+    Object fieldPath, {
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$AppUserQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        fieldPath,
+        isEqualTo: isEqualTo != _sentinel ? isEqualTo : null,
+        isNotEqualTo: isNotEqualTo != _sentinel ? isNotEqualTo : null,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        arrayContains: arrayContains,
+        arrayContainsAny: arrayContainsAny,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
+  AppUserQuery whereDocumentId({
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$AppUserQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        FieldPath.documentId,
+        isEqualTo: isEqualTo != _sentinel ? isEqualTo : null,
+        isNotEqualTo: isNotEqualTo != _sentinel ? isNotEqualTo : null,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
+  AppUserQuery whereUid({
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$AppUserQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$AppUserFieldMap['uid']!,
+        isEqualTo: isEqualTo != _sentinel
+            ? _$AppUserPerFieldToJson.uid(isEqualTo as String)
+            : null,
+        isNotEqualTo: isNotEqualTo != _sentinel
+            ? _$AppUserPerFieldToJson.uid(isNotEqualTo as String)
+            : null,
+        isLessThan: isLessThan != null
+            ? _$AppUserPerFieldToJson.uid(isLessThan as String)
+            : null,
+        isLessThanOrEqualTo: isLessThanOrEqualTo != null
+            ? _$AppUserPerFieldToJson.uid(isLessThanOrEqualTo as String)
+            : null,
+        isGreaterThan: isGreaterThan != null
+            ? _$AppUserPerFieldToJson.uid(isGreaterThan as String)
+            : null,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo != null
+            ? _$AppUserPerFieldToJson.uid(isGreaterThanOrEqualTo as String)
+            : null,
+        whereIn: whereIn?.map((e) => _$AppUserPerFieldToJson.uid(e)),
+        whereNotIn: whereNotIn?.map((e) => _$AppUserPerFieldToJson.uid(e)),
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
+  AppUserQuery whereDisplayName({
+    Object? isEqualTo = _sentinel,
+    Object? isNotEqualTo = _sentinel,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$AppUserQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$AppUserFieldMap['displayName']!,
+        isEqualTo: isEqualTo != _sentinel
+            ? _$AppUserPerFieldToJson.displayName(isEqualTo as String)
+            : null,
+        isNotEqualTo: isNotEqualTo != _sentinel
+            ? _$AppUserPerFieldToJson.displayName(isNotEqualTo as String)
+            : null,
+        isLessThan: isLessThan != null
+            ? _$AppUserPerFieldToJson.displayName(isLessThan as String)
+            : null,
+        isLessThanOrEqualTo: isLessThanOrEqualTo != null
+            ? _$AppUserPerFieldToJson.displayName(isLessThanOrEqualTo as String)
+            : null,
+        isGreaterThan: isGreaterThan != null
+            ? _$AppUserPerFieldToJson.displayName(isGreaterThan as String)
+            : null,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo != null
+            ? _$AppUserPerFieldToJson
+                .displayName(isGreaterThanOrEqualTo as String)
+            : null,
+        whereIn: whereIn?.map((e) => _$AppUserPerFieldToJson.displayName(e)),
+        whereNotIn:
+            whereNotIn?.map((e) => _$AppUserPerFieldToJson.displayName(e)),
+        isNull: isNull ??
+            (isEqualTo == null ? false : null) ??
+            (isNotEqualTo == null ? true : null),
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  @override
   AppUserQuery orderByFieldPath(
-    FieldPath fieldPath, {
+    Object fieldPath, {
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
@@ -671,6 +656,7 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
         endBeforeDocumentSnapshot: null,
       );
     }
+
     return _$AppUserQuery(
       _collection,
       $referenceWithoutCursor: query,
@@ -678,214 +664,7 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
     );
   }
 
-  AppUserQuery whereFieldPath(
-    FieldPath fieldPath, {
-    Object? isEqualTo,
-    Object? isNotEqualTo,
-    Object? isLessThan,
-    Object? isLessThanOrEqualTo,
-    Object? isGreaterThan,
-    Object? isGreaterThanOrEqualTo,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-    List<Object?>? whereIn,
-    List<Object?>? whereNotIn,
-    bool? isNull,
-  }) {
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        fieldPath,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        arrayContains: arrayContains,
-        arrayContainsAny: arrayContainsAny,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-        isNull: isNull,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AppUserQuery whereDocumentId({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  }) {
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        FieldPath.documentId,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AppUserQuery whereUid({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  }) {
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AppUserFieldMap['uid']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AppUserQuery whereDisplayName({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  }) {
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AppUserFieldMap['displayName']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AppUserQuery whereProps({
-    List<Object?>? isEqualTo,
-    List<Object?>? isNotEqualTo,
-    List<Object?>? isLessThan,
-    List<Object?>? isLessThanOrEqualTo,
-    List<Object?>? isGreaterThan,
-    List<Object?>? isGreaterThanOrEqualTo,
-    bool? isNull,
-    Object? arrayContains,
-    List<Object?>? arrayContainsAny,
-  }) {
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AppUserFieldMap['props']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        arrayContains: arrayContains,
-        arrayContainsAny: arrayContainsAny,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AppUserQuery whereStringify({
-    bool? isEqualTo,
-    bool? isNotEqualTo,
-    bool? isLessThan,
-    bool? isLessThanOrEqualTo,
-    bool? isGreaterThan,
-    bool? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<bool?>? whereIn,
-    List<bool?>? whereNotIn,
-  }) {
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AppUserFieldMap['stringify']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AppUserQuery whereHashCode({
-    int? isEqualTo,
-    int? isNotEqualTo,
-    int? isLessThan,
-    int? isLessThanOrEqualTo,
-    int? isGreaterThan,
-    int? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<int>? whereIn,
-    List<int>? whereNotIn,
-  }) {
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AppUserFieldMap['hashCode']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
+  @override
   AppUserQuery orderByDocumentId({
     bool descending = false,
     Object? startAt = _sentinel,
@@ -958,6 +737,7 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
     );
   }
 
+  @override
   AppUserQuery orderByUid({
     bool descending = false,
     Object? startAt = _sentinel,
@@ -1030,6 +810,7 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
     );
   }
 
+  @override
   AppUserQuery orderByDisplayName({
     bool descending = false,
     Object? startAt = _sentinel,
@@ -1102,222 +883,6 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
     );
   }
 
-  AppUserQuery orderByProps({
-    bool descending = false,
-    Object? startAt = _sentinel,
-    Object? startAfter = _sentinel,
-    Object? endAt = _sentinel,
-    Object? endBefore = _sentinel,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
-  }) {
-    final query = $referenceWithoutCursor.orderBy(_$AppUserFieldMap['props']!,
-        descending: descending);
-    var queryCursor = $queryCursor;
-
-    if (startAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAt: const [],
-        startAtDocumentSnapshot: startAtDocument.snapshot,
-      );
-    }
-    if (startAfterDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: const [],
-        startAfterDocumentSnapshot: startAfterDocument.snapshot,
-      );
-    }
-    if (endAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endAt: const [],
-        endAtDocumentSnapshot: endAtDocument.snapshot,
-      );
-    }
-    if (endBeforeDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: const [],
-        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
-      );
-    }
-
-    if (startAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAt: [...queryCursor.startAt, startAt],
-        startAtDocumentSnapshot: null,
-      );
-    }
-    if (startAfter != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: [...queryCursor.startAfter, startAfter],
-        startAfterDocumentSnapshot: null,
-      );
-    }
-    if (endAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endAt: [...queryCursor.endAt, endAt],
-        endAtDocumentSnapshot: null,
-      );
-    }
-    if (endBefore != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: [...queryCursor.endBefore, endBefore],
-        endBeforeDocumentSnapshot: null,
-      );
-    }
-
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: query,
-      $queryCursor: queryCursor,
-    );
-  }
-
-  AppUserQuery orderByStringify({
-    bool descending = false,
-    Object? startAt = _sentinel,
-    Object? startAfter = _sentinel,
-    Object? endAt = _sentinel,
-    Object? endBefore = _sentinel,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
-  }) {
-    final query = $referenceWithoutCursor
-        .orderBy(_$AppUserFieldMap['stringify']!, descending: descending);
-    var queryCursor = $queryCursor;
-
-    if (startAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAt: const [],
-        startAtDocumentSnapshot: startAtDocument.snapshot,
-      );
-    }
-    if (startAfterDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: const [],
-        startAfterDocumentSnapshot: startAfterDocument.snapshot,
-      );
-    }
-    if (endAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endAt: const [],
-        endAtDocumentSnapshot: endAtDocument.snapshot,
-      );
-    }
-    if (endBeforeDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: const [],
-        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
-      );
-    }
-
-    if (startAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAt: [...queryCursor.startAt, startAt],
-        startAtDocumentSnapshot: null,
-      );
-    }
-    if (startAfter != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: [...queryCursor.startAfter, startAfter],
-        startAfterDocumentSnapshot: null,
-      );
-    }
-    if (endAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endAt: [...queryCursor.endAt, endAt],
-        endAtDocumentSnapshot: null,
-      );
-    }
-    if (endBefore != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: [...queryCursor.endBefore, endBefore],
-        endBeforeDocumentSnapshot: null,
-      );
-    }
-
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: query,
-      $queryCursor: queryCursor,
-    );
-  }
-
-  AppUserQuery orderByHashCode({
-    bool descending = false,
-    Object? startAt = _sentinel,
-    Object? startAfter = _sentinel,
-    Object? endAt = _sentinel,
-    Object? endBefore = _sentinel,
-    AppUserDocumentSnapshot? startAtDocument,
-    AppUserDocumentSnapshot? endAtDocument,
-    AppUserDocumentSnapshot? endBeforeDocument,
-    AppUserDocumentSnapshot? startAfterDocument,
-  }) {
-    final query = $referenceWithoutCursor
-        .orderBy(_$AppUserFieldMap['hashCode']!, descending: descending);
-    var queryCursor = $queryCursor;
-
-    if (startAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAt: const [],
-        startAtDocumentSnapshot: startAtDocument.snapshot,
-      );
-    }
-    if (startAfterDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: const [],
-        startAfterDocumentSnapshot: startAfterDocument.snapshot,
-      );
-    }
-    if (endAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endAt: const [],
-        endAtDocumentSnapshot: endAtDocument.snapshot,
-      );
-    }
-    if (endBeforeDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: const [],
-        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
-      );
-    }
-
-    if (startAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAt: [...queryCursor.startAt, startAt],
-        startAtDocumentSnapshot: null,
-      );
-    }
-    if (startAfter != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: [...queryCursor.startAfter, startAfter],
-        startAfterDocumentSnapshot: null,
-      );
-    }
-    if (endAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endAt: [...queryCursor.endAt, endAt],
-        endAtDocumentSnapshot: null,
-      );
-    }
-    if (endBefore != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: [...queryCursor.endBefore, endBefore],
-        endBeforeDocumentSnapshot: null,
-      );
-    }
-
-    return _$AppUserQuery(
-      _collection,
-      $referenceWithoutCursor: query,
-      $queryCursor: queryCursor,
-    );
-  }
-
   @override
   bool operator ==(Object other) {
     return other is _$AppUserQuery &&
@@ -1329,6 +894,23 @@ class _$AppUserQuery extends QueryReference<AppUser, AppUserQuerySnapshot>
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
+class AppUserDocumentSnapshot extends FirestoreDocumentSnapshot<AppUser> {
+  AppUserDocumentSnapshot._(this.snapshot) : data = snapshot.data();
+
+  @override
+  final DocumentSnapshot<AppUser> snapshot;
+
+  @override
+  AppUserDocumentReference get reference {
+    return AppUserDocumentReference(
+      snapshot.reference,
+    );
+  }
+
+  @override
+  final AppUser? data;
+}
+
 class AppUserQuerySnapshot
     extends FirestoreQuerySnapshot<AppUser, AppUserQueryDocumentSnapshot> {
   AppUserQuerySnapshot._(
@@ -1336,6 +918,38 @@ class AppUserQuerySnapshot
     this.docs,
     this.docChanges,
   );
+
+  factory AppUserQuerySnapshot._fromQuerySnapshot(
+    QuerySnapshot<AppUser> snapshot,
+  ) {
+    final docs = snapshot.docs.map(AppUserQueryDocumentSnapshot._).toList();
+
+    final docChanges = snapshot.docChanges.map((change) {
+      return _decodeDocumentChange(
+        change,
+        AppUserDocumentSnapshot._,
+      );
+    }).toList();
+
+    return AppUserQuerySnapshot._(
+      snapshot,
+      docs,
+      docChanges,
+    );
+  }
+
+  static FirestoreDocumentChange<AppUserDocumentSnapshot>
+      _decodeDocumentChange<T>(
+    DocumentChange<T> docChange,
+    AppUserDocumentSnapshot Function(DocumentSnapshot<T> doc) decodeDoc,
+  ) {
+    return FirestoreDocumentChange<AppUserDocumentSnapshot>(
+      type: docChange.type,
+      oldIndex: docChange.oldIndex,
+      newIndex: docChange.newIndex,
+      doc: decodeDoc(docChange.doc),
+    );
+  }
 
   final QuerySnapshot<AppUser> snapshot;
 
@@ -1349,18 +963,18 @@ class AppUserQuerySnapshot
 class AppUserQueryDocumentSnapshot
     extends FirestoreQueryDocumentSnapshot<AppUser>
     implements AppUserDocumentSnapshot {
-  AppUserQueryDocumentSnapshot._(this.snapshot, this.data);
+  AppUserQueryDocumentSnapshot._(this.snapshot) : data = snapshot.data();
 
   @override
   final QueryDocumentSnapshot<AppUser> snapshot;
 
   @override
+  final AppUser data;
+
+  @override
   AppUserDocumentReference get reference {
     return AppUserDocumentReference(snapshot.reference);
   }
-
-  @override
-  final AppUser data;
 }
 
 // **************************************************************************

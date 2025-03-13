@@ -1,16 +1,10 @@
-import 'package:bloc_test/bloc_test.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:freegamesexample/core/application/providers/authentication.dart';
-import 'package:freegamesexample/core/use_cases.dart';
 import 'package:freegamesexample/core/data/constants.dart';
-import 'package:freegamesexample/features/games/application/blocs/favorites_list.dart';
-import 'package:freegamesexample/features/games/application/use_cases/filter_games_list.dart';
+import 'package:freegamesexample/features/games/application/use_cases/filtered_games_list.dart';
 import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
-import 'package:freegamesexample/features/games/domain/value_objects/filter_games_list_params.dart';
-import 'package:freegamesexample/features/games/presentation/view_models/game.dart';
 
 import '../../../../../utils.dart';
 
@@ -41,17 +35,8 @@ void main() {
     tearDownAll(() => clearFirestore(fakeFirestore));
 
     test('can be instantiated', () {
-      const useCase = FilterGamesListUseCase();
+      const useCase = FilteredGamesListUseCase();
       expect(useCase, isNotNull);
-    });
-
-    test('can read provider', () {
-      final root = createContainer();
-      final container = createContainer(parent: root);
-
-      final useCase = container.read(filterGamesListUseCaseProvider);
-      expect(useCase, isNotNull);
-      expect(useCase, const FilterGamesListUseCase()); // No params so it should match the const.
     });
   });
 }

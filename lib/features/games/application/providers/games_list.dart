@@ -1,3 +1,4 @@
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 /// Games feature elements.
@@ -7,7 +8,7 @@ import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 part 'games_list.g.dart';
 
 @riverpod
-Future<List<Game>> fetchAllGames(FetchAllGamesRef ref) async {
+Future<List<Game>> fetchAllGames(Ref ref) async {
   final repository = ref.watch(gamesRepositoryProvider);
   return await repository.getAllGames();
 }

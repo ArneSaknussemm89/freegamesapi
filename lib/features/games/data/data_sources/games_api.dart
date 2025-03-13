@@ -14,4 +14,6 @@ class GameApiDataSource {
   final String baseUrl;
   final String gamesEndpoint;
   final String contentType;
+
+  String get gamesUrl => '$baseUrl$gamesEndpoint/games';
 }

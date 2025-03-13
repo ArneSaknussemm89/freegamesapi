@@ -6,7 +6,7 @@ part of 'game.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
+String _$fetchOneGameHash() => r'e76ea06ff84b0eea9f51a8d31613e87b1c6794d7';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,16 +29,60 @@ class _SystemHash {
   }
 }
 
-String $fetchOneGameHash() => r'243f6e03d5724fea7f4c32adba35560ccbd8a7c6';
+/// See also [fetchOneGame].
+@ProviderFor(fetchOneGame)
+const fetchOneGameProvider = FetchOneGameFamily();
+
+/// See also [fetchOneGame].
+class FetchOneGameFamily extends Family<AsyncValue<Game?>> {
+  /// See also [fetchOneGame].
+  const FetchOneGameFamily();
+
+  /// See also [fetchOneGame].
+  FetchOneGameProvider call({
+    required int id,
+    bool checkFavorite = false,
+  }) {
+    return FetchOneGameProvider(
+      id: id,
+      checkFavorite: checkFavorite,
+    );
+  }
+
+  @override
+  FetchOneGameProvider getProviderOverride(
+    covariant FetchOneGameProvider provider,
+  ) {
+    return call(
+      id: provider.id,
+      checkFavorite: provider.checkFavorite,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'fetchOneGameProvider';
+}
 
 /// See also [fetchOneGame].
 class FetchOneGameProvider extends AutoDisposeFutureProvider<Game?> {
+  /// See also [fetchOneGame].
   FetchOneGameProvider({
-    required this.id,
-    this.checkFavorite = false,
-  }) : super(
+    required int id,
+    bool checkFavorite = false,
+  }) : this._internal(
           (ref) => fetchOneGame(
-            ref,
+            ref as FetchOneGameRef,
             id: id,
             checkFavorite: checkFavorite,
           ),
@@ -47,11 +91,51 @@ class FetchOneGameProvider extends AutoDisposeFutureProvider<Game?> {
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : $fetchOneGameHash,
+                  : _$fetchOneGameHash,
+          dependencies: FetchOneGameFamily._dependencies,
+          allTransitiveDependencies:
+              FetchOneGameFamily._allTransitiveDependencies,
+          id: id,
+          checkFavorite: checkFavorite,
         );
+
+  FetchOneGameProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.id,
+    required this.checkFavorite,
+  }) : super.internal();
 
   final int id;
   final bool checkFavorite;
+
+  @override
+  Override overrideWith(
+    FutureOr<Game?> Function(FetchOneGameRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchOneGameProvider._internal(
+        (ref) => create(ref as FetchOneGameRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        id: id,
+        checkFavorite: checkFavorite,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeFutureProviderElement<Game?> createElement() {
+    return _FetchOneGameProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -70,54 +154,79 @@ class FetchOneGameProvider extends AutoDisposeFutureProvider<Game?> {
   }
 }
 
-typedef FetchOneGameRef = AutoDisposeFutureProviderRef<Game?>;
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin FetchOneGameRef on AutoDisposeFutureProviderRef<Game?> {
+  /// The parameter `id` of this provider.
+  int get id;
 
-/// See also [fetchOneGame].
-final fetchOneGameProvider = FetchOneGameFamily();
+  /// The parameter `checkFavorite` of this provider.
+  bool get checkFavorite;
+}
 
-class FetchOneGameFamily extends Family<AsyncValue<Game?>> {
-  FetchOneGameFamily();
+class _FetchOneGameProviderElement
+    extends AutoDisposeFutureProviderElement<Game?> with FetchOneGameRef {
+  _FetchOneGameProviderElement(super.provider);
 
-  FetchOneGameProvider call({
+  @override
+  int get id => (origin as FetchOneGameProvider).id;
+  @override
+  bool get checkFavorite => (origin as FetchOneGameProvider).checkFavorite;
+}
+
+String _$fetchOneFavoriteHash() => r'a987e6b17a9d91689af958ac43c3f334b2266a51';
+
+/// See also [fetchOneFavorite].
+@ProviderFor(fetchOneFavorite)
+const fetchOneFavoriteProvider = FetchOneFavoriteFamily();
+
+/// See also [fetchOneFavorite].
+class FetchOneFavoriteFamily extends Family<AsyncValue<FavoriteGame?>> {
+  /// See also [fetchOneFavorite].
+  const FetchOneFavoriteFamily();
+
+  /// See also [fetchOneFavorite].
+  FetchOneFavoriteProvider call({
     required int id,
-    bool checkFavorite = false,
   }) {
-    return FetchOneGameProvider(
+    return FetchOneFavoriteProvider(
       id: id,
-      checkFavorite: checkFavorite,
     );
   }
 
   @override
-  AutoDisposeFutureProvider<Game?> getProviderOverride(
-    covariant FetchOneGameProvider provider,
+  FetchOneFavoriteProvider getProviderOverride(
+    covariant FetchOneFavoriteProvider provider,
   ) {
     return call(
       id: provider.id,
-      checkFavorite: provider.checkFavorite,
     );
   }
 
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
 
   @override
-  List<ProviderOrFamily>? get dependencies => null;
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  String? get name => r'fetchOneGameProvider';
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'fetchOneFavoriteProvider';
 }
-
-String $fetchOneFavoriteHash() => r'a987e6b17a9d91689af958ac43c3f334b2266a51';
 
 /// See also [fetchOneFavorite].
 class FetchOneFavoriteProvider
     extends AutoDisposeFutureProvider<FavoriteGame?> {
+  /// See also [fetchOneFavorite].
   FetchOneFavoriteProvider({
-    required this.id,
-  }) : super(
+    required int id,
+  }) : this._internal(
           (ref) => fetchOneFavorite(
-            ref,
+            ref as FetchOneFavoriteRef,
             id: id,
           ),
           from: fetchOneFavoriteProvider,
@@ -125,10 +234,47 @@ class FetchOneFavoriteProvider
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : $fetchOneFavoriteHash,
+                  : _$fetchOneFavoriteHash,
+          dependencies: FetchOneFavoriteFamily._dependencies,
+          allTransitiveDependencies:
+              FetchOneFavoriteFamily._allTransitiveDependencies,
+          id: id,
         );
 
+  FetchOneFavoriteProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.id,
+  }) : super.internal();
+
   final int id;
+
+  @override
+  Override overrideWith(
+    FutureOr<FavoriteGame?> Function(FetchOneFavoriteRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchOneFavoriteProvider._internal(
+        (ref) => create(ref as FetchOneFavoriteRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        id: id,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeFutureProviderElement<FavoriteGame?> createElement() {
+    return _FetchOneFavoriteProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -144,37 +290,20 @@ class FetchOneFavoriteProvider
   }
 }
 
-typedef FetchOneFavoriteRef = AutoDisposeFutureProviderRef<FavoriteGame?>;
-
-/// See also [fetchOneFavorite].
-final fetchOneFavoriteProvider = FetchOneFavoriteFamily();
-
-class FetchOneFavoriteFamily extends Family<AsyncValue<FavoriteGame?>> {
-  FetchOneFavoriteFamily();
-
-  FetchOneFavoriteProvider call({
-    required int id,
-  }) {
-    return FetchOneFavoriteProvider(
-      id: id,
-    );
-  }
-
-  @override
-  AutoDisposeFutureProvider<FavoriteGame?> getProviderOverride(
-    covariant FetchOneFavoriteProvider provider,
-  ) {
-    return call(
-      id: provider.id,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'fetchOneFavoriteProvider';
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin FetchOneFavoriteRef on AutoDisposeFutureProviderRef<FavoriteGame?> {
+  /// The parameter `id` of this provider.
+  int get id;
 }
+
+class _FetchOneFavoriteProviderElement
+    extends AutoDisposeFutureProviderElement<FavoriteGame?>
+    with FetchOneFavoriteRef {
+  _FetchOneFavoriteProviderElement(super.provider);
+
+  @override
+  int get id => (origin as FetchOneFavoriteProvider).id;
+}
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
