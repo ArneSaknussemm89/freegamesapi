@@ -36,14 +36,14 @@ class AuthenticationService extends _$AuthenticationService {
 }
 
 @freezed
-class AuthenticationEvent with _$AuthenticationEvent {
+sealed class AuthenticationEvent with _$AuthenticationEvent {
   const factory AuthenticationEvent.signInWithPhoneNumber() = SignInWithPhoneNumber;
   const factory AuthenticationEvent.authenticate(User user) = Authenticate;
   const factory AuthenticationEvent.unauthenticate() = Unauthenticate;
 }
 
 @freezed
-class AuthenticationState with _$AuthenticationState {
+sealed class AuthenticationState with _$AuthenticationState {
   const factory AuthenticationState.uninitialized() = Uninitialized;
   const factory AuthenticationState.unauthenticated() = Unauthenticated;
   const factory AuthenticationState.authenticated(User user) = Authenticated;

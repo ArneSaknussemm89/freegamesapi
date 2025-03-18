@@ -34,7 +34,7 @@ Future main() async {
 /// The main entry widget for the application.
 ///
 class AppEntry extends ConsumerWidget {
-  const AppEntry({Key? key, this.authed = false}) : super(key: key);
+  const AppEntry({super.key, this.authed = false});
 
   final bool authed;
 

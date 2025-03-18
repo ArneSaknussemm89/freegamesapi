@@ -1,7 +1,6 @@
+import 'package:freegamesexample/core/use_cases.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod/riverpod.dart';
-// Core elements.
-import 'package:freegamesexample/core/application/providers/authentication.dart';
 
 // Games feature elements.
 import 'package:freegamesexample/features/games/application/providers/favorites_list.dart';
@@ -9,7 +8,6 @@ import 'package:freegamesexample/features/games/application/providers/games_list
 import 'package:freegamesexample/features/games/application/use_cases/filtered_games_list.dart';
 import 'package:freegamesexample/features/games/application/use_cases/merge_game_favorites.dart';
 import 'package:freegamesexample/features/games/data/repositories/games.dart';
-import 'package:freegamesexample/features/games/domain/models/favorites/favorite.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
 part 'filtered_games_list.g.dart';
@@ -18,41 +16,20 @@ part 'filtered_games_list.g.dart';
 Future<List<Game>> fetchFilteredGames(Ref ref) async {
   final filter = ref.watch(gamesListFilterNotifierProvider);
   final repository = ref.watch(gamesRepositoryProvider);
-  final auth = ref.watch(authenticationServiceProvider);
-
-  // Use cases.
-  const merge = MergeGameFavoritesUseCase();
-  const filterGames = FilteredGamesListUseCase();
+  final favorites = ref.watch(fetchUserFavoritesProvider).requireValue;
   final games = await repository.getAllGames();
-  final favorites = auth.maybeMap(
-    orElse: () => <FavoriteGame>[],
-    authenticated: (authState) {
-      final favorites = ref.watch(fetchUserFavoritesProvider);
-      return favorites.when(
-        data: (data) {
-          return data;
-        },
-        error: (error, stackTrace) {
-          // @TODO: Add crashlytics
-          return <FavoriteGame>[];
-        },
-        loading: () => <FavoriteGame>[],
-      );
-    },
-  );
+  final mergedGames = mergeGamesWithFavorites(games, favorites);
+  // Now filter the games.
+  final filteredGames = switch (mergedGames) {
+    UseCaseResultSuccess(:final data) => filterGames(filter, data),
+    UseCaseResultFailure() => UseCaseResult.failure('Unable to merge games with favorites', StackTrace.current),
+    _ => UseCaseResult.failure('Unable to merge games with favorites', StackTrace.current),
+  };
 
   // Merge games with favorites.
-  return merge(games, favorites).when(
-    failure: (error, stackTrace) {
-      // @TODO: Add crashlytics
-      return games;
-    },
-    success: (merged) => filterGames(filter, merged).when(
-      success: (games) => games,
-      failure: (error, stackTrace) {
-        // @TODO: Add crashlytics
-        return merged;
-      },
-    ),
-  );
+  return switch (filteredGames) {
+    UseCaseResultSuccess(:final data) => data,
+    UseCaseResultFailure() => [],
+    _ => [],
+  };
 }

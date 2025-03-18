@@ -32,11 +32,11 @@ class GamesListingPage extends ConsumerWidget {
             loading: const CircularProgressIndicator.adaptive().center,
             data: (games) {
               return ListView.builder(
+                itemCount: games.length,
                 itemBuilder: (context, index) {
                   final game = games[index];
                   return GameTileWidget(gameId: game.id);
                 },
-                itemCount: games.length,
               ).expanded();
             },
             error: ErrorViewWidget.builder,

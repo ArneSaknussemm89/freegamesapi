@@ -124,6 +124,51 @@ abstract class AppUserDocumentReference
   @override
   Future<void> delete();
 
+  /// Sets data on the document, overwriting any existing data. If the document
+  /// does not yet exist, it will be created.
+  ///
+  /// If [SetOptions] are provided, the data can be merged into an existing
+  /// document instead of overwriting.
+  ///
+  /// Any [FieldValue]s provided will replace the corresponding fields in the
+  /// [model] during serialization.
+  Future<void> set(
+    AppUser model, {
+    SetOptions? options,
+    FieldValue uidFieldValue,
+    FieldValue displayNameFieldValue,
+  });
+
+  /// Writes to the document using the transaction API.
+  ///
+  /// If the document does not exist yet, it will be created. If you pass
+  /// [SetOptions], the provided data can be merged into the existing document.
+  ///
+  /// Any [FieldValue]s provided will replace the corresponding fields in the
+  /// [model] during serialization.
+  void transactionSet(
+    Transaction transaction,
+    AppUser model, {
+    SetOptions? options,
+    FieldValue uidFieldValue,
+    FieldValue displayNameFieldValue,
+  });
+
+  /// Writes to the document using the batch API.
+  ///
+  /// If the document does not exist yet, it will be created. If you pass
+  /// [SetOptions], the provided data can be merged into the existing document.
+  ///
+  /// Any [FieldValue]s provided will replace the corresponding fields in the
+  /// [model] during serialization.
+  void batchSet(
+    WriteBatch batch,
+    AppUser model, {
+    SetOptions? options,
+    FieldValue uidFieldValue,
+    FieldValue displayNameFieldValue,
+  });
+
   /// Updates data on the document. Data will be merged with any existing
   /// document data.
   ///
@@ -140,6 +185,17 @@ abstract class AppUserDocumentReference
   /// The update will fail if applied to a document that does not exist.
   void transactionUpdate(
     Transaction transaction, {
+    String uid,
+    FieldValue uidFieldValue,
+    String displayName,
+    FieldValue displayNameFieldValue,
+  });
+
+  /// Updates fields in the current document using the batch API.
+  ///
+  /// The update will fail if applied to a document that does not exist.
+  void batchUpdate(
+    WriteBatch batch, {
     String uid,
     FieldValue uidFieldValue,
     String displayName,
@@ -173,6 +229,60 @@ class _$AppUserDocumentReference
   @override
   Future<AppUserDocumentSnapshot> transactionGet(Transaction transaction) {
     return transaction.get(reference).then(AppUserDocumentSnapshot._);
+  }
+
+  Future<void> set(
+    AppUser model, {
+    SetOptions? options,
+    FieldValue? uidFieldValue,
+    FieldValue? displayNameFieldValue,
+  }) async {
+    final json = {
+      ...model.toJson(),
+      if (uidFieldValue != null) _$AppUserFieldMap['uid']!: uidFieldValue,
+      if (displayNameFieldValue != null)
+        _$AppUserFieldMap['displayName']!: displayNameFieldValue,
+    };
+
+    final castedReference = reference.withConverter<Map<String, dynamic>>(
+      fromFirestore: (snapshot, options) => throw UnimplementedError(),
+      toFirestore: (value, options) => value,
+    );
+    return castedReference.set(json, options);
+  }
+
+  void transactionSet(
+    Transaction transaction,
+    AppUser model, {
+    SetOptions? options,
+    FieldValue? uidFieldValue,
+    FieldValue? displayNameFieldValue,
+  }) {
+    final json = {
+      ...model.toJson(),
+      if (uidFieldValue != null) _$AppUserFieldMap['uid']!: uidFieldValue,
+      if (displayNameFieldValue != null)
+        _$AppUserFieldMap['displayName']!: displayNameFieldValue,
+    };
+
+    transaction.set(reference, json, options);
+  }
+
+  void batchSet(
+    WriteBatch batch,
+    AppUser model, {
+    SetOptions? options,
+    FieldValue? uidFieldValue,
+    FieldValue? displayNameFieldValue,
+  }) {
+    final json = {
+      ...model.toJson(),
+      if (uidFieldValue != null) _$AppUserFieldMap['uid']!: uidFieldValue,
+      if (displayNameFieldValue != null)
+        _$AppUserFieldMap['displayName']!: displayNameFieldValue,
+    };
+
+    batch.set(reference, json, options);
   }
 
   Future<void> update({
@@ -230,6 +340,35 @@ class _$AppUserDocumentReference
     };
 
     transaction.update(reference, json);
+  }
+
+  void batchUpdate(
+    WriteBatch batch, {
+    Object? uid = _sentinel,
+    FieldValue? uidFieldValue,
+    Object? displayName = _sentinel,
+    FieldValue? displayNameFieldValue,
+  }) {
+    assert(
+      uid == _sentinel || uidFieldValue == null,
+      "Cannot specify both uid and uidFieldValue",
+    );
+    assert(
+      displayName == _sentinel || displayNameFieldValue == null,
+      "Cannot specify both displayName and displayNameFieldValue",
+    );
+    final json = {
+      if (uid != _sentinel)
+        _$AppUserFieldMap['uid']!: _$AppUserPerFieldToJson.uid(uid as String),
+      if (uidFieldValue != null) _$AppUserFieldMap['uid']!: uidFieldValue,
+      if (displayName != _sentinel)
+        _$AppUserFieldMap['displayName']!:
+            _$AppUserPerFieldToJson.displayName(displayName as String),
+      if (displayNameFieldValue != null)
+        _$AppUserFieldMap['displayName']!: displayNameFieldValue,
+    };
+
+    batch.update(reference, json);
   }
 
   @override
@@ -990,6 +1129,14 @@ const _$AppUserFieldMap = <String, String>{
   'uid': 'uid',
   'displayName': 'displayName',
 };
+
+// ignore: unused_element
+abstract class _$AppUserPerFieldToJson {
+  // ignore: unused_element
+  static Object? uid(String instance) => instance;
+  // ignore: unused_element
+  static Object? displayName(String instance) => instance;
+}
 
 Map<String, dynamic> _$AppUserToJson(AppUser instance) => <String, dynamic>{
       'uid': instance.uid,

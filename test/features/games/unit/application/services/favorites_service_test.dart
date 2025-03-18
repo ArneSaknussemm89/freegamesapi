@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -99,9 +98,7 @@ void main() {
       final container = createContainer(
         parent: root,
         overrides: [
-          appFirestoreServiceProvider.overrideWithProvider(
-            Provider.autoDispose((ref) => service),
-          ),
+          appFirestoreServiceProvider.overrideWith((ref) => service),
         ],
       );
 

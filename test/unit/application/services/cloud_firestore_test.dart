@@ -1,5 +1,4 @@
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:freegamesexample/core/application/services/cloud_firestore.dart';
@@ -24,7 +23,7 @@ void main() {
       final container = createContainer(
         parent: root,
         overrides: [
-          cloudFirestoreProvider.overrideWithProvider(Provider.autoDispose((ref) => firestore)),
+          cloudFirestoreProvider.overrideWith((ref) => firestore),
         ],
       );
 

@@ -27,6 +27,17 @@ class FavoriteGamesService {
 
   // Add a favorites to the list.
   Future<void> addFavorite(Game game) async {
+    // switch (auth) {
+    //   AuthenticationState.authenticated(:final value) => service.favorites.add(
+    //     FavoriteGame(
+    //       gameId: game.id,
+    //       ownerId: user.uid,
+    //       savedOn: DateTime.now(),
+    //     ),
+    //   );
+    //   _ => {}
+      
+    // }
     auth.whenOrNull(authenticated: (user) {
       service.favorites.add(
         FavoriteGame(

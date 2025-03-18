@@ -10,6 +10,25 @@
 part of 'router.dart';
 
 /// generated route for
+/// [AuthEntryPage]
+class AuthEntryRoute extends PageRouteInfo<void> {
+  const AuthEntryRoute({List<PageRouteInfo>? children})
+      : super(
+          AuthEntryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AuthEntryRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AuthEntryPage();
+    },
+  );
+}
+
+/// generated route for
 /// [EmptyRouterPage]
 class EmptyRouterRoute extends PageRouteInfo<void> {
   const EmptyRouterRoute({List<PageRouteInfo>? children})

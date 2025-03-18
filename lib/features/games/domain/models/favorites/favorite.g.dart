@@ -127,6 +127,54 @@ abstract class FavoriteGameDocumentReference extends FirestoreDocumentReference<
   @override
   Future<void> delete();
 
+  /// Sets data on the document, overwriting any existing data. If the document
+  /// does not yet exist, it will be created.
+  ///
+  /// If [SetOptions] are provided, the data can be merged into an existing
+  /// document instead of overwriting.
+  ///
+  /// Any [FieldValue]s provided will replace the corresponding fields in the
+  /// [model] during serialization.
+  Future<void> set(
+    FavoriteGame model, {
+    SetOptions? options,
+    FieldValue gameIdFieldValue,
+    FieldValue ownerIdFieldValue,
+    FieldValue savedOnFieldValue,
+  });
+
+  /// Writes to the document using the transaction API.
+  ///
+  /// If the document does not exist yet, it will be created. If you pass
+  /// [SetOptions], the provided data can be merged into the existing document.
+  ///
+  /// Any [FieldValue]s provided will replace the corresponding fields in the
+  /// [model] during serialization.
+  void transactionSet(
+    Transaction transaction,
+    FavoriteGame model, {
+    SetOptions? options,
+    FieldValue gameIdFieldValue,
+    FieldValue ownerIdFieldValue,
+    FieldValue savedOnFieldValue,
+  });
+
+  /// Writes to the document using the batch API.
+  ///
+  /// If the document does not exist yet, it will be created. If you pass
+  /// [SetOptions], the provided data can be merged into the existing document.
+  ///
+  /// Any [FieldValue]s provided will replace the corresponding fields in the
+  /// [model] during serialization.
+  void batchSet(
+    WriteBatch batch,
+    FavoriteGame model, {
+    SetOptions? options,
+    FieldValue gameIdFieldValue,
+    FieldValue ownerIdFieldValue,
+    FieldValue savedOnFieldValue,
+  });
+
   /// Updates data on the document. Data will be merged with any existing
   /// document data.
   ///
@@ -145,6 +193,19 @@ abstract class FavoriteGameDocumentReference extends FirestoreDocumentReference<
   /// The update will fail if applied to a document that does not exist.
   void transactionUpdate(
     Transaction transaction, {
+    int gameId,
+    FieldValue gameIdFieldValue,
+    String ownerId,
+    FieldValue ownerIdFieldValue,
+    DateTime savedOn,
+    FieldValue savedOnFieldValue,
+  });
+
+  /// Updates fields in the current document using the batch API.
+  ///
+  /// The update will fail if applied to a document that does not exist.
+  void batchUpdate(
+    WriteBatch batch, {
     int gameId,
     FieldValue gameIdFieldValue,
     String ownerId,
@@ -180,6 +241,72 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
   @override
   Future<FavoriteGameDocumentSnapshot> transactionGet(Transaction transaction) {
     return transaction.get(reference).then(FavoriteGameDocumentSnapshot._);
+  }
+
+  Future<void> set(
+    FavoriteGame model, {
+    SetOptions? options,
+    FieldValue? gameIdFieldValue,
+    FieldValue? ownerIdFieldValue,
+    FieldValue? savedOnFieldValue,
+  }) async {
+    final json = {
+      ...model.toJson(),
+      if (gameIdFieldValue != null)
+        _$FavoriteGameFieldMap['gameId']!: gameIdFieldValue,
+      if (ownerIdFieldValue != null)
+        _$FavoriteGameFieldMap['ownerId']!: ownerIdFieldValue,
+      if (savedOnFieldValue != null)
+        _$FavoriteGameFieldMap['savedOn']!: savedOnFieldValue,
+    };
+
+    final castedReference = reference.withConverter<Map<String, dynamic>>(
+      fromFirestore: (snapshot, options) => throw UnimplementedError(),
+      toFirestore: (value, options) => value,
+    );
+    return castedReference.set(json, options);
+  }
+
+  void transactionSet(
+    Transaction transaction,
+    FavoriteGame model, {
+    SetOptions? options,
+    FieldValue? gameIdFieldValue,
+    FieldValue? ownerIdFieldValue,
+    FieldValue? savedOnFieldValue,
+  }) {
+    final json = {
+      ...model.toJson(),
+      if (gameIdFieldValue != null)
+        _$FavoriteGameFieldMap['gameId']!: gameIdFieldValue,
+      if (ownerIdFieldValue != null)
+        _$FavoriteGameFieldMap['ownerId']!: ownerIdFieldValue,
+      if (savedOnFieldValue != null)
+        _$FavoriteGameFieldMap['savedOn']!: savedOnFieldValue,
+    };
+
+    transaction.set(reference, json, options);
+  }
+
+  void batchSet(
+    WriteBatch batch,
+    FavoriteGame model, {
+    SetOptions? options,
+    FieldValue? gameIdFieldValue,
+    FieldValue? ownerIdFieldValue,
+    FieldValue? savedOnFieldValue,
+  }) {
+    final json = {
+      ...model.toJson(),
+      if (gameIdFieldValue != null)
+        _$FavoriteGameFieldMap['gameId']!: gameIdFieldValue,
+      if (ownerIdFieldValue != null)
+        _$FavoriteGameFieldMap['ownerId']!: ownerIdFieldValue,
+      if (savedOnFieldValue != null)
+        _$FavoriteGameFieldMap['savedOn']!: savedOnFieldValue,
+    };
+
+    batch.set(reference, json, options);
   }
 
   Future<void> update({
@@ -263,6 +390,48 @@ class _$FavoriteGameDocumentReference extends FirestoreDocumentReference<
     };
 
     transaction.update(reference, json);
+  }
+
+  void batchUpdate(
+    WriteBatch batch, {
+    Object? gameId = _sentinel,
+    FieldValue? gameIdFieldValue,
+    Object? ownerId = _sentinel,
+    FieldValue? ownerIdFieldValue,
+    Object? savedOn = _sentinel,
+    FieldValue? savedOnFieldValue,
+  }) {
+    assert(
+      gameId == _sentinel || gameIdFieldValue == null,
+      "Cannot specify both gameId and gameIdFieldValue",
+    );
+    assert(
+      ownerId == _sentinel || ownerIdFieldValue == null,
+      "Cannot specify both ownerId and ownerIdFieldValue",
+    );
+    assert(
+      savedOn == _sentinel || savedOnFieldValue == null,
+      "Cannot specify both savedOn and savedOnFieldValue",
+    );
+    final json = {
+      if (gameId != _sentinel)
+        _$FavoriteGameFieldMap['gameId']!:
+            _$FavoriteGamePerFieldToJson.gameId(gameId as int),
+      if (gameIdFieldValue != null)
+        _$FavoriteGameFieldMap['gameId']!: gameIdFieldValue,
+      if (ownerId != _sentinel)
+        _$FavoriteGameFieldMap['ownerId']!:
+            _$FavoriteGamePerFieldToJson.ownerId(ownerId as String),
+      if (ownerIdFieldValue != null)
+        _$FavoriteGameFieldMap['ownerId']!: ownerIdFieldValue,
+      if (savedOn != _sentinel)
+        _$FavoriteGameFieldMap['savedOn']!:
+            _$FavoriteGamePerFieldToJson.savedOn(savedOn as DateTime),
+      if (savedOnFieldValue != null)
+        _$FavoriteGameFieldMap['savedOn']!: savedOnFieldValue,
+    };
+
+    batch.update(reference, json);
   }
 
   @override
@@ -1179,6 +1348,17 @@ const _$FavoriteGameFieldMap = <String, String>{
   'ownerId': 'ownerId',
   'savedOn': 'savedOn',
 };
+
+// ignore: unused_element
+abstract class _$FavoriteGamePerFieldToJson {
+  // ignore: unused_element
+  static Object? gameId(int instance) => instance;
+  // ignore: unused_element
+  static Object? ownerId(String instance) => instance;
+  // ignore: unused_element
+  static Object? savedOn(DateTime instance) =>
+      const FirestoreDateTimeConverter().toJson(instance);
+}
 
 Map<String, dynamic> _$FavoriteGameToJson(FavoriteGame instance) =>
     <String, dynamic>{

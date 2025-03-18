@@ -34,7 +34,7 @@ void main() {
   test('games api source can be overridden', () async {
     final container = ProviderContainer(
       overrides: [
-        gamesApiDataSourceProvider.overrideWithProvider(Provider.autoDispose((ref) => mockedSource)),
+        gamesApiDataSourceProvider.overrideWith((ref) => mockedSource),
       ],
     );
     addTearDown(container.dispose);

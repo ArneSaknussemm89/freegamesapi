@@ -6,7 +6,7 @@ part of 'game.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fetchOneGameHash() => r'e76ea06ff84b0eea9f51a8d31613e87b1c6794d7';
+String _$fetchOneGameHash() => r'fe459293ca7494472dfc16511a4ee2fc0db25fd0';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -174,7 +174,7 @@ class _FetchOneGameProviderElement
   bool get checkFavorite => (origin as FetchOneGameProvider).checkFavorite;
 }
 
-String _$fetchOneFavoriteHash() => r'a987e6b17a9d91689af958ac43c3f334b2266a51';
+String _$fetchOneFavoriteHash() => r'61ef606bbd20065c14ba14daac3130c8677649d2';
 
 /// See also [fetchOneFavorite].
 @ProviderFor(fetchOneFavorite)

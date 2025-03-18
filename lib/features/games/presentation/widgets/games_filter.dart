@@ -6,7 +6,7 @@ import 'package:freegamesexample/features/games/application/providers/games_list
 import 'package:freegamesexample/features/games/domain/value_objects/games_list_filter.dart';
 
 class GamesFilterWidget extends ConsumerWidget {
-  const GamesFilterWidget({Key? key}) : super(key: key);
+  const GamesFilterWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

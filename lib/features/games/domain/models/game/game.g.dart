@@ -11,7 +11,6 @@ _$GameImpl _$$GameImplFromJson(Map<String, dynamic> json) => _$GameImpl(
       title: json['title'] as String,
       thumbnail: json['thumbnail'] as String,
       shortDescription: json['short_description'] as String,
-      releaseDate: DateTime.parse(json['release_date'] as String),
       gameUrl: json['game_url'] as String? ?? '',
       genre: json['genre'] as String? ?? '',
       platform: json['platform'] as String? ?? '',
@@ -19,8 +18,53 @@ _$GameImpl _$$GameImplFromJson(Map<String, dynamic> json) => _$GameImpl(
       developer: json['developer'] as String? ?? '',
       freetogameProfileUrl: json['freetogame_profile_url'] as String? ?? '',
       isFavorite: json['is_favorite'] as bool? ?? false,
-      $type: json['runtimeType'] as String?,
+      releaseDate: json['release_date'] == null
+          ? null
+          : DateTime.parse(json['release_date'] as String),
     );
+
+const _$$GameImplFieldMap = <String, String>{
+  'id': 'id',
+  'title': 'title',
+  'thumbnail': 'thumbnail',
+  'shortDescription': 'short_description',
+  'gameUrl': 'game_url',
+  'genre': 'genre',
+  'platform': 'platform',
+  'publisher': 'publisher',
+  'developer': 'developer',
+  'freetogameProfileUrl': 'freetogame_profile_url',
+  'isFavorite': 'is_favorite',
+  'releaseDate': 'release_date',
+};
+
+// ignore: unused_element
+abstract class _$$GameImplPerFieldToJson {
+  // ignore: unused_element
+  static Object? id(int instance) => instance;
+  // ignore: unused_element
+  static Object? title(String instance) => instance;
+  // ignore: unused_element
+  static Object? thumbnail(String instance) => instance;
+  // ignore: unused_element
+  static Object? shortDescription(String instance) => instance;
+  // ignore: unused_element
+  static Object? gameUrl(String instance) => instance;
+  // ignore: unused_element
+  static Object? genre(String instance) => instance;
+  // ignore: unused_element
+  static Object? platform(String instance) => instance;
+  // ignore: unused_element
+  static Object? publisher(String instance) => instance;
+  // ignore: unused_element
+  static Object? developer(String instance) => instance;
+  // ignore: unused_element
+  static Object? freetogameProfileUrl(String instance) => instance;
+  // ignore: unused_element
+  static Object? isFavorite(bool instance) => instance;
+  // ignore: unused_element
+  static Object? releaseDate(DateTime? instance) => instance?.toIso8601String();
+}
 
 Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
     <String, dynamic>{
@@ -28,7 +72,6 @@ Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
       'title': instance.title,
       'thumbnail': instance.thumbnail,
       'short_description': instance.shortDescription,
-      'release_date': instance.releaseDate.toIso8601String(),
       'game_url': instance.gameUrl,
       'genre': instance.genre,
       'platform': instance.platform,
@@ -36,41 +79,5 @@ Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
       'developer': instance.developer,
       'freetogame_profile_url': instance.freetogameProfileUrl,
       'is_favorite': instance.isFavorite,
-      'runtimeType': instance.$type,
-    };
-
-_$GameNotFoundImpl _$$GameNotFoundImplFromJson(Map<String, dynamic> json) =>
-    _$GameNotFoundImpl(
-      (json['id'] as num?)?.toInt() ?? 0,
-      json['title'] as String? ?? '',
-      json['thumbnail'] as String? ?? '',
-      json['shortDescription'] as String? ?? '',
-      json['gameUrl'] as String? ?? '',
-      json['genre'] as String? ?? '',
-      json['platform'] as String? ?? '',
-      json['publisher'] as String? ?? '',
-      json['developer'] as String? ?? '',
-      json['freetogameProfileUrl'] as String? ?? '',
-      json['isFavorite'] as bool? ?? false,
-      json['releaseDate'] == null
-          ? DateTime.now
-          : DateTime.parse(json['releaseDate'] as String),
-      json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$GameNotFoundImplToJson(_$GameNotFoundImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      'thumbnail': instance.thumbnail,
-      'shortDescription': instance.shortDescription,
-      'gameUrl': instance.gameUrl,
-      'genre': instance.genre,
-      'platform': instance.platform,
-      'publisher': instance.publisher,
-      'developer': instance.developer,
-      'freetogameProfileUrl': instance.freetogameProfileUrl,
-      'isFavorite': instance.isFavorite,
-      'releaseDate': instance.releaseDate.toIso8601String(),
-      'runtimeType': instance.$type,
+      'release_date': instance.releaseDate?.toIso8601String(),
     };

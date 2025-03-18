@@ -7,7 +7,7 @@ part of 'favorites_list.dart';
 // **************************************************************************
 
 String _$fetchUserFavoritesHash() =>
-    r'50ab019c5b90ff5825915c5ef00c7237b102626f';
+    r'2ac281d4e4bf078405f6d25a2159669d8ead9497';
 
 /// See also [fetchUserFavorites].
 @ProviderFor(fetchUserFavorites)

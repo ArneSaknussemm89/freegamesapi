@@ -7,7 +7,7 @@ part of 'favorites_service.dart';
 // **************************************************************************
 
 String _$favoriteGamesServiceHash() =>
-    r'418b279520687081dfb5aefa478496774e601a8e';
+    r'93f1beb59bfb6bd13e2769e07869982020389d33';
 
 /// See also [favoriteGamesService].
 @ProviderFor(favoriteGamesService)

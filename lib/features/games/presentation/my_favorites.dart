@@ -7,6 +7,7 @@ import 'package:styled_widget/styled_widget.dart';
 // Games feature elements.
 import 'package:freegamesexample/features/games/application/providers/favorites_list.dart';
 import 'package:freegamesexample/features/games/application/providers/game.dart';
+import 'package:freegamesexample/features/games/data/constants.dart';
 import 'package:freegamesexample/features/games/domain/models/game/game.dart';
 
 // Core elements.
@@ -70,7 +71,7 @@ class FavoriteGamesPageBody extends ConsumerWidget {
                   data: (data) {
                     late final Game matched;
                     if (data == null) {
-                      matched = Game.notFound();
+                      matched = notFoundGame;
                     } else {
                       matched = data;
                     }

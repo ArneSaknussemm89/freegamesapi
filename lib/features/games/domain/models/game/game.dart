@@ -13,7 +13,6 @@ class Game with _$Game {
     required String title,
     required String thumbnail,
     required String shortDescription,
-    required DateTime releaseDate,
     @Default('') String gameUrl,
     @Default('') String genre,
     @Default('') String platform,
@@ -21,22 +20,8 @@ class Game with _$Game {
     @Default('') String developer,
     @Default('') String freetogameProfileUrl,
     @Default(false) bool isFavorite,
+    @Default(null) DateTime? releaseDate,
   }) = _Game;
-
-  factory Game.notFound([
-    @Default(0) int id,
-    @Default('') String title,
-    @Default('') String thumbnail,
-    @Default('') String shortDescription,
-    @Default('') String gameUrl,
-    @Default('') String genre,
-    @Default('') String platform,
-    @Default('') String publisher,
-    @Default('') String developer,
-    @Default('') String freetogameProfileUrl,
-    @Default(false) bool isFavorite,
-    @Default(DateTime.now) DateTime releaseDate,
-  ]) = _GameNotFound;
 
   factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 }

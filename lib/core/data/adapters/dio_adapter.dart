@@ -10,17 +10,12 @@ final dioAdapterProvider = Provider.autoDispose.family<DioAdapter, BaseOptions>(
 
 class DioAdapterOptions extends AdapterOptions {
   const DioAdapterOptions({
-    required String path,
-    Map<String, dynamic>? query,
-    Map<String, dynamic>? body,
-    Map<String, dynamic>? headers,
+    required super.path,
+    super.query,
+    super.body,
+    super.headers,
     this.cancelToken,
-  }) : super(
-          path: path,
-          query: query,
-          body: body,
-          headers: headers,
-        );
+  });
 
   final CancelToken? cancelToken;
 

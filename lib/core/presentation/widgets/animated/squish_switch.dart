@@ -5,7 +5,7 @@ import 'package:supercharged/supercharged.dart';
 
 class SquishSwitch extends StatefulWidget {
   const SquishSwitch({
-    Key? key,
+    super.key,
     this.firstChild = Icons.close,
     this.secondChild = Icons.filter_list,
     this.switched = false,
@@ -13,7 +13,7 @@ class SquishSwitch extends StatefulWidget {
     this.firstIconColor = Colors.red,
     this.secondIconColor = Colors.grey,
     this.transform,
-  }) : super(key: key);
+  });
 
   final IconData firstChild;
   final IconData secondChild;

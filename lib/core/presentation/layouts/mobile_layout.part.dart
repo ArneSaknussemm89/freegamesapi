@@ -1,4 +1,4 @@
-part of layouts;
+part of 'layouts.dart';
 
 class MobileLayout extends StatelessWidget {
   const MobileLayout({
@@ -10,8 +10,8 @@ class MobileLayout extends StatelessWidget {
     this.bottomButtons = const [],
     this.showAppBar = true,
     this.showFab = true,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final WidgetBuilder bodyBuilder;
   final Widget? bottomNav;

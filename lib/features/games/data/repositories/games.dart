@@ -42,7 +42,8 @@ class GamesRepository extends Repository<Game, DioAdapter> {
     return response.when(
       success: (data) {
         return data.map((game) {
-          return Game.fromJson(game as Map<String, dynamic>);
+          final unserialized = Game.fromJson(game as Map<String, dynamic>);
+          return unserialized;
         }).toList();
       },
       failure: (exception, stackTrace) {

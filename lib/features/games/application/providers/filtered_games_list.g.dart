@@ -7,7 +7,7 @@ part of 'filtered_games_list.dart';
 // **************************************************************************
 
 String _$fetchFilteredGamesHash() =>
-    r'f41b45a55669db0e8dea73a4f0b8b898c5c3b89e';
+    r'630a61f2d419ca232b5e60c380b560319bdaf087';
 
 /// See also [fetchFilteredGames].
 @ProviderFor(fetchFilteredGames)
